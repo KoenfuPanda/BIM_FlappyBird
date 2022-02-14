@@ -7793,6 +7793,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocity: 12
+  travelTime: 0
 --- !u!70 &1923315309
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
