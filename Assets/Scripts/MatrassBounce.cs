@@ -10,11 +10,20 @@ public class MatrassBounce : MonoBehaviour
     [SerializeField]
     private float _bounceStrength;
 
+    [SerializeField]
+    private float _timeAmountControlLost;
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Player")
         {
             _bimRigid = collision.attachedRigidbody;
+            
+            if(collision.TryGetComponent(out FollowFinger followFinger))
+            {
+                followFinger.TurnOffControl(_timeAmountControlLost);
+            }
+
             BounceActivate();
         }
     }
@@ -23,7 +32,6 @@ public class MatrassBounce : MonoBehaviour
     {
         _bimRigid.AddForce(Vector2.up * _bounceStrength, ForceMode2D.Impulse);
 
-        // disable control scheme for a moment ?
     }
 
 

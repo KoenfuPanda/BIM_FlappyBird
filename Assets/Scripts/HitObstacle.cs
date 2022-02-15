@@ -25,7 +25,7 @@ public class HitObstacle : MonoBehaviour
             // checks what control scheme is used and disables it
             if(TryGetComponent(out FollowFinger followFingerScript))
             {
-                followFingerScript.enabled = false;
+                followFingerScript.enabled = false;              
             }
             if(GetComponentInParent<BimControllerFloating>() != null)
             {

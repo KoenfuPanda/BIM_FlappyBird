@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using PathCreation;
+using System;
 
 public class FollowFinger : MonoBehaviour
 {
@@ -47,6 +48,7 @@ public class FollowFinger : MonoBehaviour
         // Calculate Velocity
 
         mouseWorldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
         if (mouseWorldPosition.y < transform.position.y - 0.1f)
         {
             velocity = (Mathf.Pow(2, velocityMultiplier))*-1;
@@ -141,6 +143,22 @@ public class FollowFinger : MonoBehaviour
         bounce = false;
         controlCharacter = true;
         rigidBody.gravityScale = 0;
+    }
+    public void TurnOffControl(float timeLostControl)
+    {
+        bounce = true;
+        controlCharacter = false;
+        rigidBody.gravityScale = 1;
+
+        // start coroutine to regain control
+        StartCoroutine(RegainControl(timeLostControl));
+    }
+
+    private IEnumerator RegainControl(float timeLostControl)
+    {
+        yield return new WaitForSeconds(timeLostControl);
+
+        TurnOnControl();
     }
 
     private void SetDestination(Vector3 destination)

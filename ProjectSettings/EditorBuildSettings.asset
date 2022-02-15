@@ -5,19 +5,19 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Levels/MainMenu.unity
     guid: 6022cf520f016934a9b8b25f32048b90
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Levels/Level_01.unity
     guid: 00d36d1d7c7382045b9b2844107e2244
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Levels/Level_02.unity
     guid: 6d15856b21893364ba05f9357c15eea1
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Levels/Level_03.unity
     guid: 8ff9fa24f114c8c479a38353f5fac921
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Levels/Level_03-1.unity
     guid: b50fd0cba6872f2438246759acc97bbc
   - enabled: 0
@@ -29,10 +29,13 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Test_Scenes/Mechanics.unity
     guid: d63c7de716b59304eb9a427af7681295
   - enabled: 0
     path: Assets/Scenes/Levels/Template.unity
     guid: 5b7f577420bcda546ad748d09ed81f14
+  - enabled: 1
+    path: Assets/Scenes/webGL test/webGL_testing.unity
+    guid: 81c27ae87564951439fbc35f376b5d69
   m_configObjects: {}
