@@ -4,20 +4,53 @@ using UnityEngine;
 
 public class SideMatras : MonoBehaviour
 {
+    private Animator _animator;
+
     public enum Direction { Left, Right }
     public Direction direction;
 
-    private void OnTriggerEnter2D(Collider2D collider)
+    private bool _bouncesLeft;
+
+    private Transform _playerParent;
+
+
+    private void Start()
     {
-        GetComponent<Animator>().SetTrigger("Bounce");
         if (direction.ToString() == "Right")
         {
-            collider.gameObject.transform.parent.gameObject.transform.GetComponent<ChangeDirection>().GoRight();
+            _bouncesLeft = false;
+        }
+        else
+        {
+            _bouncesLeft = true;
         }
 
-        if (direction.ToString() == "Left")
+        _animator = GetComponent<Animator>();
+    }
+
+    private void OnTriggerEnter2D(Collider2D collider)
+    {
+        _animator.SetTrigger("Bounce");
+
+        _playerParent = collider.transform.parent;
+
+        if (_playerParent.TryGetComponent(out ChangeDirection changeDirection))
         {
-            collider.gameObject.transform.parent.gameObject.transform.GetComponent<ChangeDirection>().GoLeft();
+            if (_bouncesLeft == false)
+            {
+                changeDirection.GoRight();
+            }
+            else
+                changeDirection.GoLeft();
+        }
+        if (_playerParent.TryGetComponent(out ChangeDirection_Updated changeDirectionU))
+        {
+            if (_bouncesLeft == false)
+            {
+                changeDirectionU.GoRight();
+            }
+            else
+                changeDirectionU.GoLeft();
         }
     }
 }

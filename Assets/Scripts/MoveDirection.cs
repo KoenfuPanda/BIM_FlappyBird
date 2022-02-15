@@ -21,7 +21,16 @@ public class MoveDirection : MonoBehaviour
     IEnumerator DelayStart()
     {
         yield return new WaitForSeconds(2);
-        GetComponent<ChangeDirection>().enabled = true;
+
+        if(TryGetComponent(out ChangeDirection changeDirection))
+        {
+            changeDirection.enabled = true;
+        }
+        if (TryGetComponent(out ChangeDirection_Updated changeDirectionU))
+        {
+            changeDirectionU.enabled = true;
+        }
+
         speed = 6;
     }
 }
