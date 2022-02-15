@@ -13,6 +13,13 @@ public class MatrassBounce : MonoBehaviour
     [SerializeField]
     private float _timeAmountControlLost;
 
+    private Animator _animator;
+
+    private void Start()
+    {
+        _animator = GetComponent<Animator>();
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Player")
@@ -32,6 +39,7 @@ public class MatrassBounce : MonoBehaviour
     {
         _bimRigid.AddForce(Vector2.up * _bounceStrength, ForceMode2D.Impulse);
 
+        _animator.SetTrigger("Bounce");
     }
 
 
