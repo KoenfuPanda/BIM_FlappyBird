@@ -38,4 +38,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/webGL test/webGL_testing.unity
     guid: 81c27ae87564951439fbc35f376b5d69
+  - enabled: 1
+    path: Assets/Scenes/Prototype_Levels/Proto_07.unity
+    guid: f01250d00500a1e41924a636ffb791b4
   m_configObjects: {}
