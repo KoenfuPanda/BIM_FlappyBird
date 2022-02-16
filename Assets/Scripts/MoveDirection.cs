@@ -6,6 +6,8 @@ public class MoveDirection : MonoBehaviour
 {
     public float speed = 0;
 
+    public float IntendedLevelSpeed;
+
     void Start()
     {
         StartCoroutine(DelayStart());
@@ -40,6 +42,14 @@ public class MoveDirection : MonoBehaviour
             changeDirectionU.enabled = true;
         }
 
-        speed = 6;
+        if (IntendedLevelSpeed != 0)
+        {
+            speed = IntendedLevelSpeed;
+        }
+        else
+        {
+            speed = 6;
+        }
+        
     }
 }

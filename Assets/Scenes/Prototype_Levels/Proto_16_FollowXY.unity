@@ -4446,20 +4446,20 @@ Transform:
   - {fileID: 815547058}
   - {fileID: 2134473611}
   - {fileID: 1144539373}
-  - {fileID: 574066898}
   - {fileID: 587158322}
+  - {fileID: 1503505921}
   - {fileID: 1657033326}
-  - {fileID: 2115826251}
   - {fileID: 2133710886}
   - {fileID: 1805276985}
-  - {fileID: 1273185768}
-  - {fileID: 808998284}
   - {fileID: 2007673653}
+  - {fileID: 1273185768}
+  - {fileID: 2115826251}
+  - {fileID: 808998284}
   - {fileID: 501411190}
   - {fileID: 349882533}
   - {fileID: 400485577}
   - {fileID: 74644255}
-  - {fileID: 1503505921}
+  - {fileID: 574066898}
   - {fileID: 1027793358}
   - {fileID: 351928783}
   - {fileID: 875251476}
@@ -9011,6 +9011,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 720151284534849150, guid: 942b014ade4b52148b60379cd2b85ff4,
+        type: 3}
+      propertyPath: IntendedLevelSpeed
+      value: 4.5
+      objectReference: {fileID: 0}
     - target: {fileID: 720151285875758525, guid: 942b014ade4b52148b60379cd2b85ff4,
         type: 3}
       propertyPath: gameManager

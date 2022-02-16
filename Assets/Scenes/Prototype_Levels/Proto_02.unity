@@ -1700,6 +1700,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 6
+  IntendedLevelSpeed: 0
 --- !u!4 &801448463
 Transform:
   m_ObjectHideFlags: 0
@@ -2724,9 +2725,9 @@ Transform:
   - {fileID: 2018510665}
   - {fileID: 2061544814}
   - {fileID: 1494956809}
+  - {fileID: 2077235740}
   - {fileID: 955666493}
   - {fileID: 1678636501}
-  - {fileID: 2077235740}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4251,12 +4252,12 @@ Transform:
   - {fileID: 1026186148}
   - {fileID: 1183556792}
   - {fileID: 661976642}
-  - {fileID: 19639893}
   - {fileID: 2113416634}
   - {fileID: 1469083639}
+  - {fileID: 1634124228}
+  - {fileID: 19639893}
   - {fileID: 583985700}
   - {fileID: 820831181}
-  - {fileID: 1634124228}
   - {fileID: 1323942641}
   - {fileID: 506090406}
   - {fileID: 657175182}
@@ -6145,6 +6146,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: GameManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 8157713602601542621, guid: 617028c5d648d2c40b4fe3b8b212824c,
+        type: 3}
+      propertyPath: levelName
+      value: Proto_02
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 617028c5d648d2c40b4fe3b8b212824c, type: 3}

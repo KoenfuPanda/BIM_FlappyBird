@@ -240,9 +240,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2084307970}
-        m_MethodName: Replay
-        m_Mode: 1
+      - m_Target: {fileID: 1214691904}
+        m_MethodName: LoadTheSceneByName
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2632,6 +2632,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1214691904 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8157713602601542619, guid: 617028c5d648d2c40b4fe3b8b212824c,
+    type: 3}
+  m_PrefabInstance: {fileID: 1735811830}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5909a27c96ec12047bef9b478a2e1a8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1234345644
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3534,6 +3546,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8157713601660536430, guid: 617028c5d648d2c40b4fe3b8b212824c,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1735811831}
+    - target: {fileID: 8157713601660536430, guid: 617028c5d648d2c40b4fe3b8b212824c,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Replay
+      objectReference: {fileID: 0}
     - target: {fileID: 8157713602601542618, guid: 617028c5d648d2c40b4fe3b8b212824c,
         type: 3}
       propertyPath: m_RootOrder
@@ -3597,10 +3619,22 @@ PrefabInstance:
     - target: {fileID: 8157713602601542621, guid: 617028c5d648d2c40b4fe3b8b212824c,
         type: 3}
       propertyPath: levelName
-      value: FlappyBim_Prototype01
+      value: Proto_14_Flappy_Bim_Game
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 617028c5d648d2c40b4fe3b8b212824c, type: 3}
+--- !u!114 &1735811831 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8157713602601542621, guid: 617028c5d648d2c40b4fe3b8b212824c,
+    type: 3}
+  m_PrefabInstance: {fileID: 1735811830}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31014bbc3aaf054418de37c55e7e8b7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1783247249
 GameObject:
   m_ObjectHideFlags: 0
@@ -3973,7 +4007,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f340ce2bdcd0644ab84c18a272da67c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameManager: {fileID: 2084307970}
+  gameManager: {fileID: 1735811831}
   velocity: 4
   fethersParticle: {fileID: 6719945654410942288, guid: ccf49b57520f09a4c9f258ce8cc48f2d,
     type: 3}
