@@ -15,7 +15,7 @@ public class ChangeDirection : MonoBehaviour
     private bool rightDirection = false;
 
     private float timeElapsed;
-    private float lerpDuration = 1;
+    private float lerpDuration = 0.5f;
 
     private Vector3 startCam;
     private Vector3 endCam;
