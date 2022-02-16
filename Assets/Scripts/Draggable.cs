@@ -33,7 +33,8 @@ public class Draggable : MonoBehaviour
         topBorder = borderSprite.transform.TransformPoint(borderSprite.sprite.bounds.max).y;
         bottomBorder = borderSprite.transform.TransformPoint(borderSprite.sprite.bounds.min).y;
 
-        Destroy(border);
+        //Destroy(border);
+        
     }
 
     void OnMouseDown()

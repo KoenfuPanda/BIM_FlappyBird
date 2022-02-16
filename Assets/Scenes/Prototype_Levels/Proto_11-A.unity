@@ -659,6 +659,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7992583326677856784, guid: 7f026974117d2664f9e96945c166b623,
+        type: 3}
+      propertyPath: reverseAnimation
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7992583326677856796, guid: 7f026974117d2664f9e96945c166b623,
         type: 3}
       propertyPath: m_Name
@@ -2207,6 +2212,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 6
+  IntendedLevelSpeed: 0
 --- !u!4 &801448463
 Transform:
   m_ObjectHideFlags: 0
