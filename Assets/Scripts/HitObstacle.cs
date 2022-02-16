@@ -27,7 +27,11 @@ public class HitObstacle : MonoBehaviour
             {
                 followFingerScript.enabled = false;              
             }
-            if(GetComponentInParent<BimControllerFloating>() != null)
+            if (TryGetComponent(out FollowFingerXY followFingerScriptXY))
+            {
+                followFingerScriptXY.enabled = false;
+            }
+            if (GetComponentInParent<BimControllerFloating>() != null)
             {
                 GetComponentInParent<BimControllerFloating>().enabled = false;
             }

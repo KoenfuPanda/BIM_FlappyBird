@@ -9,6 +9,9 @@ public class Wind : MonoBehaviour
 
     private ChangeDirection _changeDirection;
     private ChangeDirection_Updated _changeDirectionU;
+    private MoveDirection _moveDirection;
+
+    private float _originalSpeed;
 
 
     private void OnTriggerEnter2D(Collider2D collider)
@@ -27,7 +30,13 @@ public class Wind : MonoBehaviour
             {
                 changeDirectionU.speed = 12;
                 _changeDirectionU = changeDirectionU;
-            }       
+            }
+            if(_playerParent.GetComponentInParent<MoveDirection>() != null)
+            {
+                _moveDirection = _playerParent.GetComponentInParent<MoveDirection>();
+                _originalSpeed = _moveDirection.speed;
+                _moveDirection.speed = 12;
+            }
         }      
     }
 
@@ -50,7 +59,7 @@ public class Wind : MonoBehaviour
             yield return new WaitForSeconds(0.2f);
             _changeDirection.speed = 7;
         }
-        else
+        else if (_changeDirectionU != null)
         {
             _changeDirectionU.speed = 10;
 
@@ -59,6 +68,16 @@ public class Wind : MonoBehaviour
 
             yield return new WaitForSeconds(0.2f);
             _changeDirectionU.speed = 7;
+        }
+        else
+        {
+            _moveDirection.speed = 10;
+
+            yield return new WaitForSeconds(0.5f);
+            _moveDirection.speed = 7;
+
+            yield return new WaitForSeconds(0.2f);
+            _moveDirection.speed = _originalSpeed;
         }
     }
 }
