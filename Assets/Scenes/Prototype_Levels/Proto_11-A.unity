@@ -3874,6 +3874,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerCharacter
       objectReference: {fileID: 0}
+    - target: {fileID: 6106393831258886311, guid: a449fe7b4e53d99459c68fa6840544ad,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6106393831258886328, guid: a449fe7b4e53d99459c68fa6840544ad,
         type: 3}
       propertyPath: m_RootOrder
@@ -3937,7 +3942,7 @@ PrefabInstance:
     - target: {fileID: 6106393831850996111, guid: a449fe7b4e53d99459c68fa6840544ad,
         type: 3}
       propertyPath: m_Mass
-      value: 0.6264234
+      value: 0.47930866
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a449fe7b4e53d99459c68fa6840544ad, type: 3}
