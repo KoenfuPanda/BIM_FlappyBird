@@ -8,16 +8,36 @@ public class MoveDirection : MonoBehaviour
 
     public float IntendedLevelSpeed;
 
+    public bool GoDiagonalDown = false;
+
+    [SerializeField]
+    private Transform _startPoint, _endPoint;
+
+    private Vector3 _calculatedDirection;
+
     void Start()
     {
         StartCoroutine(DelayStart());
+
+        if (_endPoint != null && _startPoint != null)
+        {
+            _calculatedDirection = _endPoint.position - _startPoint.position;
+        }       
     }
 
     void Update()
     {
         // Move root to the right
 
-        transform.Translate(new Vector3( speed * Time.deltaTime, 0 ,0 ));
+        if(GoDiagonalDown == false)
+        {
+            transform.Translate(new Vector3(speed * Time.deltaTime, 0, 0));
+        }
+        else
+        {
+            transform.Translate(_calculatedDirection.normalized * speed * Time.deltaTime);
+        }
+
 
         // -- FOR FOLLOW BIM EVERYWHERE --
         // 1) make it so that the logic in here is only applied to the camera, not Bim
