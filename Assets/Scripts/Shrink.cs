@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Shrink : MonoBehaviour
 {
+    [SerializeField] private float _timeActive = 17;
+
     private void OnTriggerEnter2D(Collider2D collider)
     {
         GetComponent<SpriteRenderer>().enabled = false;
@@ -13,7 +15,7 @@ public class Shrink : MonoBehaviour
 
     IEnumerator SetNormalSize(GameObject character)
     {
-        yield return new WaitForSeconds(17);
+        yield return new WaitForSeconds(_timeActive);
         character.transform.localScale = new Vector3(1, 1, 1);
         Destroy(gameObject);
     }
