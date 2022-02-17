@@ -400,6 +400,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6106393831258886311, guid: a449fe7b4e53d99459c68fa6840544ad,
         type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6106393831258886311, guid: a449fe7b4e53d99459c68fa6840544ad,
+        type: 3}
       propertyPath: IntendedLevelSpeed
       value: 3.5
       objectReference: {fileID: 0}
@@ -411,7 +416,7 @@ PrefabInstance:
     - target: {fileID: 6106393831258886328, guid: a449fe7b4e53d99459c68fa6840544ad,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 375
+      value: 363.39
       objectReference: {fileID: 0}
     - target: {fileID: 6106393831258886328, guid: a449fe7b4e53d99459c68fa6840544ad,
         type: 3}
@@ -5155,7 +5160,7 @@ MonoBehaviour:
       - 0
       globalNormalsAngle: 0
       flipNormals: 0
-    vertexPathUpToDate: 0
+    vertexPathUpToDate: 1
     vertexPathMaxAngleError: 0.3
     vertexPathMinVertexSpacing: 0.01
     showTransformTool: 1

@@ -3345,6 +3345,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3142147522616046346, guid: 50aa999a8bafd80498f18d854008c9df,
+        type: 3}
+      propertyPath: _speed
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 3142147522616046347, guid: 50aa999a8bafd80498f18d854008c9df,
         type: 3}
       propertyPath: _endPoint
@@ -3380,6 +3385,11 @@ PrefabInstance:
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 1367610763}
+    - target: {fileID: 3142147523395971751, guid: 50aa999a8bafd80498f18d854008c9df,
+        type: 3}
+      propertyPath: m_GravityScale
+      value: 0.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 50aa999a8bafd80498f18d854008c9df, type: 3}
 --- !u!1 &1012739476
@@ -7653,7 +7663,7 @@ PrefabInstance:
     - target: {fileID: 8157713602601542621, guid: 617028c5d648d2c40b4fe3b8b212824c,
         type: 3}
       propertyPath: levelName
-      value: Proto_15_B
+      value: Proto_15_B_Slow
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 617028c5d648d2c40b4fe3b8b212824c, type: 3}

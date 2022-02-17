@@ -39,6 +39,8 @@ public class Draggable : MonoBehaviour
 
     void OnMouseDown()
     {
+        FollowFinger.controlCharacter = false;
+
         screenPoint = Camera.main.WorldToScreenPoint(gameObject.transform.position);
         offset = gameObject.transform.position - Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z));
     }
@@ -50,7 +52,6 @@ public class Draggable : MonoBehaviour
 
     void OnMouseDrag()
     {
-        FollowFinger.controlCharacter = false;
 
         // Calculate mouse & obstacle position
 

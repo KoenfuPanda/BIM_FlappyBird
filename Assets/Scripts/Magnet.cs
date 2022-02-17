@@ -13,6 +13,7 @@ public class Magnet : MonoBehaviour
 
     private bool magnetActive = false;
     private GameObject player;
+    [SerializeField] private float _timeActive = 15;
 
     private void OnTriggerEnter2D(Collider2D collider)
     {
@@ -36,7 +37,7 @@ public class Magnet : MonoBehaviour
 
     IEnumerator DestroyMagnet()
     {
-        yield return new WaitForSeconds(15);
+        yield return new WaitForSeconds(_timeActive);
         Destroy(gameObject);
     }
 }

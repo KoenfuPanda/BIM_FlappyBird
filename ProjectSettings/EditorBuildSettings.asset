@@ -104,4 +104,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Prototype_Levels/Proto_15_A.unity
     guid: 5718f810444c39a4a920f6b076d06377
+  - enabled: 1
+    path: Assets/Scenes/Prototype_Levels/Proto_15_B_Slow.unity
+    guid: b929796462b943d4aa3e7b9d31f826eb
+  - enabled: 1
+    path: Assets/Scenes/Prototype_Levels/Proto_15_A_Slow.unity
+    guid: 3690a6c0b057c6c44b98758886362dca
   m_configObjects: {}
