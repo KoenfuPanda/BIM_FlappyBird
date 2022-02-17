@@ -1,19 +1,19 @@
 fileFormatVersion: 2
-guid: 002672df3e1079140a54d347d579ce48
+guid: 76a8e8d8c448dc041a832b02daeed337
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -9182477289799507488
-    second: Basic_Obstacles_Tilemappp_0
+      213: -7746882999598092661
+    second: Basic_Obstacles_Tilemap_F_0
   - first:
-      213: -8020359280024392018
-    second: Basic_Obstacles_Tilemappp_1
+      213: -864740685866570906
+    second: Basic_Obstacles_Tilemap_F_1
   - first:
-      213: 5335816434744286026
-    second: Basic_Obstacles_Tilemappp_2
+      213: -1171233843470997237
+    second: Basic_Obstacles_Tilemap_F_2
   - first:
-      213: 8205374992513415342
-    second: Basic_Obstacles_Tilemappp_3
+      213: -7354028281228897570
+    second: Basic_Obstacles_Tilemap_F_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -147,7 +147,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Basic_Obstacles_Tilemappp_0
+      name: Basic_Obstacles_Tilemap_F_0
       rect:
         serializedVersion: 2
         x: 0
@@ -161,14 +161,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0e1a8674e89419080800000000000000
-      internalID: -9182477289799507488
+      spriteID: b8e6174e4fa8d7490800000000000000
+      internalID: -7746882999598092661
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Basic_Obstacles_Tilemappp_1
+      name: Basic_Obstacles_Tilemap_F_1
       rect:
         serializedVersion: 2
         x: 512
@@ -182,14 +182,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: eae632f7ab5f1b090800000000000000
-      internalID: -8020359280024392018
+      spriteID: 66b68148de2dff3f0800000000000000
+      internalID: -864740685866570906
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Basic_Obstacles_Tilemappp_2
+      name: Basic_Obstacles_Tilemap_F_2
       rect:
         serializedVersion: 2
         x: 0
@@ -203,14 +203,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a4bdf9be6c0ac0a40800000000000000
-      internalID: 5335816434744286026
+      spriteID: b09eefa5601febfe0800000000000000
+      internalID: -1171233843470997237
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Basic_Obstacles_Tilemappp_3
+      name: Basic_Obstacles_Tilemap_F_3
       rect:
         serializedVersion: 2
         x: 512
@@ -224,8 +224,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ea8b2ade4195fd170800000000000000
-      internalID: 8205374992513415342
+      spriteID: ed2dc25dd3e31f990800000000000000
+      internalID: -7354028281228897570
       vertices: []
       indices: 
       edges: []
