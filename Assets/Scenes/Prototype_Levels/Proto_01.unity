@@ -3256,6 +3256,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 6
   IntendedLevelSpeed: 0
+  GoDiagonalDown: 0
+  _startPoint: {fileID: 0}
+  _endPoint: {fileID: 0}
 --- !u!4 &801448463
 Transform:
   m_ObjectHideFlags: 0
@@ -9152,6 +9155,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: GameManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 8157713602601542621, guid: 617028c5d648d2c40b4fe3b8b212824c,
+        type: 3}
+      propertyPath: levelName
+      value: Proto_01
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 617028c5d648d2c40b4fe3b8b212824c, type: 3}
