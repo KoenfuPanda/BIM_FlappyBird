@@ -23,12 +23,16 @@ public class Feathers : MonoBehaviour
     [SerializeField]
     private List<AudioClip> _possibleSounds;
 
+    private GameManager _gameManager;
+
 
     private void Start()
     {
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _collider = GetComponent<CircleCollider2D>();
         _audioSource = GetComponent<AudioSource>();
+
+        _gameManager = FindObjectOfType<GameManager>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -40,6 +44,9 @@ public class Feathers : MonoBehaviour
             Destroy(_particleSystemGlow);
             Destroy(_collider);
             Destroy(_spriteRenderer);
+
+            // remove it from the list
+            //_gameManager.LevelPickups.Remove(this);
 
             // play sound effect
             if (_possibleSounds.Count > 0) ;
@@ -55,7 +62,7 @@ public class Feathers : MonoBehaviour
 
     private void Update()
     {
-        if (followPlayer)
+        if (followPlayer)  // rewrite this logic onto the player (more performant)
         {
             target = player.transform.position;
             t += Time.deltaTime / timeToReachTarget;

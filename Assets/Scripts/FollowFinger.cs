@@ -154,6 +154,20 @@ public class FollowFinger : MonoBehaviour
         StartCoroutine(RegainControl(timeLostControl));
     }
 
+    public void TurnOffControlK()
+    {
+        controlCharacter = false;
+    }
+    public void TurnOnControlK()
+    {
+        controlCharacter = true;
+    }
+
+
+
+
+
+
     private IEnumerator RegainControl(float timeLostControl)
     {
         yield return new WaitForSeconds(timeLostControl);

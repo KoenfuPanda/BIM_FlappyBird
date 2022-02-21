@@ -34,8 +34,8 @@ public class Wind : MonoBehaviour
             if(_playerParent.GetComponentInParent<MoveDirection>() != null)
             {
                 _moveDirection = _playerParent.GetComponentInParent<MoveDirection>();
-                _originalSpeed = _moveDirection.speed;
-                _moveDirection.speed = 12;
+                _originalSpeed = _moveDirection.Speed;
+                _moveDirection.Speed = 12;
             }
         }      
     }
@@ -71,13 +71,13 @@ public class Wind : MonoBehaviour
         }
         else
         {
-            _moveDirection.speed = 10;
+            _moveDirection.Speed = 10;
 
             yield return new WaitForSeconds(0.5f);
-            _moveDirection.speed = 7;
+            _moveDirection.Speed = 7;
 
             yield return new WaitForSeconds(0.2f);
-            _moveDirection.speed = _originalSpeed;
+            _moveDirection.Speed = _originalSpeed;
         }
     }
 }

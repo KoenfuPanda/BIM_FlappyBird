@@ -23,7 +23,7 @@ public class ChangeDirection_Updated : MonoBehaviour
 
     void Start()
     {
-        speed = GetComponent<MoveDirection>().speed;
+        speed = GetComponent<MoveDirection>().Speed;
 
         bimPivot = GetComponentInChildren<Rigidbody2D>().gameObject;
         mainCamera = GetComponentInChildren<Camera>().gameObject;
@@ -34,7 +34,7 @@ public class ChangeDirection_Updated : MonoBehaviour
 
     void Update()
     {
-        GetComponent<MoveDirection>().speed = speed;
+        GetComponent<MoveDirection>().Speed = speed;
 
         if (timeElapsed < lerpDuration && leftDirection)
         {

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MoveDirection : MonoBehaviour
 {
-    public float speed = 0;
+    public float Speed = 0;
 
     public float IntendedLevelSpeed;
 
@@ -15,39 +15,91 @@ public class MoveDirection : MonoBehaviour
 
     private Vector3 _calculatedDirection;
 
+    public float ReboundSpeed;
+    [HideInInspector]
+    public bool BouncedBack;
+
+    public bool BouncedVertically;
+
+    private float _bounceTimer;
+    [SerializeField]
+    private float _bounceTmeSpeedFrozen;
+
+    private bool _returnToNormalSpeed;
+    private float _returnSpeedModifier = 2;
+
     void Start()
     {
-        StartCoroutine(DelayStart());
+        //StartCoroutine(DelayStart());
 
         if (_endPoint != null && _startPoint != null)
         {
             _calculatedDirection = _endPoint.position - _startPoint.position;
-        }       
+        }
+
+        if (IntendedLevelSpeed != 0)
+        {
+            Speed = IntendedLevelSpeed;
+        }
+        else
+        {
+            Speed = 6;
+        }
     }
 
     void Update()
     {
+        
+        if (BouncedBack == true)
+        {
+            Speed += Time.deltaTime * ReboundSpeed;
+
+            if (Speed >= IntendedLevelSpeed)
+            {
+                Speed = IntendedLevelSpeed;
+                BouncedBack = false;
+            }
+        }
+
+
+        // Logic that makes it so that the game slows down when a vertical bounce is made against terrain //
+
+        if (BouncedVertically == true)
+        {
+            _bounceTimer += Time.deltaTime;
+
+            if(_bounceTimer >= _bounceTmeSpeedFrozen) // 1 for example
+            {
+                _returnToNormalSpeed = true;
+                _bounceTimer = 0;
+
+                BouncedVertically = false;
+            }
+        }
+        if(_returnToNormalSpeed == true)
+        {
+            Speed += Time.deltaTime * _returnSpeedModifier;
+            if (Speed >= IntendedLevelSpeed)
+            {
+                Speed = IntendedLevelSpeed;
+                _returnToNormalSpeed = false;
+            }
+        }
+
         // Move root to the right
 
-        if(GoDiagonalDown == false)
-        {
-            transform.Translate(new Vector3(speed * Time.deltaTime, 0, 0));
-        }
-        else
-        {
-            transform.Translate(_calculatedDirection.normalized * speed * Time.deltaTime);
-        }
-
-
-        // -- FOR FOLLOW BIM EVERYWHERE --
-        // 1) make it so that the logic in here is only applied to the camera, not Bim
-        // 2) make followfinger logic also be applied to x-axis mouse position
-        // NOTES
-        // - make Bim turn 180 degrees depending on the movement 5 not needed, but perhaps)
-        // - proppelor ?!
-        // - vertical matrass adjustment needed, add a constant speed forward (equal to cam moving speed)
-
+        transform.Translate(new Vector3(Speed * Time.deltaTime, 0, 0)); 
     }
+
+    public void VerticalBounceMatrass()
+    {
+        BouncedVertically = false;
+        _returnToNormalSpeed = false;
+        _bounceTimer = 0;
+
+        Speed = IntendedLevelSpeed;
+    }
+
 
     IEnumerator DelayStart()
     {
@@ -64,11 +116,11 @@ public class MoveDirection : MonoBehaviour
 
         if (IntendedLevelSpeed != 0)
         {
-            speed = IntendedLevelSpeed;
+            Speed = IntendedLevelSpeed;
         }
         else
         {
-            speed = 6;
+            Speed = 6;
         }
         
     }
