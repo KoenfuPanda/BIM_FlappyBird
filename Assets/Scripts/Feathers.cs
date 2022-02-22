@@ -42,39 +42,22 @@ public class Feathers : MonoBehaviour
             _collider.enabled = false;
             _spriteRenderer.enabled = false;
 
+            // remove magnetizer if present
+            if (TryGetComponent(out Magnetizer magnetizer))
+                Destroy(magnetizer);
             // add it to the list
             _gameManager.CollectedFeathers.Add(this);
             // update actual score
             _gameManager.PickedUpFeather();
 
             // play sound effect
-            if (_possibleSounds.Count > 0) ;
+            if (_possibleSounds.Count > 0) 
             {
                 _audioSource.PlayOneShot(_possibleSounds[Random.Range(0, _possibleSounds.Count - 1)]);
             }
             // instantiate particle
             Instantiate(_particleSystemPickup, transform.position, Quaternion.identity);
 
-
-
-            //Destroy(gameObject, 2f);
         }
     }
-
-    //private void Update()
-    //{
-    //    if (followPlayer)  // rewrite this logic 
-    //    {
-    //        target = player.transform.position;
-    //        t += Time.deltaTime / timeToReachTarget;
-    //        transform.position = Vector3.Lerp(startPosition, target, t);
-    //    }
-    //}
-
-    //public void FollowPlayer(GameObject player_)
-    //{
-    //    player = player_;
-    //    startPosition = transform.position;
-    //    followPlayer = true;
-    //}
 }
