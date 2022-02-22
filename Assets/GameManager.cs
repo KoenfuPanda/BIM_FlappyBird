@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -12,8 +13,12 @@ public class GameManager : MonoBehaviour
     [HideInInspector]
     public int HealthBiM;
 
-    //public List<Feathers> LevelPickups = new List<Feathers>();
-    //public List<Feathers> _savedFeathers = new List<Feathers>();
+    
+    public List<Feathers> CollectedFeathers = new List<Feathers>();
+    public List<Feathers> CollectedSavedFeathers = new List<Feathers>();
+    public Text FeatherScoreText;
+    private int FeatherScore;
+    private int SavedFeatherScore;
 
     public List<CheckPoint> CheckPoints = new List<CheckPoint>();
     private CheckPoint _currentCheckpoint;
@@ -40,8 +45,6 @@ public class GameManager : MonoBehaviour
                 _currentCheckpoint = checkPoint;
             }
         }
-        //LevelPickups = FindObjectsOfType<Feathers>().ToList();
-        //LevelPickups.AddRange(FindObjectsOfType<Feathers>());
 
         _currentPlayer = FindObjectOfType<MoveDirection>().gameObject;
         _originalPlayerOffset = _currentPlayer.transform.position;
@@ -90,18 +93,66 @@ public class GameManager : MonoBehaviour
     }
 
 
-    public void SaveFeathersCollectedSoFar()
+    public void SaveFeathersCollectedSoFar()  // logic for when a checkpoint is reached
     {
-        //_savedFeathers.AddRange(LevelPickups);
+        SavedFeatherScore = FeatherScore;
+
+        CollectedSavedFeathers.Clear(); // clear it first
+
+        for (int i = 0; i < CollectedFeathers.Count; i++)
+        {
+            // copy of the list that holds same references
+            CollectedSavedFeathers.Add(CollectedFeathers[i]);
+        }
+
+        CollectedFeathers.Clear();
+
+        foreach (Feathers feather in CollectedSavedFeathers)  
+        {
+            Destroy(feather.gameObject);
+        }
+
+        CollectedSavedFeathers.Clear(); // clear it first
     }
+    public void PickedUpFeather()
+    {
+        FeatherScore += 1;
+        UpdateScoreHud();
+    }
+    private void ResetFeatherCount()
+    {
+        FeatherScore = SavedFeatherScore;
+        UpdateScoreHud();
+    }
+    private void UpdateScoreHud()
+    {
+        FeatherScoreText.text = FeatherScore.ToString();
+    }
+
+
+
 
     public IEnumerator RespawnLatestPoint()
     {
         yield return new WaitForSeconds(2);
 
         // respawn feathers //
-        // optional, might not be needed as the game would be quite casual
+        foreach (Feathers pickedFeather in CollectedFeathers)
+        {
+            pickedFeather.GetComponent<Collider2D>().enabled = true;
+            pickedFeather.GetComponent<SpriteRenderer>().enabled = true;
+            pickedFeather.transform.GetChild(0).gameObject.SetActive(true); // egt component didnt seem to do the trick..
 
+            // check for feathers with magnetizer on them, -> enable = false ,reset their position to start, remove the script -- players could die when feathers are being magnetized, hence this logic.
+            if (pickedFeather.TryGetComponent(out Magnetizer magnetizer))
+            {
+                magnetizer.enabled = false;
+                pickedFeather.transform.position = magnetizer.StartPosition;
+                Destroy(magnetizer);
+            }
+        }
+        // reset score //
+        ResetFeatherCount();
 
         // respawn player //
         foreach (CheckPoint checkPoint in CheckPoints) 
@@ -111,17 +162,15 @@ public class GameManager : MonoBehaviour
                 _currentCheckpoint = checkPoint;
             }
         }
-
         RefillHealth();
-
-        if(_playerPrefab != null) // null check
+        if(_playerPrefab != null) 
         {
             var newPlayer = Instantiate(_playerPrefab, _currentCheckpoint.SpawnPoint.position + _instantiateExtraOffset, Quaternion.identity);
 
-            // destroy the current player
+            // destroy the player that previously died
             Destroy(_currentPlayer);
-
-            _currentPlayer = newPlayer;
+            // assign new player as current
+            _currentPlayer = newPlayer;  
         }        
     }
 }

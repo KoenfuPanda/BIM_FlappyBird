@@ -16,8 +16,11 @@ public class CheckPoint : MonoBehaviour
 
     public Transform SpawnPoint;
 
+    private bool _hasBeenActivated;
+
     void Start()
     {
+        _hasBeenActivated = false;
         _gameManager = FindObjectOfType<GameManager>();
 
         if(IsStartLevel == true)
@@ -30,21 +33,27 @@ public class CheckPoint : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        foreach (CheckPoint checkPoint in _gameManager.CheckPoints) // disable others
+        if(_hasBeenActivated == false)
         {
-            checkPoint.IsActive = false;
+            foreach (CheckPoint checkPoint in _gameManager.CheckPoints) // disable others
+            {
+                checkPoint.IsActive = false;
+            }
+
+            IsActive = true; // enable this one
+
+            // change color/sprite
+            if (GetComponentInChildren<SpriteRenderer>() != null)
+            {
+                GetComponentInChildren<SpriteRenderer>().color = Color.green;
+            }
+
+            _gameManager.SaveFeathersCollectedSoFar(); // save feathers
+
+            _gameManager.RefillHealth();
+
+            _hasBeenActivated = true;
         }
 
-        IsActive = true; // enable this one
-
-        // change color/sprite
-        if(GetComponentInChildren<SpriteRenderer>() != null)
-        {
-            GetComponentInChildren<SpriteRenderer>().color = Color.green;
-        }
-
-        //_gameManager.SaveFeathersCollectedSoFar(); // save feathers
-
-        _gameManager.RefillHealth();
     }
 }

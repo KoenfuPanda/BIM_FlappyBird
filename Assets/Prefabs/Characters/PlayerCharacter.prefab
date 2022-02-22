@@ -53,9 +53,7 @@ MonoBehaviour:
   _endPoint: {fileID: 0}
   ReboundSpeed: 4
   BouncedBack: 0
-  YSpeed: 0
-  BounceDown: 0
-  BounceUp: 0
+  BouncedVertically: 0
   _bounceTmeSpeedFrozen: 2
 --- !u!114 &6106393831258886310
 MonoBehaviour:
@@ -380,7 +378,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86712bc785adb014b86cdf5d32e78d61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _immunityTime: 3
+  _immunityTime: 2
 --- !u!58 &4855686127239626921
 CircleCollider2D:
   m_ObjectHideFlags: 0

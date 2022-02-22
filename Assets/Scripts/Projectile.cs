@@ -30,7 +30,7 @@ public class Projectile : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            FeatherScore.feathers++;
+            FeatherScore.Feathers++;
             Destroy(gameObject);
         }
 

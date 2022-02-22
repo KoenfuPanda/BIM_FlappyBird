@@ -31,7 +31,9 @@ public class Magnet : MonoBehaviour
 
         if(collider.gameObject.tag == "Feather")
         {
-            collider.gameObject.GetComponent<Feathers>().FollowPlayer(player);                      
+            //collider.gameObject.GetComponent<Feathers>().FollowPlayer(player);
+
+            collider.gameObject.AddComponent<Magnetizer>();
         }
     }
 

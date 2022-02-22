@@ -55,9 +55,8 @@ public class HitObstacle : MonoBehaviour
                 }
             }
 
-            Debug.Log(collision.contacts[0].normal.normalized.x + " is the normal X normalized");
-            Debug.Log(collision.contacts[0].normal.normalized.y + " is the normal Y normalized");
-
+            //Debug.Log(collision.contacts[0].normal.normalized.x + " is the normal X normalized");
+            //Debug.Log(collision.contacts[0].normal.normalized.y + " is the normal Y normalized");
 
 
             //  check for the normal of the collision ... //

@@ -4,14 +4,6 @@ using UnityEngine;
 
 public class Feathers : MonoBehaviour
 {
-    // move to destination
-    private bool followPlayer = false;
-    private float t;
-    private Vector3 startPosition;
-    private Vector3 target;
-    private float timeToReachTarget = 0.5f;
-    private GameObject player;
-
     private SpriteRenderer _spriteRenderer;
     private CircleCollider2D _collider;
 
@@ -39,14 +31,21 @@ public class Feathers : MonoBehaviour
     {
         if(collision.gameObject.tag == "Player")
         {
-            FeatherScore.feathers++;
+            //FeatherScore.Feathers++;
 
-            Destroy(_particleSystemGlow);
-            Destroy(_collider);
-            Destroy(_spriteRenderer);
+            // destroy logic replaced (due to feather respawn system)
+            //Destroy(_particleSystemGlow);
+            //Destroy(_collider);
+            //Destroy(_spriteRenderer);
 
-            // remove it from the list
-            //_gameManager.LevelPickups.Remove(this);
+            _particleSystemGlow.SetActive(false);
+            _collider.enabled = false;
+            _spriteRenderer.enabled = false;
+
+            // add it to the list
+            _gameManager.CollectedFeathers.Add(this);
+            // update actual score
+            _gameManager.PickedUpFeather();
 
             // play sound effect
             if (_possibleSounds.Count > 0) ;
@@ -56,24 +55,26 @@ public class Feathers : MonoBehaviour
             // instantiate particle
             Instantiate(_particleSystemPickup, transform.position, Quaternion.identity);
 
-            Destroy(gameObject, 2f);
+
+
+            //Destroy(gameObject, 2f);
         }
     }
 
-    private void Update()
-    {
-        if (followPlayer)  // rewrite this logic onto the player (more performant)
-        {
-            target = player.transform.position;
-            t += Time.deltaTime / timeToReachTarget;
-            transform.position = Vector3.Lerp(startPosition, target, t);
-        }
-    }
+    //private void Update()
+    //{
+    //    if (followPlayer)  // rewrite this logic 
+    //    {
+    //        target = player.transform.position;
+    //        t += Time.deltaTime / timeToReachTarget;
+    //        transform.position = Vector3.Lerp(startPosition, target, t);
+    //    }
+    //}
 
-    public void FollowPlayer(GameObject player_)
-    {
-        player = player_;
-        startPosition = transform.position;
-        followPlayer = true;
-    }
+    //public void FollowPlayer(GameObject player_)
+    //{
+    //    player = player_;
+    //    startPosition = transform.position;
+    //    followPlayer = true;
+    //}
 }

@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class FeatherScore : MonoBehaviour
 {
-    public static int feathers = 0;
+    public static int Feathers = 0;
 
     void Start()
     {
-        feathers = 0;
+        Feathers = 0;
     }
 
-    void Update()
-    {
-        GetComponent<UnityEngine.UI.Text>().text = feathers.ToString();
-    }
+    //void Update()
+    //{
+    //    GetComponent<UnityEngine.UI.Text>().text = Feathers.ToString();
+    //}
 }
