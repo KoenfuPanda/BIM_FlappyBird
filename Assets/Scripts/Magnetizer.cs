@@ -5,7 +5,7 @@ using UnityEngine;
 public class Magnetizer : MonoBehaviour
 {
     private float _t;
-    private float _timeToReachTarget = 0.3f;
+    private float _timeToReachTarget = 0.15f;
 
     [HideInInspector]
     public Vector3 StartPosition;
