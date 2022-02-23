@@ -104,8 +104,6 @@ public class MoveDirection : MonoBehaviour
         BouncedVertically = false;
         _returnToNormalSpeed = false;
         _bounceTimer = 0;
-
-        //Speed = IntendedLevelSpeed;
     }
 
 

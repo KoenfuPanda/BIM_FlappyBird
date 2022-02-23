@@ -17,6 +17,8 @@ public class Feathers : MonoBehaviour
 
     private GameManager _gameManager;
 
+    [HideInInspector]
+    public Vector3 StartingPosition; 
 
     private void Start()
     {
@@ -25,6 +27,8 @@ public class Feathers : MonoBehaviour
         _audioSource = GetComponent<AudioSource>();
 
         _gameManager = FindObjectOfType<GameManager>();
+
+        StartingPosition = transform.position;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

@@ -141,15 +141,16 @@ public class GameManager : MonoBehaviour
         {
             pickedFeather.GetComponent<Collider2D>().enabled = true;
             pickedFeather.GetComponent<SpriteRenderer>().enabled = true;
-            pickedFeather.transform.GetChild(0).gameObject.SetActive(true); // egt component didnt seem to do the trick..
-
+            pickedFeather.transform.GetChild(0).gameObject.SetActive(true); // get component didnt seem to do the trick..
+            
             // check for feathers with magnetizer on them, -> enable = false ,reset their position to start, remove the script -- players could die when feathers are being magnetized, hence this logic.
             if (pickedFeather.TryGetComponent(out Magnetizer magnetizer))
             {
                 magnetizer.enabled = false;
-                pickedFeather.transform.position = magnetizer.StartPosition;
                 Destroy(magnetizer);
             }
+
+            pickedFeather.transform.position = pickedFeather.StartingPosition;
         }
         // reset score //
         ResetFeatherCount();
