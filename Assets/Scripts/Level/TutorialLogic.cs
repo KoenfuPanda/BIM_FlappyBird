@@ -7,13 +7,12 @@ public class TutorialLogic : MonoBehaviour
     public bool IsFirstTutorial;
 
     private bool _activated, _showingTutorial;
+    [HideInInspector]
     public bool ReachedGoal;
 
     private MoveDirection _moveDirection;
     private FollowFinger _followFingerScript;
 
-    [SerializeField]
-    private float _timeInfluencer;
     [SerializeField]
     private float _speedDecreaser;
 
@@ -31,7 +30,7 @@ public class TutorialLogic : MonoBehaviour
         if (IsFirstTutorial)
         {
             _followFingerScript = FindObjectOfType<FollowFinger>();
-            _followFingerScript.enabled = false;
+            //_followFingerScript.TurnOffControl(1000, true, false);
         }
 
         // disable draggable objects if that tutorial
@@ -75,26 +74,29 @@ public class TutorialLogic : MonoBehaviour
                 PopupPanel.SetActive(true);
 
                 _showingTutorial = true;
+                _activated = false;
             }
 
                 // if bimpivot pos.y is equal or greater than X, 
                 //.. destroy popup      
         }
 
-        if(_showingTutorial == true)
+        if (_showingTutorial == true)
         {
             _tutorialGoal.SetActive(true);
+            
+            _followFingerScript.TurnOffControl(2, true, false);
+
             _showingTutorial = false;
         }
 
-        if(ReachedGoal == true)
-        {
-            _moveDirection.Speed = _moveDirection.IntendedLevelSpeed;
+    }
 
-            // delete this object
+    public void ContinueTheGame()
+    {
+        _moveDirection.Speed = _moveDirection.IntendedLevelSpeed;
 
-        }
-
+        // delete this object
     }
 
 

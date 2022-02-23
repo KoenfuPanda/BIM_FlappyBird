@@ -288,7 +288,7 @@ RectTransform:
   - {fileID: 1428958761}
   - {fileID: 928998929}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -490,6 +490,7 @@ GameObject:
   - component: {fileID: 1081230993}
   - component: {fileID: 1081230992}
   - component: {fileID: 1081230991}
+  - component: {fileID: 1081230994}
   m_Layer: 0
   m_Name: TutorialGoal
   m_TagString: Untagged
@@ -582,12 +583,25 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1081230990}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.4, y: 0, z: 0}
-  m_LocalScale: {x: 0.4, y: 2.4, z: 1}
+  m_LocalPosition: {x: 8, y: -3.52, z: 0}
+  m_LocalScale: {x: 1.5715625, y: 0.51000005, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1081230994
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1081230990}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3bc02767a20e0e469f6c9a20f97e5d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _tutorialTrigger: {fileID: 0}
 --- !u!1 &1428958760
 GameObject:
   m_ObjectHideFlags: 0
@@ -606,7 +620,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1428958761
 RectTransform:
   m_ObjectHideFlags: 0
@@ -699,7 +713,7 @@ PrefabInstance:
     - target: {fileID: 4986589275257345151, guid: 7580026096ed9d743839b60d1a8db0cd,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.95
+      value: -1.03
       objectReference: {fileID: 0}
     - target: {fileID: 7827462474383321295, guid: 7580026096ed9d743839b60d1a8db0cd,
         type: 3}
@@ -822,7 +836,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1888665271
 GameObject:
@@ -1003,7 +1017,7 @@ Transform:
   m_GameObject: {fileID: 1993615253}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 4, y: 0, z: 0}
-  m_LocalScale: {x: 0.4, y: 2.4, z: 1}
+  m_LocalScale: {x: 0.625, y: 2.4, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
@@ -1020,6 +1034,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86f75b81092b0ae45aeaba39922e1459, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IsFirstTutorial: 0
-  _timeInfluencer: 0
-  PopupPanel: {fileID: 0}
+  IsFirstTutorial: 1
+  ReachedGoal: 0
+  _speedDecreaser: 4
+  PopupPanel: {fileID: 1428958760}
+  _tutorialGoal: {fileID: 1081230990}

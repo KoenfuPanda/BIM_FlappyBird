@@ -5,10 +5,10 @@ using UnityEngine;
 public class TutorialGoal : MonoBehaviour
 {
     [SerializeField]
-    private TutorialLogic _tutorialLogic;
+    private TutorialLogic _tutorialTrigger;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        _tutorialLogic.ReachedGoal = true;
+        _tutorialTrigger.ContinueTheGame();
     }
 }

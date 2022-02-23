@@ -22,11 +22,15 @@ public class Draggable : MonoBehaviour
 
     private float previousValue;
 
+    private FollowFinger _followFinger;
+
+
     private void Start()
     {
         // Calculate border
         GameObject border = transform.Find("Border").gameObject;
         borderSprite = border.transform.GetComponent<SpriteRenderer>();
+        _followFinger = FindObjectOfType<FollowFinger>();
 
         leftBorder = borderSprite.transform.TransformPoint(borderSprite.sprite.bounds.min).x;
         rightBorder = borderSprite.transform.TransformPoint(borderSprite.sprite.bounds.max).x;
@@ -39,7 +43,8 @@ public class Draggable : MonoBehaviour
 
     void OnMouseDown()
     {
-        FollowFinger.controlCharacter = false;
+        //FollowFinger.controlCharacter = false;
+        _followFinger.EnteredClickableSurface();
 
         screenPoint = Camera.main.WorldToScreenPoint(gameObject.transform.position);
         offset = gameObject.transform.position - Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z));
@@ -47,7 +52,8 @@ public class Draggable : MonoBehaviour
     
     void OnMouseUp()
     {
-        FollowFinger.controlCharacter = true;
+        _followFinger.ExitedClickableSurface();
+        //FollowFinger.controlCharacter = true;       
     }
 
     void OnMouseDrag()
