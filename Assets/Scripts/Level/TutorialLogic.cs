@@ -56,11 +56,11 @@ public class TutorialLogic : MonoBehaviour
         {
             _tutorialGoal.SetActive(true);
 
-            if(IsFirstTutorial)
+            if (IsFirstTutorial)
             {
                 _followFingerScript.TurnOffControl(0.2f, true, false);
             }
-            
+
             _showingTutorial = false;
         }
 
