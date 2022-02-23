@@ -169,3 +169,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   direction: 0
+  VerticalBoostDirection: 0
+  _bounceStrength: 6

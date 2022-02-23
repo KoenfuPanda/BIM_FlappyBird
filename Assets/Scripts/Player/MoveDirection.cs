@@ -17,9 +17,9 @@ public class MoveDirection : MonoBehaviour
 
     public float ReboundSpeed;
     [HideInInspector]
-    public bool BouncedBack;
-
-    public bool BouncedVertically;
+    public bool BouncedBack; // for horizontally made collisions
+    [HideInInspector]
+    public bool BouncedVertically; // for vertically made collisions (crashing into floor/ceiling)
 
     private float _bounceTimer;
     [SerializeField]
@@ -62,7 +62,7 @@ public class MoveDirection : MonoBehaviour
         }
 
 
-        // Logic that makes it so that the game slows down when a vertical bounce is made against terrain //
+        // Logic that makes it so that the game slows down when a vertical rebound/hit is made against terrain //
 
         if (BouncedVertically == true)
         {
@@ -98,6 +98,14 @@ public class MoveDirection : MonoBehaviour
         _bounceTimer = 0;
 
         Speed = IntendedLevelSpeed;
+    }
+    public void HorizontalBoostMatrass()
+    {
+        BouncedVertically = false;
+        _returnToNormalSpeed = false;
+        _bounceTimer = 0;
+
+        //Speed = IntendedLevelSpeed;
     }
 
 
