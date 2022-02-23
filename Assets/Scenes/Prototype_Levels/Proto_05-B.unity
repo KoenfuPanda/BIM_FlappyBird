@@ -3376,8 +3376,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31c4493f84543e341a02aa61ed3de596, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 6
+  Speed: 0
   IntendedLevelSpeed: 0
+  GoDiagonalDown: 0
+  _startPoint: {fileID: 0}
+  _endPoint: {fileID: 0}
+  ReboundSpeed: 0
+  BouncedBack: 0
+  BouncedVertically: 0
+  _bounceTmeSpeedFrozen: 0
 --- !u!4 &801448463
 Transform:
   m_ObjectHideFlags: 0
@@ -6201,7 +6208,7 @@ PrefabInstance:
     - target: {fileID: 6106393831258886310, guid: a449fe7b4e53d99459c68fa6840544ad,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6106393831258886328, guid: a449fe7b4e53d99459c68fa6840544ad,
         type: 3}
@@ -6835,7 +6842,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86712bc785adb014b86cdf5d32e78d61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameManager: {fileID: 1367610763}
+  _immunityTime: 0
 --- !u!114 &1923315308
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -30,7 +30,7 @@ public class TutorialLogic : MonoBehaviour
         if (IsFirstTutorial)
         {
             _followFingerScript = FindObjectOfType<FollowFinger>();
-            //_followFingerScript.TurnOffControl(1000, true, false);
+            _followFingerScript.TurnOffControl(1000, true, false);
         }
 
         // disable draggable objects if that tutorial
@@ -38,30 +38,6 @@ public class TutorialLogic : MonoBehaviour
 
     private void Update()
     {
-        // slowdown time (prolly not good)
-        //if (_activated)
-        //{
-        //    Time.timeScale -= _timeInfluencer;
-
-        //    if(Time.timeScale <= 0)
-        //    {
-        //        Time.timeScale = 0;
-
-        //        // darken game
-
-        //        // show finger popup  // or show image of bim hitting lever..
-        //        PopupPanel.SetActive(true);
-        //        // play finger popup animation
-
-        //        // if the mouseDown pos.y is equal or greater than X, 
-        //        //.. un-darken game
-        //        //.. destroy popup
-        //        Destroy(PopupPanel);
-        //        //.. timeScale to normal
-        //        Time.timeScale = 1;
-        //    }
-        //}
-
         if (_activated == true && _showingTutorial == false)
         {
             _moveDirection.Speed -= _speedDecreaser * Time.deltaTime;
@@ -69,24 +45,17 @@ public class TutorialLogic : MonoBehaviour
             if (_moveDirection.Speed <= 0)
             {
                 _moveDirection.Speed = 0;
-
-                // show finger popup  // or show image of bim hitting lever..
                 PopupPanel.SetActive(true);
 
                 _showingTutorial = true;
                 _activated = false;
-            }
-
-                // if bimpivot pos.y is equal or greater than X, 
-                //.. destroy popup      
+            }  
         }
 
         if (_showingTutorial == true)
         {
-            _tutorialGoal.SetActive(true);
-            
-            _followFingerScript.TurnOffControl(2, true, false);
-
+            _tutorialGoal.SetActive(true);           
+            _followFingerScript.TurnOffControl(0.5f, true, false);
             _showingTutorial = false;
         }
 
@@ -94,9 +63,11 @@ public class TutorialLogic : MonoBehaviour
 
     public void ContinueTheGame()
     {
+        PopupPanel.SetActive(false);
         _moveDirection.Speed = _moveDirection.IntendedLevelSpeed;
 
         // delete this object
+        
     }
 
 
