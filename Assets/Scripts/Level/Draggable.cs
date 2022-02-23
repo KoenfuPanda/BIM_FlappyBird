@@ -33,7 +33,7 @@ public class Draggable : MonoBehaviour
         topBorder = borderSprite.transform.TransformPoint(borderSprite.sprite.bounds.max).y;
         bottomBorder = borderSprite.transform.TransformPoint(borderSprite.sprite.bounds.min).y;
 
-        //Destroy(border);
+        Destroy(border);
         
     }
 
@@ -73,7 +73,7 @@ public class Draggable : MonoBehaviour
         {
             previousValue = transform.position.y;
 
-            if (previousValue < curPosition.y && topBorder < transform.TransformPoint(GetComponent<SpriteRenderer>().sprite.bounds.max).y)
+            if (previousValue < curPosition.y && topBorder > transform.TransformPoint(GetComponent<SpriteRenderer>().sprite.bounds.min).y)
             {
                 transform.position = new Vector3(transform.position.x, curPosition.y, transform.position.z);
             }
@@ -91,7 +91,7 @@ public class Draggable : MonoBehaviour
         {
             previousValue = transform.position.y;
 
-            if (previousValue > curPosition.y && bottomBorder > transform.TransformPoint(GetComponent<SpriteRenderer>().sprite.bounds.min).y)
+            if (previousValue > curPosition.y && bottomBorder < transform.TransformPoint(GetComponent<SpriteRenderer>().sprite.bounds.max).y)
             {
                 transform.position = new Vector3(transform.position.x, curPosition.y, transform.position.z);
             }
