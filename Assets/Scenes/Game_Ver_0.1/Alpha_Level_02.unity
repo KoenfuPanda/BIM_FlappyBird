@@ -18762,6 +18762,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 523527904206017942, guid: b1687e3623d6d914f86d06509db88e37,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -4.14
+      objectReference: {fileID: 0}
     - target: {fileID: 1431341600610790976, guid: b1687e3623d6d914f86d06509db88e37,
         type: 3}
       propertyPath: m_RootOrder
@@ -18821,6 +18826,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: CheckPoint
+      objectReference: {fileID: 0}
+    - target: {fileID: 4734222659638862632, guid: b1687e3623d6d914f86d06509db88e37,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -4.14
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b1687e3623d6d914f86d06509db88e37, type: 3}

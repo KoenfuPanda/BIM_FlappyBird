@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6106393831258886309}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.45, z: -42.24282}
+  m_LocalPosition: {x: 0, y: 1.51, z: -42.24282}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6106393831850996107}
@@ -53,6 +53,7 @@ MonoBehaviour:
   _endPoint: {fileID: 0}
   ReboundSpeed: 4
   BouncedBack: 0
+  BouncedForward: 0
   BouncedVertically: 0
   _bounceTmeSpeedFrozen: 2
 --- !u!114 &6106393831258886310
@@ -281,7 +282,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6106393831850996106}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.049, y: 0, z: 42.24282}
+  m_LocalPosition: {x: -8, y: -3.84, z: 42}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6106393831715984686}
@@ -378,6 +379,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86712bc785adb014b86cdf5d32e78d61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsImmune: 0
   _immunityTime: 2
 --- !u!58 &4855686127239626921
 CircleCollider2D:

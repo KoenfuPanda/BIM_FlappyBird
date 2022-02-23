@@ -10,7 +10,8 @@ public class HitObstacle : MonoBehaviour
     private Collider2D _collider;
     private FollowFinger _followFinger;
 
-    private bool _isImmune;
+    [HideInInspector]
+    public bool IsImmune;
 
     private MoveDirection _moveDirection;
 
@@ -27,14 +28,16 @@ public class HitObstacle : MonoBehaviour
         _collider = GetComponent<Collider2D>();
         _moveDirection = GetComponentInParent<MoveDirection>();
 
-        _gameManager = FindObjectOfType<GameManager>();      
+        _gameManager = FindObjectOfType<GameManager>();
+
+        IsImmune = false;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag != "Block")
         {
-            if(_isImmune == false)
+            if(IsImmune == false)
             {
                 // become immune
                 StartCoroutine(GainImmunity(_immunityTime));
@@ -135,11 +138,16 @@ public class HitObstacle : MonoBehaviour
 
     IEnumerator GainImmunity(float immuneTimer)
     {
-        _isImmune = true;
+        IsImmune = true;
 
         yield return new WaitForSeconds (immuneTimer);
 
-        _isImmune = false;
+        IsImmune = false;
+    }
+
+    public void ImmuneToggled()
+    {
+        IsImmune = !IsImmune;
     }
 
     IEnumerator LostControl(float lostControlTimer)
