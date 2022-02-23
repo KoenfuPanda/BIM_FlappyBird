@@ -15,6 +15,7 @@ public class FollowFinger : MonoBehaviour
     private float velocityMultiplier = 0;
 
     private float _lostControlTimer;
+    private bool _onClickableSurface;
 
     // Move to destination
     private bool moveTo = false;
@@ -159,7 +160,7 @@ public class FollowFinger : MonoBehaviour
         rigidBody.gravityScale = 0;
         _lostControlTimer = 0;
     }
-    public void TurnOffControl(float timeLostControl, bool overridesTimer, bool wantsGravity)
+    public void TurnOffControl(float timeLostControl, bool shouldOverrideTimerNoMatterWhat, bool wantsGravity)
     {
         bounce = true;
         controlCharacter = false;
@@ -172,11 +173,11 @@ public class FollowFinger : MonoBehaviour
         // start coroutine to regain control
         //StartCoroutine(RegainControl(timeLostControl)); cgange this to update logic
 
-        if (overridesTimer == false && timeLostControl > _lostControlTimer) // if statement for matrass bounces
+        if (shouldOverrideTimerNoMatterWhat == false && timeLostControl > _lostControlTimer) // if statement for matrass bounces
         {
             _lostControlTimer = timeLostControl;
         }
-        if (overridesTimer == true)
+        if (shouldOverrideTimerNoMatterWhat == true)
         {
             _lostControlTimer = timeLostControl;
         }
@@ -190,6 +191,20 @@ public class FollowFinger : MonoBehaviour
     public void TurnOnControlK()
     {
         controlCharacter = true;
+    }
+
+
+    public void EnteredClickableSurface()
+    {
+        _lostControlTimer = 20; // just some big number ...
+        controlCharacter = false;
+        //_onClickableSurface = true;      
+    }
+    public void ExitedClickableSurface()
+    {
+        _lostControlTimer = 0;
+        controlCharacter = true;
+        //_onClickableSurface = false;
     }
 
 
