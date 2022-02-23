@@ -14,6 +14,8 @@ public class FollowFinger : MonoBehaviour
     private bool bounce = false;
     private float velocityMultiplier = 0;
 
+    private float _lostControlTimer;
+
     // Move to destination
     private bool moveTo = false;
     private float t;
@@ -87,8 +89,20 @@ public class FollowFinger : MonoBehaviour
 
     void Update()
     {
-        // Mouse button down
+        if (controlCharacter == false)
+        {
+            _lostControlTimer -= Time.deltaTime;
 
+            if(_lostControlTimer <= 0)
+            {
+                TurnOnControl();
+                _lostControlTimer = 0;
+            }
+        }
+
+
+
+        // Mouse button down
         if (Input.GetMouseButton(0) && controlCharacter)
         {
             rigidBody.velocity = Vector2.up * velocity;
@@ -151,7 +165,13 @@ public class FollowFinger : MonoBehaviour
         rigidBody.gravityScale = 1;
 
         // start coroutine to regain control
-        StartCoroutine(RegainControl(timeLostControl));
+        //StartCoroutine(RegainControl(timeLostControl)); cgange this to update logic
+
+        if (timeLostControl > _lostControlTimer) // if statement for convenience sake
+        {
+            _lostControlTimer = timeLostControl;
+        }
+        
     }
 
     public void TurnOffControlK()
