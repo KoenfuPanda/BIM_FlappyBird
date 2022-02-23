@@ -157,17 +157,26 @@ public class FollowFinger : MonoBehaviour
         bounce = false;
         controlCharacter = true;
         rigidBody.gravityScale = 0;
+        _lostControlTimer = 0;
     }
-    public void TurnOffControl(float timeLostControl)
+    public void TurnOffControl(float timeLostControl, bool overridesTimer, bool wantsGravity)
     {
         bounce = true;
         controlCharacter = false;
-        rigidBody.gravityScale = 1;
+
+        if (wantsGravity == true)
+        {
+            rigidBody.gravityScale = 1;
+        }
 
         // start coroutine to regain control
         //StartCoroutine(RegainControl(timeLostControl)); cgange this to update logic
 
-        if (timeLostControl > _lostControlTimer) // if statement for convenience sake
+        if (overridesTimer == false && timeLostControl > _lostControlTimer) // if statement for matrass bounces
+        {
+            _lostControlTimer = timeLostControl;
+        }
+        if (overridesTimer == true)
         {
             _lostControlTimer = timeLostControl;
         }

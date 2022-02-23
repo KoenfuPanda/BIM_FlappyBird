@@ -29,7 +29,7 @@ public class MatrassBounce : MonoBehaviour
             
             if(collision.TryGetComponent(out FollowFinger followFinger))
             {
-                followFinger.TurnOffControl(_timeAmountControlLost);
+                followFinger.TurnOffControl(_timeAmountControlLost, true, true);
 
                 if(collision.GetComponentInParent<MoveDirection>() != null)
                 {

@@ -7,7 +7,7 @@ public class TutorialLogic : MonoBehaviour
     public bool IsFirstTutorial;
 
     private bool _activated, _showingTutorial;
-    public bool 
+    public bool ReachedGoal;
 
     private MoveDirection _moveDirection;
     private FollowFinger _followFingerScript;
@@ -87,8 +87,11 @@ public class TutorialLogic : MonoBehaviour
             _showingTutorial = false;
         }
 
-        if(_reachedGoal == true)
+        if(ReachedGoal == true)
         {
+            _moveDirection.Speed = _moveDirection.IntendedLevelSpeed;
+
+            // delete this object
 
         }
 

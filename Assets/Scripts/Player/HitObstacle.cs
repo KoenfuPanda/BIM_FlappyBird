@@ -64,6 +64,7 @@ public class HitObstacle : MonoBehaviour
             {
                 // 0) lose control (maybe not this)
                 //StartCoroutine(LostControl(_immunityTime / 2f));
+                _followFinger.TurnOffControl(_immunityTime / 4f, true, false);
 
                 // 1) reverse the speed
                 _moveDirection.Speed = _moveDirection.Speed * -1;
@@ -76,7 +77,8 @@ public class HitObstacle : MonoBehaviour
                 _moveDirection.BouncedVertically = true;                
                 _moveDirection.Speed = 2;
 
-                StartCoroutine(LostControl(_immunityTime / 4f));
+                //StartCoroutine(LostControl(_immunityTime / 4f));
+                _followFinger.TurnOffControl(_immunityTime / 4f, true, false);
 
                 _followFinger.GetComponent<Rigidbody2D>().AddForce(-Vector2.up * 25);
             }
@@ -85,7 +87,8 @@ public class HitObstacle : MonoBehaviour
                 _moveDirection.BouncedVertically = true;
                 _moveDirection.Speed = 2;
 
-                StartCoroutine(LostControl(_immunityTime / 4f));
+                //StartCoroutine(LostControl(_immunityTime / 4f));
+                _followFinger.TurnOffControl(_immunityTime / 4f, true, false);
 
                 _followFinger.GetComponent<Rigidbody2D>().AddForce(Vector2.up * 25);
             }
