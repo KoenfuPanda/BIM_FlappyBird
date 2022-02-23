@@ -59,22 +59,43 @@ public class HitObstacle : MonoBehaviour
             //Debug.Log(collision.contacts[0].normal.normalized.y + " is the normal Y normalized");
 
 
-            //  check for the normal of the collision ... //
+            //  check for the normal of the collision ... (right,left,down,up) //
             if (collision.contacts[0].normal.normalized.x <= -0.3f)  // bounce backwards with moveDirection script
             {
                 // 0) lose control (maybe not this)
-                //StartCoroutine(LostControl(_immunityTime / 2f));
                 _followFinger.TurnOffControl(_immunityTime / 4f, true, false);
 
-                // 1) reverse the speed
-                _moveDirection.Speed = _moveDirection.Speed * -1;
+                // 1) activate a bool on the player (this bool will slowly increase the speed up until the original level speed)
+                if (_moveDirection.Speed >= 0)
+                {
+                    _moveDirection.BouncedBack = true;
+                }
+                else
+                {
+                    _moveDirection.BouncedForward = true;
+                }
 
-                // 2) activate a bool on the player (this bool will slowly increase the speed up until the original level speed)
-                _moveDirection.BouncedBack = true;
+                // 2) reverse the speed
+                _moveDirection.Speed = _moveDirection.Speed * -1;
             }
+            else if (collision.contacts[0].normal.normalized.x >= 0.3f)
+            {
+                _followFinger.TurnOffControl(_immunityTime / 4f, true, false);
+
+                if (_moveDirection.Speed >= 0)
+                {
+                    _moveDirection.BouncedBack = true;
+                }
+                else
+                {
+                    _moveDirection.BouncedForward = true;
+                }
+
+                _moveDirection.Speed = _moveDirection.Speed * -1;
+            } 
             else if (collision.contacts[0].normal.normalized.y <= -0.2f) // bounce down with rigidbody force 
             {
-                _moveDirection.BouncedVertically = true;                
+                _moveDirection.BouncedVertically = true;
                 _moveDirection.Speed = 2;
 
                 //StartCoroutine(LostControl(_immunityTime / 4f));

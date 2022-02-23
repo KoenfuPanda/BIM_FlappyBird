@@ -54,8 +54,13 @@ public class TutorialLogic : MonoBehaviour
 
         if (_showingTutorial == true)
         {
-            _tutorialGoal.SetActive(true);           
-            _followFingerScript.TurnOffControl(0.5f, true, false);
+            _tutorialGoal.SetActive(true);
+
+            if(IsFirstTutorial)
+            {
+                _followFingerScript.TurnOffControl(0.2f, true, false);
+            }
+            
             _showingTutorial = false;
         }
 
@@ -67,7 +72,7 @@ public class TutorialLogic : MonoBehaviour
         _moveDirection.Speed = _moveDirection.IntendedLevelSpeed;
 
         // delete this object
-        
+        Destroy(this);
     }
 
 

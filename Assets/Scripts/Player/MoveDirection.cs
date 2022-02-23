@@ -17,7 +17,7 @@ public class MoveDirection : MonoBehaviour
 
     public float ReboundSpeed;
     [HideInInspector]
-    public bool BouncedBack; // for horizontally made collisions
+    public bool BouncedBack, BouncedForward; // for horizontally made collisions
     [HideInInspector]
     public bool BouncedVertically; // for vertically made collisions (crashing into floor/ceiling)
 
@@ -49,7 +49,17 @@ public class MoveDirection : MonoBehaviour
 
     void Update()
     {
-        
+        HitWall();
+        // Logic that makes it so that the game slows down when a vertical rebound/hit is made against terrain //
+        HitCeilingOrFloor();
+
+        // Move root to the right
+        transform.Translate(new Vector3(Speed * Time.deltaTime, 0, 0));
+    }
+
+
+    private void HitWall()
+    {
         if (BouncedBack == true)
         {
             Speed += Time.deltaTime * ReboundSpeed;
@@ -59,16 +69,26 @@ public class MoveDirection : MonoBehaviour
                 Speed = IntendedLevelSpeed;
                 BouncedBack = false;
             }
+
         }
+        else if (BouncedForward == true)
+        {
+            Speed -= Time.deltaTime * ReboundSpeed;
+            if (Speed <= -IntendedLevelSpeed)
+            {
+                Speed = -IntendedLevelSpeed;
+                BouncedForward = false;
+            }
+        }
+    }
 
-
-        // Logic that makes it so that the game slows down when a vertical rebound/hit is made against terrain //
-
+    private void HitCeilingOrFloor()
+    {
         if (BouncedVertically == true)
         {
             _bounceTimer += Time.deltaTime;
 
-            if(_bounceTimer >= _bounceTmeSpeedFrozen) // 1 for example
+            if (_bounceTimer >= _bounceTmeSpeedFrozen) // 1 for example
             {
                 _returnToNormalSpeed = true;
                 _bounceTimer = 0;
@@ -76,7 +96,7 @@ public class MoveDirection : MonoBehaviour
                 BouncedVertically = false;
             }
         }
-        if(_returnToNormalSpeed == true)
+        if (_returnToNormalSpeed == true)
         {
             Speed += Time.deltaTime * _returnSpeedModifier;
             if (Speed >= IntendedLevelSpeed)
@@ -85,11 +105,8 @@ public class MoveDirection : MonoBehaviour
                 _returnToNormalSpeed = false;
             }
         }
-
-        // Move root to the right
-
-        transform.Translate(new Vector3(Speed * Time.deltaTime, 0, 0)); 
     }
+
 
     public void VerticalBounceMatrass()
     {
