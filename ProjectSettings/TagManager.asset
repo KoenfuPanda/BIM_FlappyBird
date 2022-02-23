@@ -8,6 +8,7 @@ TagManager:
   - Block
   - Feather
   - EndZone
+  - Destructable
   layers:
   - Default
   - TransparentFX
