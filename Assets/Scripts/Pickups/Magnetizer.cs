@@ -25,6 +25,6 @@ public class Magnetizer : MonoBehaviour
 
         _t += Time.deltaTime / _timeToReachTarget;
         //transform.position = Vector3.Lerp(startPosition, target, t);
-        transform.position = Vector3.MoveTowards(StartPosition, _target, _t);  // movetowards makes more sense (lerp should be used rarely i think)
+        transform.position = Vector3.MoveTowards(transform.position, _target, _t);  // movetowards makes more sense (lerp should be used rarely i think)
     }
 }
