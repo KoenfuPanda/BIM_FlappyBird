@@ -56,6 +56,8 @@ MonoBehaviour:
   BouncedForward: 0
   BouncedVertically: 0
   _bounceTmeSpeedFrozen: 2
+  BoostedTimeLimit: 0
+  BoostedTimer: 0
 --- !u!114 &6106393831258886310
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -309,7 +311,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 4
+  m_Constraints: 5
 --- !u!60 &6106393831850996097
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -367,6 +369,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocity: 0
   travelTime: 0
+  MegaBimTimeLimit: 0
+  MegaBimActive: 0
 --- !u!114 &6106393831850996109
 MonoBehaviour:
   m_ObjectHideFlags: 0

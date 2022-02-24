@@ -39,8 +39,18 @@ public class FollowFinger : MonoBehaviour
     private Vector3 endPosition;
     public float travelTime;
 
+    private HitObstacle _hitObstacle;
+    [HideInInspector]
+    public float MegaBimTimeLimit;
+    [HideInInspector]
+    public bool MegaBimActive;
+    private float _megaBimTimer;
+
+
+
     void Start()
     {
+        _hitObstacle = GetComponent<HitObstacle>();
         bim = transform.GetChild(0).gameObject;
         rigidBody = GetComponent<Rigidbody2D>();
         controlCharacter = true;
@@ -94,13 +104,12 @@ public class FollowFinger : MonoBehaviour
         {
             _lostControlTimer -= Time.deltaTime;
 
-            if(_lostControlTimer <= 0)
+            if (_lostControlTimer <= 0)
             {
                 TurnOnControl();
                 _lostControlTimer = 0;
             }
         }
-
 
 
         // Mouse button down
@@ -114,10 +123,36 @@ public class FollowFinger : MonoBehaviour
             rigidBody.velocity = Vector2.zero;
         }
 
-        // Give direction
-
 
         // When flying up or down
+        BimRotationLogic();
+
+        if (MegaBimActive == true)
+        {
+            _megaBimTimer += Time.deltaTime;
+
+            if (_megaBimTimer >= MegaBimTimeLimit)
+            {
+                ReturnBimToNormal();
+            }
+        }
+
+        // TEST
+        //if (follow)
+        //{
+        //    distanceTravelled += pathSpeed * Time.deltaTime;
+        //    transform.position = pathCreator.path.GetPointAtDistance(distanceTravelled);
+
+        //    if (Mathf.Abs(transform.position.x - endPosition.x) < 0.2 && Mathf.Abs(transform.position.y - endPosition.y) < 0.2)
+        //    {
+        //        controlCharacter = true;
+        //        follow = false;
+        //    }
+        //}
+    }
+
+    private void BimRotationLogic()
+    {
         if (rigidBody.velocity.y > 0 && bim.transform.localRotation.z < 0.05f)
         {
             bim.transform.Rotate(0, 0, 1.5f);
@@ -137,22 +172,8 @@ public class FollowFinger : MonoBehaviour
                 bim.transform.Rotate(0, 0, +1.5f);
             }
         }
-
-
-        // TEST
-        if(follow)
-        {
-            distanceTravelled += pathSpeed * Time.deltaTime;
-            transform.position = pathCreator.path.GetPointAtDistance(distanceTravelled);
-
-            if(Mathf.Abs(transform.position.x - endPosition.x) < 0.2 && Mathf.Abs(transform.position.y - endPosition.y) < 0.2)
-            {
-                controlCharacter = true;
-                follow = false;
-            }
-        }
     }
-    
+
     public void TurnOnControl()
     {
         bounce = false;
@@ -184,15 +205,6 @@ public class FollowFinger : MonoBehaviour
         
     }
 
-    public void TurnOffControlK()
-    {
-        controlCharacter = false;
-    }
-    public void TurnOnControlK()
-    {
-        controlCharacter = true;
-    }
-
 
     public void EnteredClickableSurface()
     {
@@ -207,9 +219,20 @@ public class FollowFinger : MonoBehaviour
         //_onClickableSurface = false;
     }
 
-
-
-
+    public void BimGrow(float upgradeTimeLimit)
+    {
+        _hitObstacle.ImmuneToggled();
+        transform.localScale = new Vector3(3f, 3f, 3f); // make this gradualy increase
+        MegaBimTimeLimit = upgradeTimeLimit;
+        MegaBimActive = true;
+    }
+    public void ReturnBimToNormal()
+    {
+        transform.localScale = new Vector3(1f, 1f, 1f); // make this gradualy decrease
+        MegaBimActive = false;
+        _megaBimTimer = 0;
+        _hitObstacle.ImmuneToggled();
+    }
 
 
     private IEnumerator RegainControl(float timeLostControl)
