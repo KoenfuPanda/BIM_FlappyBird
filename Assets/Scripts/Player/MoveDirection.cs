@@ -28,6 +28,10 @@ public class MoveDirection : MonoBehaviour
     private bool _returnToNormalSpeed;
     private float _returnSpeedModifier = 2;
 
+    [HideInInspector]
+    public float BoostedTimeLimit, BoostedTimer;
+    private bool _boostedSpeed;
+
     void Start()
     {
         //StartCoroutine(DelayStart());
@@ -43,12 +47,23 @@ public class MoveDirection : MonoBehaviour
         }
         else
         {
-            Speed = 6;
+            Speed = 5;
         }
     }
 
     void Update()
     {
+        if (_boostedSpeed == true)
+        {
+            BoostedTimer += Time.deltaTime;
+
+            if(BoostedTimer >= BoostedTimeLimit)
+            {
+                // activate slowdown
+                ReturnToNormalSpeed();
+            }
+        }
+
         HitWall();
         // Logic that makes it so that the game slows down when a vertical rebound/hit is made against terrain //
         HitCeilingOrFloor();
@@ -115,6 +130,29 @@ public class MoveDirection : MonoBehaviour
         _bounceTimer = 0;
 
         Speed = IntendedLevelSpeed;
+    }
+    public void VertcalBounceBoost(float bonusSpeed, float timeBoosted)
+    {
+        BouncedVertically = false;
+        _returnToNormalSpeed = false;
+        _bounceTimer = 0;
+
+        _boostedSpeed = true;
+        BoostedTimer = 0;
+        BoostedTimeLimit = timeBoosted;
+
+        Speed = IntendedLevelSpeed + bonusSpeed;
+    }
+    private void ReturnToNormalSpeed()
+    {
+        Speed -= Time.deltaTime * _returnSpeedModifier;
+
+        if (Speed <= IntendedLevelSpeed)
+        {
+            Speed = IntendedLevelSpeed;
+            _boostedSpeed = false;
+            BoostedTimer = 0;
+        }
     }
     public void HorizontalBoostMatrass()
     {

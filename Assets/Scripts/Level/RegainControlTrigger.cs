@@ -4,17 +4,22 @@ using UnityEngine;
 
 public class RegainControlTrigger : MonoBehaviour
 {
-    private FollowFinger _followFinger;
+    [SerializeField]
+    private bool _regainsControl, _normalizesSpeed;
 
-    private void Start()
-    {
-        _followFinger = FindObjectOfType<FollowFinger>();
-    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        //Debug.Log("test");
-        _followFinger.TurnOnControl();
+        if (_regainsControl)
+        {
+            collision.GetComponent<FollowFinger>().TurnOnControl();
+        }
+
+        if (_normalizesSpeed)
+        {
+            var moveDir = collision.transform.GetComponentInParent<MoveDirection>();
+            moveDir.BoostedTimer = moveDir.BoostedTimeLimit;
+        }       
     }
 
 }

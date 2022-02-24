@@ -307,7 +307,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _bounceStrength: 10
-  _timeAmountControlLost: 1
+  _timeAmountControlLost: 1000
+  _speedsUpGame: 0
+  _speedBoost: 3
+  _timeBoosted: 1000
 --- !u!1 &8934555721459182509
 GameObject:
   m_ObjectHideFlags: 0

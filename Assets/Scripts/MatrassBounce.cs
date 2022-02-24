@@ -16,6 +16,11 @@ public class MatrassBounce : MonoBehaviour
 
     private Animator _animator;
 
+    [SerializeField]
+    private bool _speedsUpGame;
+    [SerializeField]
+    private float _speedBoost, _timeBoosted;
+
     private void Start()
     {
         _animator = GetComponent<Animator>();
@@ -33,7 +38,15 @@ public class MatrassBounce : MonoBehaviour
 
                 if(collision.GetComponentInParent<MoveDirection>() != null)
                 {
-                    collision.GetComponentInParent<MoveDirection>().VerticalBounceMatrass(); // resets level speed and some values
+                    var moveDir = collision.GetComponentInParent<MoveDirection>(); 
+                    if (_speedsUpGame)
+                    {
+                        moveDir.VertcalBounceBoost(_speedBoost, _timeBoosted); // adds level speed to the stage
+                    }
+                    else
+                    {
+                        moveDir.VerticalBounceMatrass(); // resets level speed and some values
+                    }
                 }
 
                 BounceActivate();
