@@ -18,7 +18,10 @@ public class Feathers : MonoBehaviour
     private GameManager _gameManager;
 
     [HideInInspector]
-    public Vector3 StartingPosition; 
+    public Vector3 StartingPosition;
+
+    [SerializeField]
+    private bool _imAProjectile;
 
     private void Start()
     {
@@ -29,6 +32,11 @@ public class Feathers : MonoBehaviour
         _gameManager = FindObjectOfType<GameManager>();
 
         StartingPosition = transform.position;
+
+        if (_imAProjectile)
+        {
+            Destroy(this.gameObject, 15f);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -49,8 +57,11 @@ public class Feathers : MonoBehaviour
             // remove magnetizer if present
             if (TryGetComponent(out Magnetizer magnetizer))
                 Destroy(magnetizer);
-            // add it to the list
-            _gameManager.CollectedFeathers.Add(this);
+            // add it to the list (only if it's part of the stage)
+            if (_imAProjectile == false)
+            {
+                _gameManager.CollectedFeathers.Add(this);
+            }           
             // update actual score
             _gameManager.PickedUpFeather();
 
@@ -61,6 +72,11 @@ public class Feathers : MonoBehaviour
             }
             // instantiate particle
             Instantiate(_particleSystemPickup, transform.position, Quaternion.identity);
+
+            if (_imAProjectile)
+            {
+                Destroy(this.gameObject, 2f);
+            }
 
         }
     }

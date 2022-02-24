@@ -56,8 +56,9 @@ public class MoveDirection : MonoBehaviour
         if (_boostedSpeed == true)
         {
             BoostedTimer += Time.deltaTime;
+            //BoostedTimer += Time.fixedDeltaTime;
 
-            if(BoostedTimer >= BoostedTimeLimit)
+            if (BoostedTimer >= BoostedTimeLimit)
             {
                 // activate slowdown
                 ReturnToNormalSpeed();

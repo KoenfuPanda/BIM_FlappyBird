@@ -23,7 +23,20 @@ public class Projectile : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Destroy(gameObject);
+        if (collision.gameObject.TryGetComponent(out FollowFinger followFinger))
+        {
+            if (followFinger.MegaBimActive == true) // if bim is mega, do not destroy
+            {
+                // do nothing special
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
+        }
+        else
+            Destroy(gameObject);
+
     }
 
     private void OnTriggerEnter2D(Collider2D other)

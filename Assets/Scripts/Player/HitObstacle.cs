@@ -40,9 +40,26 @@ public class HitObstacle : MonoBehaviour
                 // disable the collider on the object
                 collision.collider.enabled = false;
                 // add force forward/up to the object
-                var rigidObject = collision.gameObject.AddComponent<Rigidbody2D>();
                 Vector2 randomForce = new Vector2(Random.Range(7, 13), Random.Range(6, 13));
-                rigidObject.AddForce(randomForce, ForceMode2D.Impulse);
+
+                if (collision.gameObject.TryGetComponent(out Rigidbody2D rigidObject)) // if it has a rigidbody...
+                {
+                    rigidObject.gravityScale = 1;
+                    rigidObject.velocity = randomForce;
+                    rigidObject.AddTorque(Random.Range(-20, 20));
+                }
+                else
+                {
+                    var rigidObj = collision.gameObject.AddComponent<Rigidbody2D>(); // else, add a rigidbody
+                    rigidObj.velocity = randomForce;
+                    rigidObj.AddTorque(Random.Range(-20, 20));
+                }
+
+                if (collision.gameObject.layer == 9) // if it's a cannon
+                {
+                    Destroy(collision.transform.GetComponentInChildren<SpawnCannonBall>());
+                }
+                                             
                 // !! always have a checkpoint right after he turns small (otherwise i need code to respawn the level pieces) !!
                 // add lifespan to the pieces (they get destroyed after 3 seconds or so)
                 Destroy(collision.gameObject, 3f);
