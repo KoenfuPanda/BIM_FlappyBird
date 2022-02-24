@@ -38,76 +38,88 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/webGL test/webGL_testing.unity
     guid: 81c27ae87564951439fbc35f376b5d69
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Prototype_Levels/MainMenu_Proto.unity
     guid: daf47e3faf9cd19448f5567e19878722
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Prototype_Levels/Proto_01.unity
     guid: d65f06061bb7335429fac9de897c4b00
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Prototype_Levels/Proto_02.unity
     guid: a7269741540d9f248af5c8139b97428c
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Prototype_Levels/Proto_03.unity
     guid: 8c2340a8af75940458b3cdf10e8b0d4f
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Prototype_Levels/Proto_04.unity
     guid: de70ddac9d7241e47a9f12f8a23716fa
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Prototype_Levels/Proto_06.unity
     guid: c3cbea0cdc57a904494548f29b17a6e2
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Prototype_Levels/Proto_07.unity
     guid: f01250d00500a1e41924a636ffb791b4
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Prototype_Levels/Proto_08.unity
     guid: cd705eeb782a7934eb49bbb6e4a1e743
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Prototype_Levels/Proto_10.unity
     guid: f1830d84bda232047bc7650eefaa927a
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Prototype_Levels/Proto_11-A.unity
     guid: ee986d258bdea344fa98c1644dc42dc9
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Prototype_Levels/Proto_11-B.unity
     guid: 67a6fe9147158504f9f8fe81c38286a1
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Prototype_Levels/Proto_12.unity
     guid: 90f3d3c450112284380c288cec9dc4ce
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Prototype_Levels/Proto_14_Flappy_Bim_Game.unity
     guid: 8db681e2d3af8d841b7e55deebbb4892
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Prototype_Levels/Proto_16_FollowXY.unity
     guid: 36573ffae82cc354d90169e8d87941e7
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Prototype_Levels/Proto_05.unity
     guid: 2269899a296a82c41bec05e5bd292274
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Prototype_Levels/Proto_05-B.unity
     guid: e1ed2d431bc3c7e48b6f721832c821b0
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Prototype_Levels/Proto_13-A.unity
     guid: aacde4fb4146a654db9852ef5355ab32
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Prototype_Levels/Proto_13-B.unity
     guid: 9d2ac417dabd2ed48ad74d11be10eadb
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Prototype_Levels/Proto_13-C.unity
     guid: 3ee35f3aab7bf924caef57eb529f1e48
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Prototype_Levels/Proto_09.unity
     guid: ebf12325921bdcd44b21016365b023c7
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Prototype_Levels/Proto_15_B.unity
     guid: 881b7741a4ed28741bd2b9de2569160f
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Prototype_Levels/Proto_15_A.unity
     guid: 5718f810444c39a4a920f6b076d06377
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Prototype_Levels/Proto_15_B_Slow.unity
     guid: b929796462b943d4aa3e7b9d31f826eb
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Prototype_Levels/Proto_15_A_Slow.unity
     guid: 3690a6c0b057c6c44b98758886362dca
+  - enabled: 1
+    path: Assets/Scenes/Game_Ver_0.1/Alpha_MainMenu.unity
+    guid: 5ad2a20e01076074d80a11e22308d2d2
+  - enabled: 1
+    path: Assets/Scenes/Game_Ver_0.1/Alpha_Level_01.unity
+    guid: 086dc59870f189f428d2933ad87685ab
+  - enabled: 1
+    path: Assets/Scenes/Game_Ver_0.1/Alpha_Level_02.unity
+    guid: 6bc8e467ea9e5154e904714aaf385150
+  - enabled: 1
+    path: Assets/Scenes/Game_Ver_0.1/Alpha_Level_03.unity
+    guid: b34210603ccc93d4082a67ba8f832799
   m_configObjects: {}
