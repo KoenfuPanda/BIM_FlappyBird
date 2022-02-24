@@ -9,6 +9,9 @@ public class MatrassBounce : MonoBehaviour
     private MoveDirection _moveDirection;
 
     [SerializeField]
+    private bool _bouncesDownwards;
+
+    [SerializeField]
     private float _bounceStrength;
 
     [SerializeField]
@@ -38,30 +41,43 @@ public class MatrassBounce : MonoBehaviour
 
                 if(collision.GetComponentInParent<MoveDirection>() != null)
                 {
-                    var moveDir = collision.GetComponentInParent<MoveDirection>(); 
+                    _moveDirection = collision.GetComponentInParent<MoveDirection>(); 
+
                     if (_speedsUpGame)
                     {
-                        moveDir.VertcalBounceBoost(_speedBoost, _timeBoosted); // adds level speed to the stage
+                        _moveDirection.VertcalBounceBoost(_speedBoost, _timeBoosted); // adds level speed to the stage
                     }
                     else
                     {
-                        moveDir.VerticalBounceMatrass(); // resets level speed and some values
+                        _moveDirection.VerticalBounceMatrass(); // resets level speed and some values
                     }
                 }
 
-                BounceActivate();
+                if (_bouncesDownwards == false)
+                {
+                    BounceUpActivate();
+                }
+                else
+                {
+                    BounceDownActivate();
+                }                           
             }        
         }
     }
 
-    private void BounceActivate()
+    private void BounceUpActivate()
     {
-        //_bimRigid.AddForce(Vector2.up * _bounceStrength, ForceMode2D.Impulse);
-
         _bimRigid.velocity = Vector2.up * _bounceStrength; // this is more reliable than addforce
 
         _animator.SetTrigger("Bounce");
     }
+    private void BounceDownActivate()
+    {
+        _bimRigid.gravityScale = -1;
+        _bimRigid.velocity = -Vector2.up * _bounceStrength; 
+        _animator.SetTrigger("Bounce");
+    }
+
 
 
 }
