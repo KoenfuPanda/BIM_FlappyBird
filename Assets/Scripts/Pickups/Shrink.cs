@@ -8,6 +8,8 @@ public class Shrink : MonoBehaviour
 
     private GameManager _gameManager;
 
+    private Vector3 _originalScale;
+
     private void Start()
     {
         _gameManager = FindObjectOfType<GameManager>();
@@ -35,8 +37,18 @@ public class Shrink : MonoBehaviour
 
     IEnumerator SetNormalSize(GameObject character)
     {
-        yield return new WaitForSeconds(_timeActive);       
-        character.transform.localScale = new Vector3(1, 1, 1);
+        yield return new WaitForSeconds(_timeActive);
+        if (character != null)
+        {
+            if (character.transform.localScale.x > 0)
+            {
+                character.transform.localScale = new Vector3(1, 1, 1);
+            }
+            else
+            {
+                character.transform.localScale = new Vector3(-1, 1, 1);
+            }          
+        }       
         //Destroy(gameObject);
     }
 }

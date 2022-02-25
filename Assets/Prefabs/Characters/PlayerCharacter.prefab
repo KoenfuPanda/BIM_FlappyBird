@@ -51,11 +51,12 @@ MonoBehaviour:
   GoDiagonalDown: 0
   _startPoint: {fileID: 0}
   _endPoint: {fileID: 0}
-  ReboundSpeed: 4
+  ReboundSpeed: 3
   BouncedBack: 0
   BouncedForward: 0
   BouncedVertically: 0
-  _bounceTmeSpeedFrozen: 2
+  BounceTimer: 0
+  _bounceTmeSpeedFrozen: 1.5
   BoostedTimeLimit: 0
   BoostedTimer: 0
 --- !u!114 &6106393831258886310

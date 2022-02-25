@@ -132,39 +132,47 @@ public class HitObstacle : MonoBehaviour
                 }
                 else if (collision.contacts[0].normal.normalized.y <= -0.2f) // bounce down with rigidbody force 
                 {
+                    _moveDirection.BounceTimer = 0;
                     _moveDirection.BouncedVertically = true;
 
-                    if (_bimLocalScale.x > 0) // if BiM was moving left
+                    _bimLocalScale = _rigidbody.transform.localScale;
+                    if (_bimLocalScale.x > 0) // if BiM was moving right, push him right (it just a slowdown)
                     {
-                        _moveDirection.Speed = -2;
+                        _moveDirection.Speed = 2;
                     }
                     else
                     {
-                        _moveDirection.Speed = 2;
+                        _moveDirection.Speed = -2;
                     }
                     
                     //StartCoroutine(LostControl(_immunityTime / 4f));
                     _followFinger.TurnOffControl(_immunityTime / 4f, true, false);
 
-                    _followFinger.GetComponent<Rigidbody2D>().AddForce(-Vector2.up * 25);
+                    //_followFinger.GetComponent<Rigidbody2D>().AddForce(-Vector2.up * 25);
+                    _followFinger.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
+                    _followFinger.GetComponent<Rigidbody2D>().velocity = -Vector2.up * 2;
                 }
                 else if (collision.contacts[0].normal.normalized.y >= 0.2f) // bounce up with rigidbody force 
                 {
+                    _moveDirection.BounceTimer = 0;
                     _moveDirection.BouncedVertically = true;
 
-                    if (_bimLocalScale.x > 0) // if BiM was moving left
+                    _bimLocalScale = _rigidbody.transform.localScale;
+                    if (_bimLocalScale.x > 0) // if BiM was moving right, push him right (it just a slowdown)
                     {
-                        _moveDirection.Speed = -2;
+                        _moveDirection.Speed = 2;
                     }
                     else
                     {
-                        _moveDirection.Speed = 2;
+                        _moveDirection.Speed = -2;
                     }
 
                     //StartCoroutine(LostControl(_immunityTime / 4f));
                     _followFinger.TurnOffControl(_immunityTime / 4f, true, false);
 
-                    _followFinger.GetComponent<Rigidbody2D>().AddForce(Vector2.up * 25);
+                    //_followFinger.GetComponent<Rigidbody2D>().AddForce(Vector2.up * 25);
+                    _followFinger.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
+                    _followFinger.GetComponent<Rigidbody2D>().velocity = Vector2.up * 2;
                 }
             }
 

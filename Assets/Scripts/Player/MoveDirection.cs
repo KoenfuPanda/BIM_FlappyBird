@@ -21,7 +21,8 @@ public class MoveDirection : MonoBehaviour
     [HideInInspector]
     public bool BouncedVertically; // for vertically made collisions (crashing into floor/ceiling)
 
-    private float _bounceTimer;
+    [HideInInspector]
+    public float BounceTimer;
     [SerializeField]
     private float _bounceTmeSpeedFrozen;
 
@@ -61,7 +62,7 @@ public class MoveDirection : MonoBehaviour
             if (BoostedTimer >= BoostedTimeLimit)
             {
                 // activate slowdown
-                ReturnToNormalSpeed();
+                ReturnToNormalSpeedAfterSpeedBoost();
             }
         }
 
@@ -100,25 +101,40 @@ public class MoveDirection : MonoBehaviour
 
     private void HitCeilingOrFloor()
     {
+        // needs a _bounceTimer reset here --> present in hitobstacle
+
         if (BouncedVertically == true)
         {
-            _bounceTimer += Time.deltaTime;
+            BounceTimer += Time.deltaTime;
 
-            if (_bounceTimer >= _bounceTmeSpeedFrozen) // 1 for example
+            if (BounceTimer >= _bounceTmeSpeedFrozen) // time limit with which time stays frozen for a bit after hitting floor or ceiling
             {
                 _returnToNormalSpeed = true;
-                _bounceTimer = 0;
+                BounceTimer = 0;
 
                 BouncedVertically = false;
             }
         }
         if (_returnToNormalSpeed == true)
         {
-            Speed += Time.deltaTime * _returnSpeedModifier;
-            if (Speed >= IntendedLevelSpeed)
+            // for moving right
+            if (transform.GetComponentInChildren<Rigidbody2D>().transform.localScale.x > 0)
             {
-                Speed = IntendedLevelSpeed;
-                _returnToNormalSpeed = false;
+                Speed += Time.deltaTime * _returnSpeedModifier;
+                if (Speed >= IntendedLevelSpeed)
+                {
+                    Speed = IntendedLevelSpeed;
+                    _returnToNormalSpeed = false;
+                }
+            }
+            else // for moving left
+            {        
+                Speed -= Time.deltaTime * _returnSpeedModifier;
+                if (Speed <= -IntendedLevelSpeed)
+                {
+                    Speed = -IntendedLevelSpeed;
+                    _returnToNormalSpeed = false;
+                }
             }
         }
     }
@@ -128,7 +144,7 @@ public class MoveDirection : MonoBehaviour
     {
         BouncedVertically = false;
         _returnToNormalSpeed = false;
-        _bounceTimer = 0;
+        BounceTimer = 0;
 
         Speed = IntendedLevelSpeed;
     }
@@ -136,7 +152,7 @@ public class MoveDirection : MonoBehaviour
     {
         BouncedVertically = false;
         _returnToNormalSpeed = false;
-        _bounceTimer = 0;
+        BounceTimer = 0;
 
         _boostedSpeed = true;
         BoostedTimer = 0;
@@ -144,8 +160,8 @@ public class MoveDirection : MonoBehaviour
 
         Speed = IntendedLevelSpeed + bonusSpeed;
     }
-    private void ReturnToNormalSpeed()
-    {
+    private void ReturnToNormalSpeedAfterSpeedBoost()
+    {      
         Speed -= Time.deltaTime * _returnSpeedModifier;
 
         if (Speed <= IntendedLevelSpeed)
@@ -159,7 +175,7 @@ public class MoveDirection : MonoBehaviour
     {
         BouncedVertically = false;
         _returnToNormalSpeed = false;
-        _bounceTimer = 0;
+        BounceTimer = 0;
     }
 
 
