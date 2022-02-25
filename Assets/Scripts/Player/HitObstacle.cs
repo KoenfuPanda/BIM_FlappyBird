@@ -10,6 +10,7 @@ public class HitObstacle : MonoBehaviour
     private Collider2D _collider;
     private FollowFinger _followFinger;
     private MoveDirection _moveDirection;
+    private Vector3 _bimLocalScale;
 
     [HideInInspector]
     public bool IsImmune;
@@ -27,6 +28,8 @@ public class HitObstacle : MonoBehaviour
         _moveDirection = GetComponentInParent<MoveDirection>();
 
         _gameManager = FindObjectOfType<GameManager>();
+
+        _bimLocalScale = _rigidbody.transform.localScale;
 
         IsImmune = false;
     }
@@ -93,13 +96,14 @@ public class HitObstacle : MonoBehaviour
 
 
                 //  check for the normal of the collision ... (right,left,down,up) //
-                if (collision.contacts[0].normal.normalized.x <= -0.3f)  // bounce backwards with moveDirection script
+                if (collision.contacts[0].normal.normalized.x <= -0.3f)            // bounce backwards with moveDirection script
                 {
                     // 0) lose control (maybe not this)
                     _followFinger.TurnOffControl(_immunityTime / 4f, true, false);
 
                     // 1) activate a bool on the player (this bool will slowly increase the speed up until the original level speed)
-                    if (_moveDirection.Speed >= 0)
+                    // check for bims local scale to figure out bounce direction
+                    if (_bimLocalScale.x > 0)
                     {
                         _moveDirection.BouncedBack = true;
                     }
@@ -111,11 +115,11 @@ public class HitObstacle : MonoBehaviour
                     // 2) reverse the speed
                     _moveDirection.Speed = _moveDirection.Speed * -1;
                 }
-                else if (collision.contacts[0].normal.normalized.x >= 0.3f)
+                else if (collision.contacts[0].normal.normalized.x >= 0.3f)    // bounce forwards 
                 {
                     _followFinger.TurnOffControl(_immunityTime / 4f, true, false);
 
-                    if (_moveDirection.Speed >= 0)
+                    if (_bimLocalScale.x > 0)
                     {
                         _moveDirection.BouncedBack = true;
                     }
@@ -129,8 +133,16 @@ public class HitObstacle : MonoBehaviour
                 else if (collision.contacts[0].normal.normalized.y <= -0.2f) // bounce down with rigidbody force 
                 {
                     _moveDirection.BouncedVertically = true;
-                    _moveDirection.Speed = 2;
 
+                    if (_bimLocalScale.x > 0) // if BiM was moving left
+                    {
+                        _moveDirection.Speed = -2;
+                    }
+                    else
+                    {
+                        _moveDirection.Speed = 2;
+                    }
+                    
                     //StartCoroutine(LostControl(_immunityTime / 4f));
                     _followFinger.TurnOffControl(_immunityTime / 4f, true, false);
 
@@ -139,7 +151,15 @@ public class HitObstacle : MonoBehaviour
                 else if (collision.contacts[0].normal.normalized.y >= 0.2f) // bounce up with rigidbody force 
                 {
                     _moveDirection.BouncedVertically = true;
-                    _moveDirection.Speed = 2;
+
+                    if (_bimLocalScale.x > 0) // if BiM was moving left
+                    {
+                        _moveDirection.Speed = -2;
+                    }
+                    else
+                    {
+                        _moveDirection.Speed = 2;
+                    }
 
                     //StartCoroutine(LostControl(_immunityTime / 4f));
                     _followFinger.TurnOffControl(_immunityTime / 4f, true, false);

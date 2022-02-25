@@ -20,6 +20,8 @@ public class GameManager : MonoBehaviour
     private int FeatherScore;
     private int SavedFeatherScore;
 
+    public List<GameObject> CollectedPowerups = new List<GameObject>();
+
     public List<CheckPoint> CheckPoints = new List<CheckPoint>();
     private CheckPoint _currentCheckpoint;
 
@@ -34,7 +36,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        Application.targetFrameRate = 60;
+        //Application.targetFrameRate = 60;
 
         Time.timeScale = 1;
         HealthBiM = 3;
@@ -143,7 +145,7 @@ public class GameManager : MonoBehaviour
         {
             pickedFeather.GetComponent<Collider2D>().enabled = true;
             pickedFeather.GetComponent<SpriteRenderer>().enabled = true;
-            pickedFeather.transform.GetChild(0).gameObject.SetActive(true); // get component didnt seem to do the trick..
+            pickedFeather.transform.GetChild(0).gameObject.SetActive(true); // get component didnt seem to do the trick to get the particle ..
             
             // check for feathers with magnetizer on them, -> enable = false ,reset their position to start, remove the script -- players could die when feathers are being magnetized, hence this logic.
             if (pickedFeather.TryGetComponent(out Magnetizer magnetizer))
@@ -156,6 +158,28 @@ public class GameManager : MonoBehaviour
         }
         // reset score //
         ResetFeatherCount();
+
+        // respawn magnets and shrinks
+        foreach (GameObject upgrade in CollectedPowerups)
+        {
+            if (upgrade.TryGetComponent(out Magnet magnet))
+            {
+                magnet.transform.SetParent(null);
+                magnet.transform.position = magnet.StartPosition;
+                magnet.transform.localScale = magnet.StartSize;
+                magnet.PlayerCollider.enabled = true;
+                magnet.FeatherCollider.enabled = false;
+                magnet.MagnetActive = false;
+                magnet.GetComponent<SpriteRenderer>().enabled = true;
+                magnet.transform.GetChild(0).gameObject.SetActive(true); // get component didnt seem to do the trick to get the particle ..
+            }
+            else
+            {
+                upgrade.GetComponent<Collider2D>().enabled = true;
+                upgrade.GetComponent<SpriteRenderer>().enabled = true;
+                upgrade.transform.GetChild(0).gameObject.SetActive(true); 
+            }
+        }
 
         // respawn player //
         foreach (CheckPoint checkPoint in CheckPoints) 
