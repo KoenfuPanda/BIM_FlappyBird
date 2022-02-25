@@ -6,7 +6,7 @@ public class DestroyOnCollision : MonoBehaviour
 {
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Destructable")
+        if (collision.gameObject.tag == "Destructable" && gameObject.tag == "Destructable")
         {
             Destroy(gameObject);
         }
