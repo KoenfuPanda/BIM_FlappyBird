@@ -71,7 +71,18 @@ public class MoveDirection : MonoBehaviour
         HitCeilingOrFloor();
 
         // Move root to the right
-        transform.Translate(new Vector3(Speed * Time.deltaTime, 0, 0));
+        if (GoDiagonalDown)
+        {
+            // Move root according to direction
+            transform.Translate(Speed * _calculatedDirection.normalized * Time.deltaTime);
+        }
+        else
+        {
+            transform.Translate(new Vector3(Speed * Time.deltaTime, 0, 0));
+        }
+
+
+        
     }
 
 
