@@ -63,18 +63,25 @@ public class ChangeDirection : MonoBehaviour
 
     public void GoRight()
     {
+        timeElapsed = 0;
+        leftDirection = false;
+
         rightDirection = true;
         //speed = 6;
         GetComponent<MoveDirection>().Speed = GetComponent<MoveDirection>().IntendedLevelSpeed;
-        bimPivot.transform.localScale = new Vector3(1, 1, 1);
+
+        bimPivot.transform.localScale = new Vector3(-bimPivot.transform.localScale.x, bimPivot.transform.localScale.y, bimPivot.transform.localScale.z);
     }
 
     public void GoLeft()
     {
+        timeElapsed = 0;
+        rightDirection = false;
+
         leftDirection = true;
         //speed = -6;
         GetComponent<MoveDirection>().Speed = -GetComponent<MoveDirection>().IntendedLevelSpeed;
-        bimPivot.transform.localScale = new Vector3(-1, 1, 1);
+        bimPivot.transform.localScale = new Vector3(-bimPivot.transform.localScale.x, bimPivot.transform.localScale.y, bimPivot.transform.localScale.z);
 
     }
 }

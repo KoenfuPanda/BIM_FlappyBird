@@ -20,6 +20,7 @@ public class SpawnCannonBall : MonoBehaviour
 
     private float _timer = 0;
 
+
     private void Start()
     {
         _timer = _loopTime;
@@ -58,7 +59,7 @@ public class SpawnCannonBall : MonoBehaviour
             }
 
             _chosenProjectile.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-            _chosenProjectile.GetComponent<Rigidbody2D>().velocity = shootDir * Time.fixedDeltaTime * _speed; // adds the velocity to the spawned object
+            _chosenProjectile.GetComponent<Rigidbody2D>().velocity = _speed * Time.fixedDeltaTime * shootDir; // adds the velocity to the spawned object
 
             _timer = 0;
 

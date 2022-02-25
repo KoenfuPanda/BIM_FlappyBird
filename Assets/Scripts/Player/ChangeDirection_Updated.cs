@@ -63,6 +63,9 @@ public class ChangeDirection_Updated : MonoBehaviour
 
     public void GoRight()
     {
+        timeElapsed = 0;
+        leftDirection = false;
+
         rightDirection = true;
         speed = 6;
         bimPivot.transform.localScale = new Vector3(1, 1, 1);
@@ -70,6 +73,9 @@ public class ChangeDirection_Updated : MonoBehaviour
 
     public void GoLeft()
     {
+        timeElapsed = 0;
+        rightDirection = false;
+
         leftDirection = true;
         speed = -6;
         bimPivot.transform.localScale = new Vector3(-1, 1, 1);
