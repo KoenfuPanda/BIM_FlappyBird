@@ -38,7 +38,7 @@ public class Shrink : MonoBehaviour
     IEnumerator SetNormalSize(GameObject character)
     {
         yield return new WaitForSeconds(_timeActive);
-        if (character != null)
+        if (character != null && character.GetComponent<FollowFinger>().MegaBimActive == false)  // if Bim exists AND is not mega...
         {
             if (character.transform.localScale.x > 0)
             {
