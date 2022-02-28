@@ -9,6 +9,8 @@ TagManager:
   - Feather
   - EndZone
   - Destructable
+  - Floor
+  - Ceiling
   layers:
   - Default
   - TransparentFX

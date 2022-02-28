@@ -47,7 +47,7 @@ public class BimControllerFloating : MonoBehaviour
             _holdingDown = false;
         }
 
-        BimRotationLogic();
+        //BimRotationLogic();
     }
 
 

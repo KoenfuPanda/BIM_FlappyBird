@@ -321,6 +321,71 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3519531812215917004, guid: 4b37b3da0f3646d4e98c967d1d806094,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3519531812619365728, guid: 4b37b3da0f3646d4e98c967d1d806094,
+        type: 3}
+      propertyPath: m_Mass
+      value: 1.3419043
+      objectReference: {fileID: 0}
+    - target: {fileID: 3519531812619365728, guid: 4b37b3da0f3646d4e98c967d1d806094,
+        type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4380279179549627480, guid: 4b37b3da0f3646d4e98c967d1d806094,
+        type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4380279179549627480, guid: 4b37b3da0f3646d4e98c967d1d806094,
+        type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[0].x
+      value: 1.7501388
+      objectReference: {fileID: 0}
+    - target: {fileID: 4380279179549627480, guid: 4b37b3da0f3646d4e98c967d1d806094,
+        type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[0].y
+      value: 0.28588277
+      objectReference: {fileID: 0}
+    - target: {fileID: 4380279179549627480, guid: 4b37b3da0f3646d4e98c967d1d806094,
+        type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[1].x
+      value: 0.5170254
+      objectReference: {fileID: 0}
+    - target: {fileID: 4380279179549627480, guid: 4b37b3da0f3646d4e98c967d1d806094,
+        type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[1].y
+      value: 0.8511462
+      objectReference: {fileID: 0}
+    - target: {fileID: 4380279179549627480, guid: 4b37b3da0f3646d4e98c967d1d806094,
+        type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[2].x
+      value: 0.782659
+      objectReference: {fileID: 0}
+    - target: {fileID: 4380279179549627480, guid: 4b37b3da0f3646d4e98c967d1d806094,
+        type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[2].y
+      value: -0.302631
+      objectReference: {fileID: 0}
+    - target: {fileID: 4380279179549627480, guid: 4b37b3da0f3646d4e98c967d1d806094,
+        type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[3].x
+      value: 1.5083871
+      objectReference: {fileID: 0}
+    - target: {fileID: 4380279179549627480, guid: 4b37b3da0f3646d4e98c967d1d806094,
+        type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[3].y
+      value: -0.27520007
+      objectReference: {fileID: 0}
+    - target: {fileID: 7194901418304162768, guid: 4b37b3da0f3646d4e98c967d1d806094,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4b37b3da0f3646d4e98c967d1d806094, type: 3}
 --- !u!4 &2349240824122130214 stripped

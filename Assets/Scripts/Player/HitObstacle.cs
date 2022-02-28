@@ -122,6 +122,7 @@ public class HitObstacle : MonoBehaviour
         //Debug.Log(collision.contacts[0].normal.normalized.x + " is the normal X normalized");
         //Debug.Log(collision.contacts[0].normal.normalized.y + " is the normal Y normalized");
 
+
         if (collision.contacts[0].normal.normalized.x <= -0.3f)  // bounce backwards with moveDirection script
         {
             // 0) lose control (maybe not this)
@@ -206,7 +207,51 @@ public class HitObstacle : MonoBehaviour
         //Debug.Log(collision.contacts[0].normal.normalized.x + " is the normal X normalized");
         //Debug.Log(collision.contacts[0].normal.normalized.y + " is the normal Y normalized");
 
-        if (collision.contacts[0].normal.normalized.x <= -0.3f)  // bounce backwards with moveDirection script
+        if (collision.gameObject.tag == "Floor" || collision.contacts[0].normal.normalized.y >= 0.2f)
+        {
+            _moveDirection.BounceTimer = 0;
+            _moveDirection.BouncedVertically = true;
+
+            _bimLocalScale = _rigidbody.transform.localScale;
+            if (_bimLocalScale.x > 0) // if BiM was moving right, push him right (it just a slowdown)
+            {
+                _moveDirection.Speed = 2;
+            }
+            else
+            {
+                _moveDirection.Speed = -2;
+            }
+
+            //StartCoroutine(LostControl(_immunityTime / 4f));
+            _bimFloating.TurnOffControl(_immunityTime / 4f, true, false);
+
+            //_followFinger.GetComponent<Rigidbody2D>().AddForce(Vector2.up * 25);
+            _bimFloating.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
+            _bimFloating.GetComponent<Rigidbody2D>().velocity = Vector2.up * 5;
+        }
+        else if (collision.gameObject.tag == "Ceiling" || collision.contacts[0].normal.normalized.y <= -0.2f) // bounce down with rigidbody force 
+        {
+            //_moveDirection.BounceTimer = 0;
+            //_moveDirection.BouncedVertically = true;
+
+            //_bimLocalScale = _rigidbody.transform.localScale;
+            //if (_bimLocalScale.x > 0) // if BiM was moving right, push him right (it just a slowdown)
+            //{
+            //    _moveDirection.Speed = 2;
+            //}
+            //else
+            //{
+            //    _moveDirection.Speed = -2;
+            //}
+
+            ////StartCoroutine(LostControl(_immunityTime / 4f));
+            //_bimFloating.TurnOffControl(_immunityTime / 4f, true, false);
+
+            ////_followFinger.GetComponent<Rigidbody2D>().AddForce(-Vector2.up * 25);
+            //_bimFloating.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
+            //_bimFloating.GetComponent<Rigidbody2D>().velocity = -Vector2.up * 2;
+        }
+        else if (collision.contacts[0].normal.normalized.x <= -0.3f)  // bounce backwards with moveDirection script
         {
             // 0) lose control (maybe not this)
             _bimFloating.TurnOffControl(_immunityTime / 4f, true, false);
@@ -240,50 +285,7 @@ public class HitObstacle : MonoBehaviour
 
             _moveDirection.Speed = _moveDirection.Speed * -1;
         }
-        else if (collision.contacts[0].normal.normalized.y <= -0.2f) // bounce down with rigidbody force 
-        {
-            _moveDirection.BounceTimer = 0;
-            _moveDirection.BouncedVertically = true;
-
-            _bimLocalScale = _rigidbody.transform.localScale;
-            if (_bimLocalScale.x > 0) // if BiM was moving right, push him right (it just a slowdown)
-            {
-                _moveDirection.Speed = 2;
-            }
-            else
-            {
-                _moveDirection.Speed = -2;
-            }
-
-            //StartCoroutine(LostControl(_immunityTime / 4f));
-            _bimFloating.TurnOffControl(_immunityTime / 4f, true, false);
-
-            //_followFinger.GetComponent<Rigidbody2D>().AddForce(-Vector2.up * 25);
-            _bimFloating.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
-            _bimFloating.GetComponent<Rigidbody2D>().velocity = -Vector2.up * 2;
-        }
-        else if (collision.contacts[0].normal.normalized.y >= 0.2f) // bounce up with rigidbody force 
-        {
-            _moveDirection.BounceTimer = 0;
-            _moveDirection.BouncedVertically = true;
-
-            _bimLocalScale = _rigidbody.transform.localScale;
-            if (_bimLocalScale.x > 0) // if BiM was moving right, push him right (it just a slowdown)
-            {
-                _moveDirection.Speed = 2;
-            }
-            else
-            {
-                _moveDirection.Speed = -2;
-            }
-
-            //StartCoroutine(LostControl(_immunityTime / 4f));
-            _bimFloating.TurnOffControl(_immunityTime / 4f, true, false);
-
-            //_followFinger.GetComponent<Rigidbody2D>().AddForce(Vector2.up * 25);
-            _bimFloating.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
-            _bimFloating.GetComponent<Rigidbody2D>().velocity = Vector2.up * 2;
-        }
+        
     }
 
     private void LoseControl()
