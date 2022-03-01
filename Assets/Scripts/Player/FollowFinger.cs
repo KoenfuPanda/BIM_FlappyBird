@@ -47,9 +47,9 @@ public class FollowFinger : MonoBehaviour
     public bool MegaBimActive;
     private float _megaBimTimer;
 
-
-    private Vector2 _moveDirection;
-    private bool _holdingDown, _tappedTargetReached;
+    public bool HoldingDown;
+    public Vector2 TargetPosition;
+    private Vector2 _movementDirection;
     private float _timerT;
 
     [SerializeField]
@@ -72,11 +72,12 @@ public class FollowFinger : MonoBehaviour
         /////////
         // Calculate Velocity
 
-        if (_holdingDown == true)
+        if (HoldingDown == true)
         {
             mouseWorldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            TargetPosition = mouseWorldPosition;
         }
-        
+
 
         if (mouseWorldPosition.y < transform.position.y - 0.1f)
         {
@@ -85,6 +86,7 @@ public class FollowFinger : MonoBehaviour
             {
                 velocityMultiplier += 0.2f;
             }
+            //velocity = -8;
         }
         else if (mouseWorldPosition.y > transform.position.y + 0.1f)
         {
@@ -93,12 +95,28 @@ public class FollowFinger : MonoBehaviour
             {
                 velocityMultiplier += 0.2f;
             }
+            //velocity = 8;
         }
         else
         {
             velocityMultiplier = 0;
             velocity = 0;
         }
+
+              // update the velocity calculater to be more efficient //
+        //if (_movementDirection.y < 0)
+        //{
+        //    velocity = -8;
+        //}
+        //else if (_movementDirection.y > 0)
+        //{
+        //    velocity = 8;
+        //}
+        //else
+        //{
+        //    velocityMultiplier = 0;
+        //    velocity = 0;
+        //}
         //////////
 
         //// Move to
@@ -136,19 +154,20 @@ public class FollowFinger : MonoBehaviour
                 _timerT += Time.deltaTime;
                 if (_timerT >= 0.15f) // held down with intent.
                 {
-                    _holdingDown = true;
+                    HoldingDown = true;
                 }
             }
-            if (_holdingDown == true)
+            if (HoldingDown == true)
             {
                 rigidBody.velocity = Vector2.up * velocity;
             }
 
 
             // --- Mouse button tap ---
-            if (Input.GetMouseButtonDown(0) && _holdingDown == false) // tapping
+            if (Input.GetMouseButtonDown(0) && HoldingDown == false) // tapping
             {
                 mouseWorldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                TargetPosition = mouseWorldPosition;
 
                 // Get the target position  
                 Vector2 dir = new Vector2(rigidBody.position.x, mouseWorldPosition.y) - rigidBody.position;
@@ -165,27 +184,27 @@ public class FollowFinger : MonoBehaviour
                     dir = Vector2.ClampMagnitude(dir, 8);
                 }
                 // Apply that to the rigidbody
-                _moveDirection = dir;
-                rigidBody.velocity = _moveDirection;
+                _movementDirection = dir;
+                rigidBody.velocity = _movementDirection;
             }
 
             // if I am not holding down, && at the desired Y, stop moving
-            if (_holdingDown == false)
+            if (HoldingDown == false)
             {
-                if (_moveDirection.y < 0 && rigidBody.position.y <= mouseWorldPosition.y) // if direction was downwards
+                if (_movementDirection.y < 0 && rigidBody.position.y <= mouseWorldPosition.y) // if direction was downwards
                 {
                     rigidBody.velocity = Vector2.zero;
                 }
-                else if (_moveDirection.y > 0 && rigidBody.position.y >= mouseWorldPosition.y) // if direction was downwards
+                else if (_movementDirection.y > 0 && rigidBody.position.y >= mouseWorldPosition.y) // if direction was downwards
                 {
                     rigidBody.velocity = Vector2.zero;
                 }
             }
 
-            if (_holdingDown == true && Input.GetMouseButtonUp(0)) // if let go
+            if (HoldingDown == true && Input.GetMouseButtonUp(0)) // if let go
             {
                 _timerT = 0;
-                _holdingDown = false;
+                HoldingDown = false;
             }
         }
         //else if (bounce == false)
@@ -341,6 +360,8 @@ public class FollowFinger : MonoBehaviour
         controlCharacter = true;
 
         rigidBody.velocity = Vector3.zero;
+        _movementDirection = Vector3.zero;
+        HoldingDown = false;
 
         rigidBody.gravityScale = 0;
         _lostControlTimer = 0;

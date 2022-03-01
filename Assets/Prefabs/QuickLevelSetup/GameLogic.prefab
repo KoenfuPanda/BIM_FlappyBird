@@ -346,6 +346,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7827462474383321295}
     m_Modifications:
+    - target: {fileID: 1197254162286585376, guid: a449fe7b4e53d99459c68fa6840544ad,
+        type: 3}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].value
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 6106393831258886309, guid: a449fe7b4e53d99459c68fa6840544ad,
         type: 3}
       propertyPath: m_Name
@@ -435,6 +440,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.y
       value: -0.87
+      objectReference: {fileID: 0}
+    - target: {fileID: 6106393831850996107, guid: a449fe7b4e53d99459c68fa6840544ad,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 6106393831850996109, guid: a449fe7b4e53d99459c68fa6840544ad,
         type: 3}

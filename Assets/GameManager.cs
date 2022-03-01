@@ -213,7 +213,7 @@ public class GameManager : MonoBehaviour
 
             //var newPlayer = Instantiate(_playerPrefab, _currentCheckpoint.SpawnPoint.position + _instantiateExtraOffset, Quaternion.identity);
             var newPlayer = Instantiate(_playerPrefab, new Vector3(_currentCheckpoint.SpawnPoint.position.x - (-7), 1.51f, -40), Quaternion.identity);
-            newPlayer.GetComponentInChildren<Rigidbody2D>().transform.localPosition = new Vector3(-8, _currentCheckpoint.SpawnPoint.position.y - 1, 42);
+            newPlayer.GetComponentInChildren<Rigidbody2D>().transform.localPosition = new Vector3(-8, _currentCheckpoint.SpawnPoint.position.y - 1, 40);
 
             // destroy the player that previously died
             Destroy(_currentPlayer);
