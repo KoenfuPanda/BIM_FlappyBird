@@ -27454,6 +27454,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Obstacle_SlopeHigh_Base (20)
       objectReference: {fileID: 0}
+    - target: {fileID: 4823641830977932784, guid: 7cc648b99b1ccf1448037148aff2c3b5,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4823641830977932799, guid: 7cc648b99b1ccf1448037148aff2c3b5,
         type: 3}
       propertyPath: m_RootOrder
@@ -27528,6 +27533,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Obstacle_SlopeHigh_Base (19)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4823641830977932784, guid: 7cc648b99b1ccf1448037148aff2c3b5,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4823641830977932799, guid: 7cc648b99b1ccf1448037148aff2c3b5,
         type: 3}
@@ -45324,7 +45334,7 @@ PrefabInstance:
     - target: {fileID: 2293627265519700362, guid: dc7546bced063894db22d652760738d8,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 159.06377
+      value: 158.91
       objectReference: {fileID: 0}
     - target: {fileID: 2293627265519700362, guid: dc7546bced063894db22d652760738d8,
         type: 3}
@@ -56835,6 +56845,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Obstacle_SlopeLow_Base
+      objectReference: {fileID: 0}
+    - target: {fileID: 8525659709406111237, guid: 8d6d3903a7e72034ebed3012a0174c16,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8525659709406111242, guid: 8d6d3903a7e72034ebed3012a0174c16,
         type: 3}

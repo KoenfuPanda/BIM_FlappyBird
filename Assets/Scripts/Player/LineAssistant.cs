@@ -43,11 +43,16 @@ public class LineAssistant : MonoBehaviour
         // (when tapped, draw line with goal transparency and then slowly lose transparency)
 
 
-        // if target position.x is smaller/equal to Bim.x  OR  control character is disabled  =>  set transparency to 0
-        if (_followFinger.TargetPosition.x <= _followFinger.transform.position.x || FollowFinger.controlCharacter == false)
+        // if target position.x is smaller/equal to Bim.x  OR  control character is disabled  =>  set transparency to 0  (check for mirrored bim!)
+        if (_followFinger.transform.localScale.x > 0 && _followFinger.TargetPosition.x <= _followFinger.transform.position.x || FollowFinger.controlCharacter == false)
         {
             _transparencyValue = 0;
         }
+        else if (_followFinger.transform.localScale.x < 0 && _followFinger.TargetPosition.x >= _followFinger.transform.position.x)
+        {
+            _transparencyValue = 0;
+        }
+
 
         _colorStart = new Color(1, 0, 0, _transparencyValue);
         _colorEnd = new Color(0, 0, 1, _transparencyValue);
@@ -61,8 +66,5 @@ public class LineAssistant : MonoBehaviour
 
         _lineRenderer.SetPosition(0, bim);
         _lineRenderer.SetPosition(1, target);
-
-
-        Debug.Log(_transparencyValue);
     }    
 }
