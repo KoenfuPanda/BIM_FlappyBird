@@ -129,6 +129,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Game_Ver_0.1/Alpha_Level_05.unity
     guid: 4dd58340da12d82458e74c43caf6737f
   - enabled: 1
+    path: Assets/Scenes/Game_Ver_0.1/Alpha_Level_06.unity
+    guid: 1254f57403c13814fac1bd290d71f72e
+  - enabled: 1
     path: Assets/Scenes/Game_Ver_0.1/Alpha_Level_07.unity
     guid: f1e80b5a8ea05f94099afe88fb4de06e
   m_configObjects: {}
