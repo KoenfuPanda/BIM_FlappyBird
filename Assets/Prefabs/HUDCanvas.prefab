@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 781351286719017820}
   - component: {fileID: 781351286719017810}
   - component: {fileID: 781351286719017821}
+  - component: {fileID: 6426569275964536304}
   m_Layer: 5
   m_Name: Full_Health
   m_TagString: Untagged
@@ -77,6 +78,25 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!95 &6426569275964536304
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 781351286719017823}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 306e1df69fca8714ea0ee41afa2dab1a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &781351287031216391
 GameObject:
   m_ObjectHideFlags: 0
@@ -164,7 +184,7 @@ GameObject:
   - component: {fileID: 781351287193475723}
   - component: {fileID: 781351287193475722}
   m_Layer: 5
-  m_Name: UICanvas
+  m_Name: HUDCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

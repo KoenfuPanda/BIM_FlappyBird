@@ -50,8 +50,17 @@ public class CheckPoint : MonoBehaviour
 
             _gameManager.SaveFeathersCollectedSoFar(); // save feathers
 
-            _gameManager.RefillHealth();
-
+            // fill HUD health
+            
+            if(IsStartLevel == true)
+            {
+                _gameManager.RefillHealth(true);
+            }
+            else
+            {
+                _gameManager.RefillHealth(false);
+            }
+            
             _hasBeenActivated = true;
         }
 

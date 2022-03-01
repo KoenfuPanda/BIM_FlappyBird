@@ -8,6 +8,7 @@ public class FollowFinger : MonoBehaviour
 {
     // PRIVATE
 
+    private Animator _animator;
     private GameObject bim;
     private static Rigidbody2D rigidBody;
     private Vector3 mouseWorldPosition;
@@ -47,24 +48,39 @@ public class FollowFinger : MonoBehaviour
     private float _megaBimTimer;
 
 
+    private Vector2 dire;
+    private bool _holdingDown, _tappedTargetReached;
+    private float _timerT;
+
+    [SerializeField]
+    private GameObject _getHitParticlePrefab;
+    private bool _tookDamage, _recoveringToNormal;
+    private float _damagedTimer;
+
 
     void Start()
     {
         _hitObstacle = GetComponent<HitObstacle>();
         bim = transform.GetChild(0).gameObject;
+        _animator = bim.GetComponent<Animator>();
         rigidBody = GetComponent<Rigidbody2D>();
         controlCharacter = true;
     }
 
     void FixedUpdate()
     {
+        /////////
         // Calculate Velocity
 
-        mouseWorldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        if (_holdingDown == true)
+        {
+            mouseWorldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        }
+        
 
         if (mouseWorldPosition.y < transform.position.y - 0.1f)
         {
-            velocity = (Mathf.Pow(2, velocityMultiplier))*-1;
+            velocity = (Mathf.Pow(2, velocityMultiplier)) * -1;
             if (velocity > -7)
             {
                 velocityMultiplier += 0.2f;
@@ -83,19 +99,20 @@ public class FollowFinger : MonoBehaviour
             velocityMultiplier = 0;
             velocity = 0;
         }
+        //////////
 
-        // Move to
-        if(moveTo)
-        {
-            t += Time.deltaTime / travelTime;
-            transform.position = Vector3.Lerp(startPosition, target, t);
+        //// Move to
+        //if(moveTo)
+        //{
+        //    t += Time.deltaTime / travelTime;
+        //    transform.position = Vector3.Lerp(startPosition, target, t);
 
-            if(transform.position == target)
-            {
-                follow = true;
-                moveTo = false;
-            }
-        }
+        //    if(transform.position == target)
+        //    {
+        //        follow = true;
+        //        moveTo = false;
+        //    }
+        //}
     }
 
     void Update()
@@ -111,17 +128,73 @@ public class FollowFinger : MonoBehaviour
             }
         }
 
-
         // Mouse button down
-        if (Input.GetMouseButton(0) && controlCharacter)
+        if (Input.GetMouseButton(0) && controlCharacter) // finger held down
+        {
+            _timerT += Time.deltaTime;
+            if (_timerT >= 0.5f) // held down with intent.
+            {
+                _holdingDown = true;
+            }
+        }
+        if (_holdingDown == true && controlCharacter == true)
         {
             rigidBody.velocity = Vector2.up * velocity;
         }
-        else if (!bounce)
+        //else if (!bounce)
+        //{
+        //    velocity = 0;
+        //    rigidBody.velocity = Vector2.zero;
+        //}
+
+        // Mouse button tap
+        if (Input.GetMouseButtonDown(0) && controlCharacter == true && _holdingDown == false) // tapping
         {
-            velocity = 0;
-            rigidBody.velocity = Vector2.zero;
+            mouseWorldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+            // Get the target position  
+            Vector2 dir = new Vector2(rigidBody.position.x, mouseWorldPosition.y) - rigidBody.position;           
+            // Get the velocity required to reach the target in the next frame
+            dir /= Time.fixedDeltaTime;
+            Debug.Log(dir);
+            // Clamp that to the max speed
+            if (dir.y < 0) // if direction was downwards
+            {
+                dir = -Vector2.ClampMagnitude(dir, -8);
+            }
+            else
+            {
+                dir = Vector2.ClampMagnitude(dir, 8);
+            }
+            // Apply that to the rigidbody
+            dire = dir;
+            Debug.Log(dire + " clamped");
+            rigidBody.velocity = dire;
         }
+
+        // if I am not holding down, && at the desired Y, stop moving
+        if(_holdingDown == false)
+        {
+            if (dire.y < 0 && rigidBody.position.y <= mouseWorldPosition.y) // if direction was downwards
+            {
+                rigidBody.velocity = Vector2.zero;
+            }
+            else if (dire.y > 0 && rigidBody.position.y >= mouseWorldPosition.y) // if direction was downwards
+            {
+                rigidBody.velocity = Vector2.zero;
+            }
+        }
+
+        if (_holdingDown == true && Input.GetMouseButtonUp(0)) // if let go
+        {
+            _timerT = 0;
+            _holdingDown = false;
+        }
+
+
+
+
+
 
 
         // When flying up or down
@@ -136,6 +209,28 @@ public class FollowFinger : MonoBehaviour
                 ReturnBimToNormal();
             }
         }
+
+        if (_tookDamage == true)
+        {
+            _damagedTimer += Time.deltaTime;
+            if(_damagedTimer > 0.75f)
+            {
+                _recoveringToNormal = true;
+                _tookDamage = false;
+                _damagedTimer = 0;
+            }
+        }
+        else if (_recoveringToNormal == true)
+        {
+            _animator.speed += Time.deltaTime;
+            if(_animator.speed >= 1)
+            {
+                _animator.speed = 1;
+                _recoveringToNormal = false;
+            }
+        }
+
+
 
         // TEST
         //if (follow)
@@ -233,6 +328,23 @@ public class FollowFinger : MonoBehaviour
         _megaBimTimer = 0;
         _hitObstacle.ImmuneToggled();
     }
+
+
+
+
+
+    public void HitWallFeedback(Vector3 hitPosition)
+    {
+        Instantiate(_getHitParticlePrefab, transform.position, Quaternion.Euler(-90,0,0));
+        _animator.speed = 0.5f;
+
+        _recoveringToNormal = false;
+        _tookDamage = true;
+    }
+
+
+
+
 
 
     private IEnumerator RegainControl(float timeLostControl)

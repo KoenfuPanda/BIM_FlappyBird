@@ -372,6 +372,8 @@ MonoBehaviour:
   travelTime: 0
   MegaBimTimeLimit: 0
   MegaBimActive: 0
+  _getHitParticlePrefab: {fileID: 126166133314912002, guid: d6dbda516fa8a1840be8e18477bc317d,
+    type: 3}
 --- !u!114 &6106393831850996109
 MonoBehaviour:
   m_ObjectHideFlags: 0

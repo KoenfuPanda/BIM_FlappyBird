@@ -594,6 +594,12 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 1970960955340288185}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &4788874786236712265 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 6426569275964536304, guid: 253a3bdab46750d4e8c28b108bd75587,
+    type: 3}
+  m_PrefabInstance: {fileID: 1970960955340288185}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1264852135985584532 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 781351287427459373, guid: 253a3bdab46750d4e8c28b108bd75587,
@@ -697,6 +703,11 @@ PrefabInstance:
         type: 3}
     - target: {fileID: 8157713602601542621, guid: 617028c5d648d2c40b4fe3b8b212824c,
         type: 3}
+      propertyPath: _healthAnimator
+      value: 
+      objectReference: {fileID: 4788874786236712265}
+    - target: {fileID: 8157713602601542621, guid: 617028c5d648d2c40b4fe3b8b212824c,
+        type: 3}
       propertyPath: FeatherScoreText
       value: 
       objectReference: {fileID: 1264852135397469579}
@@ -707,9 +718,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8157713602601542621, guid: 617028c5d648d2c40b4fe3b8b212824c,
         type: 3}
+      propertyPath: _audioClips.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: e4c65d2bc6e29f5439b2bcc7cec9b5b3, type: 3}
+    - target: {fileID: 8157713602601542621, guid: 617028c5d648d2c40b4fe3b8b212824c,
+        type: 3}
+      propertyPath: _audioClips.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 4a7b3922d37653c47b7d5dcfa0cc35c9, type: 3}
+    - target: {fileID: 8157713602601542621, guid: 617028c5d648d2c40b4fe3b8b212824c,
+        type: 3}
       propertyPath: HeartSprites.Array.data[0]
       value: 
-      objectReference: {fileID: 1264852135985584532}
+      objectReference: {fileID: 1264852135888711103}
     - target: {fileID: 8157713602601542621, guid: 617028c5d648d2c40b4fe3b8b212824c,
         type: 3}
       propertyPath: HeartSprites.Array.data[1]
@@ -719,7 +740,7 @@ PrefabInstance:
         type: 3}
       propertyPath: HeartSprites.Array.data[2]
       value: 
-      objectReference: {fileID: 1264852135888711103}
+      objectReference: {fileID: 1264852135985584532}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 617028c5d648d2c40b4fe3b8b212824c, type: 3}
 --- !u!4 &1264852135874017215 stripped

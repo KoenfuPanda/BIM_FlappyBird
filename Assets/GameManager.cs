@@ -26,6 +26,11 @@ public class GameManager : MonoBehaviour
     private CheckPoint _currentCheckpoint;
 
     public List<GameObject> HeartSprites = new List<GameObject>();
+    [SerializeField]
+    private Animator _healthAnimator;
+    const string _loseHealth_1 = "Health_1_Lost";
+    const string _loseHealth_2 = "Health_2_Lost";
+    const string _loseHealth_3 = "Health_3_Lost";
 
     [SerializeField]
     private GameObject _playerPrefab;
@@ -33,6 +38,15 @@ public class GameManager : MonoBehaviour
 
     private Vector3 _originalPlayerOffset;
     private Vector3 _instantiateExtraOffset;
+
+    private AudioSource _audioSource;
+    [SerializeField]
+    private AudioClip[] _audioClips = new AudioClip[2];
+
+    private void Awake()
+    {
+        _audioSource = GetComponent<AudioSource>();
+    }
 
     private void Start()
     {
@@ -73,27 +87,31 @@ public class GameManager : MonoBehaviour
     {
         if(HealthBiM == 2)
         {
-            HeartSprites[2].gameObject.SetActive(false);
+            _healthAnimator.Play(_loseHealth_1);     
         }
         else if (HealthBiM == 1)
         {
-            HeartSprites[2].gameObject.SetActive(false);
-            HeartSprites[1].gameObject.SetActive(false);
+            _healthAnimator.Play(_loseHealth_2);       
         }
         else
         {
-            HeartSprites[2].gameObject.SetActive(false);
-            HeartSprites[1].gameObject.SetActive(false);
-            HeartSprites[0].gameObject.SetActive(false);
+            _healthAnimator.Play(_loseHealth_3);
         }
     }
-    public void RefillHealth()
+    public void RefillHealth(bool respawned)
     {
         HealthBiM = 3;
 
-        HeartSprites[2].gameObject.SetActive(true);
-        HeartSprites[1].gameObject.SetActive(true);
-        HeartSprites[0].gameObject.SetActive(true);
+        if(respawned)
+        {
+            _audioSource.PlayOneShot(_audioClips[1]);
+            _healthAnimator.Play("Health_Full_State");
+        }
+        else
+        {
+            _audioSource.PlayOneShot(_audioClips[0]);
+            _healthAnimator.Play("Health_Refilled_Fully");
+        }     
     }
 
 
@@ -189,7 +207,7 @@ public class GameManager : MonoBehaviour
                 _currentCheckpoint = checkPoint;
             }
         }
-        RefillHealth();
+        RefillHealth(true);
         if(_playerPrefab != null) 
         {
 

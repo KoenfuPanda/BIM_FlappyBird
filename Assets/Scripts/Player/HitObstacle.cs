@@ -21,7 +21,6 @@ public class HitObstacle : MonoBehaviour
     [SerializeField]
     private float _immunityTime;
 
-
     private void Start()
     {
         if (GetComponent<FollowFinger>() != null)
@@ -87,6 +86,8 @@ public class HitObstacle : MonoBehaviour
                     {
                         // become immune
                         StartCoroutine(GainImmunity(_immunityTime));
+                        // instantiate object with sound effect and particle
+                        _followFinger.HitWallFeedback(collision.contacts[0].point);
                         // lose health
                         _gameManager.HealthBiM -= 1;
                         // update sprites
@@ -121,7 +122,6 @@ public class HitObstacle : MonoBehaviour
     {
         //Debug.Log(collision.contacts[0].normal.normalized.x + " is the normal X normalized");
         //Debug.Log(collision.contacts[0].normal.normalized.y + " is the normal Y normalized");
-
 
         if (collision.contacts[0].normal.normalized.x <= -0.3f)  // bounce backwards with moveDirection script
         {
