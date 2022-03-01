@@ -48,7 +48,7 @@ public class FollowFinger : MonoBehaviour
     private float _megaBimTimer;
 
 
-    private Vector2 dire;
+    private Vector2 _moveDirection;
     private bool _holdingDown, _tappedTargetReached;
     private float _timerT;
 
@@ -127,69 +127,135 @@ public class FollowFinger : MonoBehaviour
                 _lostControlTimer = 0;
             }
         }
-
-        // Mouse button down
-        if (Input.GetMouseButton(0) && controlCharacter) // finger held down
+        // if I can control BiM
+        if (controlCharacter == true)  
         {
-            _timerT += Time.deltaTime;
-            if (_timerT >= 0.5f) // held down with intent.
+            // --- Mouse button down ---
+            if (Input.GetMouseButton(0)) // finger held down
             {
-                _holdingDown = true;
+                _timerT += Time.deltaTime;
+                if (_timerT >= 0.15f) // held down with intent.
+                {
+                    _holdingDown = true;
+                }
+            }
+            if (_holdingDown == true)
+            {
+                rigidBody.velocity = Vector2.up * velocity;
+            }
+
+
+            // --- Mouse button tap ---
+            if (Input.GetMouseButtonDown(0) && _holdingDown == false) // tapping
+            {
+                mouseWorldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+                // Get the target position  
+                Vector2 dir = new Vector2(rigidBody.position.x, mouseWorldPosition.y) - rigidBody.position;
+                // Get the velocity required to reach the target in the next frame
+                dir /= Time.fixedDeltaTime;
+                Debug.Log(dir);
+                // Clamp that to the max speed
+                if (dir.y < 0) // if direction was downwards
+                {
+                    dir = -Vector2.ClampMagnitude(dir, -8);
+                }
+                else
+                {
+                    dir = Vector2.ClampMagnitude(dir, 8);
+                }
+                // Apply that to the rigidbody
+                _moveDirection = dir;
+                rigidBody.velocity = _moveDirection;
+            }
+
+            // if I am not holding down, && at the desired Y, stop moving
+            if (_holdingDown == false)
+            {
+                if (_moveDirection.y < 0 && rigidBody.position.y <= mouseWorldPosition.y) // if direction was downwards
+                {
+                    rigidBody.velocity = Vector2.zero;
+                }
+                else if (_moveDirection.y > 0 && rigidBody.position.y >= mouseWorldPosition.y) // if direction was downwards
+                {
+                    rigidBody.velocity = Vector2.zero;
+                }
+            }
+
+            if (_holdingDown == true && Input.GetMouseButtonUp(0)) // if let go
+            {
+                _timerT = 0;
+                _holdingDown = false;
             }
         }
-        if (_holdingDown == true && controlCharacter == true)
-        {
-            rigidBody.velocity = Vector2.up * velocity;
-        }
+        //else if (bounce == false)
+        //{
+        //    velocity = 0;
+        //    rigidBody.velocity = Vector2.zero;
+        //}
+
+        //// Mouse button down
+        //if (Input.GetMouseButton(0) && controlCharacter) // finger held down
+        //{
+        //    _timerT += Time.deltaTime;
+        //    if (_timerT >= 0.5f) // held down with intent.
+        //    {
+        //        _holdingDown = true;
+        //    }
+        //}
+        //if (_holdingDown == true && controlCharacter == true)
+        //{
+        //    rigidBody.velocity = Vector2.up * velocity;
+        //}
         //else if (!bounce)
         //{
         //    velocity = 0;
         //    rigidBody.velocity = Vector2.zero;
         //}
 
-        // Mouse button tap
-        if (Input.GetMouseButtonDown(0) && controlCharacter == true && _holdingDown == false) // tapping
-        {
-            mouseWorldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        //// Mouse button tap
+        //if (Input.GetMouseButtonDown(0) && controlCharacter == true && _holdingDown == false) // tapping
+        //{
+        //    mouseWorldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-            // Get the target position  
-            Vector2 dir = new Vector2(rigidBody.position.x, mouseWorldPosition.y) - rigidBody.position;           
-            // Get the velocity required to reach the target in the next frame
-            dir /= Time.fixedDeltaTime;
-            Debug.Log(dir);
-            // Clamp that to the max speed
-            if (dir.y < 0) // if direction was downwards
-            {
-                dir = -Vector2.ClampMagnitude(dir, -8);
-            }
-            else
-            {
-                dir = Vector2.ClampMagnitude(dir, 8);
-            }
-            // Apply that to the rigidbody
-            dire = dir;
-            Debug.Log(dire + " clamped");
-            rigidBody.velocity = dire;
-        }
+        //    // Get the target position  
+        //    Vector2 dir = new Vector2(rigidBody.position.x, mouseWorldPosition.y) - rigidBody.position;           
+        //    // Get the velocity required to reach the target in the next frame
+        //    dir /= Time.fixedDeltaTime;
+        //    Debug.Log(dir);
+        //    // Clamp that to the max speed
+        //    if (dir.y < 0) // if direction was downwards
+        //    {
+        //        dir = -Vector2.ClampMagnitude(dir, -8);
+        //    }
+        //    else
+        //    {
+        //        dir = Vector2.ClampMagnitude(dir, 8);
+        //    }
+        //    // Apply that to the rigidbody
+        //    dire = dir;
+        //    Debug.Log(dire + " clamped");
+        //    rigidBody.velocity = dire;
+        //}
 
-        // if I am not holding down, && at the desired Y, stop moving
-        if(_holdingDown == false)
-        {
-            if (dire.y < 0 && rigidBody.position.y <= mouseWorldPosition.y) // if direction was downwards
-            {
-                rigidBody.velocity = Vector2.zero;
-            }
-            else if (dire.y > 0 && rigidBody.position.y >= mouseWorldPosition.y) // if direction was downwards
-            {
-                rigidBody.velocity = Vector2.zero;
-            }
-        }
+        //// if I am not holding down, && at the desired Y, stop moving
+        //if(_holdingDown == false)
+        //{
+        //    if (dire.y < 0 && rigidBody.position.y <= mouseWorldPosition.y) // if direction was downwards
+        //    {
+        //        rigidBody.velocity = Vector2.zero;
+        //    }
+        //    else if (dire.y > 0 && rigidBody.position.y >= mouseWorldPosition.y) // if direction was downwards
+        //    {
+        //        rigidBody.velocity = Vector2.zero;
+        //    }
+        //}
 
-        if (_holdingDown == true && Input.GetMouseButtonUp(0)) // if let go
-        {
-            _timerT = 0;
-            _holdingDown = false;
-        }
+        //if (_holdingDown == true && Input.GetMouseButtonUp(0)) // if let go
+        //{
+        //    _timerT = 0;
+        //    _holdingDown = false;
+        //}
 
 
 
@@ -222,7 +288,7 @@ public class FollowFinger : MonoBehaviour
         }
         else if (_recoveringToNormal == true)
         {
-            _animator.speed += Time.deltaTime;
+            _animator.speed += Time.deltaTime * 0.5f;
             if(_animator.speed >= 1)
             {
                 _animator.speed = 1;
@@ -273,6 +339,9 @@ public class FollowFinger : MonoBehaviour
     {
         bounce = false;
         controlCharacter = true;
+
+        rigidBody.velocity = Vector3.zero;
+
         rigidBody.gravityScale = 0;
         _lostControlTimer = 0;
     }
