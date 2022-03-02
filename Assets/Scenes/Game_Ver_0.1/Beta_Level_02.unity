@@ -292,7 +292,7 @@ PrefabInstance:
     - target: {fileID: 8934555721446212752, guid: d9d808477880cf34ebba167236d86217,
         type: 3}
       propertyPath: _speedBoost
-      value: 2.4
+      value: 3.9
       objectReference: {fileID: 0}
     - target: {fileID: 8934555721446212752, guid: d9d808477880cf34ebba167236d86217,
         type: 3}
@@ -9901,7 +9901,7 @@ PrefabInstance:
     - target: {fileID: 8934555721446212752, guid: d9d808477880cf34ebba167236d86217,
         type: 3}
       propertyPath: _speedBoost
-      value: 2
+      value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: 8934555721446212752, guid: d9d808477880cf34ebba167236d86217,
         type: 3}
@@ -10006,6 +10006,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: RegainControlTrigger
+      objectReference: {fileID: 0}
+    - target: {fileID: 8174509837011046210, guid: b4497b303a3100245ae0336935e279c4,
+        type: 3}
+      propertyPath: _normalizesSpeed
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8174509837011046237, guid: b4497b303a3100245ae0336935e279c4,
         type: 3}
@@ -11591,6 +11596,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8934555721446212752, guid: d9d808477880cf34ebba167236d86217,
+        type: 3}
+      propertyPath: _speedBoost
+      value: 4.5
+      objectReference: {fileID: 0}
     - target: {fileID: 8934555721446212752, guid: d9d808477880cf34ebba167236d86217,
         type: 3}
       propertyPath: _speedsUpGame
@@ -14022,7 +14032,7 @@ PrefabInstance:
     - target: {fileID: 8934555721446212752, guid: d9d808477880cf34ebba167236d86217,
         type: 3}
       propertyPath: _speedBoost
-      value: 2
+      value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: 8934555721446212752, guid: d9d808477880cf34ebba167236d86217,
         type: 3}
@@ -16695,6 +16705,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8934555721446212752, guid: d9d808477880cf34ebba167236d86217,
+        type: 3}
+      propertyPath: _speedBoost
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8934555721446212752, guid: d9d808477880cf34ebba167236d86217,
+        type: 3}
+      propertyPath: _speedsUpGame
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8934555721446212755, guid: d9d808477880cf34ebba167236d86217,
         type: 3}
       propertyPath: m_Name
@@ -21272,7 +21292,7 @@ PrefabInstance:
     - target: {fileID: 4986589276938663251, guid: 7580026096ed9d743839b60d1a8db0cd,
         type: 3}
       propertyPath: IntendedLevelSpeed
-      value: 5
+      value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: 6602732843846922882, guid: 7580026096ed9d743839b60d1a8db0cd,
         type: 3}
@@ -25125,6 +25145,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3865939203162594126, guid: 1a8c0a1eb23fabb4abccf9f8f8090bc8,
+        type: 3}
+      propertyPath: _upgradeTime
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 5029689700875310477, guid: 1a8c0a1eb23fabb4abccf9f8f8090bc8,
         type: 3}
       propertyPath: m_RootOrder
@@ -28455,6 +28480,41 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 403817160516944973, guid: 1d0ec975da2945c43aa32fc244a6d96a,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2015799852457900654, guid: 1d0ec975da2945c43aa32fc244a6d96a,
+        type: 3}
+      propertyPath: m_TagString
+      value: Block
+      objectReference: {fileID: 0}
+    - target: {fileID: 6451060125296485557, guid: 1d0ec975da2945c43aa32fc244a6d96a,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 16.64
+      objectReference: {fileID: 0}
+    - target: {fileID: 6451060125530298484, guid: 1d0ec975da2945c43aa32fc244a6d96a,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.32
+      objectReference: {fileID: 0}
+    - target: {fileID: 6451060125530298490, guid: 1d0ec975da2945c43aa32fc244a6d96a,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 2.632378
+      objectReference: {fileID: 0}
+    - target: {fileID: 6451060125530298490, guid: 1d0ec975da2945c43aa32fc244a6d96a,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: -1.2438109
+      objectReference: {fileID: 0}
+    - target: {fileID: 7915861850624184688, guid: 1d0ec975da2945c43aa32fc244a6d96a,
+        type: 3}
+      propertyPath: m_TagString
+      value: Block
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1d0ec975da2945c43aa32fc244a6d96a, type: 3}
