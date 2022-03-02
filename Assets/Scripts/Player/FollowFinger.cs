@@ -85,29 +85,29 @@ public class FollowFinger : MonoBehaviour
         }
 
 
-        //if (mouseWorldPosition.y < transform.position.y - 0.1f)
-        //{
-        //    velocity = (Mathf.Pow(2, velocityMultiplier)) * -1;  // creates negative velocity
-        //    if (velocity > -7)
-        //    {
-        //        velocityMultiplier += 0.2f;
-        //    }
-        //    //velocity = -8;
-        //}
-        //else if (mouseWorldPosition.y > transform.position.y + 0.1f)
-        //{
-        //    velocity = Mathf.Pow(2, velocityMultiplier);
-        //    if (velocity < 7)
-        //    {
-        //        velocityMultiplier += 0.2f;
-        //    }
-        //    //velocity = 8;
-        //}
-        //else
-        //{
-        //    velocityMultiplier = 0;
-        //    velocity = 0;
-        //}
+        if (mouseWorldPosition.y < transform.position.y - 0.1f)
+        {
+            velocity = (Mathf.Pow(2, velocityMultiplier)) * -1;  // creates negative velocity
+            if (velocity > -7)
+            {
+                velocityMultiplier += 0.5f;
+            }
+            //velocity = -8;
+        }
+        else if (mouseWorldPosition.y > transform.position.y + 0.1f)
+        {
+            velocity = Mathf.Pow(2, velocityMultiplier);
+            if (velocity < 7)
+            {
+                velocityMultiplier += 0.5f;
+            }
+            //velocity = 8;
+        }
+        else
+        {
+            velocityMultiplier = 0;
+            velocity = 0;
+        }
 
         // update the velocity calculater to be more efficient //
         //if (TargetPosition.y < transform.position.y - 0.25f)
@@ -141,33 +141,31 @@ public class FollowFinger : MonoBehaviour
 
     void Update()
     {
-        if (mouseWorldPosition.y < transform.position.y - 0.1f)
-        {
-            velocity = (Mathf.Pow(2, velocityMultiplier)) * -1;  // creates negative velocity
-            if (velocity > -7)
-            {
-                velocityMultiplier += 0.2f;
-            }
-            //velocity = -8;
-        }
-        else if (mouseWorldPosition.y > transform.position.y + 0.1f)
-        {
-            velocity = Mathf.Pow(2, velocityMultiplier);
-            if (velocity < 7)
-            {
-                velocityMultiplier += 0.2f;
-            }
-            //velocity = 8;
-        }
-        else
-        {
-            velocityMultiplier = 0;
-            velocity = 0;
-        }
+        //if (mouseWorldPosition.y < transform.position.y - 0.1f)
+        //{
+        //    velocity = (Mathf.Pow(2, velocityMultiplier)) * -1;  // creates negative velocity
+        //    if (velocity > -7)
+        //    {
+        //        velocityMultiplier += 0.2f;
+        //    }
+        //    //velocity = -8;
+        //}
+        //else if (mouseWorldPosition.y > transform.position.y + 0.1f)
+        //{
+        //    velocity = Mathf.Pow(2, velocityMultiplier);
+        //    if (velocity < 7)
+        //    {
+        //        velocityMultiplier += 0.2f;
+        //    }
+        //    //velocity = 8;
+        //}
+        //else
+        //{
+        //    velocityMultiplier = 0;
+        //    velocity = 0;
+        //}
 
-
-
-
+     
         if (controlCharacter == false)
         {
             _lostControlTimer -= Time.deltaTime;
@@ -181,27 +179,12 @@ public class FollowFinger : MonoBehaviour
         // if I can control BiM
         if (controlCharacter == true)  
         {
-            // --- Mouse button down ---
-            if (Input.GetMouseButton(0)) // finger held down
-            {
-                _timerT += Time.deltaTime;
-                if (_timerT >= 0.15f) // held down with intent.
-                {
-                    HoldingDown = true;
-                }
-            }
-            if (HoldingDown == true)
-            {
-                rigidBody.velocity = Vector2.up * velocity;
-            }
-
-
             // --- Mouse button tap ---
             if (Input.GetMouseButtonDown(0) && HoldingDown == false) // tapping
             {
                 mouseWorldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                 TargetPosition = mouseWorldPosition;
-
+               
                 // set line transparency to 1
                 _lineAssitsant.TransparencyValue = 1;
 
@@ -209,7 +192,9 @@ public class FollowFinger : MonoBehaviour
                 Vector2 dir = new Vector2(rigidBody.position.x, mouseWorldPosition.y) - rigidBody.position;
                 // Get the velocity required to reach the target in the next frame
                 dir /= Time.fixedDeltaTime;
-                Debug.Log(dir);
+
+                //Debug.Log(dir);
+
                 // Clamp that to the max speed
                 if (dir.y < 0) // if direction was downwards
                 {
@@ -222,8 +207,26 @@ public class FollowFinger : MonoBehaviour
                 // Apply that to the rigidbody
                 _movementDirection = dir;
                 rigidBody.velocity = _movementDirection;
+
+                //Debug.Log(_movementDirection);
             }
 
+            // --- Mouse button down ---
+            if (Input.GetMouseButton(0)) // finger held down
+            {
+                _timerT += Time.deltaTime;
+                if (_timerT >= 0.15f) // held down with intent.
+                {
+                    HoldingDown = true;
+                }
+            }
+
+            if (HoldingDown == true)
+            {
+                rigidBody.velocity = Vector2.up * velocity;
+
+                //Debug.Log(rigidBody.velocity + " is the velocity");
+            }
             // if I am not holding down, && at the desired Y, stop moving
             if (HoldingDown == false)
             {
@@ -237,7 +240,7 @@ public class FollowFinger : MonoBehaviour
                 }
             }
 
-            if (HoldingDown == true && Input.GetMouseButtonUp(0)) // if let go
+            if (Input.GetMouseButtonUp(0)) // if let go
             {
                 _timerT = 0;
                 HoldingDown = false;
