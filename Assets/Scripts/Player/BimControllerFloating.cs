@@ -48,6 +48,11 @@ public class BimControllerFloating : MonoBehaviour
         }
 
         //BimRotationLogic();
+
+        //if (Input.GetMouseButtonUp(0) && )
+        //{
+
+        //}
     }
 
 
