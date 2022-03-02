@@ -5,6 +5,8 @@ using UnityEngine;
 public class TutorialLogic : MonoBehaviour
 {
     public bool IsFirstTutorial;
+    [SerializeField]
+    private bool _isDraggableTutorial, _isGateTutorial;
 
     private bool _activated, _showingTutorial;
     [HideInInspector]
@@ -21,6 +23,10 @@ public class TutorialLogic : MonoBehaviour
 
     [SerializeField]
     private GameObject _tutorialGoal;
+    [SerializeField]
+    private Draggable _draggableTutorial;
+    [SerializeField]
+    private Gate _gateTutorial;
 
     private void Start()
     {
@@ -47,6 +53,15 @@ public class TutorialLogic : MonoBehaviour
                 _moveDirection.Speed = 0;
                 PopupPanel.SetActive(true);
 
+                if (_isDraggableTutorial == true)
+                {
+                    _draggableTutorial.IsActive = true;
+                }
+                else if (_isGateTutorial == true)
+                {
+                    _gateTutorial.IsActive = true;
+                }
+
                 _showingTutorial = true;
                 _activated = false;
             }  
@@ -54,7 +69,10 @@ public class TutorialLogic : MonoBehaviour
 
         if (_showingTutorial == true)
         {
-            _tutorialGoal.SetActive(true);
+            if (_tutorialGoal != null)
+            {
+                _tutorialGoal.SetActive(true);
+            }            
 
             if (IsFirstTutorial)
             {
@@ -63,7 +81,6 @@ public class TutorialLogic : MonoBehaviour
 
             _showingTutorial = false;
         }
-
     }
 
     public void ContinueTheGame()

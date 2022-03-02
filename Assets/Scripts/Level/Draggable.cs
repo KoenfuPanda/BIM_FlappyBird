@@ -24,6 +24,13 @@ public class Draggable : MonoBehaviour
 
     private FollowFinger _followFinger;
 
+    [SerializeField]
+    private bool _isTutorial;
+    [HideInInspector]
+    public bool IsActive;
+    [SerializeField]
+    private TutorialLogic _requiredTutorial;
+
 
     private void Start()
     {
@@ -31,6 +38,15 @@ public class Draggable : MonoBehaviour
         GameObject border = transform.Find("Border").gameObject;
         borderSprite = border.transform.GetComponent<SpriteRenderer>();
         _followFinger = FindObjectOfType<FollowFinger>();
+
+        if (_isTutorial == true)
+        {
+            IsActive = false;
+        }
+        else
+        {
+            IsActive = true;
+        }
 
         leftBorder = borderSprite.transform.TransformPoint(borderSprite.sprite.bounds.min).x;
         rightBorder = borderSprite.transform.TransformPoint(borderSprite.sprite.bounds.max).x;
@@ -43,11 +59,14 @@ public class Draggable : MonoBehaviour
 
     void OnMouseDown()
     {
-        //FollowFinger.controlCharacter = false;
-        _followFinger.EnteredClickableSurface();
+        if (IsActive == true)
+        {
+            //FollowFinger.controlCharacter = false;
+            _followFinger.EnteredClickableSurface();
 
-        screenPoint = Camera.main.WorldToScreenPoint(gameObject.transform.position);
-        offset = gameObject.transform.position - Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z));
+            screenPoint = Camera.main.WorldToScreenPoint(gameObject.transform.position);
+            offset = gameObject.transform.position - Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z));
+        }
     }
     
     void OnMouseUp()
@@ -58,49 +77,59 @@ public class Draggable : MonoBehaviour
 
     void OnMouseDrag()
     {
-
-        // Calculate mouse & obstacle position
-
-        Vector3 curScreenPoint = new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z);
-        Vector3 curPosition = Camera.main.ScreenToWorldPoint(curScreenPoint) + offset;
-
-        // Dragging directions
-
-        if (direction.ToString() == "Left") // Left dragging
+        if (IsActive == true)
         {
-            previousValue = transform.position.x;
+            // Calculate mouse & obstacle position
 
-            if (previousValue > curPosition.x && leftBorder < transform.TransformPoint(GetComponent<SpriteRenderer>().sprite.bounds.max).x)
+            Vector3 curScreenPoint = new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z);
+            Vector3 curPosition = Camera.main.ScreenToWorldPoint(curScreenPoint) + offset;
+
+            // Dragging directions
+
+            if (direction == Direction.Left) // Left dragging
             {
-                transform.position = new Vector3(curPosition.x, transform.position.y, transform.position.z);
+                previousValue = transform.position.x;
+
+                if (previousValue > curPosition.x && leftBorder < transform.TransformPoint(GetComponent<SpriteRenderer>().sprite.bounds.max).x)
+                {
+                    transform.position = new Vector3(curPosition.x, transform.position.y, transform.position.z);
+                }
+            }
+            else if (direction == Direction.Top) // Top dragging
+            {
+                previousValue = transform.position.y;
+
+                if (previousValue < curPosition.y && topBorder > transform.TransformPoint(GetComponent<SpriteRenderer>().sprite.bounds.min).y)
+                {
+                    transform.position = new Vector3(transform.position.x, curPosition.y, transform.position.z);
+                }
+            }
+            else if (direction == Direction.Right) // Right dragging
+            {
+                previousValue = transform.position.x;
+
+                if (previousValue < curPosition.x && rightBorder > transform.TransformPoint(GetComponent<SpriteRenderer>().sprite.bounds.min).x)
+                {
+                    transform.position = new Vector3(curPosition.x, transform.position.y, transform.position.z);
+                }
+            }
+            else if (direction == Direction.Bottom) // Bottom dragging
+            {
+                previousValue = transform.position.y;
+
+                if (previousValue > curPosition.y && bottomBorder < transform.TransformPoint(GetComponent<SpriteRenderer>().sprite.bounds.max).y)
+                {
+                    transform.position = new Vector3(transform.position.x, curPosition.y, transform.position.z);
+                }
+            }
+
+            if (_isTutorial && transform.position.y >= 1.4f) // if lifted high enough => call continue game
+            {
+                _requiredTutorial.ContinueTheGame();
             }
         }
-        else if (direction.ToString() == "Top") // Top dragging
-        {
-            previousValue = transform.position.y;
 
-            if (previousValue < curPosition.y && topBorder > transform.TransformPoint(GetComponent<SpriteRenderer>().sprite.bounds.min).y)
-            {
-                transform.position = new Vector3(transform.position.x, curPosition.y, transform.position.z);
-            }
-        }
-        else if (direction.ToString() == "Right") // Right dragging
-        {
-            previousValue = transform.position.x;
-
-            if (previousValue < curPosition.x && rightBorder > transform.TransformPoint(GetComponent<SpriteRenderer>().sprite.bounds.min).x)
-            {
-                transform.position = new Vector3(curPosition.x, transform.position.y, transform.position.z);
-            }
-        }
-        else if (direction.ToString() == "Bottom") // Bottom dragging
-        {
-            previousValue = transform.position.y;
-
-            if (previousValue > curPosition.y && bottomBorder < transform.TransformPoint(GetComponent<SpriteRenderer>().sprite.bounds.max).y)
-            {
-                transform.position = new Vector3(transform.position.x, curPosition.y, transform.position.z);
-            }
-        }
     }
+
+
 }
