@@ -8024,6 +8024,11 @@ PrefabInstance:
       propertyPath: levelName
       value: Alpha_Level_05
       objectReference: {fileID: 0}
+    - target: {fileID: 2287545607410046572, guid: 7580026096ed9d743839b60d1a8db0cd,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3310928810333996863, guid: 7580026096ed9d743839b60d1a8db0cd,
         type: 3}
       propertyPath: m_Name

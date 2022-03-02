@@ -21219,6 +21219,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 309305252396883600, guid: 7580026096ed9d743839b60d1a8db0cd,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.01830175
+      objectReference: {fileID: 0}
     - target: {fileID: 1264852134270880865, guid: 7580026096ed9d743839b60d1a8db0cd,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
@@ -21227,7 +21232,7 @@ PrefabInstance:
     - target: {fileID: 1264852134283055078, guid: 7580026096ed9d743839b60d1a8db0cd,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 683.2
+      value: 684.44
       objectReference: {fileID: 0}
     - target: {fileID: 1264852135874017208, guid: 7580026096ed9d743839b60d1a8db0cd,
         type: 3}
@@ -21268,6 +21273,11 @@ PrefabInstance:
         type: 3}
       propertyPath: IntendedLevelSpeed
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6602732843846922882, guid: 7580026096ed9d743839b60d1a8db0cd,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.279
       objectReference: {fileID: 0}
     - target: {fileID: 7827462474383321295, guid: 7580026096ed9d743839b60d1a8db0cd,
         type: 3}

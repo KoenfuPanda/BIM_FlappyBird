@@ -35420,12 +35420,12 @@ PrefabInstance:
     - target: {fileID: 4986589275257345151, guid: 7580026096ed9d743839b60d1a8db0cd,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.71
+      value: -0.9
       objectReference: {fileID: 0}
     - target: {fileID: 4986589276938663244, guid: 7580026096ed9d743839b60d1a8db0cd,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 108
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4986589276938663250, guid: 7580026096ed9d743839b60d1a8db0cd,
         type: 3}
@@ -66227,7 +66227,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: -7746882999598092661, guid: 76a8e8d8c448dc041a832b02daeed337,
     type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.34117648}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -66284,11 +66284,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   IsFirstTutorial: 0
   _isDraggableTutorial: 1
+  _isGateTutorial: 0
   ReachedGoal: 0
   _speedDecreaser: 4
   PopupPanel: {fileID: 3131006984894833066}
   _tutorialGoal: {fileID: 0}
   _draggableTutorial: {fileID: 1812780405}
+  _gateTutorial: {fileID: 0}
 --- !u!1 &3131006985471979829
 GameObject:
   m_ObjectHideFlags: 0
