@@ -5063,7 +5063,7 @@ PrefabInstance:
     - target: {fileID: 8934555721446212752, guid: d9d808477880cf34ebba167236d86217,
         type: 3}
       propertyPath: _speedBoost
-      value: 5
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 8934555721446212752, guid: d9d808477880cf34ebba167236d86217,
         type: 3}
@@ -5073,7 +5073,7 @@ PrefabInstance:
     - target: {fileID: 8934555721446212752, guid: d9d808477880cf34ebba167236d86217,
         type: 3}
       propertyPath: _speedsUpGame
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8934555721446212752, guid: d9d808477880cf34ebba167236d86217,
         type: 3}
@@ -8027,7 +8027,7 @@ PrefabInstance:
     - target: {fileID: 2287545607410046572, guid: 7580026096ed9d743839b60d1a8db0cd,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3310928810333996863, guid: 7580026096ed9d743839b60d1a8db0cd,
         type: 3}
@@ -8043,6 +8043,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4986589276938663251, guid: 7580026096ed9d743839b60d1a8db0cd,
+        type: 3}
+      propertyPath: IntendedLevelSpeed
+      value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: 7827462474383321295, guid: 7580026096ed9d743839b60d1a8db0cd,
         type: 3}
@@ -12485,7 +12490,7 @@ PrefabInstance:
     - target: {fileID: 7992583326677856784, guid: 7f026974117d2664f9e96945c166b623,
         type: 3}
       propertyPath: animationSpeed
-      value: 3
+      value: 2.25
       objectReference: {fileID: 0}
     - target: {fileID: 7992583326677856796, guid: 7f026974117d2664f9e96945c166b623,
         type: 3}
@@ -20613,7 +20618,7 @@ PrefabInstance:
     - target: {fileID: 8934555721446212752, guid: d9d808477880cf34ebba167236d86217,
         type: 3}
       propertyPath: _speedBoost
-      value: 5
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 8934555721446212752, guid: d9d808477880cf34ebba167236d86217,
         type: 3}
@@ -20623,7 +20628,7 @@ PrefabInstance:
     - target: {fileID: 8934555721446212752, guid: d9d808477880cf34ebba167236d86217,
         type: 3}
       propertyPath: _speedsUpGame
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8934555721446212752, guid: d9d808477880cf34ebba167236d86217,
         type: 3}
@@ -28364,7 +28369,7 @@ PrefabInstance:
     - target: {fileID: 7992583326677856784, guid: 7f026974117d2664f9e96945c166b623,
         type: 3}
       propertyPath: animationSpeed
-      value: 3
+      value: 2.25
       objectReference: {fileID: 0}
     - target: {fileID: 7992583326677856784, guid: 7f026974117d2664f9e96945c166b623,
         type: 3}
@@ -28389,7 +28394,7 @@ PrefabInstance:
     - target: {fileID: 7992583326677856797, guid: 7f026974117d2664f9e96945c166b623,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.9251595
+      value: -3.93
       objectReference: {fileID: 0}
     - target: {fileID: 7992583326677856797, guid: 7f026974117d2664f9e96945c166b623,
         type: 3}
@@ -39603,7 +39608,7 @@ PrefabInstance:
     - target: {fileID: 2928990698037565334, guid: ae7879aba3457a14983f7aa18306baa0,
         type: 3}
       propertyPath: _timeActive
-      value: 22
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 2928990698037565417, guid: ae7879aba3457a14983f7aa18306baa0,
         type: 3}
@@ -39678,7 +39683,7 @@ PrefabInstance:
     - target: {fileID: 8934555721446212752, guid: d9d808477880cf34ebba167236d86217,
         type: 3}
       propertyPath: _speedBoost
-      value: 5
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 8934555721446212752, guid: d9d808477880cf34ebba167236d86217,
         type: 3}
@@ -39688,7 +39693,7 @@ PrefabInstance:
     - target: {fileID: 8934555721446212752, guid: d9d808477880cf34ebba167236d86217,
         type: 3}
       propertyPath: _speedsUpGame
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8934555721446212752, guid: d9d808477880cf34ebba167236d86217,
         type: 3}
@@ -47262,6 +47267,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: RegainControlTrigger
+      objectReference: {fileID: 0}
+    - target: {fileID: 8174509837011046210, guid: b4497b303a3100245ae0336935e279c4,
+        type: 3}
+      propertyPath: _normalizesSpeed
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8174509837011046237, guid: b4497b303a3100245ae0336935e279c4,
         type: 3}
@@ -68728,7 +68738,7 @@ PrefabInstance:
     - target: {fileID: 8934555721446212752, guid: d9d808477880cf34ebba167236d86217,
         type: 3}
       propertyPath: _speedBoost
-      value: 5
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 8934555721446212752, guid: d9d808477880cf34ebba167236d86217,
         type: 3}
@@ -68738,7 +68748,7 @@ PrefabInstance:
     - target: {fileID: 8934555721446212752, guid: d9d808477880cf34ebba167236d86217,
         type: 3}
       propertyPath: _speedsUpGame
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8934555721446212752, guid: d9d808477880cf34ebba167236d86217,
         type: 3}

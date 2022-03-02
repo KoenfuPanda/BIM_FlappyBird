@@ -1494,7 +1494,7 @@ PrefabInstance:
     - target: {fileID: 8934555721446212752, guid: d9d808477880cf34ebba167236d86217,
         type: 3}
       propertyPath: _speedBoost
-      value: 7
+      value: 8.5
       objectReference: {fileID: 0}
     - target: {fileID: 8934555721446212752, guid: d9d808477880cf34ebba167236d86217,
         type: 3}
@@ -1588,7 +1588,7 @@ PrefabInstance:
     - target: {fileID: 8934555721446212752, guid: d9d808477880cf34ebba167236d86217,
         type: 3}
       propertyPath: _speedBoost
-      value: 2.5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8934555721446212752, guid: d9d808477880cf34ebba167236d86217,
         type: 3}
@@ -3353,7 +3353,7 @@ PrefabInstance:
     - target: {fileID: 8934555721446212752, guid: d9d808477880cf34ebba167236d86217,
         type: 3}
       propertyPath: _speedBoost
-      value: 2.5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8934555721446212752, guid: d9d808477880cf34ebba167236d86217,
         type: 3}
@@ -4932,6 +4932,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8934555721446212752, guid: d9d808477880cf34ebba167236d86217,
+        type: 3}
+      propertyPath: _speedBoost
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8934555721446212752, guid: d9d808477880cf34ebba167236d86217,
+        type: 3}
+      propertyPath: _speedsUpGame
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8934555721446212752, guid: d9d808477880cf34ebba167236d86217,
         type: 3}
       propertyPath: _bounceStrength
@@ -11900,8 +11910,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3882241377669134926, guid: 3bbd3c513c1b0de4e829faa26e4b5718,
         type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.5375
+      objectReference: {fileID: 0}
+    - target: {fileID: 3882241377669134926, guid: 3bbd3c513c1b0de4e829faa26e4b5718,
+        type: 3}
       propertyPath: m_LocalPosition.x
-      value: 80.32
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 3882241377669134926, guid: 3bbd3c513c1b0de4e829faa26e4b5718,
         type: 3}
@@ -14332,7 +14347,7 @@ PrefabInstance:
     - target: {fileID: 8934555721446212752, guid: d9d808477880cf34ebba167236d86217,
         type: 3}
       propertyPath: _speedBoost
-      value: 7
+      value: 8.5
       objectReference: {fileID: 0}
     - target: {fileID: 8934555721446212752, guid: d9d808477880cf34ebba167236d86217,
         type: 3}
@@ -14352,12 +14367,12 @@ PrefabInstance:
     - target: {fileID: 8934555721446212754, guid: d9d808477880cf34ebba167236d86217,
         type: 3}
       propertyPath: m_Size.x
-      value: 3.3876066
+      value: 3.0443769
       objectReference: {fileID: 0}
     - target: {fileID: 8934555721446212754, guid: d9d808477880cf34ebba167236d86217,
         type: 3}
       propertyPath: m_Offset.x
-      value: 0.65630955
+      value: 0.8279245
       objectReference: {fileID: 0}
     - target: {fileID: 8934555721446212755, guid: d9d808477880cf34ebba167236d86217,
         type: 3}
@@ -14436,7 +14451,7 @@ PrefabInstance:
     - target: {fileID: 8934555721446212752, guid: d9d808477880cf34ebba167236d86217,
         type: 3}
       propertyPath: _speedBoost
-      value: 4
+      value: 5.5
       objectReference: {fileID: 0}
     - target: {fileID: 8934555721446212752, guid: d9d808477880cf34ebba167236d86217,
         type: 3}
@@ -17296,6 +17311,16 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8934555721446212752, guid: d9d808477880cf34ebba167236d86217,
         type: 3}
+      propertyPath: _speedBoost
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8934555721446212752, guid: d9d808477880cf34ebba167236d86217,
+        type: 3}
+      propertyPath: _speedsUpGame
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8934555721446212752, guid: d9d808477880cf34ebba167236d86217,
+        type: 3}
       propertyPath: _bounceStrength
       value: 18
       objectReference: {fileID: 0}
@@ -19067,7 +19092,7 @@ PrefabInstance:
     - target: {fileID: 2928990698037565334, guid: ae7879aba3457a14983f7aa18306baa0,
         type: 3}
       propertyPath: _timeActive
-      value: 15
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 2928990698037565417, guid: ae7879aba3457a14983f7aa18306baa0,
         type: 3}
@@ -24405,8 +24430,28 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8934555721446212752, guid: d9d808477880cf34ebba167236d86217,
         type: 3}
+      propertyPath: _speedBoost
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8934555721446212752, guid: d9d808477880cf34ebba167236d86217,
+        type: 3}
+      propertyPath: _speedsUpGame
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8934555721446212752, guid: d9d808477880cf34ebba167236d86217,
+        type: 3}
       propertyPath: _bounceStrength
       value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 8934555721446212754, guid: d9d808477880cf34ebba167236d86217,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 3.9145343
+      objectReference: {fileID: 0}
+    - target: {fileID: 8934555721446212754, guid: d9d808477880cf34ebba167236d86217,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: 0.39284575
       objectReference: {fileID: 0}
     - target: {fileID: 8934555721446212755, guid: d9d808477880cf34ebba167236d86217,
         type: 3}
@@ -25294,6 +25339,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8393465350759913077}
     m_Modifications:
+    - target: {fileID: 8934555721446212752, guid: d9d808477880cf34ebba167236d86217,
+        type: 3}
+      propertyPath: _speedBoost
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8934555721446212752, guid: d9d808477880cf34ebba167236d86217,
+        type: 3}
+      propertyPath: _speedsUpGame
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8934555721446212752, guid: d9d808477880cf34ebba167236d86217,
         type: 3}
       propertyPath: _bounceStrength
@@ -29683,6 +29738,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: RegainControlTrigger (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 8174509837011046210, guid: b4497b303a3100245ae0336935e279c4,
+        type: 3}
+      propertyPath: _normalizesSpeed
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8174509837011046237, guid: b4497b303a3100245ae0336935e279c4,
         type: 3}
       propertyPath: m_RootOrder
@@ -29924,6 +29984,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4986589276938663251, guid: 7580026096ed9d743839b60d1a8db0cd,
+        type: 3}
+      propertyPath: IntendedLevelSpeed
+      value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: 4986589276938663251, guid: 7580026096ed9d743839b60d1a8db0cd,
         type: 3}
