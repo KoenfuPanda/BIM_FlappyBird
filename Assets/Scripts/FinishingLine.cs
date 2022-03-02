@@ -11,5 +11,6 @@ public class FinishingLine : MonoBehaviour
     {
         EndScreen.SetActive(true);
         FX.SetActive(true);
+        GetComponent<AudioSource>().Play();
     }
 }
