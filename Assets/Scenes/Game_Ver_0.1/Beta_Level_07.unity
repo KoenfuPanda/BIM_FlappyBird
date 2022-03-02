@@ -28375,6 +28375,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3660229332666624357, guid: ca9ee75487b79a5499893863b6f70411,
+        type: 3}
+      propertyPath: _levelNumber
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 3660229332666624358, guid: ca9ee75487b79a5499893863b6f70411,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -28403,7 +28408,7 @@ PrefabInstance:
     - target: {fileID: 3660229332695345889, guid: ca9ee75487b79a5499893863b6f70411,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: Alpha_MainMenu
+      value: Beta_MainMenu
       objectReference: {fileID: 0}
     - target: {fileID: 5757479225557274191, guid: ca9ee75487b79a5499893863b6f70411,
         type: 3}
