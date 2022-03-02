@@ -16,6 +16,8 @@ public class BimControllerFloating : MonoBehaviour
     public static bool controlCharacter = true;
     private float _lostControlTimer;
 
+    private float _timer;
+
 
     private void Awake()
     {
@@ -47,30 +49,60 @@ public class BimControllerFloating : MonoBehaviour
             _holdingDown = false;
         }
 
+        if (Input.GetMouseButtonUp(0))
+        {
+            _timer = 0;
+        }
+
         //BimRotationLogic();
 
-        //if (Input.GetMouseButtonUp(0) && )
-        //{
+        // pseudo code for improving mechanics...
 
-        //}
+        // if holding down ...&&... if the current rigidbody.vel.y is negative...
+        //    timer += Time.
+        //    if timer <= 0.75...
+        //       velocity += time * 1.5f
+        // else if holding down ...&&...  rigidbody.vel.y  is pos..
+        //      velocity += Time.d              
     }
 
 
     private void FixedUpdate()
     {
-        if (_holdingDown)
+        if (_holdingDown && _rigidBodyBim.velocity.y <= 0)
+        {
+            _timer += Time.deltaTime;
+            if (_timer < 0.75f)
+            {
+                IncreaseHeightStronger();
+            }
+            else
+            {
+                IncreaseHeight();
+            }
+            
+        }
+        else if (_holdingDown && _rigidBodyBim.velocity.y > 0)
         {
             IncreaseHeight();
         }
     }
+
+
 
     private void IncreaseHeight()
     {
         if (_rigidBodyBim.velocity.y <= 10) // limiting speed upwards
         {
             _rigidBodyBim.velocity += Vector2.up * Time.deltaTime * _speed;
+        }      
+    }
+    private void IncreaseHeightStronger()
+    {
+        if (_rigidBodyBim.velocity.y <= 10) // limiting speed upwards
+        {
+            _rigidBodyBim.velocity += Vector2.up * Time.deltaTime * 3f * _speed;
         }
-        
     }
 
 
