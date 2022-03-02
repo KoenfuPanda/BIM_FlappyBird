@@ -11,14 +11,16 @@ public class LineAssistant : MonoBehaviour
 
     private Color _colorStart;
     private Color _colorEnd;
-    private float _transparencyValue;
+
+    [HideInInspector]
+    public float TransparencyValue;
 
 
     private void Start()
     {
         _lineRenderer = GetComponent<LineRenderer>();
 
-        _transparencyValue = 0;
+        TransparencyValue = 0;
     }
 
     void Update()
@@ -26,36 +28,37 @@ public class LineAssistant : MonoBehaviour
         // when holding down, draw line between bim and finger (ramp up the transparency up to goal)
         if (_followFinger.HoldingDown == true)
         {
-            _transparencyValue += Time.deltaTime * 0.7f;
-            if (_transparencyValue >= 1)
-            {
-                _transparencyValue = 1;
-            }
+            //_transparencyValue += Time.deltaTime * 0.7f;
+            //if (_transparencyValue >= 1)
+            //{
+                TransparencyValue = 1;
+            //}
         }
         else
         {            
-            _transparencyValue -= Time.deltaTime * 1.2f;
-            if (_transparencyValue <= 0)
+            TransparencyValue -= Time.deltaTime * 1.2f;
+            if (TransparencyValue <= 0)
             {
-                _transparencyValue = 0;
+                TransparencyValue = 0;
             }
         }
-        // (when tapped, draw line with goal transparency and then slowly lose transparency)
 
+        // (when tapped, draw line with goal transparency and then slowly lose transparency)
+        // (done in FollowFinger code)
 
         // if target position.x is smaller/equal to Bim.x  OR  control character is disabled  =>  set transparency to 0  (check for mirrored bim!)
         if (_followFinger.transform.localScale.x > 0 && _followFinger.TargetPosition.x <= _followFinger.transform.position.x || FollowFinger.controlCharacter == false)
         {
-            _transparencyValue = 0;
+            TransparencyValue = 0;
         }
         else if (_followFinger.transform.localScale.x < 0 && _followFinger.TargetPosition.x >= _followFinger.transform.position.x)
         {
-            _transparencyValue = 0;
+            TransparencyValue = 0;
         }
 
 
-        _colorStart = new Color(1, 0, 0, _transparencyValue);
-        _colorEnd = new Color(0, 0, 1, _transparencyValue);
+        _colorStart = new Color(1, 0, 0, TransparencyValue);
+        _colorEnd = new Color(0, 0, 1, TransparencyValue);
         _lineRenderer.startColor = _colorStart;
         _lineRenderer.endColor = _colorEnd;
 

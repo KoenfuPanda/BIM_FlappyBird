@@ -57,6 +57,9 @@ public class FollowFinger : MonoBehaviour
     private bool _tookDamage, _recoveringToNormal;
     private float _damagedTimer;
 
+    private LineAssistant _lineAssitsant;
+    private Transform _parentObject;
+
 
     void Start()
     {
@@ -65,6 +68,9 @@ public class FollowFinger : MonoBehaviour
         _animator = bim.GetComponent<Animator>();
         rigidBody = GetComponent<Rigidbody2D>();
         controlCharacter = true;
+
+        _parentObject = GetComponentInParent<MoveDirection>().transform;
+        _lineAssitsant = _parentObject.GetComponentInChildren<LineAssistant>();
     }
 
     void FixedUpdate()
@@ -79,38 +85,38 @@ public class FollowFinger : MonoBehaviour
         }
 
 
-        if (mouseWorldPosition.y < transform.position.y - 0.1f)
-        {
-            velocity = (Mathf.Pow(2, velocityMultiplier)) * -1;
-            if (velocity > -7)
-            {
-                velocityMultiplier += 0.2f;
-            }
-            //velocity = -8;
-        }
-        else if (mouseWorldPosition.y > transform.position.y + 0.1f)
-        {
-            velocity = Mathf.Pow(2, velocityMultiplier);
-            if (velocity < 7)
-            {
-                velocityMultiplier += 0.2f;
-            }
-            //velocity = 8;
-        }
-        else
-        {
-            velocityMultiplier = 0;
-            velocity = 0;
-        }
-
-              // update the velocity calculater to be more efficient //
-        //if (_movementDirection.y < 0)
+        //if (mouseWorldPosition.y < transform.position.y - 0.1f)
         //{
-        //    velocity = -8;
+        //    velocity = (Mathf.Pow(2, velocityMultiplier)) * -1;  // creates negative velocity
+        //    if (velocity > -7)
+        //    {
+        //        velocityMultiplier += 0.2f;
+        //    }
+        //    //velocity = -8;
         //}
-        //else if (_movementDirection.y > 0)
+        //else if (mouseWorldPosition.y > transform.position.y + 0.1f)
         //{
-        //    velocity = 8;
+        //    velocity = Mathf.Pow(2, velocityMultiplier);
+        //    if (velocity < 7)
+        //    {
+        //        velocityMultiplier += 0.2f;
+        //    }
+        //    //velocity = 8;
+        //}
+        //else
+        //{
+        //    velocityMultiplier = 0;
+        //    velocity = 0;
+        //}
+
+        // update the velocity calculater to be more efficient //
+        //if (TargetPosition.y < transform.position.y - 0.25f)
+        //{
+        //    velocity = -6;
+        //}
+        //else if (TargetPosition.y > transform.position.y + 0.25f)
+        //{
+        //    velocity = 6;
         //}
         //else
         //{
@@ -135,6 +141,33 @@ public class FollowFinger : MonoBehaviour
 
     void Update()
     {
+        if (mouseWorldPosition.y < transform.position.y - 0.1f)
+        {
+            velocity = (Mathf.Pow(2, velocityMultiplier)) * -1;  // creates negative velocity
+            if (velocity > -7)
+            {
+                velocityMultiplier += 0.2f;
+            }
+            //velocity = -8;
+        }
+        else if (mouseWorldPosition.y > transform.position.y + 0.1f)
+        {
+            velocity = Mathf.Pow(2, velocityMultiplier);
+            if (velocity < 7)
+            {
+                velocityMultiplier += 0.2f;
+            }
+            //velocity = 8;
+        }
+        else
+        {
+            velocityMultiplier = 0;
+            velocity = 0;
+        }
+
+
+
+
         if (controlCharacter == false)
         {
             _lostControlTimer -= Time.deltaTime;
@@ -168,6 +201,9 @@ public class FollowFinger : MonoBehaviour
             {
                 mouseWorldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                 TargetPosition = mouseWorldPosition;
+
+                // set line transparency to 1
+                _lineAssitsant.TransparencyValue = 1;
 
                 // Get the target position  
                 Vector2 dir = new Vector2(rigidBody.position.x, mouseWorldPosition.y) - rigidBody.position;
