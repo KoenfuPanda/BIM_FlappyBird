@@ -44,6 +44,8 @@ public class HitObstacle : MonoBehaviour
         IsImmune = false;
     }
 
+    // check for tags with projectile, and rotating obstacle (rotating needs to phase through, so make that a trigger, same for the cannon)
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag != "Block")
@@ -82,33 +84,39 @@ public class HitObstacle : MonoBehaviour
                 }
                 else // if not Mega
                 {
-                    if (IsImmune == false)
+                    if (IsImmune == false)  // only take damage when not immune and when the collision is forward
                     {
-                        // become immune
-                        StartCoroutine(GainImmunity(_immunityTime));
-                        // instantiate object with sound effect and particle
-                        _followFinger.HitWallFeedback(collision.contacts[0].point);
-                        // lose health
-                        _gameManager.HealthBiM -= 1;
-                        // update sprites
-                        _gameManager.UpdateHUDHealth();
-                        // if health == 0  -> checkpoint
-                        if (_gameManager.HealthBiM <= 0)
+                        if (transform.localScale.x > 0 && collision.contacts[0].normal.normalized.x <= -0.78f ||
+                            transform.localScale.x < 0 && collision.contacts[0].normal.normalized.x >= 0.78f)
                         {
-                            _followFinger.enabled = false;
+                            CheckReboundDirectionFollowFinger(collision);
+                            // become immune
+                            StartCoroutine(GainImmunity(_immunityTime));
+                            // instantiate object with sound effect and particle
+                            _followFinger.HitWallFeedback(collision.contacts[0].point);
+                            // lose health
+                            _gameManager.HealthBiM -= 1;
+                            // update sprites
+                            _gameManager.UpdateHUDHealth();
+                            // if health == 0  -> checkpoint
+                            if (_gameManager.HealthBiM <= 0)
+                            {
+                                _followFinger.enabled = false;
 
-                            _collider.enabled = false;
-                            _rigidbody.gravityScale = 1;
-                            _rigidbody.constraints = RigidbodyConstraints2D.None;
+                                _collider.enabled = false;
+                                _rigidbody.gravityScale = 1;
+                                _rigidbody.constraints = RigidbodyConstraints2D.None;
 
-                            _gameManager.StartCoroutine(_gameManager.RespawnLatestPoint());
+                                _gameManager.StartCoroutine(_gameManager.RespawnLatestPoint());
+                            }
                         }
+
                     }
 
 
                     // logic for bouncing of when colliding with terrain
                     //  check for the normal of the collision ... (right,left,down,up) //
-                    CheckReboundDirectionFollowFinger(collision);
+                    //CheckReboundDirectionFollowFinger(collision);
                 }
             }
             else // else if using floaty ...
@@ -118,10 +126,45 @@ public class HitObstacle : MonoBehaviour
         }
     }
 
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.layer == 11 || collision.gameObject.layer == 10)  // if I hit a rotating obstacle or projectile (using layer index)
+        {
+            if (IsImmune == false)  // only take damage when not immune and when the collision is forward
+            {
+                // become immune
+                StartCoroutine(GainImmunity(_immunityTime));
+                // instantiate object with sound effect and particle
+                _followFinger.HitWallFeedback(transform.position);
+                // lose health
+                _gameManager.HealthBiM -= 1;
+                // update sprites
+                _gameManager.UpdateHUDHealth();
+                // if health == 0  -> checkpoint
+                if (_gameManager.HealthBiM <= 0)
+                {
+                    _followFinger.enabled = false;
+
+                    _collider.enabled = false;
+                    _rigidbody.gravityScale = 1;
+                    _rigidbody.constraints = RigidbodyConstraints2D.None;
+
+                    _gameManager.StartCoroutine(_gameManager.RespawnLatestPoint());
+                }               
+            }
+        }
+    }
+
+
+
+
+
+
     private void CheckReboundDirectionFollowFinger(Collision2D collision)
     {
-        //Debug.Log(collision.contacts[0].normal.normalized.x + " is the normal X normalized");
-        //Debug.Log(collision.contacts[0].normal.normalized.y + " is the normal Y normalized");
+        Debug.Log(collision.contacts[0].normal.normalized.x + " is the normal X normalized");
+        Debug.Log(collision.contacts[0].normal.normalized.y + " is the normal Y normalized");
 
         if (collision.contacts[0].normal.normalized.x <= -0.3f)  // bounce backwards with moveDirection script
         {
@@ -130,6 +173,7 @@ public class HitObstacle : MonoBehaviour
 
             // 1) activate a bool on the player (this bool will slowly increase the speed up until the original level speed)
             // check for bims local scale to figure out bounce direction
+            _bimLocalScale = _rigidbody.transform.localScale;
             if (_bimLocalScale.x > 0)
             {
                 _moveDirection.BouncedBack = true;
@@ -146,6 +190,7 @@ public class HitObstacle : MonoBehaviour
         {
             _followFinger.TurnOffControl(_immunityTime / 4f, true, false);
 
+            _bimLocalScale = _rigidbody.transform.localScale;
             if (_bimLocalScale.x > 0)
             {
                 _moveDirection.BouncedBack = true;

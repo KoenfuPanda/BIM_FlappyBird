@@ -93,4 +93,11 @@ public class SpawnCannonBall : MonoBehaviour
     //{
     //    _chosenProjectile.GetComponent<Rigidbody2D>().velocity = Vector3.forward * Time.deltaTime * _speed; // adds the velocity to the spawned object
     //}
+
+
+
+    private void OnEnable()
+    {
+        _timer = _loopTime;
+    }
 }

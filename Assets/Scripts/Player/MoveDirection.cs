@@ -16,7 +16,7 @@ public class MoveDirection : MonoBehaviour
     private Vector3 _calculatedDirection;
 
     public float ReboundSpeed;
-    [HideInInspector]
+    //[HideInInspector]
     public bool BouncedBack, BouncedForward; // for horizontally made collisions
     [HideInInspector]
     public bool BouncedVertically; // for vertically made collisions (crashing into floor/ceiling)
@@ -68,7 +68,7 @@ public class MoveDirection : MonoBehaviour
 
         HitWall();
         // Logic that makes it so that the game slows down when a vertical rebound/hit is made against terrain //
-        HitCeilingOrFloor();
+        //HitCeilingOrFloor();
 
         // Move root to the right
         if (GoDiagonalDown)

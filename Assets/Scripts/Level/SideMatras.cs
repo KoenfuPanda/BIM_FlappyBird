@@ -27,7 +27,7 @@ public class SideMatras : MonoBehaviour
 
     private void Start()
     {
-        if (direction.ToString() == "Right")
+        if (direction == Direction.Right)
         {
             _bouncesLeft = false;
         }

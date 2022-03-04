@@ -22,6 +22,10 @@ public class GameManager : MonoBehaviour
 
     public List<GameObject> CollectedPowerups = new List<GameObject>();
 
+    private List<SetAnimationSpeed> _rotatingPillars = new List<SetAnimationSpeed>();
+    private List<SpawnCannonBall> _cannonShooters = new List<SpawnCannonBall>();
+    private List<CanonBall_Projectile> _balls = new List<CanonBall_Projectile>();
+
     public List<CheckPoint> CheckPoints = new List<CheckPoint>();
     private CheckPoint _currentCheckpoint;
 
@@ -67,6 +71,9 @@ public class GameManager : MonoBehaviour
         _currentPlayer = FindObjectOfType<MoveDirection>().gameObject;
         _originalPlayerOffset = _currentPlayer.transform.position;
         _instantiateExtraOffset = new Vector3(5, _originalPlayerOffset.y, -40);
+
+        _rotatingPillars = FindObjectsOfType<SetAnimationSpeed>().ToList();
+        _cannonShooters = FindObjectsOfType<SpawnCannonBall>().ToList();
 
         //SaveFeathersCollectedSoFar();
     }
@@ -198,6 +205,25 @@ public class GameManager : MonoBehaviour
                 upgrade.transform.GetChild(0).gameObject.SetActive(true); 
             }
         }
+
+        // disable the cannons and rotating pillars
+        foreach (var obj in _rotatingPillars)
+        {
+            obj.gameObject.SetActive(false);
+        }
+        foreach (var obj in _cannonShooters)
+        {
+            obj.enabled = false;
+        }
+
+        // remove excess cannonballs in game
+        _balls = FindObjectsOfType<CanonBall_Projectile>().ToList();
+        foreach (var ball in _balls)
+        {
+            Destroy(ball);
+        }
+
+
 
         // respawn player //
         foreach (CheckPoint checkPoint in CheckPoints) 

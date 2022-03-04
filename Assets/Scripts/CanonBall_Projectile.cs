@@ -4,7 +4,29 @@ using UnityEngine;
 
 public class CanonBall_Projectile : MonoBehaviour
 {
-    private void OnCollisionEnter2D(Collision2D collision)
+    //[SerializeField]
+    //private Collider2D _triggerCollider, _collisionCollider;
+
+    //private void OnCollisionEnter2D(Collision2D collision)
+    //{
+    //    if (collision.gameObject.TryGetComponent(out FollowFinger followfinger))  // if it is the player...
+    //    {
+    //        if (followfinger.MegaBimActive == true)   // if bim is gigantic..
+    //        {
+    //            // nothing
+    //        }
+    //        else
+    //            Destroy(this.gameObject); // use fancier logic here for sound, particle, etc
+    //    }
+    //    else
+    //    {
+    //        Destroy(this.gameObject); 
+    //    }
+       
+    //}
+
+
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.TryGetComponent(out FollowFinger followfinger))  // if it is the player...
         {
@@ -15,10 +37,9 @@ public class CanonBall_Projectile : MonoBehaviour
             else
                 Destroy(this.gameObject); // use fancier logic here for sound, particle, etc
         }
-        else
+        else if (collision.gameObject.GetComponent<Feathers>() == null) // if it's not a feather
         {
-            Destroy(this.gameObject); 
+            Destroy(this.gameObject);
         }
-       
     }
 }
