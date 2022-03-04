@@ -110,28 +110,52 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Prototype_Levels/Proto_15_A_Slow.unity
     guid: 3690a6c0b057c6c44b98758886362dca
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Game_Ver_0.1/Alpha_MainMenu.unity
     guid: 5ad2a20e01076074d80a11e22308d2d2
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Game_Ver_0.1/Alpha_Level_01.unity
     guid: 086dc59870f189f428d2933ad87685ab
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Game_Ver_0.1/Alpha_Level_02.unity
     guid: 6bc8e467ea9e5154e904714aaf385150
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Game_Ver_0.1/Alpha_Level_03.unity
     guid: b34210603ccc93d4082a67ba8f832799
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Game_Ver_0.1/Alpha_Level_04.unity
     guid: d260f91c6a77b1d4bb76729f9ec4c4ea
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Game_Ver_0.1/Alpha_Level_05.unity
     guid: 4dd58340da12d82458e74c43caf6737f
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Game_Ver_0.1/Alpha_Level_06.unity
     guid: 1254f57403c13814fac1bd290d71f72e
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Game_Ver_0.1/Alpha_Level_07.unity
     guid: f1e80b5a8ea05f94099afe88fb4de06e
+  - enabled: 1
+    path: Assets/Scenes/Game_Ver_0.1/Beta_MainMenu.unity
+    guid: 7710108752f42ba4e9872dcb12ea26ef
+  - enabled: 1
+    path: Assets/Scenes/Game_Ver_0.1/Beta_Level_01.unity
+    guid: 6f511140710a1c4459c7858b97d820fb
+  - enabled: 1
+    path: Assets/Scenes/Game_Ver_0.1/Beta_Level_02.unity
+    guid: 3a01c70ddf1136a409c42476768a3fa9
+  - enabled: 1
+    path: Assets/Scenes/Game_Ver_0.1/Beta_Level_03.unity
+    guid: 84f8b1fa3672343439beb6f87f1b68c1
+  - enabled: 1
+    path: Assets/Scenes/Game_Ver_0.1/Beta_Level_04.unity
+    guid: c3d3da45d3dcae349b11e7eab89533fd
+  - enabled: 1
+    path: Assets/Scenes/Game_Ver_0.1/Beta_Level_05.unity
+    guid: aa8f3e474dc2c9240b969c80222890c0
+  - enabled: 1
+    path: Assets/Scenes/Game_Ver_0.1/Beta_Level_06.unity
+    guid: 678129d9a128d894e94894dca49a1f4a
+  - enabled: 1
+    path: Assets/Scenes/Game_Ver_0.1/Beta_Level_07.unity
+    guid: 74a6d7a93a1b41140b582e90d11e0a90
   m_configObjects: {}
