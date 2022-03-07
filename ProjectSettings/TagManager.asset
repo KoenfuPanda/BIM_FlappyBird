@@ -11,6 +11,7 @@ TagManager:
   - Destructable
   - Floor
   - Ceiling
+  - FxTemporaire
   layers:
   - Default
   - TransparentFX
@@ -53,4 +54,7 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 830444581
+    locked: 0
+  - name: Foreground
+    uniqueID: 412932639
     locked: 0

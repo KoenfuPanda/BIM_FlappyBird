@@ -1,0 +1,1844 @@
+fileFormatVersion: 2
+guid: 413efa15da82d4f4fb2e03cdd683bb72
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6119779895684279153
+    second: Raster_0
+  - first:
+      213: -8421291229655805366
+    second: Raster_1
+  - first:
+      213: 4143683679902503795
+    second: Raster_2
+  - first:
+      213: 7435490654825314799
+    second: Raster_3
+  - first:
+      213: -3682193008632472218
+    second: Raster_4
+  - first:
+      213: 4694830336345833738
+    second: Raster_5
+  - first:
+      213: -4022497597341198951
+    second: Raster_6
+  - first:
+      213: 131847970990638756
+    second: Raster_7
+  - first:
+      213: 1365310579675431738
+    second: Raster_8
+  - first:
+      213: 695768609896042925
+    second: Raster_9
+  - first:
+      213: -226759643348963431
+    second: Raster_10
+  - first:
+      213: -1598033142364532606
+    second: Raster_11
+  - first:
+      213: -7132225322735392294
+    second: Raster_12
+  - first:
+      213: 2061876758339267522
+    second: Raster_13
+  - first:
+      213: 3816041335850284247
+    second: Raster_14
+  - first:
+      213: -6526620042117965485
+    second: Raster_15
+  - first:
+      213: -5109584416737111827
+    second: Raster_16
+  - first:
+      213: -5794449272444396979
+    second: Raster_17
+  - first:
+      213: 5240478646765544815
+    second: Raster_18
+  - first:
+      213: -517608062594990126
+    second: Raster_19
+  - first:
+      213: -3629772901344035558
+    second: Raster_20
+  - first:
+      213: -721343818073218569
+    second: Raster_21
+  - first:
+      213: 6767554062437762799
+    second: Raster_22
+  - first:
+      213: 68465056696599612
+    second: Raster_23
+  - first:
+      213: 2550252511802291681
+    second: Raster_24
+  - first:
+      213: 3374435312405001928
+    second: Raster_25
+  - first:
+      213: -2446863666733148404
+    second: Raster_26
+  - first:
+      213: 8479514537795535581
+    second: Raster_27
+  - first:
+      213: -7244703859328092390
+    second: Raster_28
+  - first:
+      213: -7043880466218286908
+    second: Raster_29
+  - first:
+      213: 7297349731949772305
+    second: Raster_30
+  - first:
+      213: 5311047877087487808
+    second: Raster_31
+  - first:
+      213: 1975686236330283627
+    second: Raster_32
+  - first:
+      213: 35808221873412828
+    second: Raster_33
+  - first:
+      213: 7473324672098482932
+    second: Raster_34
+  - first:
+      213: 7733450586455507214
+    second: Raster_35
+  - first:
+      213: 1988962868209248725
+    second: Raster_36
+  - first:
+      213: -3896156005515485831
+    second: Raster_37
+  - first:
+      213: -819179451189202546
+    second: Raster_38
+  - first:
+      213: -7478871592977466077
+    second: Raster_39
+  - first:
+      213: 6992085471599619225
+    second: Raster_40
+  - first:
+      213: -8955579855094235360
+    second: Raster_41
+  - first:
+      213: -269044440063258883
+    second: Raster_42
+  - first:
+      213: -2986977037916023159
+    second: Raster_43
+  - first:
+      213: 3996835171502006043
+    second: Raster_44
+  - first:
+      213: -7140672032077049849
+    second: Raster_45
+  - first:
+      213: 2548814117185156044
+    second: Raster_46
+  - first:
+      213: 5959573908153966181
+    second: Raster_47
+  - first:
+      213: -6736087423998669929
+    second: Raster_48
+  - first:
+      213: -8829651101483635775
+    second: Raster_49
+  - first:
+      213: -5622395475549954442
+    second: Raster_50
+  - first:
+      213: -1927806003655616324
+    second: Raster_51
+  - first:
+      213: -4780996723205717658
+    second: Raster_52
+  - first:
+      213: -4118161713337131237
+    second: Raster_53
+  - first:
+      213: -6278360667769633977
+    second: Raster_54
+  - first:
+      213: -6521219367712892881
+    second: Raster_55
+  - first:
+      213: -4046669245886218908
+    second: Raster_56
+  - first:
+      213: -6609914474130538716
+    second: Raster_57
+  - first:
+      213: -5503333055741305915
+    second: Raster_58
+  - first:
+      213: 6466220826075865523
+    second: Raster_59
+  - first:
+      213: 18768658673800243
+    second: Raster_60
+  - first:
+      213: 2807048911627352662
+    second: Raster_61
+  - first:
+      213: -8237855681871064565
+    second: Raster_62
+  - first:
+      213: 623947131312444135
+    second: Raster_63
+  - first:
+      213: -1031503392658492517
+    second: Raster_64
+  - first:
+      213: 9032334742534225498
+    second: Raster_65
+  - first:
+      213: -8955413052655507726
+    second: Raster_66
+  - first:
+      213: 4292057757841844320
+    second: Raster_67
+  - first:
+      213: 2248871818494981517
+    second: Raster_68
+  - first:
+      213: 1104238831636444336
+    second: Raster_69
+  - first:
+      213: -8019853260829048338
+    second: Raster_70
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 1
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 1
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 1
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 1
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 1
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Raster_0
+      rect:
+        serializedVersion: 2
+        x: 851
+        y: 4027
+        width: 34
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f84592edb9c221ba0800000000000000
+      internalID: -6119779895684279153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Raster_1
+      rect:
+        serializedVersion: 2
+        x: 907
+        y: 4028
+        width: 29
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a42d04a9e30912b80800000000000000
+      internalID: -8421291229655805366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Raster_2
+      rect:
+        serializedVersion: 2
+        x: 973
+        y: 4032
+        width: 7
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3731c2a4a52518930800000000000000
+      internalID: 4143683679902503795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Raster_3
+      rect:
+        serializedVersion: 2
+        x: 1176
+        y: 2984
+        width: 1400
+        height: 1077
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe9799b0b5b203760800000000000000
+      internalID: 7435490654825314799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Raster_4
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 2984
+        width: 955
+        height: 1045
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66dd80eb7f836ecc0800000000000000
+      internalID: -3682193008632472218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Raster_5
+      rect:
+        serializedVersion: 2
+        x: 912
+        y: 4024
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a010f9e0153672140800000000000000
+      internalID: 4694830336345833738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Raster_6
+      rect:
+        serializedVersion: 2
+        x: 999
+        y: 3189
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9959d905fb73d28c0800000000000000
+      internalID: -4022497597341198951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Raster_7
+      rect:
+        serializedVersion: 2
+        x: 2680
+        y: 3056
+        width: 1328
+        height: 946
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a6c043f70b64d100800000000000000
+      internalID: 131847970990638756
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Raster_8
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 2704
+        width: 740
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3303ad0dbe82f210800000000000000
+      internalID: 1365310579675431738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Raster_9
+      rect:
+        serializedVersion: 2
+        x: 883
+        y: 2718
+        width: 154
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da198b64dddd7a900800000000000000
+      internalID: 695768609896042925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Raster_10
+      rect:
+        serializedVersion: 2
+        x: 1189
+        y: 2686
+        width: 347
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99f6ac84e436adcf0800000000000000
+      internalID: -226759643348963431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Raster_11
+      rect:
+        serializedVersion: 2
+        x: 1728
+        y: 2680
+        width: 312
+        height: 136
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2809f02e255a2d9e0800000000000000
+      internalID: -1598033142364532606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Raster_12
+      rect:
+        serializedVersion: 2
+        x: 2188
+        y: 2688
+        width: 318
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad9af4c6bde350d90800000000000000
+      internalID: -7132225322735392294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Raster_13
+      rect:
+        serializedVersion: 2
+        x: 2684
+        y: 2712
+        width: 188
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2cb2277ccf14d9c10800000000000000
+      internalID: 2061876758339267522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Raster_14
+      rect:
+        serializedVersion: 2
+        x: 2936
+        y: 2704
+        width: 208
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d4309f606d45f430800000000000000
+      internalID: 3816041335850284247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Raster_15
+      rect:
+        serializedVersion: 2
+        x: 3232
+        y: 2668
+        width: 330
+        height: 196
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3591d95b6a9cc65a0800000000000000
+      internalID: -6526620042117965485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Raster_16
+      rect:
+        serializedVersion: 2
+        x: 3608
+        y: 2707
+        width: 122
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de053827b0c1719b0800000000000000
+      internalID: -5109584416737111827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Raster_17
+      rect:
+        serializedVersion: 2
+        x: 3779
+        y: 2712
+        width: 240
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4a5ee6461bf59fa0800000000000000
+      internalID: -5794449272444396979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Raster_18
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 2440
+        width: 440
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f65ea71609be9b840800000000000000
+      internalID: 5240478646765544815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Raster_19
+      rect:
+        serializedVersion: 2
+        x: 508
+        y: 2545
+        width: 4
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2dfb520a53611d8f0800000000000000
+      internalID: -517608062594990126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Raster_20
+      rect:
+        serializedVersion: 2
+        x: 523
+        y: 2547
+        width: 4
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1dbc0017c470adc0800000000000000
+      internalID: -3629772901344035558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Raster_21
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 2544
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f162da8e954df5f0800000000000000
+      internalID: -721343818073218569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Raster_22
+      rect:
+        serializedVersion: 2
+        x: 608
+        y: 2432
+        width: 456
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe6cad1509e2bed50800000000000000
+      internalID: 6767554062437762799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Raster_23
+      rect:
+        serializedVersion: 2
+        x: 1168
+        y: 2424
+        width: 480
+        height: 170
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c348de73b9c33f000800000000000000
+      internalID: 68465056696599612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Raster_24
+      rect:
+        serializedVersion: 2
+        x: 1736
+        y: 2408
+        width: 520
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e5f58dc521546320800000000000000
+      internalID: 2550252511802291681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Raster_25
+      rect:
+        serializedVersion: 2
+        x: 2339
+        y: 2232
+        width: 261
+        height: 364
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c63f61c90764de20800000000000000
+      internalID: 3374435312405001928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Raster_26
+      rect:
+        serializedVersion: 2
+        x: 2656
+        y: 2264
+        width: 236
+        height: 342
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c079f8a857efa0ed0800000000000000
+      internalID: -2446863666733148404
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Raster_27
+      rect:
+        serializedVersion: 2
+        x: 3232
+        y: 2336
+        width: 323
+        height: 264
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd24015bb894da570800000000000000
+      internalID: 8479514537795535581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Raster_28
+      rect:
+        serializedVersion: 2
+        x: 3616
+        y: 2512
+        width: 112
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a17f8d95934a57b90800000000000000
+      internalID: -7244703859328092390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Raster_29
+      rect:
+        serializedVersion: 2
+        x: 3792
+        y: 2440
+        width: 258
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c00fba390c1f3e90800000000000000
+      internalID: -7043880466218286908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Raster_30
+      rect:
+        serializedVersion: 2
+        x: 507
+        y: 2468
+        width: 5
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11e78ae0be4654560800000000000000
+      internalID: 7297349731949772305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Raster_31
+      rect:
+        serializedVersion: 2
+        x: 518
+        y: 2455
+        width: 10
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04764e2b7e1a4b940800000000000000
+      internalID: 5311047877087487808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Raster_32
+      rect:
+        serializedVersion: 2
+        x: 534
+        y: 2460
+        width: 18
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6258101a2c0b6b10800000000000000
+      internalID: 1975686236330283627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Raster_33
+      rect:
+        serializedVersion: 2
+        x: 2329
+        y: 2462
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cda9dc853673f7000800000000000000
+      internalID: 35808221873412828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Raster_34
+      rect:
+        serializedVersion: 2
+        x: 2955
+        y: 2324
+        width: 221
+        height: 180
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4fab793a13596b760800000000000000
+      internalID: 7473324672098482932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Raster_35
+      rect:
+        serializedVersion: 2
+        x: 505
+        y: 2452
+        width: 7
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0187b5b55cb25b60800000000000000
+      internalID: 7733450586455507214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Raster_36
+      rect:
+        serializedVersion: 2
+        x: 546
+        y: 2456
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d9ed0fc0373a9b10800000000000000
+      internalID: 1988962868209248725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Raster_37
+      rect:
+        serializedVersion: 2
+        x: 3763
+        y: 2440
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97d9eb571c21ee9c0800000000000000
+      internalID: -3896156005515485831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Raster_38
+      rect:
+        serializedVersion: 2
+        x: 2339
+        y: 2412
+        width: 7
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e81719c11a0b1a4f0800000000000000
+      internalID: -819179451189202546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Raster_39
+      rect:
+        serializedVersion: 2
+        x: 532
+        y: 2360
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32d71d339e5b53890800000000000000
+      internalID: -7478871592977466077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Raster_40
+      rect:
+        serializedVersion: 2
+        x: 920
+        y: 2216
+        width: 408
+        height: 152
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99c6dd5d0b0e80160800000000000000
+      internalID: 6992085471599619225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Raster_41
+      rect:
+        serializedVersion: 2
+        x: 1424
+        y: 2224
+        width: 286
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02fb67b029367b380800000000000000
+      internalID: -8955579855094235360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Raster_42
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 2216
+        width: 400
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dfe4c39d189244cf0800000000000000
+      internalID: -269044440063258883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Raster_43
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 2245
+        width: 229
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98654cea5302c86d0800000000000000
+      internalID: -2986977037916023159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Raster_44
+      rect:
+        serializedVersion: 2
+        x: 1760
+        y: 2032
+        width: 336
+        height: 312
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1f1a2f896c977730800000000000000
+      internalID: 3996835171502006043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Raster_45
+      rect:
+        serializedVersion: 2
+        x: 3595
+        y: 2232
+        width: 181
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7001b76ae9c37ec90800000000000000
+      internalID: -7140672032077049849
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Raster_46
+      rect:
+        serializedVersion: 2
+        x: 3800
+        y: 2088
+        width: 216
+        height: 213
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc372557fe43f5320800000000000000
+      internalID: 2548814117185156044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Raster_47
+      rect:
+        serializedVersion: 2
+        x: 3419
+        y: 2232
+        width: 10
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56e1430f4e8a4b250800000000000000
+      internalID: 5959573908153966181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Raster_48
+      rect:
+        serializedVersion: 2
+        x: 584
+        y: 2200
+        width: 8
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79b459c5d2c9482a0800000000000000
+      internalID: -6736087423998669929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Raster_49
+      rect:
+        serializedVersion: 2
+        x: 587
+        y: 2152
+        width: 29
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1cb6e6dca17c67580800000000000000
+      internalID: -8829651101483635775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Raster_50
+      rect:
+        serializedVersion: 2
+        x: 1360
+        y: 2152
+        width: 8
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67ed41d8a1d39f1b0800000000000000
+      internalID: -5622395475549954442
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Raster_51
+      rect:
+        serializedVersion: 2
+        x: 2184
+        y: 1947
+        width: 384
+        height: 213
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb8dd3457ae0f35e0800000000000000
+      internalID: -1927806003655616324
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Raster_52
+      rect:
+        serializedVersion: 2
+        x: 2965
+        y: 1792
+        width: 211
+        height: 368
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6614401afcc76adb0800000000000000
+      internalID: -4780996723205717658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Raster_53
+      rect:
+        serializedVersion: 2
+        x: 3261
+        y: 1960
+        width: 283
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1f1dec9db959d6c0800000000000000
+      internalID: -4118161713337131237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Raster_54
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 1528
+        width: 992
+        height: 589
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7438ec1ac38ced8a0800000000000000
+      internalID: -6278360667769633977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Raster_55
+      rect:
+        serializedVersion: 2
+        x: 1144
+        y: 932
+        width: 910
+        height: 1052
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2853153989ff75a0800000000000000
+      internalID: -6521219367712892881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Raster_56
+      rect:
+        serializedVersion: 2
+        x: 3312
+        y: 600
+        width: 784
+        height: 1336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46d3473d2c757d7c0800000000000000
+      internalID: -4046669245886218908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Raster_57
+      rect:
+        serializedVersion: 2
+        x: 3416
+        y: 1924
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42f7cbd7ecdd444a0800000000000000
+      internalID: -6609914474130538716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Raster_58
+      rect:
+        serializedVersion: 2
+        x: 3235
+        y: 1912
+        width: 21
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5cbdfd36ebb30a3b0800000000000000
+      internalID: -5503333055741305915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Raster_59
+      rect:
+        serializedVersion: 2
+        x: 3267
+        y: 1912
+        width: 21
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b12c71f491acb950800000000000000
+      internalID: 6466220826075865523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Raster_60
+      rect:
+        serializedVersion: 2
+        x: 3291
+        y: 1912
+        width: 18
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3349921eefda24000800000000000000
+      internalID: 18768658673800243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Raster_61
+      rect:
+        serializedVersion: 2
+        x: 3311
+        y: 1912
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65af1bcdc14a4f620800000000000000
+      internalID: 2807048911627352662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Raster_62
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 1672
+        width: 13
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b02542347e14dad80800000000000000
+      internalID: -8237855681871064565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Raster_63
+      rect:
+        serializedVersion: 2
+        x: 2182
+        y: 1152
+        width: 802
+        height: 547
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e290803c94b8a800800000000000000
+      internalID: 623947131312444135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Raster_64
+      rect:
+        serializedVersion: 2
+        x: 2940
+        y: 1395
+        width: 52
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b93faf7212d5fa1f0800000000000000
+      internalID: -1031503392658492517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Raster_65
+      rect:
+        serializedVersion: 2
+        x: 2985
+        y: 1208
+        width: 7
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5efb2dc79c495d70800000000000000
+      internalID: 9032334742534225498
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Raster_66
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 632
+        width: 428
+        height: 504
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f66293c64bf7b380800000000000000
+      internalID: -8955413052655507726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Raster_67
+      rect:
+        serializedVersion: 2
+        x: 1307
+        y: 928
+        width: 9
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0686f9b5ac3709b30800000000000000
+      internalID: 4292057757841844320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Raster_68
+      rect:
+        serializedVersion: 2
+        x: 1319
+        y: 920
+        width: 24
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d85b7cef009953f10800000000000000
+      internalID: 2248871818494981517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Raster_69
+      rect:
+        serializedVersion: 2
+        x: 1347
+        y: 920
+        width: 13
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b4f1eaed5b035f00800000000000000
+      internalID: 1104238831636444336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Raster_70
+      rect:
+        serializedVersion: 2
+        x: 1363
+        y: 920
+        width: 37
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee1c68543f1c3b090800000000000000
+      internalID: -8019853260829048338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
