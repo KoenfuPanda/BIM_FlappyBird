@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1138385415986671127}
   - component: {fileID: 1138385415986671123}
   - component: {fileID: 1138385415986671124}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Magnet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -131,8 +131,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerCollider: {fileID: 1138385415986671127}
   FeatherCollider: {fileID: 1138385415986671123}
-  _timeActive: 15
+  MagnetActive: 0
   StartPosition: {x: 0, y: 0, z: 0}
+  StartSize: {x: 0, y: 0, z: 0}
+  _timeActive: 15
 --- !u!1001 &1203585549460144358
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -195,10 +197,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4215966157954352546, guid: 825feacf7e925284594119aed29436c9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 6401084966637423860, guid: 825feacf7e925284594119aed29436c9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 7276576345278048746, guid: 825feacf7e925284594119aed29436c9,
         type: 3}
       propertyPath: m_Name
       value: Particle_PickupGlow-Wrap
+      objectReference: {fileID: 0}
+    - target: {fileID: 7276576345278048746, guid: 825feacf7e925284594119aed29436c9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 825feacf7e925284594119aed29436c9, type: 3}

@@ -226,6 +226,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5019030211323492717, guid: 0881280b36e474043bd965b803e61200,
         type: 3}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 5019030211323492717, guid: 0881280b36e474043bd965b803e61200,
+        type: 3}
       propertyPath: m_TagString
       value: Destructable
       objectReference: {fileID: 0}
@@ -7545,26 +7550,13 @@ GameObject:
   - component: {fileID: 216418978}
   - component: {fileID: 216418977}
   - component: {fileID: 216418976}
-  - component: {fileID: 216418975}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: barrel (3)
-  m_TagString: Untagged
+  m_TagString: Destructable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &216418975
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 216418974}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ffc1f308085fbff4eade0fec9ed05248, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!50 &216418976
 Rigidbody2D:
   serializedVersion: 4
@@ -7926,7 +7918,7 @@ PrefabInstance:
     - target: {fileID: 8660945090048447888, guid: 56cddd653e7ecc643a1b0fe45c2b69b4,
         type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 8660945090048447888, guid: 56cddd653e7ecc643a1b0fe45c2b69b4,
         type: 3}
@@ -8308,7 +8300,7 @@ Transform:
   - {fileID: 399920361}
   - {fileID: 968680466}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &234452814
 PrefabInstance:
@@ -8589,7 +8581,7 @@ PrefabInstance:
     - target: {fileID: 1138385415986671125, guid: 5ddd34dd7d02bbc4e9439e8f9c01105e,
         type: 3}
       propertyPath: m_RootOrder
-      value: 14
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 1138385415986671125, guid: 5ddd34dd7d02bbc4e9439e8f9c01105e,
         type: 3}
@@ -12076,7 +12068,7 @@ PrefabInstance:
     - target: {fileID: 5691137647491880847, guid: e53f11e8c28771949a63dafcd636557d,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5691137647491880847, guid: e53f11e8c28771949a63dafcd636557d,
         type: 3}
@@ -13380,26 +13372,13 @@ GameObject:
   - component: {fileID: 399920360}
   - component: {fileID: 399920359}
   - component: {fileID: 399920358}
-  - component: {fileID: 399920357}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: barrel
-  m_TagString: Untagged
+  m_TagString: Destructable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &399920357
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 399920356}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ffc1f308085fbff4eade0fec9ed05248, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!50 &399920358
 Rigidbody2D:
   serializedVersion: 4
@@ -14384,7 +14363,7 @@ Transform:
   - {fileID: 819061024}
   - {fileID: 1328804114}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &428282817
 PrefabInstance:
@@ -14841,26 +14820,13 @@ GameObject:
   - component: {fileID: 443685882}
   - component: {fileID: 443685881}
   - component: {fileID: 443685880}
-  - component: {fileID: 443685879}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: barrel (10)
-  m_TagString: Untagged
+  m_TagString: Destructable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &443685879
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 443685878}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ffc1f308085fbff4eade0fec9ed05248, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!50 &443685880
 Rigidbody2D:
   serializedVersion: 4
@@ -14876,7 +14842,7 @@ Rigidbody2D:
   m_Mass: 2
   m_LinearDrag: 0
   m_AngularDrag: 0
-  m_GravityScale: 1.3
+  m_GravityScale: 3
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -15879,7 +15845,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &459945806
 PrefabInstance:
@@ -16958,7 +16924,7 @@ PrefabInstance:
     - target: {fileID: 1235289082553920940, guid: 29dd989f34ea8cb40b8d879bbb19a598,
         type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1235289082553920940, guid: 29dd989f34ea8cb40b8d879bbb19a598,
         type: 3}
@@ -19588,7 +19554,7 @@ Transform:
   - {fileID: 1182421262}
   - {fileID: 1914695061}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &565549458 stripped
 Transform:
@@ -22216,7 +22182,7 @@ Transform:
   - {fileID: 186096260}
   - {fileID: 1622311039}
   m_Father: {fileID: 0}
-  m_RootOrder: 20
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &634131829
 GameObject:
@@ -26608,26 +26574,13 @@ GameObject:
   - component: {fileID: 759773221}
   - component: {fileID: 759773220}
   - component: {fileID: 759773219}
-  - component: {fileID: 759773218}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: barrel (6)
-  m_TagString: Untagged
+  m_TagString: Destructable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &759773218
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 759773217}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ffc1f308085fbff4eade0fec9ed05248, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!50 &759773219
 Rigidbody2D:
   serializedVersion: 4
@@ -26643,7 +26596,7 @@ Rigidbody2D:
   m_Mass: 2
   m_LinearDrag: 0
   m_AngularDrag: 0
-  m_GravityScale: 2
+  m_GravityScale: 3
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -27108,7 +27061,7 @@ PrefabInstance:
     - target: {fileID: 1431341600610790976, guid: b1687e3623d6d914f86d06509db88e37,
         type: 3}
       propertyPath: m_RootOrder
-      value: 19
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 1431341600610790976, guid: b1687e3623d6d914f86d06509db88e37,
         type: 3}
@@ -27509,7 +27462,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &794421339 stripped
 Transform:
@@ -28873,7 +28826,7 @@ PrefabInstance:
     - target: {fileID: 1235289082553920940, guid: 29dd989f34ea8cb40b8d879bbb19a598,
         type: 3}
       propertyPath: m_RootOrder
-      value: 12
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 1235289082553920940, guid: 29dd989f34ea8cb40b8d879bbb19a598,
         type: 3}
@@ -31504,7 +31457,7 @@ PrefabInstance:
     - target: {fileID: 8660945090048447888, guid: 56cddd653e7ecc643a1b0fe45c2b69b4,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8660945090048447888, guid: 56cddd653e7ecc643a1b0fe45c2b69b4,
         type: 3}
@@ -32437,6 +32390,75 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 941463881}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &942191765
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2763264453520142503, guid: a0faecb95d8037d4ca6f32e9cf1f6184,
+        type: 3}
+      propertyPath: m_Name
+      value: TriggerObstacle_Wrap_5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2763264453520142520, guid: a0faecb95d8037d4ca6f32e9cf1f6184,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2763264453520142520, guid: a0faecb95d8037d4ca6f32e9cf1f6184,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2763264453520142520, guid: a0faecb95d8037d4ca6f32e9cf1f6184,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2763264453520142520, guid: a0faecb95d8037d4ca6f32e9cf1f6184,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2763264453520142520, guid: a0faecb95d8037d4ca6f32e9cf1f6184,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2763264453520142520, guid: a0faecb95d8037d4ca6f32e9cf1f6184,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2763264453520142520, guid: a0faecb95d8037d4ca6f32e9cf1f6184,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2763264453520142520, guid: a0faecb95d8037d4ca6f32e9cf1f6184,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2763264453520142520, guid: a0faecb95d8037d4ca6f32e9cf1f6184,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2763264453520142520, guid: a0faecb95d8037d4ca6f32e9cf1f6184,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2763264453520142520, guid: a0faecb95d8037d4ca6f32e9cf1f6184,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a0faecb95d8037d4ca6f32e9cf1f6184, type: 3}
 --- !u!1001 &950915385
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -33093,26 +33115,13 @@ GameObject:
   - component: {fileID: 968680465}
   - component: {fileID: 968680464}
   - component: {fileID: 968680463}
-  - component: {fileID: 968680462}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: barrel (1)
   m_TagString: Destructable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &968680462
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 968680461}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ffc1f308085fbff4eade0fec9ed05248, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!50 &968680463
 Rigidbody2D:
   serializedVersion: 4
@@ -39408,26 +39417,13 @@ GameObject:
   - component: {fileID: 1150788382}
   - component: {fileID: 1150788381}
   - component: {fileID: 1150788380}
-  - component: {fileID: 1150788379}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: barrel (12)
-  m_TagString: Untagged
+  m_TagString: Destructable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1150788379
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1150788378}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ffc1f308085fbff4eade0fec9ed05248, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!50 &1150788380
 Rigidbody2D:
   serializedVersion: 4
@@ -39443,7 +39439,7 @@ Rigidbody2D:
   m_Mass: 2
   m_LinearDrag: 0
   m_AngularDrag: 0
-  m_GravityScale: 2.5
+  m_GravityScale: 3
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -39618,7 +39614,7 @@ PrefabInstance:
     - target: {fileID: 2928990698037565417, guid: ae7879aba3457a14983f7aa18306baa0,
         type: 3}
       propertyPath: m_RootOrder
-      value: 15
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 2928990698037565417, guid: ae7879aba3457a14983f7aa18306baa0,
         type: 3}
@@ -42823,26 +42819,13 @@ GameObject:
   - component: {fileID: 1254079988}
   - component: {fileID: 1254079987}
   - component: {fileID: 1254079986}
-  - component: {fileID: 1254079985}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: barrel (7)
-  m_TagString: Untagged
+  m_TagString: Destructable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1254079985
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1254079984}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ffc1f308085fbff4eade0fec9ed05248, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!50 &1254079986
 Rigidbody2D:
   serializedVersion: 4
@@ -42858,7 +42841,7 @@ Rigidbody2D:
   m_Mass: 2
   m_LinearDrag: 0
   m_AngularDrag: 0
-  m_GravityScale: 2
+  m_GravityScale: 3
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -47276,7 +47259,7 @@ PrefabInstance:
     - target: {fileID: 8174509837011046237, guid: b4497b303a3100245ae0336935e279c4,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8174509837011046237, guid: b4497b303a3100245ae0336935e279c4,
         type: 3}
@@ -48986,26 +48969,13 @@ GameObject:
   - component: {fileID: 1453101937}
   - component: {fileID: 1453101936}
   - component: {fileID: 1453101935}
-  - component: {fileID: 1453101934}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: barrel (11)
-  m_TagString: Untagged
+  m_TagString: Destructable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1453101934
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1453101933}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ffc1f308085fbff4eade0fec9ed05248, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!50 &1453101935
 Rigidbody2D:
   serializedVersion: 4
@@ -49021,7 +48991,7 @@ Rigidbody2D:
   m_Mass: 2
   m_LinearDrag: 0
   m_AngularDrag: 0
-  m_GravityScale: 2
+  m_GravityScale: 3
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -50207,7 +50177,7 @@ Transform:
   - {fileID: 889991709}
   - {fileID: 1730790410}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1491840966
 PrefabInstance:
@@ -52042,26 +52012,13 @@ GameObject:
   - component: {fileID: 1556483538}
   - component: {fileID: 1556483537}
   - component: {fileID: 1556483536}
-  - component: {fileID: 1556483535}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: barrel (2)
-  m_TagString: Untagged
+  m_TagString: Destructable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1556483535
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1556483534}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ffc1f308085fbff4eade0fec9ed05248, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!50 &1556483536
 Rigidbody2D:
   serializedVersion: 4
@@ -56922,7 +56879,7 @@ PrefabInstance:
     - target: {fileID: 1431341600610790976, guid: b1687e3623d6d914f86d06509db88e37,
         type: 3}
       propertyPath: m_RootOrder
-      value: 17
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 1431341600610790976, guid: b1687e3623d6d914f86d06509db88e37,
         type: 3}
@@ -58631,7 +58588,7 @@ PrefabInstance:
     - target: {fileID: 6372078926031247177, guid: 7dae5da452c0fd843ba159a02d2a1183,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6372078926031247177, guid: 7dae5da452c0fd843ba159a02d2a1183,
         type: 3}
@@ -59487,26 +59444,13 @@ GameObject:
   - component: {fileID: 1793219830}
   - component: {fileID: 1793219829}
   - component: {fileID: 1793219828}
-  - component: {fileID: 1793219827}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: barrel (8)
-  m_TagString: Untagged
+  m_TagString: Destructable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1793219827
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1793219826}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ffc1f308085fbff4eade0fec9ed05248, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!50 &1793219828
 Rigidbody2D:
   serializedVersion: 4
@@ -59522,7 +59466,7 @@ Rigidbody2D:
   m_Mass: 2
   m_LinearDrag: 0
   m_AngularDrag: 0
-  m_GravityScale: 2
+  m_GravityScale: 3
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -61221,7 +61165,7 @@ PrefabInstance:
     - target: {fileID: 1431341600610790976, guid: b1687e3623d6d914f86d06509db88e37,
         type: 3}
       propertyPath: m_RootOrder
-      value: 18
+      value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 1431341600610790976, guid: b1687e3623d6d914f86d06509db88e37,
         type: 3}
@@ -62971,26 +62915,13 @@ GameObject:
   - component: {fileID: 1898950475}
   - component: {fileID: 1898950474}
   - component: {fileID: 1898950473}
-  - component: {fileID: 1898950472}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: barrel (9)
-  m_TagString: Untagged
+  m_TagString: Destructable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1898950472
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1898950471}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ffc1f308085fbff4eade0fec9ed05248, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!50 &1898950473
 Rigidbody2D:
   serializedVersion: 4
@@ -63006,7 +62937,7 @@ Rigidbody2D:
   m_Mass: 2
   m_LinearDrag: 0
   m_AngularDrag: 0
-  m_GravityScale: 2
+  m_GravityScale: 3
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -68520,7 +68451,7 @@ PrefabInstance:
     - target: {fileID: 1431341600610790976, guid: b1687e3623d6d914f86d06509db88e37,
         type: 3}
       propertyPath: m_RootOrder
-      value: 16
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 1431341600610790976, guid: b1687e3623d6d914f86d06509db88e37,
         type: 3}
