@@ -54,8 +54,13 @@ public class HitObstacle : MonoBehaviour
             {
                 if (_followFinger.MegaBimActive == true)
                 {
-                    // disable the collider on the object
-                    collision.collider.enabled = false;
+                    // disable the collider(s) on the object
+                    var colls = collision.gameObject.GetComponents<Collider2D>();
+                    foreach (var col in colls)
+                    {
+                        col.enabled = false;
+                    }
+                    //collision.collider.enabled = false;
                     // add force forward/up to the object
                     Vector2 randomForce = new Vector2(Random.Range(7, 13), Random.Range(6, 13));
 
@@ -172,7 +177,7 @@ public class HitObstacle : MonoBehaviour
         if (collision.contacts[0].normal.normalized.x <= -0.3f)  // bounce backwards with moveDirection script
         {
             // 0) lose control (maybe not this)
-            _followFinger.TurnOffControl(_immunityTime / 4f, true, false);
+            _followFinger.TurnOffControl(_immunityTime / 4f, true, false, false);
 
             // 1) activate a bool on the player (this bool will slowly increase the speed up until the original level speed)
             // check for bims local scale to figure out bounce direction
@@ -191,7 +196,7 @@ public class HitObstacle : MonoBehaviour
         }
         else if (collision.contacts[0].normal.normalized.x >= 0.3f)    // bounce forwards 
         {
-            _followFinger.TurnOffControl(_immunityTime / 4f, true, false);
+            _followFinger.TurnOffControl(_immunityTime / 4f, true, false, false);
 
             _bimLocalScale = _rigidbody.transform.localScale;
             if (_bimLocalScale.x > 0)
@@ -221,7 +226,7 @@ public class HitObstacle : MonoBehaviour
             }
 
             //StartCoroutine(LostControl(_immunityTime / 4f));
-            _followFinger.TurnOffControl(_immunityTime / 4f, true, false);
+            _followFinger.TurnOffControl(_immunityTime / 4f, true, false, false);
 
             //_followFinger.GetComponent<Rigidbody2D>().AddForce(-Vector2.up * 25);
             _followFinger.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
@@ -243,7 +248,7 @@ public class HitObstacle : MonoBehaviour
             }
 
             //StartCoroutine(LostControl(_immunityTime / 4f));
-            _followFinger.TurnOffControl(_immunityTime / 4f, true, false);
+            _followFinger.TurnOffControl(_immunityTime / 4f, true, false, false);
 
             //_followFinger.GetComponent<Rigidbody2D>().AddForce(Vector2.up * 25);
             _followFinger.GetComponent<Rigidbody2D>().velocity = Vector3.zero;

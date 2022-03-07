@@ -41061,6 +41061,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4507009663325669242, guid: ff98886ae0fceb946a6a88078ec9426f,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 1.0378189
+      objectReference: {fileID: 0}
+    - target: {fileID: 4507009663325669242, guid: ff98886ae0fceb946a6a88078ec9426f,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: -4.010227
+      objectReference: {fileID: 0}
     - target: {fileID: 4808668642580395170, guid: ff98886ae0fceb946a6a88078ec9426f,
         type: 3}
       propertyPath: m_RootOrder
@@ -52697,6 +52707,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5019030211323492717, guid: 0881280b36e474043bd965b803e61200,
         type: 3}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 5019030211323492717, guid: 0881280b36e474043bd965b803e61200,
+        type: 3}
       propertyPath: m_TagString
       value: Destructable
       objectReference: {fileID: 0}
@@ -57149,7 +57164,7 @@ PrefabInstance:
     - target: {fileID: 8660945089566781235, guid: 56cddd653e7ecc643a1b0fe45c2b69b4,
         type: 3}
       propertyPath: _loopTime
-      value: 1.5
+      value: 1.8
       objectReference: {fileID: 0}
     - target: {fileID: 8660945090048447888, guid: 56cddd653e7ecc643a1b0fe45c2b69b4,
         type: 3}
@@ -64159,8 +64174,7 @@ GameObject:
   - component: {fileID: 2087474821}
   - component: {fileID: 2087474820}
   - component: {fileID: 2087474823}
-  - component: {fileID: 2087474824}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: barrel
   m_TagString: Destructable
   m_Icon: {fileID: 0}
@@ -64268,18 +64282,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &2087474824
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2087474819}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ffc1f308085fbff4eade0fec9ed05248, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &2089206958
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -66365,11 +66367,14 @@ MonoBehaviour:
   _isDraggableTutorial: 1
   _isGateTutorial: 0
   ReachedGoal: 0
+  FollowFingerScript: {fileID: 0}
   _speedDecreaser: 4
-  PopupPanel: {fileID: 3131006984894833066}
+  _popupPanel: {fileID: 0}
+  _canvasDarkened: {fileID: 0}
   _tutorialGoal: {fileID: 0}
   _draggableTutorial: {fileID: 1812780405}
   _gateTutorial: {fileID: 0}
+  _tutorialType: 0
 --- !u!1 &3131006985471979829
 GameObject:
   m_ObjectHideFlags: 0

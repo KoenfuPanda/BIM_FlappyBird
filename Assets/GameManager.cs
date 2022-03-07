@@ -105,13 +105,16 @@ public class GameManager : MonoBehaviour
             _healthAnimator.Play(_loseHealth_3);
         }
     }
-    public void RefillHealth(bool respawned)
+    public void RefillHealth(bool respawned, bool isLevelStart)
     {
         HealthBiM = 3;
 
         if(respawned)
         {
-            _audioSource.PlayOneShot(_audioClips[1]);
+            if (isLevelStart == false)
+            {
+                _audioSource.PlayOneShot(_audioClips[1]);
+            }           
             _healthAnimator.Play("Health_Full_State");
         }
         else
@@ -233,7 +236,7 @@ public class GameManager : MonoBehaviour
                 _currentCheckpoint = checkPoint;
             }
         }
-        RefillHealth(true);
+        RefillHealth(true, false);
         if(_playerPrefab != null) 
         {
 

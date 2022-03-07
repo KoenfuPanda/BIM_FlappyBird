@@ -54,11 +54,11 @@ public class CheckPoint : MonoBehaviour
             
             if(IsStartLevel == true)
             {
-                _gameManager.RefillHealth(true);
+                _gameManager.RefillHealth(true, true);
             }
             else
             {
-                _gameManager.RefillHealth(false);
+                _gameManager.RefillHealth(false,false);
             }
             
             _hasBeenActivated = true;

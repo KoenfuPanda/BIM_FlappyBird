@@ -32,7 +32,7 @@ public class CanonBall_Projectile : MonoBehaviour
         {
             if (followfinger.MegaBimActive == true)   // if bim is gigantic..
             {
-                // nothing
+
             }
             else
                 Destroy(this.gameObject); // use fancier logic here for sound, particle, etc

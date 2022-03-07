@@ -6175,7 +6175,7 @@ PrefabInstance:
     - target: {fileID: 8660945089566781235, guid: 56cddd653e7ecc643a1b0fe45c2b69b4,
         type: 3}
       propertyPath: _loopTime
-      value: 1.4
+      value: 1.3
       objectReference: {fileID: 0}
     - target: {fileID: 8660945090048447888, guid: 56cddd653e7ecc643a1b0fe45c2b69b4,
         type: 3}
@@ -8616,8 +8616,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8660945089566781235, guid: 56cddd653e7ecc643a1b0fe45c2b69b4,
         type: 3}
+      propertyPath: _speed
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 8660945089566781235, guid: 56cddd653e7ecc643a1b0fe45c2b69b4,
+        type: 3}
       propertyPath: _loopTime
-      value: 1.2
+      value: 1.1
       objectReference: {fileID: 0}
     - target: {fileID: 8660945090048447888, guid: 56cddd653e7ecc643a1b0fe45c2b69b4,
         type: 3}
@@ -15457,6 +15462,36 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7960194070359384831, guid: 1c9956db63968ae4ebadcbd6a79cfa80,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 1.4405518
+      objectReference: {fileID: 0}
+    - target: {fileID: 7960194070359384831, guid: 1c9956db63968ae4ebadcbd6a79cfa80,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: -3.2782593
+      objectReference: {fileID: 0}
+    - target: {fileID: 7960194070421590990, guid: 1c9956db63968ae4ebadcbd6a79cfa80,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 1.6930542
+      objectReference: {fileID: 0}
+    - target: {fileID: 7960194070421590990, guid: 1c9956db63968ae4ebadcbd6a79cfa80,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: -7.9255676
+      objectReference: {fileID: 0}
+    - target: {fileID: 7960194071821088803, guid: 1c9956db63968ae4ebadcbd6a79cfa80,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 2.152771
+      objectReference: {fileID: 0}
+    - target: {fileID: 7960194071821088803, guid: 1c9956db63968ae4ebadcbd6a79cfa80,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: -5.9312134
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1c9956db63968ae4ebadcbd6a79cfa80, type: 3}
 --- !u!1001 &1558459531
@@ -17027,12 +17062,12 @@ PrefabInstance:
     - target: {fileID: 8660945089566781235, guid: 56cddd653e7ecc643a1b0fe45c2b69b4,
         type: 3}
       propertyPath: _speed
-      value: 100
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 8660945089566781235, guid: 56cddd653e7ecc643a1b0fe45c2b69b4,
         type: 3}
       propertyPath: _loopTime
-      value: 3
+      value: 2.2
       objectReference: {fileID: 0}
     - target: {fileID: 8660945090048447888, guid: 56cddd653e7ecc643a1b0fe45c2b69b4,
         type: 3}

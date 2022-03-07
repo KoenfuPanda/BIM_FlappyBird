@@ -126,11 +126,14 @@ MonoBehaviour:
   _isDraggableTutorial: 0
   _isGateTutorial: 1
   ReachedGoal: 0
+  FollowFingerScript: {fileID: 0}
   _speedDecreaser: 4
-  PopupPanel: {fileID: 403817159785558332}
+  _popupPanel: {fileID: 403817159785558332}
+  _canvasDarkened: {fileID: 0}
   _tutorialGoal: {fileID: 0}
   _draggableTutorial: {fileID: 0}
   _gateTutorial: {fileID: 8815400065195464675}
+  _tutorialType: 0
 --- !u!1 &403817159304094115
 GameObject:
   m_ObjectHideFlags: 0
@@ -995,11 +998,14 @@ MonoBehaviour:
   _isDraggableTutorial: 0
   _isGateTutorial: 1
   ReachedGoal: 0
+  FollowFingerScript: {fileID: 0}
   _speedDecreaser: 4
-  PopupPanel: {fileID: 403817159323417291}
+  _popupPanel: {fileID: 403817159323417291}
+  _canvasDarkened: {fileID: 0}
   _tutorialGoal: {fileID: 0}
   _draggableTutorial: {fileID: 0}
   _gateTutorial: {fileID: 8815400066270556631}
+  _tutorialType: 0
 --- !u!1001 &403817160640646171
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -405,7 +405,7 @@ public class FollowFinger : MonoBehaviour
         rigidBody.gravityScale = 0;
         _lostControlTimer = 0;
     }
-    public void TurnOffControl(float timeLostControl, bool shouldOverrideTimerNoMatterWhat, bool wantsGravity)
+    public void TurnOffControl(float timeLostControl, bool shouldOverrideTimerNoMatterWhat, bool wantsGravity, bool isFirstTutorial)
     {
         bounce = true;
         controlCharacter = false;
@@ -426,7 +426,11 @@ public class FollowFinger : MonoBehaviour
         {
             _lostControlTimer = timeLostControl;
         }
-        
+
+        if (isFirstTutorial == true)
+        {
+            rigidBody.velocity = Vector2.zero; // stop from descending too much in tutorial_1 as otherwise bim sinks too much down below
+        }            
     }
 
 

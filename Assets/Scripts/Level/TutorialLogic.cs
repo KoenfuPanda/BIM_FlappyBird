@@ -13,13 +13,17 @@ public class TutorialLogic : MonoBehaviour
     public bool ReachedGoal;
 
     private MoveDirection _moveDirection;
-    private FollowFinger _followFingerScript;
+    [HideInInspector]
+    public FollowFinger FollowFingerScript;
 
     [SerializeField]
     private float _speedDecreaser;
 
     [SerializeField]
-    private GameObject PopupPanel;
+    private GameObject _popupPanel;
+
+    [SerializeField]
+    private GameObject _canvasDarkened;
 
     [SerializeField]
     private GameObject _tutorialGoal;
@@ -28,6 +32,10 @@ public class TutorialLogic : MonoBehaviour
     [SerializeField]
     private Gate _gateTutorial;
 
+
+    private enum TutorialType { popup1, popup2, popup3 }
+    [SerializeField] private TutorialType _tutorialType;
+
     private void Start()
     {
         _moveDirection = FindObjectOfType<MoveDirection>();
@@ -35,8 +43,8 @@ public class TutorialLogic : MonoBehaviour
         // disable start controls if first tutorial
         if (IsFirstTutorial)
         {
-            _followFingerScript = FindObjectOfType<FollowFinger>();
-            _followFingerScript.TurnOffControl(1000, true, false);
+            FollowFingerScript = FindObjectOfType<FollowFinger>();
+            FollowFingerScript.TurnOffControl(1000, true, false,false);
         }
 
         // disable draggable objects if that tutorial
@@ -51,7 +59,22 @@ public class TutorialLogic : MonoBehaviour
             if (_moveDirection.Speed <= 0)
             {
                 _moveDirection.Speed = 0;
-                PopupPanel.SetActive(true);
+
+                _popupPanel.SetActive(true);
+
+                // if tut_1, play darken_1, else play darken_2
+                if (_canvasDarkened != null)
+                {
+                    _canvasDarkened.SetActive(true);
+                    if (_tutorialType == TutorialType.popup1)
+                    {
+                        _canvasDarkened.GetComponent<Animator>().Play("Tutorial_1_1_Spotlight");
+                    }
+                    else
+                    {
+                        _canvasDarkened.GetComponent<Animator>().Play("Tutorial_1_2_Spotlight");
+                    }                 
+                }
 
                 if (_isDraggableTutorial == true)
                 {
@@ -72,11 +95,11 @@ public class TutorialLogic : MonoBehaviour
             if (_tutorialGoal != null)
             {
                 _tutorialGoal.SetActive(true);
-            }            
+            }
 
             if (IsFirstTutorial)
             {
-                _followFingerScript.TurnOffControl(0.2f, true, false);
+                FollowFingerScript.TurnOffControl(0.2f, true, false, false);
             }
 
             _showingTutorial = false;
@@ -85,7 +108,12 @@ public class TutorialLogic : MonoBehaviour
 
     public void ContinueTheGame()
     {
-        PopupPanel.SetActive(false);
+        _popupPanel.SetActive(false);
+        if (_canvasDarkened != null)
+        {
+            _canvasDarkened.SetActive(false);
+        }
+
         _moveDirection.Speed = _moveDirection.IntendedLevelSpeed;
 
         // delete this object
