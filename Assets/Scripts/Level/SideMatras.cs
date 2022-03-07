@@ -27,7 +27,7 @@ public class SideMatras : MonoBehaviour
 
     private void Start()
     {
-        if (direction.ToString() == "Right")
+        if (direction == Direction.Right)
         {
             _bouncesLeft = false;
         }
@@ -109,12 +109,12 @@ public class SideMatras : MonoBehaviour
         }
         else if (enumValue == 1) // Up
         {
-            _followFinger.TurnOffControl(_timeLostControl, true, true);
+            _followFinger.TurnOffControl(_timeLostControl, true, true, false);
             _bimRigid.velocity = Vector2.up * _bounceStrength;          
         }
         else // Down
         {
-            _followFinger.TurnOffControl(_timeLostControl, true, true);
+            _followFinger.TurnOffControl(_timeLostControl, true, true, false);
             _bimRigid.gravityScale = -1;
             _bimRigid.velocity = -Vector2.up * _bounceStrength;
         }

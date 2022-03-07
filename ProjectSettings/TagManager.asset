@@ -24,9 +24,9 @@ TagManager:
   - Player
   - Cannon
   - Projectile
-  - 
-  - 
-  - 
+  - RotatingObstacle
+  - Magnet
+  - Destructable
   - 
   - 
   - 

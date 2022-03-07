@@ -15,24 +15,25 @@ public class LineAssistant : MonoBehaviour
     [HideInInspector]
     public float TransparencyValue;
 
+    private float _lineDistance;
+    private float _lineWidth, _lineMaxWidth;
+
 
     private void Start()
     {
         _lineRenderer = GetComponent<LineRenderer>();
 
         TransparencyValue = 0;
+
+        _lineRenderer.numCapVertices = 3;
+        _lineMaxWidth = 0.2f;
     }
 
     void Update()
     {
-        // when holding down, draw line between bim and finger (ramp up the transparency up to goal)
         if (_followFinger.HoldingDown == true)
         {
-            //_transparencyValue += Time.deltaTime * 0.7f;
-            //if (_transparencyValue >= 1)
-            //{
-                TransparencyValue = 1;
-            //}
+            TransparencyValue = 1;
         }
         else
         {            
@@ -64,10 +65,35 @@ public class LineAssistant : MonoBehaviour
 
         Vector3 bim = _followFinger.transform.position;
         Vector3 target = _followFinger.TargetPosition;
-
+   
         _lineRenderer.positionCount = 2;
 
         _lineRenderer.SetPosition(0, bim);
         _lineRenderer.SetPosition(1, target);
+
+        _lineDistance = (target - bim).magnitude;
+
+
+        // the lower my distance, the thicker the line. 
+        // if the line distance is smaller than 4 , max thichkness
+        // if the line distance is greater than 4, start reducing thicness
+        // check for very small widths that should not be allowed (cuzz it's ugly)
+
+        if (_lineDistance <= 4)
+        {
+            _lineWidth = _lineMaxWidth;
+        }
+        else if (_lineDistance > 4)
+        {
+            _lineWidth = _lineMaxWidth - ((_lineDistance ) / 65);
+        }
+
+        if (_lineWidth <= 0.07f)
+        {
+            _lineWidth = 0;
+        }
+
+        _lineRenderer.startWidth = _lineWidth;
+        _lineRenderer.endWidth = _lineWidth;
     }    
 }

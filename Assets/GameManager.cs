@@ -22,6 +22,10 @@ public class GameManager : MonoBehaviour
 
     public List<GameObject> CollectedPowerups = new List<GameObject>();
 
+    private List<SetAnimationSpeed> _rotatingPillars = new List<SetAnimationSpeed>();
+    private List<SpawnCannonBall> _cannonShooters = new List<SpawnCannonBall>();
+    private List<CanonBall_Projectile> _balls = new List<CanonBall_Projectile>();
+
     public List<CheckPoint> CheckPoints = new List<CheckPoint>();
     private CheckPoint _currentCheckpoint;
 
@@ -68,6 +72,9 @@ public class GameManager : MonoBehaviour
         _originalPlayerOffset = _currentPlayer.transform.position;
         _instantiateExtraOffset = new Vector3(5, _originalPlayerOffset.y, -40);
 
+        _rotatingPillars = FindObjectsOfType<SetAnimationSpeed>().ToList();
+        _cannonShooters = FindObjectsOfType<SpawnCannonBall>().ToList();
+
         //SaveFeathersCollectedSoFar();
     }
 
@@ -98,13 +105,16 @@ public class GameManager : MonoBehaviour
             _healthAnimator.Play(_loseHealth_3);
         }
     }
-    public void RefillHealth(bool respawned)
+    public void RefillHealth(bool respawned, bool isLevelStart)
     {
         HealthBiM = 3;
 
         if(respawned)
         {
-            _audioSource.PlayOneShot(_audioClips[1]);
+            if (isLevelStart == false)
+            {
+                _audioSource.PlayOneShot(_audioClips[1]);
+            }           
             _healthAnimator.Play("Health_Full_State");
         }
         else
@@ -199,6 +209,25 @@ public class GameManager : MonoBehaviour
             }
         }
 
+        // disable the cannons and rotating pillars
+        foreach (var obj in _rotatingPillars)
+        {
+            obj.gameObject.SetActive(false);
+        }
+        foreach (var obj in _cannonShooters)
+        {
+            obj.enabled = false;
+        }
+
+        // remove excess cannonballs in game
+        _balls = FindObjectsOfType<CanonBall_Projectile>().ToList();
+        foreach (var ball in _balls)
+        {
+            Destroy(ball);
+        }
+
+
+
         // respawn player //
         foreach (CheckPoint checkPoint in CheckPoints) 
         {
@@ -207,7 +236,7 @@ public class GameManager : MonoBehaviour
                 _currentCheckpoint = checkPoint;
             }
         }
-        RefillHealth(true);
+        RefillHealth(true, false);
         if(_playerPrefab != null) 
         {
 

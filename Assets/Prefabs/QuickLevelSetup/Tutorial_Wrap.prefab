@@ -609,7 +609,7 @@ MonoBehaviour:
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
+  m_MatchWidthOrHeight: 1
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -820,7 +820,32 @@ PrefabInstance:
       objectReference: {fileID: 8286820763144023277}
     - target: {fileID: 3671825980146834417, guid: 0e223667861179845aef297d732207ba,
         type: 3}
+      propertyPath: _popupPanel
+      value: 
+      objectReference: {fileID: 8286820763144023277}
+    - target: {fileID: 3671825980146834417, guid: 0e223667861179845aef297d732207ba,
+        type: 3}
       propertyPath: IsFirstTutorial
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3671825980304243430, guid: 0e223667861179845aef297d732207ba,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3671825980304243448, guid: 0e223667861179845aef297d732207ba,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3671825980304243449, guid: 0e223667861179845aef297d732207ba,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -4.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 3671825980304243450, guid: 0e223667861179845aef297d732207ba,
+        type: 3}
+      propertyPath: _loseControl
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -1208,15 +1233,30 @@ PrefabInstance:
       propertyPath: PopupPanel
       value: 
       objectReference: {fileID: 8286820762666641178}
+    - target: {fileID: 3671825980146834417, guid: 0e223667861179845aef297d732207ba,
+        type: 3}
+      propertyPath: _popupPanel
+      value: 
+      objectReference: {fileID: 8286820762666641178}
+    - target: {fileID: 3671825980146834417, guid: 0e223667861179845aef297d732207ba,
+        type: 3}
+      propertyPath: IsFirstTutorial
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3671825980304243430, guid: 0e223667861179845aef297d732207ba,
         type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3671825980304243448, guid: 0e223667861179845aef297d732207ba,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3671825980304243449, guid: 0e223667861179845aef297d732207ba,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.48
+      value: 4.81
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e223667861179845aef297d732207ba, type: 3}
