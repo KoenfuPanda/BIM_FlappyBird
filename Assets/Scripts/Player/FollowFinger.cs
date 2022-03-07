@@ -60,6 +60,7 @@ public class FollowFinger : MonoBehaviour
     private LineAssistant _lineAssitsant;
     private Transform _parentObject;
 
+    private float cameraDistance = 52;
 
     void Start()
     {
@@ -80,7 +81,9 @@ public class FollowFinger : MonoBehaviour
 
         if (HoldingDown == true)
         {
-            mouseWorldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            mouseWorldPosition = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, cameraDistance));
+            //mouseWorldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
             TargetPosition = mouseWorldPosition;
         }
 
@@ -182,7 +185,9 @@ public class FollowFinger : MonoBehaviour
             // --- Mouse button tap ---
             if (Input.GetMouseButtonDown(0) && HoldingDown == false) // tapping
             {
-                mouseWorldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                mouseWorldPosition = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, cameraDistance));
+                //mouseWorldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
                 TargetPosition = mouseWorldPosition;
                
                 // set line transparency to 1
