@@ -77,7 +77,7 @@ public class LineAssistant : MonoBehaviour
         // if line distance is greater than x, change target position to being a target at y (y = target pos - excess limit)
         if (_lineDistance >= _lineDistanceLimit)
         {
-            float extraDist = _lineDistance - 8.4f;
+            float extraDist = _lineDistance - _lineDistanceLimit;
 
             Vector3 targetV3 = _followFinger.TargetPosition;
             target = targetV3 - ((targetV3 - bim).normalized * extraDist);
