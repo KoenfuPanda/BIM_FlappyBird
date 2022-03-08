@@ -18,6 +18,9 @@ public class LineAssistant : MonoBehaviour
     private float _lineDistance;
     private float _lineWidth, _lineMaxWidth;
 
+    [SerializeField]
+    private float _lineDistanceLimit;
+
 
     private void Start()
     {
@@ -72,7 +75,7 @@ public class LineAssistant : MonoBehaviour
 
 
         // if line distance is greater than x, change target position to being a target at y (y = target pos - excess limit)
-        if (_lineDistance >= 8.4f)
+        if (_lineDistance >= _lineDistanceLimit)
         {
             float extraDist = _lineDistance - 8.4f;
 

@@ -45,6 +45,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _followFinger: {fileID: 6106393831850996108}
+  TransparencyValue: 0
+  _lineDistanceLimit: 8
 --- !u!120 &1197254162286585376
 LineRenderer:
   m_ObjectHideFlags: 0
