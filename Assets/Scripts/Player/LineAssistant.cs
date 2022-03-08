@@ -68,10 +68,23 @@ public class LineAssistant : MonoBehaviour
    
         _lineRenderer.positionCount = 2;
 
+        _lineDistance = (target - bim).magnitude;
+
+
+        // if line distance is greater than x, change target position to being a target at y (y = target pos - excess limit)
+        if (_lineDistance >= 8.4f)
+        {
+            float extraDist = _lineDistance - 8.4f;
+
+            Vector3 targetV3 = _followFinger.TargetPosition;
+            target = targetV3 - ((targetV3 - bim).normalized * extraDist);
+        }
+
         _lineRenderer.SetPosition(0, bim);
         _lineRenderer.SetPosition(1, target);
 
-        _lineDistance = (target - bim).magnitude;
+       
+
 
 
         // the lower my distance, the thicker the line. 
@@ -86,11 +99,11 @@ public class LineAssistant : MonoBehaviour
         else if (_lineDistance > 4)
         {
             _lineWidth = _lineMaxWidth - ((_lineDistance ) / 65);
-        }
 
-        if (_lineWidth <= 0.07f)
-        {
-            _lineWidth = 0;
+            if (_lineWidth <= 0.07f)
+            {
+                _lineWidth = 0.07f;
+            }
         }
 
         _lineRenderer.startWidth = _lineWidth;
