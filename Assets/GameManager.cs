@@ -16,8 +16,12 @@ public class GameManager : MonoBehaviour
 
     public List<EggElixir> CollectedEggs = new List<EggElixir>();
 
+    [HideInInspector]
+    public List<Feathers> AllFeathers = new List<Feathers>();
+
     public List<Feathers> CollectedFeathers = new List<Feathers>();
     public List<Feathers> CollectedSavedFeathers = new List<Feathers>();
+
     public Text EggScoreText;
     public Text FeatherScoreText;
     private int FeatherScore;
@@ -84,6 +88,7 @@ public class GameManager : MonoBehaviour
 
         _rotatingPillars = FindObjectsOfType<SetAnimationSpeed>().ToList();
         _cannonShooters = FindObjectsOfType<SpawnCannonBall>().ToList();
+        AllFeathers = FindObjectsOfType<Feathers>().ToList();
 
         //SaveFeathersCollectedSoFar();
 

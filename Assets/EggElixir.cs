@@ -20,6 +20,10 @@ public class EggElixir : MonoBehaviour
     public int LevelIndex = 0;
     public int EggIndex = 0;
 
+    public enum ElixerType { Left, Middle, Right }
+    public ElixerType ElixerTypePiece;
+
+
     private void Awake()
     {
         _audioSource = GetComponent<AudioSource>();
