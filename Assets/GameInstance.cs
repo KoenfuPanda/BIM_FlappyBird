@@ -11,10 +11,13 @@ public class GameInstance : MonoBehaviour
     public GameObject StartCanvas;
     public GameObject LevelCanvas;
 
+    static public bool[,] CollectedEggs;
+
     private void Start()
     {
-        DontDestroyOnLoad(this.gameObject);
+        CollectedEggs = new bool[6, 3];
 
+        DontDestroyOnLoad(this.gameObject);
         SetLevelButtons();
     }
 

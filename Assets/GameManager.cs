@@ -12,10 +12,13 @@ public class GameManager : MonoBehaviour
 
     [HideInInspector]
     public int HealthBiM;
+   
 
-    
+    public List<EggElixir> CollectedEggs = new List<EggElixir>();
+
     public List<Feathers> CollectedFeathers = new List<Feathers>();
     public List<Feathers> CollectedSavedFeathers = new List<Feathers>();
+    public Text EggScoreText;
     public Text FeatherScoreText;
     private int FeatherScore;
     private int SavedFeatherScore;
@@ -39,6 +42,13 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private GameObject _playerPrefab;
     private GameObject _currentPlayer;
+
+    [SerializeField]
+    private GameObject _eggElixir;
+    [SerializeField]
+    private List<Transform> _eggSpawnPoints = new List<Transform>();
+    [SerializeField]
+    private int _levelIndex;
 
     private Vector3 _originalPlayerOffset;
     private Vector3 _instantiateExtraOffset;
@@ -76,6 +86,8 @@ public class GameManager : MonoBehaviour
         _cannonShooters = FindObjectsOfType<SpawnCannonBall>().ToList();
 
         //SaveFeathersCollectedSoFar();
+
+        SpawnEggs();
     }
 
     public void GameOver()
@@ -149,16 +161,20 @@ public class GameManager : MonoBehaviour
     public void PickedUpFeather()
     {
         FeatherScore += 1;
-        UpdateScoreHud();
+        UpdateFeatherScoreHud();
     }
     private void ResetFeatherCount()
     {
         FeatherScore = SavedFeatherScore;
-        UpdateScoreHud();
+        UpdateFeatherScoreHud();
     }
-    private void UpdateScoreHud()
+    private void UpdateFeatherScoreHud()
     {
         FeatherScoreText.text = FeatherScore.ToString();
+    }
+    public void UpdateEggScoreHud()
+    {
+        EggScoreText.text = CollectedEggs.Count().ToString();
     }
 
 
@@ -249,5 +265,18 @@ public class GameManager : MonoBehaviour
             // assign new player as current
             _currentPlayer = newPlayer;  
         }        
+    }
+
+    private void SpawnEggs()
+    {
+        for(int index = 0; index < 3; index++)
+        {
+            if (!GameInstance.CollectedEggs[_levelIndex, index])
+            {
+                GameObject EggTemp = Instantiate(_eggElixir, _eggSpawnPoints[index]);
+                EggTemp.GetComponent<EggElixir>().EggIndex = index;
+                EggTemp.GetComponent<EggElixir>().LevelIndex = _levelIndex;
+            }
+        }
     }
 }
