@@ -41,6 +41,9 @@ public class FinishingLine : MonoBehaviour
     private float _timer;
     private float _timer2;
 
+    private float _timePer1Egg = 3.2f;
+    private float _timerLimit;
+
     private float _currentFeatherCountDuringRecount;
     private float _currentFillAmount;
     private float _threshHold1, _threshHold2, _threshHold3;
@@ -79,6 +82,10 @@ public class FinishingLine : MonoBehaviour
         _threshHold1 = _gameManager.AllFeathers.Count / 5;
         _threshHold2 = _gameManager.AllFeathers.Count / 2;
         _threshHold3 = _gameManager.AllFeathers.Count * (9f / 10f);
+
+        _timerLimit = _timePer1Egg / (float)_gameManager.AllFeathers.Count;
+
+        Debug.Log(_gameManager.AllFeathers.Count + " all feathers in the level" );
         Debug.Log(_threshHold1 + " T " + _threshHold2 + " T " + _threshHold3);
 
         this.enabled = false;  // disables update method untill it is needed. (enable it when the _hudScoreElement is in place next to the panel)
@@ -95,7 +102,7 @@ public class FinishingLine : MonoBehaviour
                 if (_pausedCount == false)
                 {
                     _timer += Time.deltaTime;
-                    if (_timer >= 0.08f)
+                    if (_timer >= _timerLimit)
                     {
                         _currentFeatherCountDuringRecount += 1;
                         _timer = 0;
@@ -287,6 +294,9 @@ public class FinishingLine : MonoBehaviour
             if (GameObject.Find("GameInstance(Clone)").GetComponent<GameInstance>() != null)
             {
                 _gameInstance = GameObject.Find("GameInstance(Clone)").GetComponent<GameInstance>();
+
+                // eggs collected in this level level x = _gamemanager.colectedfeathers.count
+
                 _gameInstance.SetGameState(_levelNumber);
             }
         }
