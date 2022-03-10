@@ -91,7 +91,7 @@ public class HitObstacle : MonoBehaviour
                 {
                     if (IsImmune == false)  // only take damage when not immune and when the collision is forward
                     {
-                        Debug.Log(collision.gameObject.name + " is the hit obstacle");
+                        //Debug.Log(collision.gameObject.name + " is the hit obstacle");
 
                         if (transform.localScale.x > 0 && collision.contacts[0].normal.normalized.x <= -0.78f ||
                             transform.localScale.x < 0 && collision.contacts[0].normal.normalized.x >= 0.78f)
@@ -140,7 +140,7 @@ public class HitObstacle : MonoBehaviour
         {
             if (IsImmune == false)  // only take damage when not immune and when the collision is forward
             {
-                Debug.Log(collision.name + " is the hit obstacle");
+                //Debug.Log(collision.name + " is the hit obstacle");
                 // become immune
                 StartCoroutine(GainImmunity(_immunityTime));
                 // instantiate object with sound effect and particle
@@ -171,8 +171,8 @@ public class HitObstacle : MonoBehaviour
 
     private void CheckReboundDirectionFollowFinger(Collision2D collision)
     {
-        Debug.Log(collision.contacts[0].normal.normalized.x + " is the normal X normalized");
-        Debug.Log(collision.contacts[0].normal.normalized.y + " is the normal Y normalized");
+        //Debug.Log(collision.contacts[0].normal.normalized.x + " is the normal X normalized");
+        //Debug.Log(collision.contacts[0].normal.normalized.y + " is the normal Y normalized");
 
         if (collision.contacts[0].normal.normalized.x <= -0.3f)  // bounce backwards with moveDirection script
         {

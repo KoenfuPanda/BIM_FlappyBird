@@ -38,8 +38,6 @@ public class EggElixir : MonoBehaviour
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _collider = GetComponent<CapsuleCollider2D>();
         _gameManager = FindObjectOfType<GameManager>();
-
-        Debug.Log(_childrenSprites.Length);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

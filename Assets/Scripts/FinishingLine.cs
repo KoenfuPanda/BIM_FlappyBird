@@ -45,6 +45,7 @@ public class FinishingLine : MonoBehaviour
     private float _currentFillAmount;
     private float _threshHold1, _threshHold2, _threshHold3;
     private bool _threshHold1Reached, _threshHold2Reached, _threshHold3Reached;
+    private bool _pausedCount;
 
     const string _stringThreshHold1 = "ThreshHold_1_Reached";
     const string _stringThreshHold2 = "ThreshHold_2_Reached";
@@ -87,14 +88,18 @@ public class FinishingLine : MonoBehaviour
     {
         if (_finishedEggCount == false) // if we have yet to check all collected eggs...
         {
-            //  increase the _currentFeatherCountDuringRecount by 1 every 0.2s, untill it has reached the _gameManager.collectedFeathers
+            //  increase the _currentFeatherCountDuringRecount by 1 every 0.08s, untill it has reached the _gameManager.collectedFeathers
+
             if (_currentFeatherCountDuringRecount <= _gameManager.CollectedFeathers.Count)
             {
-                _timer += Time.deltaTime;
-                if (_timer >= 0.08f)
+                if (_pausedCount == false)
                 {
-                    _currentFeatherCountDuringRecount += 1;
-                    _timer = 0;
+                    _timer += Time.deltaTime;
+                    if (_timer >= 0.08f)
+                    {
+                        _currentFeatherCountDuringRecount += 1;
+                        _timer = 0;
+                    }
                 }
             }
             else if (_currentFeatherCountDuringRecount >= _gameManager.AllFeathers.Count) // if all eggs are collected...
@@ -116,6 +121,7 @@ public class FinishingLine : MonoBehaviour
                 _threshHoldsPanel.GetComponent<Animator>().Play(_stringThreshHold1);
 
                 _threshHold1Reached = true;
+                _pausedCount = true;
             }
             else if (_currentFeatherCountDuringRecount >= _threshHold2 && _threshHold2Reached == false)
             {
@@ -123,6 +129,7 @@ public class FinishingLine : MonoBehaviour
                 _threshHoldsPanel.GetComponent<Animator>().Play(_stringThreshHold2);
 
                 _threshHold2Reached = true;
+                _pausedCount = true;
             }
             else if (_currentFeatherCountDuringRecount >= _threshHold3 && _threshHold3Reached == false)
             {
@@ -130,8 +137,20 @@ public class FinishingLine : MonoBehaviour
                 _threshHoldsPanel.GetComponent<Animator>().Play(_stringThreshHold3);
 
                 _threshHold3Reached = true;
+                _pausedCount = true;
             }
 
+            // stop the count for 1 second when it reaches a threshHold, then continue counting
+            // once the count starts, play a oneshot of the charging sound effect (pitch increase)
+            if (_pausedCount == true)
+            {
+                _timer += Time.deltaTime;
+                if (_timer >= 0.7f)
+                {
+                    _pausedCount = false;
+                    _timer = 0;
+                }
+            }
 
             // update fill image
             _currentFillAmount = _currentFeatherCountDuringRecount / _gameManager.AllFeathers.Count;
