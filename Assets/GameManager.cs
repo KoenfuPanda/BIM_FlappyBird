@@ -281,6 +281,24 @@ public class GameManager : MonoBehaviour
                 GameObject EggTemp = Instantiate(_eggElixir, _eggSpawnPoints[index]);
                 EggTemp.GetComponent<EggElixir>().EggIndex = index;
                 EggTemp.GetComponent<EggElixir>().LevelIndex = _levelIndex;
+
+                // check for enum and what sprite it should be...
+                if (index == 0)
+                {
+                    EggTemp.GetComponent<EggElixir>().ElixerTypePiece = EggElixir.ElixerType.Left;
+                    EggTemp.transform.Find("Piece_1").GetComponent<SpriteRenderer>().enabled = true;
+                }
+                else if (index == 1)
+                {
+                    EggTemp.GetComponent<EggElixir>().ElixerTypePiece = EggElixir.ElixerType.Middle;
+                    EggTemp.transform.Find("Piece_2").GetComponent<SpriteRenderer>().enabled = true;
+                }
+                else
+                {
+                    EggTemp.GetComponent<EggElixir>().ElixerTypePiece = EggElixir.ElixerType.Right;
+                    EggTemp.transform.Find("Piece_3").GetComponent<SpriteRenderer>().enabled = true;
+                }
+                
             }
         }
     }

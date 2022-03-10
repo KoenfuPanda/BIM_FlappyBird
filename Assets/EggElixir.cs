@@ -5,6 +5,8 @@ using UnityEngine;
 public class EggElixir : MonoBehaviour
 {
     private SpriteRenderer _spriteRenderer;
+    private SpriteRenderer[] _childrenSprites;
+
     private CapsuleCollider2D _collider;
 
     private AudioSource _audioSource;
@@ -27,6 +29,8 @@ public class EggElixir : MonoBehaviour
     private void Awake()
     {
         _audioSource = GetComponent<AudioSource>();
+
+        _childrenSprites = GetComponentsInChildren<SpriteRenderer>();
     }
 
     private void Start()
@@ -34,6 +38,8 @@ public class EggElixir : MonoBehaviour
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _collider = GetComponent<CapsuleCollider2D>();
         _gameManager = FindObjectOfType<GameManager>();
+
+        Debug.Log(_childrenSprites.Length);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -43,7 +49,12 @@ public class EggElixir : MonoBehaviour
             _particleSystemGlow.SetActive(false);
             _gameManager.CollectedEggs.Add(this);
             _gameManager.UpdateEggScoreHud();
+
             _spriteRenderer.enabled = false;
+            foreach (var sprite in _childrenSprites)
+            {
+                sprite.enabled = false;
+            }
             _collider.enabled = false;
 
             // play sound effect

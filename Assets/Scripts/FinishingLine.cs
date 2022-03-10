@@ -39,6 +39,7 @@ public class FinishingLine : MonoBehaviour
 
     // etc
     private float _timer;
+    private float _timer2;
 
     private float _currentFeatherCountDuringRecount;
     private float _currentFillAmount;
@@ -54,6 +55,7 @@ public class FinishingLine : MonoBehaviour
 
     private bool _finishedEggCount, _finishedSpecialsCount;
     private bool _collectedAllEggs, _collectedAllSpecials;
+    private bool _needsToCountPieces;
 
     private Animator _engravingsParentAnimator;
     private float _numberFoundSpecials, _foundSpecialCounter;
@@ -71,7 +73,7 @@ public class FinishingLine : MonoBehaviour
         // 20, 50 and 90 %
         _threshHold1 = _gameManager.AllFeathers.Count / 5;
         _threshHold2 = _gameManager.AllFeathers.Count / 2;
-        _threshHold3 = _gameManager.AllFeathers.Count * (10f / 9f);
+        _threshHold3 = _gameManager.AllFeathers.Count * (9f / 10f);
         Debug.Log(_threshHold1 + " T " + _threshHold2 + " T " + _threshHold3);
 
         this.enabled = false;  // disables update method untill it is needed. (enable it when the _hudScoreElement is in place next to the panel)
@@ -85,7 +87,7 @@ public class FinishingLine : MonoBehaviour
             if (_currentFeatherCountDuringRecount <= _gameManager.CollectedFeathers.Count)
             {
                 _timer += Time.deltaTime;
-                if (_timer >= 0.2f)
+                if (_timer >= 0.08f)
                 {
                     _currentFeatherCountDuringRecount += 1;
                     _timer = 0;
@@ -135,7 +137,7 @@ public class FinishingLine : MonoBehaviour
         {
             _timer += Time.deltaTime;
 
-            if (_timer >= 1.5f)
+            if (_timer >= 0.75f)
             {
                 // for each elixer collected, check types
                 foreach (var elixer in _gameManager.CollectedEggs)
@@ -146,22 +148,23 @@ public class FinishingLine : MonoBehaviour
                         {
                             _engraving1.SetActive(true);
                             _collectedSpecial1 = true;
-                            _foundOneSpecial = true;                           
+                            _foundOneSpecial = true;
+                            _foundSpecialCounter += 1;
                         }
-                        else if (elixer.ElixerTypePiece == EggElixir.ElixerType.Middle && _collectedSpecial2 == false)
+                        if (elixer.ElixerTypePiece == EggElixir.ElixerType.Middle && _collectedSpecial2 == false)
                         {
                             _engraving2.SetActive(true);
                             _collectedSpecial2 = true;
                             _foundOneSpecial = true;
+                            _foundSpecialCounter += 1;
                         }
-                        else if (elixer.ElixerTypePiece == EggElixir.ElixerType.Right && _collectedSpecial3 == false)
+                        if (elixer.ElixerTypePiece == EggElixir.ElixerType.Right && _collectedSpecial3 == false)
                         {
                             _engraving3.SetActive(true);
                             _collectedSpecial3 = true;
                             _foundOneSpecial = true;
-                        }
-
-                        _foundSpecialCounter += 1;
+                            _foundSpecialCounter += 1;
+                        }                     
                     }
                 }
 
@@ -169,24 +172,32 @@ public class FinishingLine : MonoBehaviour
                 _timer = 0;
             }
 
+
             // activate special animation for when all 3 pieces have been collected
             if (_collectedSpecial1 && _collectedSpecial2 && _collectedSpecial3 && _engravingsParentAnimator.enabled == false)
             {
-                _engravingsParentAnimator.enabled = true;
-            }
-            // once the amount of specials have been checked for, move on to button enable
-            if (_foundSpecialCounter >= _numberFoundSpecials) 
+                _timer2 += Time.deltaTime;
+                if (_timer2 >= 0.75f)
+                {
+                    _engravingsParentAnimator.enabled = true;
+                    _timer2 = 0;
+                }           
+            }           
+            else if (_foundSpecialCounter >= _numberFoundSpecials) 
             {
-                _finishedSpecialsCount = true;
+                _finishedSpecialsCount = true;          
             }
         }
         else // finally, show the buttons becoming available
         {
-            _buttonPanel.SetActive(true);
-            this.enabled = false; // disable the update once here
+            _timer2 += Time.deltaTime;
+            if (_timer2 >= 1f)
+            {
+                _buttonPanel.SetActive(true);
+                _timer2 = 0;
+                this.enabled = false; // disable the update once here              
+            }
         }
-
-
     }
 
 
