@@ -59,6 +59,10 @@ public class FinishingLine : MonoBehaviour
 
     private Animator _engravingsParentAnimator;
     private float _numberFoundSpecials, _foundSpecialCounter;
+
+    // sound effect things
+    [SerializeField]
+    private SoundEffectMaster _audioMaster;
     
 
 
@@ -149,7 +153,7 @@ public class FinishingLine : MonoBehaviour
                             _engraving1.SetActive(true);
                             _collectedSpecial1 = true;
                             _foundOneSpecial = true;
-                            _foundSpecialCounter += 1;
+                            _foundSpecialCounter += 1;                           
                         }
                         if (elixer.ElixerTypePiece == EggElixir.ElixerType.Middle && _collectedSpecial2 == false)
                         {
@@ -157,6 +161,11 @@ public class FinishingLine : MonoBehaviour
                             _collectedSpecial2 = true;
                             _foundOneSpecial = true;
                             _foundSpecialCounter += 1;
+
+                            if (_collectedSpecial1 == true)
+                            {
+                                _audioMaster.IncreasePitch(0.2f);
+                            }                              
                         }
                         if (elixer.ElixerTypePiece == EggElixir.ElixerType.Right && _collectedSpecial3 == false)
                         {
@@ -164,6 +173,11 @@ public class FinishingLine : MonoBehaviour
                             _collectedSpecial3 = true;
                             _foundOneSpecial = true;
                             _foundSpecialCounter += 1;
+
+                            if (_collectedSpecial1 == true || _collectedSpecial2 == true)
+                            {
+                                _audioMaster.IncreasePitch(0.2f);
+                            }                           
                         }                     
                     }
                 }
@@ -179,12 +193,14 @@ public class FinishingLine : MonoBehaviour
                 _timer2 += Time.deltaTime;
                 if (_timer2 >= 0.75f)
                 {
+                    _audioMaster.NormalizePitch();
                     _engravingsParentAnimator.enabled = true;
                     _timer2 = 0;
                 }           
             }           
             else if (_foundSpecialCounter >= _numberFoundSpecials) 
             {
+                _audioMaster.NormalizePitch();
                 _finishedSpecialsCount = true;          
             }
         }

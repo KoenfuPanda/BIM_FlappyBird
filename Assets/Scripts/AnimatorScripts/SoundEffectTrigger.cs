@@ -5,19 +5,23 @@ using UnityEngine;
 public class SoundEffectTrigger : MonoBehaviour
 {
     [SerializeField]
-    private List<AudioClip> _soundEffects = new List<AudioClip>();
-
-    private AudioSource _audioSource;
+    private SoundEffectMaster _audioMaster;
 
 
     private void Start()
     {
-        _audioSource = GetComponent<AudioSource>();
+        if (GetComponent<SoundEffectMaster>() == null)
+        {
+            _audioMaster = GetComponentInParent<SoundEffectMaster>();
+        }
+        else
+        {
+            _audioMaster = GetComponent<SoundEffectMaster>();
+        }       
     }
 
-
-    private void PlaySoundEffect(int index)
+    public void PlaySoundEffect(int index)
     {
-        _audioSource.PlayOneShot(_soundEffects.ToArray()[index]);
+        _audioMaster.PlaySpecificSoundEffect(index);
     }
 }
