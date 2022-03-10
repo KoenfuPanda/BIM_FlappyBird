@@ -97,7 +97,7 @@ public class FinishingLine : MonoBehaviour
         {
             //  increase the _currentFeatherCountDuringRecount by 1 every 0.08s, untill it has reached the _gameManager.collectedFeathers
 
-            if (_currentFeatherCountDuringRecount <= _gameManager.CollectedFeathers.Count)
+            if (_currentFeatherCountDuringRecount <= _gameManager.CollectedFeathers.Count -1)
             {
                 if (_pausedCount == false)
                 {
@@ -105,11 +105,12 @@ public class FinishingLine : MonoBehaviour
                     if (_timer >= _timerLimit)
                     {
                         _currentFeatherCountDuringRecount += 1;
+                        Debug.Log(_currentFeatherCountDuringRecount + " recounter");
                         _timer = 0;
                     }
                 }
             }
-            else if (_currentFeatherCountDuringRecount >= _gameManager.AllFeathers.Count) // if all eggs are collected...
+            else if (_currentFeatherCountDuringRecount > _gameManager.AllFeathers.Count -1) // if all eggs are collected...
             {
                 _collectedAllEggs = true;
                 _finishedEggCount = true;
@@ -161,6 +162,8 @@ public class FinishingLine : MonoBehaviour
 
             // update fill image
             _currentFillAmount = _currentFeatherCountDuringRecount / _gameManager.AllFeathers.Count;
+            Debug.Log(_currentFeatherCountDuringRecount + " recounter2");
+            Debug.Log(_currentFillAmount + " fills");
             _fillingBar.fillAmount = _currentFillAmount;
         }
         else if (_finishedSpecialsCount == false) // else if we have not counted all the specials collected...
