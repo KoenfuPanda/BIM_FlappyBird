@@ -110,7 +110,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Prototype_Levels/Proto_15_A_Slow.unity
     guid: 3690a6c0b057c6c44b98758886362dca
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Game_Ver_0.1/Alpha_MainMenu.unity
     guid: 5ad2a20e01076074d80a11e22308d2d2
   - enabled: 1
