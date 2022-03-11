@@ -47,8 +47,11 @@ public class LevelFramesManager : MonoBehaviour
     {
         for(int index = 1; index < GameInstance.GameState + 1; index++)
         {
-            Frames[index].Locked.SetActive(false);
-            Frames[index].Unlocked.SetActive(true);
+            if(index < 6)
+            {
+                Frames[index].Locked.SetActive(false);
+                Frames[index].Unlocked.SetActive(true);
+            }
         }
     }
 
