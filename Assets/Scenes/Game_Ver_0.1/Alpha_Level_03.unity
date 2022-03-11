@@ -66131,7 +66131,7 @@ MonoBehaviour:
   ReachedGoal: 0
   FollowFingerScript: {fileID: 0}
   _speedDecreaser: 4
-  _popupPanel: {fileID: 0}
+  _popupPanel: {fileID: 3131006984894833066}
   _canvasDarkened: {fileID: 0}
   _tutorialGoal: {fileID: 0}
   _draggableTutorial: {fileID: 1812780405}
