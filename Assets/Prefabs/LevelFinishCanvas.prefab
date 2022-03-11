@@ -366,6 +366,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 858700b678e640a42818031a059212a2, type: 3}
   - {fileID: 8300000, guid: f048f686b6bde4d4ead2c4a325a1ffb4, type: 3}
   - {fileID: 8300000, guid: ddf0b3f7983deb046a55ea93626d0aa5, type: 3}
+  - {fileID: 8300000, guid: e9692ac0afff6e244bc11980a6e391f3, type: 3}
 --- !u!114 &3304055369890346
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -874,6 +875,7 @@ GameObject:
   - component: {fileID: 5007173270806944562}
   - component: {fileID: 5007173270806944563}
   - component: {fileID: 5007173270806944561}
+  - component: {fileID: 2757626871774378770}
   m_Layer: 5
   m_Name: Panel_Buttons
   m_TagString: Untagged
@@ -960,6 +962,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &2757626871774378770
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5007173270806944565}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93fa7d7bdbcf2ed40a3d7ccc42a5ce07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _audioMaster: {fileID: 0}
 --- !u!1 &5007173270852685291
 GameObject:
   m_ObjectHideFlags: 0
@@ -2713,7 +2728,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 73.1}
+  m_AnchoredPosition: {x: 0, y: 61.4}
   m_SizeDelta: {x: 256, y: 256}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5007173271422027225

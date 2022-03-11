@@ -24,8 +24,8 @@ public class GameManager : MonoBehaviour
 
     public Text EggScoreText;
     public Text FeatherScoreText;
-    private int FeatherScore;
-    private int SavedFeatherScore;
+    public int FeatherScore;
+    public int SavedFeatherScore;
 
     public List<GameObject> CollectedPowerups = new List<GameObject>();
 

@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -49,6 +50,7 @@ public class FinishingLine : MonoBehaviour
     private float _threshHold1, _threshHold2, _threshHold3;
     private bool _threshHold1Reached, _threshHold2Reached, _threshHold3Reached;
     private bool _pausedCount;
+    private bool _playedChargingSound;
 
     const string _stringThreshHold1 = "ThreshHold_1_Reached";
     const string _stringThreshHold2 = "ThreshHold_2_Reached";
@@ -78,10 +80,10 @@ public class FinishingLine : MonoBehaviour
         _engravingsParentAnimator = _engravingParent.GetComponent<Animator>();
         _engravingsParentAnimator.enabled = false; // idem ditto
 
-        // 20, 50 and 90 %
+        // 20, 50 and 80 %
         _threshHold1 = _gameManager.AllFeathers.Count / 5;
         _threshHold2 = _gameManager.AllFeathers.Count / 2;
-        _threshHold3 = _gameManager.AllFeathers.Count * (9f / 10f);
+        _threshHold3 = _gameManager.AllFeathers.Count * (8f / 10f);
 
         _timerLimit = _timePer1Egg / (float)_gameManager.AllFeathers.Count;
 
@@ -95,12 +97,14 @@ public class FinishingLine : MonoBehaviour
     {
         if (_finishedEggCount == false) // if we have yet to check all collected eggs...
         {
-            //  increase the _currentFeatherCountDuringRecount by 1 every 0.08s, untill it has reached the _gameManager.collectedFeathers
-
-            if (_currentFeatherCountDuringRecount <= _gameManager.CollectedFeathers.Count -1)
+            //  increase the _currentFeatherCountDuringRecount by 1 every x s, untill it has reached the _gameManager.saved feathers
+            if (_currentFeatherCountDuringRecount <= _gameManager.SavedFeatherScore -1)
             {
                 if (_pausedCount == false)
                 {
+                    // play a oneshot of charging meter
+                    PlayChargingSound(0.1f);
+
                     _timer += Time.deltaTime;
                     if (_timer >= _timerLimit)
                     {
@@ -110,14 +114,16 @@ public class FinishingLine : MonoBehaviour
                     }
                 }
             }
-            else if (_currentFeatherCountDuringRecount > _gameManager.AllFeathers.Count -1) // if all eggs are collected...
+            else if (_currentFeatherCountDuringRecount >= _gameManager.AllFeathers.Count) // if all eggs are collected...
             {
                 _collectedAllEggs = true;
                 _finishedEggCount = true;
                 _egg100Percent.SetActive(true);
+                _audioMaster.NormalizePitch();
             }
             else
             {
+                _audioMaster.GetComponent<AudioSource>().Stop(); // stop the charging sound once it's finished counting
                 _finishedEggCount = true;
             }
 
@@ -125,6 +131,9 @@ public class FinishingLine : MonoBehaviour
             // checking threshHolds
             if (_currentFeatherCountDuringRecount >= _threshHold1 && _threshHold1Reached == false)
             {
+                _playedChargingSound = false;
+                _audioMaster.NormalizePitch();
+
                 _star1.SetActive(true);
                 _threshHoldsPanel.GetComponent<Animator>().Play(_stringThreshHold1);
 
@@ -133,19 +142,27 @@ public class FinishingLine : MonoBehaviour
             }
             else if (_currentFeatherCountDuringRecount >= _threshHold2 && _threshHold2Reached == false)
             {
+                _playedChargingSound = false;
+
                 _star2.SetActive(true);
                 _threshHoldsPanel.GetComponent<Animator>().Play(_stringThreshHold2);
 
                 _threshHold2Reached = true;
                 _pausedCount = true;
+
+                //_audioMaster.IncreasePitch(0.1f);
             }
             else if (_currentFeatherCountDuringRecount >= _threshHold3 && _threshHold3Reached == false)
             {
+                _playedChargingSound = false;
+
                 _star3.SetActive(true);
                 _threshHoldsPanel.GetComponent<Animator>().Play(_stringThreshHold3);
 
                 _threshHold3Reached = true;
                 _pausedCount = true;
+
+                //_audioMaster.IncreasePitch(0.1f);
             }
 
             // stop the count for 1 second when it reaches a threshHold, then continue counting
@@ -171,7 +188,7 @@ public class FinishingLine : MonoBehaviour
             _timer += Time.deltaTime;
 
             if (_timer >= 0.75f)
-            {
+            {                
                 // for each elixer collected, check types
                 foreach (var elixer in _gameManager.CollectedEggs)
                 {
@@ -236,7 +253,7 @@ public class FinishingLine : MonoBehaviour
         else // finally, show the buttons becoming available
         {
             _timer2 += Time.deltaTime;
-            if (_timer2 >= 1f)
+            if (_timer2 >= 1.2f)
             {
                 _buttonPanel.SetActive(true);
                 _timer2 = 0;
@@ -244,6 +261,27 @@ public class FinishingLine : MonoBehaviour
             }
         }
     }
+
+
+
+    private void PlayChargingSound(float pitchIncrease)
+    {
+        if (_playedChargingSound == false)
+        {
+            _audioMaster.PlaySpecificSoundEffect(1);
+            _playedChargingSound = true;
+
+            if (_threshHold1Reached == true)
+            {
+                _audioMaster.IncreasePitch(pitchIncrease);
+            }           
+        }
+    }
+
+
+
+
+
 
 
     private void OnTriggerEnter2D(Collider2D collider)
@@ -268,6 +306,8 @@ public class FinishingLine : MonoBehaviour
             FX.SetActive(true);
             GetComponent<AudioSource>().Play();
 
+            // save the feathers for one last time
+            _gameManager.SaveFeathersCollectedSoFar(); 
 
             // 1)   set active of end level screen to true, this plays inherent popup animation
             // 1.1) this end level screen has some visualization of the feather score
@@ -298,7 +338,7 @@ public class FinishingLine : MonoBehaviour
             {
                 _gameInstance = GameObject.Find("GameInstance(Clone)").GetComponent<GameInstance>();
 
-                // eggs collected in this level level x = _gamemanager.colectedfeathers.count
+                // eggs collected in this level level x = _gamemanager.saved feathers
 
                 _gameInstance.SetGameState(_levelNumber);
             }
