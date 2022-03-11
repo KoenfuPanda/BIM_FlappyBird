@@ -17,7 +17,7 @@ public class CheatCode : MonoBehaviour
 
         if (_timesPressed > 10)
         {
-            _gameInstance.GetComponent<GameInstance>().GameState = 6;
+            GameInstance.GameState = 6;
             _gameInstance.GetComponent<GameInstance>().SetLevelButtons();
         }
     }

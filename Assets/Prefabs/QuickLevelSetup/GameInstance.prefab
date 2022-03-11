@@ -43,6 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35a36ec428a6ec94fa27b44c17d834a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GameState: 0
   StartCanvas: {fileID: 0}
   LevelCanvas: {fileID: 0}
-  GameState: 0
+  MaxFeathers: 000000000000000000000000000000000000000000000000

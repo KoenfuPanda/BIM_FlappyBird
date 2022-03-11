@@ -66,6 +66,7 @@ public class FinishingLine : MonoBehaviour
     private Animator _engravingsParentAnimator;
     private float _numberFoundSpecials, _foundSpecialCounter;
 
+
     // sound effect things
     [SerializeField]
     private SoundEffectMaster _audioMaster;
@@ -341,6 +342,18 @@ public class FinishingLine : MonoBehaviour
                 // eggs collected in this level level x = _gamemanager.saved feathers
 
                 _gameInstance.SetGameState(_levelNumber);
+            }
+
+            // Amount collected feathers in level
+
+            if(GameInstance.MaxFeathers[_levelNumber - 1] == 0)
+            {
+                GameInstance.MaxFeathers[_levelNumber-1] = _gameManager.AllFeathers.Count;
+            }
+
+            if(GameInstance.CollectedFeathers[_levelNumber - 1] < _gameManager.FeatherScore)
+            {
+                GameInstance.CollectedFeathers[_levelNumber-1] = _gameManager.FeatherScore;
             }
         }
 

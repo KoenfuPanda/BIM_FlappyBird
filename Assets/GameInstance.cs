@@ -1,21 +1,24 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class GameInstance : MonoBehaviour
 {
-    public int GameState = 0;
-    
+    static public int GameState = 0;
+
     public GameObject StartCanvas;
     public GameObject LevelCanvas;
 
     static public bool[,] CollectedEggs;
+    static public int[] CollectedFeathers;
+    static public int[] MaxFeathers;
+
 
     private void Start()
     {
         CollectedEggs = new bool[6, 3];
+        CollectedFeathers = new int[6];
+        MaxFeathers = new int[6];
 
         DontDestroyOnLoad(this.gameObject);
         SetLevelButtons();
@@ -28,12 +31,10 @@ public class GameInstance : MonoBehaviour
             GameState = levelNumber;
         }
     }
-    
+
     public void SetLevelButtons()
     {
-        print("set level buttons");
-
-        if (SceneManager.GetActiveScene().name == "Alpha_MainMenu")
+        if (SceneManager.GetActiveScene().name == "Alpha_MainMenu" || SceneManager.GetActiveScene().name == "MainMenu")
         {
             GameObject reference = GameObject.Find("SceneReferences");
 
@@ -46,11 +47,11 @@ public class GameInstance : MonoBehaviour
             StartCanvas.SetActive(false);
             LevelCanvas.SetActive(true);
 
-            for (int i = 0; i < GameState; i++)
-            {
-                LevelCanvas.GetComponent<LevelCollection>().LevelButtons[i].GetComponent<Button>().interactable = true;
-                LevelCanvas.GetComponent<LevelCollection>().LevelButtons[i].transform.GetChild(0).gameObject.SetActive(true);
-            }
+            //for (int i = 0; i < GameState; i++)
+            //{
+            //    LevelCanvas.GetComponent<LevelCollection>().LevelButtons[i].GetComponent<Button>().interactable = true;
+            //    LevelCanvas.GetComponent<LevelCollection>().LevelButtons[i].transform.GetChild(0).gameObject.SetActive(true);
+            //}
         }
     }
 
