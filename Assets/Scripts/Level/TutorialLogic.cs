@@ -38,8 +38,6 @@ public class TutorialLogic : MonoBehaviour
 
     private void Start()
     {
-        _moveDirection = FindObjectOfType<MoveDirection>();
-
         // disable start controls if first tutorial
         if (IsFirstTutorial)
         {
@@ -123,6 +121,8 @@ public class TutorialLogic : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        _moveDirection = collision.GetComponentInParent<MoveDirection>();
+
         _activated = true;
     }
 }
