@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 0
-    path: Assets/Scenes/Levels/MainMenu.unity
+    path: Assets/Scenes/Levels/MainMenu_Old.unity
     guid: 6022cf520f016934a9b8b25f32048b90
   - enabled: 0
     path: Assets/Scenes/Levels/Level_01.unity
@@ -110,28 +110,28 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Prototype_Levels/Proto_15_A_Slow.unity
     guid: 3690a6c0b057c6c44b98758886362dca
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Game_Ver_0.1/Alpha_MainMenu.unity
     guid: 5ad2a20e01076074d80a11e22308d2d2
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Game_Ver_0.1/Alpha_Level_01.unity
     guid: 086dc59870f189f428d2933ad87685ab
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Game_Ver_0.1/Alpha_Level_02.unity
     guid: 6bc8e467ea9e5154e904714aaf385150
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Game_Ver_0.1/Alpha_Level_03.unity
     guid: b34210603ccc93d4082a67ba8f832799
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Game_Ver_0.1/Alpha_Level_04.unity
     guid: d260f91c6a77b1d4bb76729f9ec4c4ea
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Game_Ver_0.1/Alpha_Level_05.unity
     guid: 4dd58340da12d82458e74c43caf6737f
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Game_Ver_0.1/Alpha_Level_06.unity
     guid: 1254f57403c13814fac1bd290d71f72e
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Game_Ver_0.1/Alpha_Level_07.unity
     guid: f1e80b5a8ea05f94099afe88fb4de06e
   - enabled: 0
@@ -161,4 +161,22 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Test_Scenes/TestingScoreScreen.unity
     guid: 65ffdf773726fec43bdce1619ecba23e
+  - enabled: 1
+    path: Assets/Scenes/Final/Level_01.unity
+    guid: 7337a4449bf7c53498e1683148dfa820
+  - enabled: 1
+    path: Assets/Scenes/Final/Level_02.unity
+    guid: 314aacc78048df643b3982912072fd8d
+  - enabled: 1
+    path: Assets/Scenes/Final/Level_03.unity
+    guid: 1ee3c0f5bcb906647841e1d4e49cfd39
+  - enabled: 1
+    path: Assets/Scenes/Final/Level_04.unity
+    guid: ae34dd5daca76ca41b8a1039832f1df8
+  - enabled: 1
+    path: Assets/Scenes/Final/Level_05.unity
+    guid: 2bf893ec7d057fb45b015b9ae01b6135
+  - enabled: 1
+    path: Assets/Scenes/Final/Level_06.unity
+    guid: e5ce191f31b2b3c43ab44ecf7a26c11f
   m_configObjects: {}
