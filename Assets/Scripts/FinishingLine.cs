@@ -91,6 +91,16 @@ public class FinishingLine : MonoBehaviour
         Debug.Log(_gameManager.AllFeathers.Count + " all feathers in the level" );
         Debug.Log(_threshHold1 + " T " + _threshHold2 + " T " + _threshHold3);
 
+        for (int i = 0; i < 3; i++) // checking whether the pieces have been picked up
+        {
+            if (GameInstance.CollectedEggs[_levelNumber, 0] == true)
+            {
+                // enable engarving piece, disable animator
+            }
+            
+        }
+
+
         this.enabled = false;  // disables update method untill it is needed. (enable it when the _hudScoreElement is in place next to the panel)
     }
 
@@ -107,12 +117,24 @@ public class FinishingLine : MonoBehaviour
                     PlayChargingSound(0.1f);
 
                     _timer += Time.deltaTime;
-                    if (_timer >= _timerLimit)
+                    if (_threshHold1Reached == true && _threshHold3Reached == false) // speed up a bit more than normal
                     {
-                        _currentFeatherCountDuringRecount += 1;
-                        Debug.Log(_currentFeatherCountDuringRecount + " recounter");
-                        _timer = 0;
+                        if (_timer >= _timerLimit / 2f)
+                        {
+                            _currentFeatherCountDuringRecount += 1;
+                            _timer = 0;
+                        }
                     }
+                    else
+                    {
+                        if (_timer >= _timerLimit)
+                        {
+                            _currentFeatherCountDuringRecount += 1;
+                            _timer = 0;
+                        }
+                    }
+                    
+
                 }
             }
             else if (_currentFeatherCountDuringRecount >= _gameManager.AllFeathers.Count) // if all eggs are collected...
@@ -125,6 +147,7 @@ public class FinishingLine : MonoBehaviour
             else
             {
                 _audioMaster.GetComponent<AudioSource>().Stop(); // stop the charging sound once it's finished counting
+                _audioMaster.NormalizePitch();
                 _finishedEggCount = true;
             }
 
@@ -171,7 +194,7 @@ public class FinishingLine : MonoBehaviour
             if (_pausedCount == true)
             {
                 _timer += Time.deltaTime;
-                if (_timer >= 0.7f)
+                if (_timer >= 0.9f)
                 {
                     _pausedCount = false;
                     _timer = 0;
