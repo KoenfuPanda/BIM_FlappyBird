@@ -20,13 +20,16 @@ public class ChangeDirection : MonoBehaviour
     private Vector3 startCam;
     private Vector3 endCam;
 
+    public GameObject testRoot;
+
 
     void Start()
     {
         speed = GetComponent<MoveDirection>().Speed;
 
         bimPivot = transform.Find("Bim_Pivot").gameObject;
-        mainCamera = transform.Find("Main Camera").gameObject;
+        mainCamera = testRoot;
+        //mainCamera = transform.Find("Main Camera").gameObject;
 
         startCam = mainCamera.transform.localPosition;
         endCam = new Vector3(mainCamera.transform.localPosition.x - 9, mainCamera.transform.localPosition.y, mainCamera.transform.localPosition.z);

@@ -57,7 +57,8 @@ public class LevelFramesManager : MonoBehaviour
 
     public void LoadSelectedLevel()
     {
-        SceneManager.LoadScene("Alpha_level_0" + FrameNumber.ToString());
+        SceneManager.LoadScene("Level_0" + FrameNumber.ToString());
+        //SceneManager.LoadScene("Alpha_level_0" + FrameNumber.ToString());
     }
 
     public void FrameToRight()

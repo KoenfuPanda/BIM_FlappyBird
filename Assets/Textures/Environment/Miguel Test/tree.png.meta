@@ -143,7 +143,7 @@ TextureImporter:
         width: 840
         height: 512
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -151,27 +151,6 @@ TextureImporter:
       bones: []
       spriteID: 8a09eb0b359f6b780800000000000000
       internalID: -8667466294985060184
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tree_1
-      rect:
-        serializedVersion: 2
-        x: 892
-        y: 176
-        width: 4
-        height: 5
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: eff2133ccec6d4940800000000000000
-      internalID: 5281997702118322174
       vertices: []
       indices: 
       edges: []
@@ -185,7 +164,7 @@ TextureImporter:
         width: 480
         height: 440
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -206,7 +185,7 @@ TextureImporter:
         width: 304
         height: 376
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
