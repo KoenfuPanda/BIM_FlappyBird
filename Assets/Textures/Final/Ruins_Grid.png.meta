@@ -486,10 +486,10 @@ TextureImporter:
       name: Ruins_Grid_15
       rect:
         serializedVersion: 2
-        x: 1280
+        x: 1271
         y: 728
-        width: 240
-        height: 80
+        width: 249
+        height: 82
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -507,10 +507,10 @@ TextureImporter:
       name: Ruins_Grid_16
       rect:
         serializedVersion: 2
-        x: 1590
-        y: 748
-        width: 71
-        height: 52
+        x: 1582
+        y: 743
+        width: 86
+        height: 62
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -570,10 +570,10 @@ TextureImporter:
       name: Ruins_Grid_19
       rect:
         serializedVersion: 2
-        x: 1248
-        y: 632
-        width: 400
-        height: 72
+        x: 1241
+        y: 627
+        width: 416
+        height: 83
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -591,10 +591,10 @@ TextureImporter:
       name: Ruins_Grid_20
       rect:
         serializedVersion: 2
-        x: 1704
-        y: 671
-        width: 64
-        height: 33
+        x: 1700
+        y: 666
+        width: 73
+        height: 40
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -612,10 +612,10 @@ TextureImporter:
       name: Ruins_Grid_21
       rect:
         serializedVersion: 2
-        x: 1824
-        y: 648
-        width: 64
-        height: 72
+        x: 1817
+        y: 642
+        width: 75
+        height: 83
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -633,10 +633,10 @@ TextureImporter:
       name: Ruins_Grid_22
       rect:
         serializedVersion: 2
-        x: 1928
-        y: 651
-        width: 104
-        height: 61
+        x: 1918
+        y: 646
+        width: 120
+        height: 72
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -655,9 +655,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 296
-        width: 584
-        height: 336
+        y: 269
+        width: 611
+        height: 380
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -675,10 +675,10 @@ TextureImporter:
       name: Ruins_Grid_24
       rect:
         serializedVersion: 2
-        x: 672
-        y: 296
-        width: 496
-        height: 312
+        x: 645
+        y: 268
+        width: 541
+        height: 349
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -696,10 +696,10 @@ TextureImporter:
       name: Ruins_Grid_25
       rect:
         serializedVersion: 2
-        x: 1208
-        y: 447
-        width: 177
-        height: 145
+        x: 1195
+        y: 434
+        width: 203
+        height: 165
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -717,10 +717,10 @@ TextureImporter:
       name: Ruins_Grid_26
       rect:
         serializedVersion: 2
-        x: 1440
-        y: 464
-        width: 160
-        height: 120
+        x: 1426
+        y: 451
+        width: 193
+        height: 141
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -738,10 +738,10 @@ TextureImporter:
       name: Ruins_Grid_27
       rect:
         serializedVersion: 2
-        x: 1668
-        y: 488
-        width: 117
-        height: 96
+        x: 1658
+        y: 480
+        width: 142
+        height: 111
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -759,10 +759,10 @@ TextureImporter:
       name: Ruins_Grid_28
       rect:
         serializedVersion: 2
-        x: 1868
-        y: 483
-        width: 140
-        height: 85
+        x: 1857
+        y: 476
+        width: 161
+        height: 100
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
