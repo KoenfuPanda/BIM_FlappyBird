@@ -1,0 +1,794 @@
+fileFormatVersion: 2
+guid: 9a252c3871c087541be0a2945f5211e0
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1445147288564636109
+    second: Ruins_Grid_0
+  - first:
+      213: 3779251701368209330
+    second: Ruins_Grid_1
+  - first:
+      213: 926075564051977076
+    second: Ruins_Grid_2
+  - first:
+      213: -3629476955638137244
+    second: Ruins_Grid_3
+  - first:
+      213: 6636235053346712055
+    second: Ruins_Grid_5
+  - first:
+      213: -6694138650766883264
+    second: Ruins_Grid_6
+  - first:
+      213: -1991537582684855464
+    second: Ruins_Grid_7
+  - first:
+      213: 297883063082465708
+    second: Ruins_Grid_8
+  - first:
+      213: -1590443102491799309
+    second: Ruins_Grid_9
+  - first:
+      213: 9164991405141905060
+    second: Ruins_Grid_10
+  - first:
+      213: -1012803268784349286
+    second: Ruins_Grid_11
+  - first:
+      213: -7162672509243976395
+    second: Ruins_Grid_12
+  - first:
+      213: 8544667997694413100
+    second: Ruins_Grid_13
+  - first:
+      213: 8462216168038959522
+    second: Ruins_Grid_14
+  - first:
+      213: -8213550675199025982
+    second: Ruins_Grid_15
+  - first:
+      213: 1890846342039505162
+    second: Ruins_Grid_16
+  - first:
+      213: 8974840051373054322
+    second: Ruins_Grid_17
+  - first:
+      213: 4230839690040274502
+    second: Ruins_Grid_18
+  - first:
+      213: 2802411428370089186
+    second: Ruins_Grid_19
+  - first:
+      213: 5787439821793590131
+    second: Ruins_Grid_20
+  - first:
+      213: 4891082458932939240
+    second: Ruins_Grid_21
+  - first:
+      213: -3373883527012666075
+    second: Ruins_Grid_22
+  - first:
+      213: -7931039342151187873
+    second: Ruins_Grid_23
+  - first:
+      213: -945916373132794964
+    second: Ruins_Grid_24
+  - first:
+      213: 266206834887189418
+    second: Ruins_Grid_25
+  - first:
+      213: -7967182290081551382
+    second: Ruins_Grid_26
+  - first:
+      213: -1524249768168144010
+    second: Ruins_Grid_27
+  - first:
+      213: -1811196396179351185
+    second: Ruins_Grid_28
+  - first:
+      213: 2058753879691645502
+    second: Ruins_Grid_29
+  - first:
+      213: -2874632280747904624
+    second: Ruins_Grid_30
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 1
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 1
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 1
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Ruins_Grid_0
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 1404
+        width: 835
+        height: 641
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc9930f5dc13e0410800000000000000
+      internalID: 1445147288564636109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ruins_Grid_1
+      rect:
+        serializedVersion: 2
+        x: 867
+        y: 1409
+        width: 588
+        height: 615
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2bfb7d82669927430800000000000000
+      internalID: 3779251701368209330
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ruins_Grid_2
+      rect:
+        serializedVersion: 2
+        x: 1460
+        y: 1410
+        width: 543
+        height: 617
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 473dc76a1d41adc00800000000000000
+      internalID: 926075564051977076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ruins_Grid_3
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 812
+        width: 786
+        height: 577
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46ef8ba40f181adc0800000000000000
+      internalID: -3629476955638137244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ruins_Grid_5
+      rect:
+        serializedVersion: 2
+        x: 803
+        y: 619
+        width: 436
+        height: 781
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f9e9b8ee94a81c50800000000000000
+      internalID: 6636235053346712055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ruins_Grid_6
+      rect:
+        serializedVersion: 2
+        x: 1242
+        y: 1094
+        width: 268
+        height: 303
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 046c3db3d54a913a0800000000000000
+      internalID: -6694138650766883264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ruins_Grid_7
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 1116
+        width: 136
+        height: 233
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 853aa33ce13ac54e0800000000000000
+      internalID: -1991537582684855464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ruins_Grid_8
+      rect:
+        serializedVersion: 2
+        x: 1681
+        y: 1117
+        width: 172
+        height: 243
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca9b2af411b422400800000000000000
+      internalID: 297883063082465708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ruins_Grid_9
+      rect:
+        serializedVersion: 2
+        x: 1876
+        y: 1155
+        width: 164
+        height: 165
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f09180cc6c9de9e0800000000000000
+      internalID: -1590443102491799309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ruins_Grid_10
+      rect:
+        serializedVersion: 2
+        x: 1263
+        y: 968
+        width: 288
+        height: 103
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4aecdf0ff17903f70800000000000000
+      internalID: 9164991405141905060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ruins_Grid_11
+      rect:
+        serializedVersion: 2
+        x: 1568
+        y: 968
+        width: 192
+        height: 126
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9f11c80bccc1f1f0800000000000000
+      internalID: -1012803268784349286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ruins_Grid_12
+      rect:
+        serializedVersion: 2
+        x: 1867
+        y: 882
+        width: 158
+        height: 213
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5359e046d43199c90800000000000000
+      internalID: -7162672509243976395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ruins_Grid_13
+      rect:
+        serializedVersion: 2
+        x: 1256
+        y: 827
+        width: 276
+        height: 117
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c294936b542c49670800000000000000
+      internalID: 8544667997694413100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ruins_Grid_14
+      rect:
+        serializedVersion: 2
+        x: 1540
+        y: 842
+        width: 299
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a9878425c4df6570800000000000000
+      internalID: 8462216168038959522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ruins_Grid_15
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 728
+        width: 240
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2cc971c9d2b930e80800000000000000
+      internalID: -8213550675199025982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ruins_Grid_16
+      rect:
+        serializedVersion: 2
+        x: 1590
+        y: 748
+        width: 71
+        height: 52
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a098c1edab2ad3a10800000000000000
+      internalID: 1890846342039505162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ruins_Grid_17
+      rect:
+        serializedVersion: 2
+        x: 1715
+        y: 752
+        width: 95
+        height: 53
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2791a0ad9790d8c70800000000000000
+      internalID: 8974840051373054322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ruins_Grid_18
+      rect:
+        serializedVersion: 2
+        x: 1871
+        y: 754
+        width: 165
+        height: 90
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64e697a3846f6ba30800000000000000
+      internalID: 4230839690040274502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ruins_Grid_19
+      rect:
+        serializedVersion: 2
+        x: 1248
+        y: 632
+        width: 400
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e48e76a85a24e620800000000000000
+      internalID: 2802411428370089186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ruins_Grid_20
+      rect:
+        serializedVersion: 2
+        x: 1704
+        y: 671
+        width: 64
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37bf4f0dadd115050800000000000000
+      internalID: 5787439821793590131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ruins_Grid_21
+      rect:
+        serializedVersion: 2
+        x: 1824
+        y: 648
+        width: 64
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e987d3159d90e340800000000000000
+      internalID: 4891082458932939240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ruins_Grid_22
+      rect:
+        serializedVersion: 2
+        x: 1928
+        y: 651
+        width: 104
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5253edacece8d21d0800000000000000
+      internalID: -3373883527012666075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ruins_Grid_23
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 296
+        width: 584
+        height: 336
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f524e6f1db94fe190800000000000000
+      internalID: -7931039342151187873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ruins_Grid_24
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 296
+        width: 496
+        height: 312
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca3a130021e6fd2f0800000000000000
+      internalID: -945916373132794964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ruins_Grid_25
+      rect:
+        serializedVersion: 2
+        x: 1208
+        y: 447
+        width: 177
+        height: 145
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa36b36b4b1c1b300800000000000000
+      internalID: 266206834887189418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ruins_Grid_26
+      rect:
+        serializedVersion: 2
+        x: 1440
+        y: 464
+        width: 160
+        height: 120
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aebe7ea4be1ee6190800000000000000
+      internalID: -7967182290081551382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ruins_Grid_27
+      rect:
+        serializedVersion: 2
+        x: 1668
+        y: 488
+        width: 117
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 673cd5369e6c8dae0800000000000000
+      internalID: -1524249768168144010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ruins_Grid_28
+      rect:
+        serializedVersion: 2
+        x: 1868
+        y: 483
+        width: 140
+        height: 85
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f69134b49765dd6e0800000000000000
+      internalID: -1811196396179351185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
