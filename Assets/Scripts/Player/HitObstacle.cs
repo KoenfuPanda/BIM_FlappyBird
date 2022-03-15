@@ -135,8 +135,8 @@ public class HitObstacle : MonoBehaviour
 
     private void OnCollisionStay2D(Collision2D collision)
     {
-        Debug.Log(collision.contacts.Length + " number of contacts");
-        Debug.Log(collision.contacts[0].normal.normalized + " normal");
+        //Debug.Log(collision.contacts.Length + " number of contacts");
+        //Debug.Log(collision.contacts[0].normal.normalized + " normal");
 
         if (collision.gameObject.tag != "Block")
         {
