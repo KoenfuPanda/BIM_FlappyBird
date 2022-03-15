@@ -17,7 +17,7 @@ public class MatrassBounce : MonoBehaviour
     [SerializeField]
     private float _timeAmountControlLost;
 
-    private Animator _animator;
+    [SerializeField] private Animator _animator;
 
     [SerializeField]
     private bool _speedsUpGame;
@@ -26,7 +26,7 @@ public class MatrassBounce : MonoBehaviour
 
     private void Start()
     {
-        _animator = GetComponent<Animator>();
+        //_animator = GetComponent<Animator>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
