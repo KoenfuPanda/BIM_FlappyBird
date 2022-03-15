@@ -209,8 +209,8 @@ public class FinishingLine : MonoBehaviour
 
                 // update fill image
                 _currentFillAmount = _currentFeatherCountDuringRecount / _gameManager.AllFeathers.Count;
-                Debug.Log(_currentFeatherCountDuringRecount + " recounter2");
-                Debug.Log(_currentFillAmount + " fills");
+                //Debug.Log(_currentFeatherCountDuringRecount + " recounter2");
+                //Debug.Log(_currentFillAmount + " fills");
                 _fillingBar.fillAmount = _currentFillAmount;
             }
             else if (_finishedSpecialsCount == false) // else if we have not counted all the specials collected...
