@@ -48,10 +48,10 @@ public class CheckPoint : MonoBehaviour
             IsActive = true; // enable this one
 
             // change color/sprite
-            if (GetComponentInChildren<SpriteRenderer>() != null)
-            {
-                GetComponentInChildren<SpriteRenderer>().color = Color.green;
-            }
+            //if (GetComponentInChildren<SpriteRenderer>() != null)
+            //{
+            //    GetComponentInChildren<SpriteRenderer>().color = Color.green;
+            //}
 
             _gameManager.SaveFeathersCollectedSoFar(); // save feathers
 
