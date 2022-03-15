@@ -417,6 +417,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4755342922028366119}
+  - component: {fileID: 4177741788090982132}
   m_Layer: 0
   m_Name: Obstacle_l
   m_TagString: Untagged
@@ -453,6 +454,38 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!60 &4177741788090982132
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3192989964523413003}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.116607666, y: 3.016322}
+      - {x: -3.049964, y: 1.8880644}
+      - {x: -4.0568404, y: -3.0925622}
+      - {x: 5.864244, y: -3.0439756}
+      - {x: 4.996521, y: -0.35101736}
+      - {x: 2.7826843, y: 0.08877831}
+      - {x: 2.2337408, y: 2.446804}
 --- !u!1 &3698881159198767676
 GameObject:
   m_ObjectHideFlags: 0
