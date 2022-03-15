@@ -18,6 +18,9 @@ public class CheckPoint : MonoBehaviour
 
     private bool _hasBeenActivated;
 
+    [SerializeField]
+    private Animator _animator;
+
     void Start()
     {
         _hasBeenActivated = false;
@@ -35,6 +38,8 @@ public class CheckPoint : MonoBehaviour
     {
         if(_hasBeenActivated == false)
         {
+            _animator.SetTrigger("Ring");
+
             foreach (CheckPoint checkPoint in _gameManager.CheckPoints) // disable others
             {
                 checkPoint.IsActive = false;

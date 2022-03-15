@@ -7,6 +7,7 @@ public class SpawnCannonBall : MonoBehaviour
     [SerializeField] private GameObject _projectile;
     [SerializeField] private float _loopTime;
     [SerializeField] private float _speed;
+    [SerializeField] private Animator _animator;
 
     [SerializeField]
     private GameObject _canonBallPrefab, _featherPickupPrefab;
@@ -33,6 +34,8 @@ public class SpawnCannonBall : MonoBehaviour
 
         if (_timer >= _loopTime)
         {
+            _animator.SetTrigger("Shoot");
+
             if (_projectileType == ProjectileType.Cannonball) // canonballs only
             {
                 _chosenProjectile = Instantiate(_canonBallPrefab, _shootPosition.position, Quaternion.identity);

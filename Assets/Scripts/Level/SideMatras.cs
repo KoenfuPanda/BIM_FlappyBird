@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class SideMatras : MonoBehaviour
 {
+    [SerializeField]
     private Animator _animator;
 
     private Rigidbody2D _bimRigid;
@@ -55,7 +56,7 @@ public class SideMatras : MonoBehaviour
             _bounceDown = true;
         }
 
-        _animator = GetComponent<Animator>();
+        //_animator = GetComponent<Animator>();
     }
 
     private void OnTriggerEnter2D(Collider2D collider)

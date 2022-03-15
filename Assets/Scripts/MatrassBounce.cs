@@ -17,7 +17,8 @@ public class MatrassBounce : MonoBehaviour
     [SerializeField]
     private float _timeAmountControlLost;
 
-    [SerializeField] private Animator _animator;
+    [SerializeField] 
+    private Animator _animator;
 
     [SerializeField]
     private bool _speedsUpGame;
