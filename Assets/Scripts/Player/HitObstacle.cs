@@ -133,6 +133,51 @@ public class HitObstacle : MonoBehaviour
         }
     }
 
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        Debug.Log(collision.contacts.Length + " number of contacts");
+        Debug.Log(collision.contacts[0].normal.normalized + " normal");
+
+        if (collision.gameObject.tag != "Block")
+        {
+            if (_followFinger != null) // if using followfinger ...
+            {
+                if (_followFinger.MegaBimActive == false)
+                {
+                    if (IsImmune == false)  // only take damage when not immune and when the collision is forward
+                    {
+                        //Debug.Log(collision.gameObject.name + " is the hit obstacle");
+
+                        if (transform.localScale.x > 0 && collision.contacts[0].normal.normalized.x <= -0.78f ||
+                            transform.localScale.x < 0 && collision.contacts[0].normal.normalized.x >= 0.78f)
+                        {
+                            CheckReboundDirectionFollowFinger(collision);
+                            // become immune
+                            StartCoroutine(GainImmunity(_immunityTime));
+                            // instantiate object with sound effect and particle
+                            _followFinger.HitWallFeedback(collision.contacts[0].point);
+                            // lose health
+                            _gameManager.HealthBiM -= 1;
+                            // update sprites
+                            _gameManager.UpdateHUDHealth();
+                            // if health == 0  -> checkpoint
+                            if (_gameManager.HealthBiM <= 0)
+                            {
+                                _followFinger.enabled = false;
+
+                                _collider.enabled = false;
+                                _rigidbody.gravityScale = 1;
+                                _rigidbody.constraints = RigidbodyConstraints2D.None;
+
+                                _gameManager.StartCoroutine(_gameManager.RespawnLatestPoint());
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -163,10 +208,6 @@ public class HitObstacle : MonoBehaviour
             }
         }
     }
-
-
-
-
 
 
     private void CheckReboundDirectionFollowFinger(Collision2D collision)

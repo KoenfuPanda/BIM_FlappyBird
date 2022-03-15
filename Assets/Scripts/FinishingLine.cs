@@ -66,6 +66,9 @@ public class FinishingLine : MonoBehaviour
     private Animator _engravingsParentAnimator;
     private float _numberFoundSpecials, _foundSpecialCounter;
 
+    [HideInInspector]
+    public bool IsEnabled;
+
 
     // sound effect things
     [SerializeField]
@@ -101,187 +104,191 @@ public class FinishingLine : MonoBehaviour
         }
 
 
-        this.enabled = false;  // disables update method untill it is needed. (enable it when the _hudScoreElement is in place next to the panel)
+        //this.enabled = false;  // disables update method untill it is needed. (enable it when the _hudScoreElement is in place next to the panel) (does not work ?)
     }
 
     private void Update()
     {
-        if (_finishedEggCount == false) // if we have yet to check all collected eggs...
+        if(IsEnabled == true)
         {
-            //  increase the _currentFeatherCountDuringRecount by 1 every x s, untill it has reached the _gameManager.saved feathers
-            if (_currentFeatherCountDuringRecount <= _gameManager.SavedFeatherScore -1)
+            if (_finishedEggCount == false) // if we have yet to check all collected eggs...
             {
-                if (_pausedCount == false)
+                //  increase the _currentFeatherCountDuringRecount by 1 every x s, untill it has reached the _gameManager.saved feathers
+                if (_currentFeatherCountDuringRecount <= _gameManager.SavedFeatherScore - 1)
                 {
-                    // play a oneshot of charging meter
-                    PlayChargingSound(0.1f);
-
-                    _timer += Time.deltaTime;
-                    if (_threshHold1Reached == true && _threshHold3Reached == false) // speed up a bit more than normal
+                    if (_pausedCount == false)
                     {
-                        if (_timer >= _timerLimit / 2f)
-                        {
-                            _currentFeatherCountDuringRecount += 1;
-                            _timer = 0;
-                        }
-                    }
-                    else
-                    {
-                        if (_timer >= _timerLimit)
-                        {
-                            _currentFeatherCountDuringRecount += 1;
-                            _timer = 0;
-                        }
-                    }
-                    
+                        // play a oneshot of charging meter
+                        PlayChargingSound(0.1f);
 
+                        _timer += Time.deltaTime;
+                        if (_threshHold1Reached == true && _threshHold3Reached == false) // speed up a bit more than normal
+                        {
+                            if (_timer >= _timerLimit / 2f)
+                            {
+                                _currentFeatherCountDuringRecount += 1;
+                                _timer = 0;
+                            }
+                        }
+                        else
+                        {
+                            if (_timer >= _timerLimit)
+                            {
+                                _currentFeatherCountDuringRecount += 1;
+                                _timer = 0;
+                            }
+                        }
+
+
+                    }
                 }
+                else if (_currentFeatherCountDuringRecount >= _gameManager.AllFeathers.Count) // if all eggs are collected...
+                {
+                    _collectedAllEggs = true;
+                    _finishedEggCount = true;
+                    _egg100Percent.SetActive(true);
+                    _audioMaster.NormalizePitch();
+                }
+                else
+                {
+                    _audioMaster.GetComponent<AudioSource>().Stop(); // stop the charging sound once it's finished counting
+                    Debug.Log(" teeeeeeee");
+                    _audioMaster.NormalizePitch();
+                    _finishedEggCount = true;
+                }
+
+
+                // checking threshHolds
+                if (_currentFeatherCountDuringRecount >= _threshHold1 && _threshHold1Reached == false)
+                {
+                    _playedChargingSound = false;
+                    _audioMaster.NormalizePitch();
+
+                    _star1.SetActive(true);
+                    _threshHoldsPanel.GetComponent<Animator>().Play(_stringThreshHold1);
+
+                    _threshHold1Reached = true;
+                    _pausedCount = true;
+                }
+                else if (_currentFeatherCountDuringRecount >= _threshHold2 && _threshHold2Reached == false)
+                {
+                    _playedChargingSound = false;
+
+                    _star2.SetActive(true);
+                    _threshHoldsPanel.GetComponent<Animator>().Play(_stringThreshHold2);
+
+                    _threshHold2Reached = true;
+                    _pausedCount = true;
+
+                    //_audioMaster.IncreasePitch(0.1f);
+                }
+                else if (_currentFeatherCountDuringRecount >= _threshHold3 && _threshHold3Reached == false)
+                {
+                    _playedChargingSound = false;
+
+                    _star3.SetActive(true);
+                    _threshHoldsPanel.GetComponent<Animator>().Play(_stringThreshHold3);
+
+                    _threshHold3Reached = true;
+                    _pausedCount = true;
+
+                    //_audioMaster.IncreasePitch(0.1f);
+                }
+
+                // stop the count for 1 second when it reaches a threshHold, then continue counting
+                // once the count starts, play a oneshot of the charging sound effect (pitch increase)
+                if (_pausedCount == true)
+                {
+                    _timer += Time.deltaTime;
+                    if (_timer >= 0.9f)
+                    {
+                        _pausedCount = false;
+                        _timer = 0;
+                    }
+                }
+
+                // update fill image
+                _currentFillAmount = _currentFeatherCountDuringRecount / _gameManager.AllFeathers.Count;
+                Debug.Log(_currentFeatherCountDuringRecount + " recounter2");
+                Debug.Log(_currentFillAmount + " fills");
+                _fillingBar.fillAmount = _currentFillAmount;
             }
-            else if (_currentFeatherCountDuringRecount >= _gameManager.AllFeathers.Count) // if all eggs are collected...
-            {
-                _collectedAllEggs = true;
-                _finishedEggCount = true;
-                _egg100Percent.SetActive(true);
-                _audioMaster.NormalizePitch();
-            }
-            else
-            {
-                _audioMaster.GetComponent<AudioSource>().Stop(); // stop the charging sound once it's finished counting
-                _audioMaster.NormalizePitch();
-                _finishedEggCount = true;
-            }
-
-
-            // checking threshHolds
-            if (_currentFeatherCountDuringRecount >= _threshHold1 && _threshHold1Reached == false)
-            {
-                _playedChargingSound = false;
-                _audioMaster.NormalizePitch();
-
-                _star1.SetActive(true);
-                _threshHoldsPanel.GetComponent<Animator>().Play(_stringThreshHold1);
-
-                _threshHold1Reached = true;
-                _pausedCount = true;
-            }
-            else if (_currentFeatherCountDuringRecount >= _threshHold2 && _threshHold2Reached == false)
-            {
-                _playedChargingSound = false;
-
-                _star2.SetActive(true);
-                _threshHoldsPanel.GetComponent<Animator>().Play(_stringThreshHold2);
-
-                _threshHold2Reached = true;
-                _pausedCount = true;
-
-                //_audioMaster.IncreasePitch(0.1f);
-            }
-            else if (_currentFeatherCountDuringRecount >= _threshHold3 && _threshHold3Reached == false)
-            {
-                _playedChargingSound = false;
-
-                _star3.SetActive(true);
-                _threshHoldsPanel.GetComponent<Animator>().Play(_stringThreshHold3);
-
-                _threshHold3Reached = true;
-                _pausedCount = true;
-
-                //_audioMaster.IncreasePitch(0.1f);
-            }
-
-            // stop the count for 1 second when it reaches a threshHold, then continue counting
-            // once the count starts, play a oneshot of the charging sound effect (pitch increase)
-            if (_pausedCount == true)
+            else if (_finishedSpecialsCount == false) // else if we have not counted all the specials collected...
             {
                 _timer += Time.deltaTime;
-                if (_timer >= 0.9f)
+
+                if (_timer >= 0.75f)
                 {
-                    _pausedCount = false;
+                    // for each elixer collected, check types
+                    foreach (var elixer in _gameManager.CollectedEggs)
+                    {
+                        if (_foundOneSpecial == false)
+                        {
+                            if (elixer.ElixerTypePiece == EggElixir.ElixerType.Left && _collectedSpecial1 == false)
+                            {
+                                _engraving1.SetActive(true);
+                                _collectedSpecial1 = true;
+                                _foundOneSpecial = true;
+                                _foundSpecialCounter += 1;
+                            }
+                            if (elixer.ElixerTypePiece == EggElixir.ElixerType.Middle && _collectedSpecial2 == false)
+                            {
+                                _engraving2.SetActive(true);
+                                _collectedSpecial2 = true;
+                                _foundOneSpecial = true;
+                                _foundSpecialCounter += 1;
+
+                                if (_collectedSpecial1 == true)
+                                {
+                                    _audioMaster.IncreasePitch(0.2f);
+                                }
+                            }
+                            if (elixer.ElixerTypePiece == EggElixir.ElixerType.Right && _collectedSpecial3 == false)
+                            {
+                                _engraving3.SetActive(true);
+                                _collectedSpecial3 = true;
+                                _foundOneSpecial = true;
+                                _foundSpecialCounter += 1;
+
+                                if (_collectedSpecial1 == true || _collectedSpecial2 == true)
+                                {
+                                    _audioMaster.IncreasePitch(0.2f);
+                                }
+                            }
+                        }
+                    }
+
+                    _foundOneSpecial = false; // reset bool to check for each again after timeframe has passed
                     _timer = 0;
                 }
-            }
 
-            // update fill image
-            _currentFillAmount = _currentFeatherCountDuringRecount / _gameManager.AllFeathers.Count;
-            Debug.Log(_currentFeatherCountDuringRecount + " recounter2");
-            Debug.Log(_currentFillAmount + " fills");
-            _fillingBar.fillAmount = _currentFillAmount;
-        }
-        else if (_finishedSpecialsCount == false) // else if we have not counted all the specials collected...
-        {
-            _timer += Time.deltaTime;
 
-            if (_timer >= 0.75f)
-            {                
-                // for each elixer collected, check types
-                foreach (var elixer in _gameManager.CollectedEggs)
+                // activate special animation for when all 3 pieces have been collected
+                if (_collectedSpecial1 && _collectedSpecial2 && _collectedSpecial3 && _engravingsParentAnimator.enabled == false)
                 {
-                    if (_foundOneSpecial == false)
+                    _timer2 += Time.deltaTime;
+                    if (_timer2 >= 0.75f)
                     {
-                        if (elixer.ElixerTypePiece == EggElixir.ElixerType.Left && _collectedSpecial1 == false)
-                        {
-                            _engraving1.SetActive(true);
-                            _collectedSpecial1 = true;
-                            _foundOneSpecial = true;
-                            _foundSpecialCounter += 1;                           
-                        }
-                        if (elixer.ElixerTypePiece == EggElixir.ElixerType.Middle && _collectedSpecial2 == false)
-                        {
-                            _engraving2.SetActive(true);
-                            _collectedSpecial2 = true;
-                            _foundOneSpecial = true;
-                            _foundSpecialCounter += 1;
-
-                            if (_collectedSpecial1 == true)
-                            {
-                                _audioMaster.IncreasePitch(0.2f);
-                            }                              
-                        }
-                        if (elixer.ElixerTypePiece == EggElixir.ElixerType.Right && _collectedSpecial3 == false)
-                        {
-                            _engraving3.SetActive(true);
-                            _collectedSpecial3 = true;
-                            _foundOneSpecial = true;
-                            _foundSpecialCounter += 1;
-
-                            if (_collectedSpecial1 == true || _collectedSpecial2 == true)
-                            {
-                                _audioMaster.IncreasePitch(0.2f);
-                            }                           
-                        }                     
+                        _audioMaster.NormalizePitch();
+                        _engravingsParentAnimator.enabled = true;
+                        _timer2 = 0;
                     }
                 }
-
-                _foundOneSpecial = false; // reset bool to check for each again after timeframe has passed
-                _timer = 0;
-            }
-
-
-            // activate special animation for when all 3 pieces have been collected
-            if (_collectedSpecial1 && _collectedSpecial2 && _collectedSpecial3 && _engravingsParentAnimator.enabled == false)
-            {
-                _timer2 += Time.deltaTime;
-                if (_timer2 >= 0.75f)
+                else if (_foundSpecialCounter >= _numberFoundSpecials)
                 {
                     _audioMaster.NormalizePitch();
-                    _engravingsParentAnimator.enabled = true;
-                    _timer2 = 0;
-                }           
-            }           
-            else if (_foundSpecialCounter >= _numberFoundSpecials) 
-            {
-                _audioMaster.NormalizePitch();
-                _finishedSpecialsCount = true;          
+                    _finishedSpecialsCount = true;
+                }
             }
-        }
-        else // finally, show the buttons becoming available
-        {
-            _timer2 += Time.deltaTime;
-            if (_timer2 >= 1.2f)
+            else // finally, show the buttons becoming available
             {
-                _buttonPanel.SetActive(true);
-                _timer2 = 0;
-                this.enabled = false; // disable the update once here              
+                _timer2 += Time.deltaTime;
+                if (_timer2 >= 1.2f)
+                {
+                    _buttonPanel.SetActive(true);
+                    _timer2 = 0;
+                    this.enabled = false; // disable the update once here              
+                }
             }
         }
     }
@@ -407,7 +414,8 @@ public class FinishingLine : MonoBehaviour
     // call this when the everything is ready to begin (score screen animation being done)
     public void EnableThisUpdate()
     {
-        this.enabled = true;
+        //this.enabled = true;
+        IsEnabled = true;
     }
 
     public void PopOpenScore()
