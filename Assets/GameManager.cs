@@ -4,6 +4,7 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using Cinemachine;
 
 public class GameManager : MonoBehaviour
 {
@@ -61,6 +62,9 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private AudioClip[] _audioClips = new AudioClip[2];
 
+    private CinemachineVirtualCamera _vCam;
+
+
     private void Awake()
     {
         _audioSource = GetComponent<AudioSource>();
@@ -91,6 +95,7 @@ public class GameManager : MonoBehaviour
         AllFeathers = FindObjectsOfType<Feathers>().ToList();
 
         //SaveFeathersCollectedSoFar();
+        _vCam = FindObjectOfType<CinemachineVirtualCamera>();
 
         SpawnEggs();
     }
@@ -260,7 +265,6 @@ public class GameManager : MonoBehaviour
         RefillHealth(true, false);
         if(_playerPrefab != null) 
         {
-
             //var newPlayer = Instantiate(_playerPrefab, _currentCheckpoint.SpawnPoint.position + _instantiateExtraOffset, Quaternion.identity);
             var newPlayer = Instantiate(_playerPrefab, new Vector3(_currentCheckpoint.SpawnPoint.position.x - (-7), 1.51f, -40), Quaternion.identity);
             newPlayer.GetComponentInChildren<Rigidbody2D>().transform.localPosition = new Vector3(-8, _currentCheckpoint.SpawnPoint.position.y - 1, 40);
@@ -269,7 +273,9 @@ public class GameManager : MonoBehaviour
             Destroy(_currentPlayer);
             // assign new player as current
             _currentPlayer = newPlayer;  
-        }        
+        }
+        // re-assign camera to new player object
+        _vCam.Follow = _currentPlayer.transform.Find("TestRoot");
     }
 
     private void SpawnEggs()
