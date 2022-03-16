@@ -244,7 +244,7 @@ public class GameManager : MonoBehaviour
         _balls = FindObjectsOfType<CanonBall_Projectile>().ToList();
         foreach (var ball in _balls)
         {
-            Destroy(ball);
+            Destroy(ball.gameObject);
         }
 
 

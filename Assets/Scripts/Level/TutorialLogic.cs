@@ -30,7 +30,7 @@ public class TutorialLogic : MonoBehaviour
     [SerializeField]
     private Draggable _draggableTutorial;
     [SerializeField]
-    private Gate _gateTutorial;
+    private GateTutorial _gateTutorial;
 
 
     private enum TutorialType { popup1, popup2, popup3 }

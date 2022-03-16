@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Gate : MonoBehaviour
+public class GateTutorial : MonoBehaviour
 {
     [SerializeField]
     private Transform _lever, _wheel;
@@ -51,7 +51,7 @@ public class Gate : MonoBehaviour
         {
             _triggerCollider.enabled = false;
         }
-        if(_onlyAllowedBim == true)
+        if (_onlyAllowedBim == true)
         {
             _fingerCollider.enabled = false;
         }
@@ -63,7 +63,7 @@ public class Gate : MonoBehaviour
         {
             _fingerCollider.enabled = false;
 
-            StartCoroutine(RotateMe(_lever ,new Vector3(0, 0, 50), 1f));
+            StartCoroutine(RotateMe(_lever, new Vector3(0, 0, 50), 1f));
             StartCoroutine(RotateMe(_wheel, new Vector3(0, 0, -50), 1.2f));
             _audioSource.Play();
 
@@ -75,8 +75,30 @@ public class Gate : MonoBehaviour
             }
 
             Destroy(this, 1f);
-        }    
+        }
     }
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (IsActive == true && collision.GetComponent<HitObstacle>() != null)
+        {
+            _fingerCollider.enabled = false;
+
+            StartCoroutine(RotateMe(_lever, new Vector3(0, 0, 50), 1f));
+            StartCoroutine(RotateMe(_wheel, new Vector3(0, 0, -50), 1.2f));
+            _audioSource.Play();
+
+            _gateAnimator.enabled = true;
+
+            if (_isTutorial == true)
+            {
+                _requiredTutorial.ContinueTheGame();
+            }
+
+            IsActive = false;
+            Destroy(this, 1f);
+        }
+    }
+
 
 
     private void OnMouseDown()
