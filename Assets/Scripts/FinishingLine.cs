@@ -94,13 +94,33 @@ public class FinishingLine : MonoBehaviour
         Debug.Log(_gameManager.AllFeathers.Count + " all eggs in the level" );
         Debug.Log(_threshHold1 + " T " + _threshHold2 + " T " + _threshHold3);
 
-        for (int i = 0; i < 3; i++) // checking whether the pieces have been picked up
+
+        if (GameInstance.CollectedEggs[_levelNumber-1, 0] == true)
         {
-            if (GameInstance.CollectedEggs[_levelNumber, 0] == true)
-            {
-                // enable engarving piece, disable animator
-            }
-            
+            // enable engraving piece, disable animator
+            _engraving1.SetActive(true);
+            _collectedSpecial1 = true;
+            _foundSpecialCounter += 1;
+        }
+        if (GameInstance.CollectedEggs[_levelNumber-1, 1] == true)
+        {
+            // enable engraving piece, disable animator
+            _engraving2.SetActive(true);
+            _collectedSpecial2 = true;
+            _foundSpecialCounter += 1;
+        }
+        if (GameInstance.CollectedEggs[_levelNumber-1, 2] == true)
+        {
+            // enable engraving piece, disable animator
+            _engraving3.SetActive(true);
+            _collectedSpecial3 = true;
+            _foundSpecialCounter += 1;
+        }
+
+        if(_foundSpecialCounter >= 3) // if all were previously collected...
+        {
+            _engravingsParentAnimator.enabled = true;
+            _finishedSpecialsCount = true;
         }
 
 

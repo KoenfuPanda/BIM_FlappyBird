@@ -58,6 +58,7 @@ public class LevelFramesManager : MonoBehaviour
     public void LoadSelectedLevel()
     {
         SceneManager.LoadScene("Level_0" + FrameNumber.ToString());
+        //SceneManager.LoadScene("TestingScoreScreen"); // testing purposes
         //SceneManager.LoadScene("Alpha_level_0" + FrameNumber.ToString());
     }
 
