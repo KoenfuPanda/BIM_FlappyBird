@@ -158,9 +158,12 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Game_Ver_0.1/Beta_Level_07.unity
     guid: 74a6d7a93a1b41140b582e90d11e0a90
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Test_Scenes/TestingScoreScreen.unity
     guid: 65ffdf773726fec43bdce1619ecba23e
+  - enabled: 1
+    path: Assets/Scenes/Final/MainMenu.unity
+    guid: 20389b3faf5d66b4f93b7d8d96c09182
   - enabled: 1
     path: Assets/Scenes/Final/Level_01.unity
     guid: 7337a4449bf7c53498e1683148dfa820

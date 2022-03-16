@@ -67,8 +67,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1293858113
+  m_SortingLayer: -1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 73158f24a8795a84ba652e2f047700ca, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -90,6 +90,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7836338723133922901}
+  - component: {fileID: 1969714327833400076}
   m_Layer: 0
   m_Name: Tree_Blur
   m_TagString: Untagged
@@ -104,11 +105,22 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3706073063390152569}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.2460268, y: 1.2460268, z: 1.2460268}
+  m_LocalScale: {x: -1.4702946, y: 1.470295, z: 1.4702951}
   m_Children:
   - {fileID: 4514637606261652684}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!210 &1969714327833400076
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3706073063390152569}
+  m_Enabled: 1
+  m_SortingLayerID: -1293858113
+  m_SortingLayer: -1
+  m_SortingOrder: 0
