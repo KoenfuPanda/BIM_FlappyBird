@@ -9,6 +9,9 @@ public class Gate : MonoBehaviour
 
     [SerializeField]
     private Transform _lever, _wheel;
+    [SerializeField]
+    private Animator _gateAnimator;
+    private AudioSource _audioSource;
 
     private FollowFinger _followFinger;
 
@@ -32,6 +35,9 @@ public class Gate : MonoBehaviour
     {
         //triggerRoot = transform.Find("TriggerRoot").gameObject;
         //gateRoot = transform.Find("GateRoot").gameObject;
+
+        _audioSource = GetComponentInChildren<AudioSource>();
+        _gateAnimator = GetComponentInChildren<Animator>();
 
         _followFinger = FindObjectOfType<FollowFinger>();
 
@@ -63,8 +69,9 @@ public class Gate : MonoBehaviour
             //triggerRoot.transform.Rotate(0, 0, 50);
             StartCoroutine(RotateMe(_lever ,new Vector3(0, 0, 50), 1f));
             StartCoroutine(RotateMe(_wheel, new Vector3(0, 0, -50), 1.2f));
+            _audioSource.Play();
 
-            //gateRoot.GetComponent<Animator>().enabled = true;
+            _gateAnimator.enabled = true;
 
             if (_isTutorial == true)
             {
@@ -87,8 +94,9 @@ public class Gate : MonoBehaviour
             //triggerRoot.transform.Rotate(0, 0, 50);
             StartCoroutine(RotateMe(_lever, new Vector3(0, 0, 50), 0.7f));
             StartCoroutine(RotateMe(_wheel, new Vector3(0, 0, -50), 0.8f));
+            _audioSource.Play();
 
-            //gateRoot.GetComponent<Animator>().enabled = true;
+            _gateAnimator.enabled = true;
 
             if (_isTutorial == true)
             {
