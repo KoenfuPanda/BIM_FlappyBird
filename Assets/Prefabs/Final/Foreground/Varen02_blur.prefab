@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6455923401777755000}
   - component: {fileID: 6455923401777755003}
-  - component: {fileID: -3311691556943045795}
   m_Layer: 0
   m_Name: Varen02_blur
   m_TagString: Untagged
@@ -71,26 +70,15 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1337408105504629218, guid: 722a7a5f446af06448bb9931bb3e50f2,
+  m_Sprite: {fileID: 6968689737036078080, guid: 722a7a5f446af06448bb9931bb3e50f2,
     type: 3}
   m_Color: {r: 0.45400003, g: 0.45400003, b: 0.45400003, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 2.22, y: 3.73}
+  m_Size: {x: 2.39, y: 5.2}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!210 &-3311691556943045795
-SortingGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6455923401777755002}
-  m_Enabled: 1
-  m_SortingLayerID: 412932639
-  m_SortingLayer: 2
-  m_SortingOrder: 0
