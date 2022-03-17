@@ -12,6 +12,7 @@ TagManager:
   - Floor
   - Ceiling
   - FxTemporaire
+  - ImmuneToProjectile
   layers:
   - Default
   - TransparentFX

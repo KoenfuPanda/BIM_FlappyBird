@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2112441626362324371}
   - component: {fileID: 3386095073399506098}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cannon_Grid_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93,7 +93,7 @@ GameObject:
   - component: {fileID: 4157576114670062544}
   - component: {fileID: 6864059060096518353}
   - component: {fileID: 6087761840736141681}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cannon_Grid_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -239,7 +239,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5582303675372337910}
   - component: {fileID: 4312439675486823182}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Animator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -290,7 +290,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3143697162764774457}
   - component: {fileID: 3320961168800447055}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cannon_Grid_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}

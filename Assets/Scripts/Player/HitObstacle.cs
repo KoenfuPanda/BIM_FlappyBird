@@ -79,7 +79,11 @@ public class HitObstacle : MonoBehaviour
 
                     if (collision.gameObject.layer == 9) // if it's a cannon
                     {
-                        Destroy(collision.transform.GetComponentInChildren<SpawnCannonBall>());
+                        if (collision.transform.GetComponentInChildren<SpawnCannonBall>() != null) // if it has the script
+                        {
+                            Destroy(collision.transform.GetComponentInChildren<SpawnCannonBall>()); // destroys script
+                        }
+                        
                     }
 
                     // !! always have a checkpoint right after he turns small (otherwise i need code to respawn the level pieces) !!
