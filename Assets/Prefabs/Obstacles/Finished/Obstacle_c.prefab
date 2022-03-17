@@ -747,6 +747,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4571247939024767652}
   - component: {fileID: 676530860401990044}
+  - component: {fileID: 1189807085}
   m_Layer: 0
   m_Name: Obstacle_c
   m_TagString: Untagged
@@ -810,6 +811,17 @@ PolygonCollider2D:
       - {x: -1.841783, y: -2.8110256}
       - {x: -0.27200162, y: -2.8151958}
       - {x: -0.02814579, y: -0.31194216}
+--- !u!210 &1189807085
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4571247939024767653}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
 --- !u!1 &4571247939092651439
 GameObject:
   m_ObjectHideFlags: 0
