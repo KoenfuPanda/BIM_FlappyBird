@@ -24,7 +24,11 @@ public class GameManager : MonoBehaviour
     public List<Feathers> CollectedSavedFeathers = new List<Feathers>();
 
     public Text EggScoreText;
-    public Text FeatherScoreText;
+
+    private Text _featherScoreText;
+    [SerializeField]
+    private Animator _scoreAnimator;
+
     public int FeatherScore;
     public int SavedFeatherScore;
 
@@ -93,6 +97,8 @@ public class GameManager : MonoBehaviour
         _rotatingPillars = FindObjectsOfType<SetAnimationSpeed>().ToList();
         _cannonShooters = FindObjectsOfType<SpawnCannonBall>().ToList();
         AllFeathers = FindObjectsOfType<Feathers>().ToList();
+
+        _featherScoreText = _scoreAnimator.GetComponentInChildren<Text>();
 
         //SaveFeathersCollectedSoFar();
         _vCam = FindObjectOfType<CinemachineVirtualCamera>();
@@ -178,9 +184,10 @@ public class GameManager : MonoBehaviour
         FeatherScore = SavedFeatherScore;
         UpdateFeatherScoreHud();
     }
-    private void UpdateFeatherScoreHud()
+    public void UpdateFeatherScoreHud()
     {
-        FeatherScoreText.text = FeatherScore.ToString();
+        _featherScoreText.text = FeatherScore.ToString();
+        _scoreAnimator.Play("ScoreIncreaseHUD");
     }
     public void UpdateEggScoreHud()
     {

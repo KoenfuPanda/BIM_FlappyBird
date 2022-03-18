@@ -221,7 +221,8 @@ MonoBehaviour:
   _particleSystemPickup: {fileID: 8266249862236230101, guid: 494b0a78381980446a5ebfbb139c7aef,
     type: 3}
   _particleSystemGlow: {fileID: 7276576345819725754}
-  _possibleSounds: []
+  _possibleSounds:
+  - {fileID: 8300000, guid: 28266f65b17dbb54da008b9f68335684, type: 3}
   LevelIndex: 0
   EggIndex: 0
   ElixerTypePiece: 0

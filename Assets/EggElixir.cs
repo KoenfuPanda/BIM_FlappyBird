@@ -46,7 +46,7 @@ public class EggElixir : MonoBehaviour
         {
             _particleSystemGlow.SetActive(false);
             _gameManager.CollectedEggs.Add(this);
-            _gameManager.UpdateEggScoreHud();
+            //_gameManager.UpdateEggScoreHud();
 
             _spriteRenderer.enabled = false;
             foreach (var sprite in _childrenSprites)

@@ -36,6 +36,12 @@ public class FinishingLine : MonoBehaviour
     // filling bar
     [SerializeField]
     private Image _fillingBar;
+    [SerializeField]
+    private Animator _scoreParent;
+    private Text _scoreText;
+    [SerializeField]
+    private Transform _eggTransform;
+
 
 
     // etc
@@ -94,6 +100,8 @@ public class FinishingLine : MonoBehaviour
         Debug.Log(_gameManager.AllFeathers.Count + " all eggs in the level" );
         Debug.Log(_threshHold1 + " T " + _threshHold2 + " T " + _threshHold3);
 
+        _scoreText = _scoreParent.GetComponentInChildren<Text>();
+
 
         if (GameInstance.CollectedEggs[_levelNumber-1, 0] == true)
         {
@@ -145,8 +153,13 @@ public class FinishingLine : MonoBehaviour
                         if (_threshHold1Reached == true && _threshHold3Reached == false) // speed up a bit more than normal
                         {
                             if (_timer >= _timerLimit / 2f)
-                            {
+                            {                               
                                 _currentFeatherCountDuringRecount += 1;
+                                // scoretext component -= 1
+                                CreateEggsToAbsorb();
+                                _gameManager.FeatherScore -= 1;
+                                _gameManager.UpdateFeatherScoreHud();
+                                // send 1 egg to the middle 
                                 _timer = 0;
                             }
                         }
@@ -155,6 +168,11 @@ public class FinishingLine : MonoBehaviour
                             if (_timer >= _timerLimit)
                             {
                                 _currentFeatherCountDuringRecount += 1;
+
+                                CreateEggsToAbsorb();
+                                _gameManager.FeatherScore -= 1;
+                                _gameManager.UpdateFeatherScoreHud();
+
                                 _timer = 0;
                             }
                         }
@@ -172,7 +190,6 @@ public class FinishingLine : MonoBehaviour
                 else
                 {
                     _audioMaster.GetComponent<AudioSource>().Stop(); // stop the charging sound once it's finished counting
-                    Debug.Log(" teeeeeeee");
                     _audioMaster.NormalizePitch();
                     _finishedEggCount = true;
                 }
@@ -329,7 +346,18 @@ public class FinishingLine : MonoBehaviour
         }
     }
 
-
+    public void CreateEggsToAbsorb()
+    {
+        GameObject eggImage = ObjectPooler.SharedInstance.GetPooledObject();
+        if (eggImage != null)
+        {
+            eggImage.transform.SetParent(_eggTransform);
+            eggImage.transform.localScale = Vector3.one;
+            eggImage.transform.position = _eggTransform.position;
+            eggImage.transform.rotation = _eggTransform.rotation;
+            eggImage.SetActive(true);
+        }
+    }
 
 
 
