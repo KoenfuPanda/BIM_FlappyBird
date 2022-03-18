@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5840449259281760463}
   - component: {fileID: 8762157070190542438}
+  - component: {fileID: -40619720583880010}
   m_Layer: 0
   m_Name: Grass_Grid_blur_2
   m_TagString: Untagged
@@ -82,3 +83,14 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!210 &-40619720583880010
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 731524369243100869}
+  m_Enabled: 1
+  m_SortingLayerID: 412932639
+  m_SortingLayer: 2
+  m_SortingOrder: 0
