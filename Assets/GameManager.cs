@@ -187,7 +187,9 @@ public class GameManager : MonoBehaviour
     public void UpdateFeatherScoreHud()
     {
         _featherScoreText.text = FeatherScore.ToString();
+        //_scoreAnimator.Play("None");
         _scoreAnimator.Play("ScoreIncreaseHUD");
+
     }
     public void UpdateEggScoreHud()
     {

@@ -20,6 +20,11 @@ public class HitObstacle : MonoBehaviour
 
     [SerializeField]
     private float _immunityTime;
+    [SerializeField]
+    private AudioClip[] _soundEffectsGiantBim;
+
+    private AudioSource _audioSource;
+
 
     private void Start()
     {
@@ -31,8 +36,8 @@ public class HitObstacle : MonoBehaviour
         {
             _bimFloating = GetComponent<BimControllerFloating>();
         }
-        
 
+        _audioSource = GetComponent<AudioSource>();
         _rigidbody = GetComponent<Rigidbody2D>();
         _collider = GetComponent<Collider2D>();
         _moveDirection = GetComponentInParent<MoveDirection>();
@@ -52,7 +57,7 @@ public class HitObstacle : MonoBehaviour
         {
             if (_followFinger != null) // if using followfinger ...
             {
-                if (_followFinger.MegaBimActive == true)
+                if (_followFinger.MegaBimActive == true) // IF GIGANTIC
                 {
                     // disable the collider(s) on the object
                     var colls = collision.gameObject.GetComponents<Collider2D>();
@@ -79,9 +84,9 @@ public class HitObstacle : MonoBehaviour
 
                     if (collision.gameObject.layer == 9) // if it's a cannon
                     {
-                        if (collision.transform.GetComponentInChildren<SpawnCannonBall>() != null) // if it has the script
+                        if (collision.transform.GetComponentInChildren<SpawnCannonBall>() != null) // if it has the script...
                         {
-                            Destroy(collision.transform.GetComponentInChildren<SpawnCannonBall>()); // destroys script
+                            Destroy(collision.transform.GetComponentInChildren<SpawnCannonBall>()); // destroy it
                         }
                         
                     }
@@ -90,8 +95,12 @@ public class HitObstacle : MonoBehaviour
                     // add lifespan to the pieces (they get destroyed after 3 seconds or so)
                     Destroy(collision.gameObject, 3f);
 
+                    // play a sound effect effect ( ideally probably an object pool of instantiated particles with their own hit sounds, but that would be for later
+                    var random = UnityEngine.Random.Range(0,_soundEffectsGiantBim.Length);
+                    _audioSource.PlayOneShot(_soundEffectsGiantBim[random]);
+
                 }
-                else // if not Mega
+                else // IF NOT GIGANTIC
                 {
                     if (IsImmune == false)  // only take damage when not immune and when the collision is forward
                     {
@@ -100,6 +109,7 @@ public class HitObstacle : MonoBehaviour
                         if (transform.localScale.x > 0 && collision.contacts[0].normal.normalized.x <= -0.78f ||
                             transform.localScale.x < 0 && collision.contacts[0].normal.normalized.x >= 0.78f)
                         {
+                            // check bounce direction
                             CheckReboundDirectionFollowFinger(collision);
                             // become immune
                             StartCoroutine(GainImmunity(_immunityTime));
@@ -155,6 +165,7 @@ public class HitObstacle : MonoBehaviour
                         if (transform.localScale.x > 0 && collision.contacts[0].normal.normalized.x <= -0.78f ||
                             transform.localScale.x < 0 && collision.contacts[0].normal.normalized.x >= 0.78f)
                         {
+                            // check bounce direction
                             CheckReboundDirectionFollowFinger(collision);
                             // become immune
                             StartCoroutine(GainImmunity(_immunityTime));
@@ -183,6 +194,10 @@ public class HitObstacle : MonoBehaviour
     }
 
 
+
+
+
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.layer == 11 || collision.gameObject.layer == 10)  // if I hit a rotating obstacle or projectile (using layer index)
@@ -196,6 +211,19 @@ public class HitObstacle : MonoBehaviour
                 _followFinger.HitWallFeedback(transform.position);
                 // lose health
                 _gameManager.HealthBiM -= 1;
+
+
+                //// rotate
+                //if (_bimLocalScale.x >= 0f)
+                //{
+                //    StartCoroutine(RotateBim(_immunityTime, true));
+                //}
+                //else
+                //{
+                //    StartCoroutine(RotateBim(_immunityTime, false));
+                //}      
+                
+
                 // update sprites
                 _gameManager.UpdateHUDHealth();
                 // if health == 0  -> checkpoint
@@ -212,6 +240,9 @@ public class HitObstacle : MonoBehaviour
             }
         }
     }
+
+
+
 
 
     private void CheckReboundDirectionFollowFinger(Collision2D collision)
@@ -236,6 +267,16 @@ public class HitObstacle : MonoBehaviour
                 _moveDirection.BouncedForward = true;
             }
 
+            ////rotate
+            //if (_gameManager.HealthBiM <= 0)
+            //{
+            //    StartCoroutine(RotateBimDead(_immunityTime, true));
+            //}
+            //else
+            //{
+            //    StartCoroutine(RotateBim(_immunityTime, true));
+            //}
+
             // 2) reverse the speed
             _moveDirection.Speed = _moveDirection.Speed * -1;
         }
@@ -253,9 +294,20 @@ public class HitObstacle : MonoBehaviour
                 _moveDirection.BouncedForward = true;
             }
 
+            ////rotate           
+            //if (_gameManager.HealthBiM <= 0)
+            //{
+            //    StartCoroutine(RotateBimDead(_immunityTime, false));
+            //}
+            //else
+            //{
+            //    StartCoroutine(RotateBim(_immunityTime, false));
+            //}
+
+                
             _moveDirection.Speed = _moveDirection.Speed * -1;
         }
-        else if (collision.contacts[0].normal.normalized.y <= -0.2f) // bounce down with rigidbody force 
+        else if (collision.contacts[0].normal.normalized.y <= -0.2f) // bounce down with rigidbody force      // DATED CODE BELOW AS THIS IS NOT RELEVANT ANYMORE //
         {
             _moveDirection.BounceTimer = 0;
             _moveDirection.BouncedVertically = true;
@@ -424,5 +476,47 @@ public class HitObstacle : MonoBehaviour
         yield return new WaitForSeconds(lostControlTimer);
 
         _followFinger.enabled = true;
+    }
+
+
+
+
+    IEnumerator RotateBim(float lostControlTimer, bool movingForward)
+    {
+        _rigidbody.freezeRotation = false;
+
+        if (movingForward)
+        {
+            _rigidbody.AddTorque(12);
+        }
+        else
+        {
+            _rigidbody.AddTorque(-12);
+        }
+
+        yield return new WaitForSeconds(lostControlTimer/2f);
+
+        _rigidbody.rotation = 0;
+        _rigidbody.freezeRotation = true;
+    }
+
+    IEnumerator RotateBimDead(float lostControlTimer, bool movingForward)
+    {
+        _rigidbody.freezeRotation = false;
+
+        if (movingForward)
+        {
+            _rigidbody.AddTorque(18);
+        }
+        else
+        {
+            _rigidbody.AddTorque(-18);
+        }
+        
+
+        yield return new WaitForSeconds(lostControlTimer);
+
+        _rigidbody.rotation = 0;
+        _rigidbody.freezeRotation = true;
     }
 }

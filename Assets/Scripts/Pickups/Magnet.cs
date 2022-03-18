@@ -22,6 +22,14 @@ public class Magnet : MonoBehaviour
 
     private GameManager _gameManager;
 
+    [SerializeField]
+    private AudioSource _audioSource;
+    [SerializeField]
+    private GameObject _particleEffectAttract;
+
+    [SerializeField]
+    private AudioClip[] _soundEffects;
+
 
     private void Start()
     {
@@ -29,6 +37,8 @@ public class Magnet : MonoBehaviour
 
         StartPosition = transform.position;
         StartSize = transform.localScale;
+
+        _audioSource = GetComponent<AudioSource>();
     }
 
     private void OnTriggerEnter2D(Collider2D collider)
@@ -50,8 +60,14 @@ public class Magnet : MonoBehaviour
             GetComponent<SpriteRenderer>().enabled = false;
             PlayerCollider.enabled = false;
             FeatherCollider.enabled = true;
+
+            _audioSource.PlayOneShot(_soundEffects[0]); // pickup sound
+
             //StartCoroutine(DestroyMagnet());
             StartCoroutine(DisableMagnet());
+            StartCoroutine(ActivateSoundRunningOut());
+            _particleEffectAttract.SetActive(true);
+
             MagnetActive = true;
         }
 
@@ -67,6 +83,14 @@ public class Magnet : MonoBehaviour
     {
         yield return new WaitForSeconds(_timeActive);
         FeatherCollider.enabled = false;
+        _particleEffectAttract.SetActive(false);
+    }
+
+    IEnumerator ActivateSoundRunningOut()
+    {
+        yield return new WaitForSeconds(_timeActive -2.5f);
+        _audioSource.volume = 0.7f;
+        _audioSource.PlayOneShot(_soundEffects[1]); // running out sound
     }
 
     IEnumerator DestroyMagnet()
