@@ -24,6 +24,7 @@ public class HitObstacle : MonoBehaviour
     private AudioClip[] _soundEffectsGiantBim;
 
     private AudioSource _audioSource;
+    private Animator _animator;
 
 
     private void Start()
@@ -38,6 +39,8 @@ public class HitObstacle : MonoBehaviour
         }
 
         _audioSource = GetComponent<AudioSource>();
+        _animator = GetComponent<Animator>();
+
         _rigidbody = GetComponent<Rigidbody2D>();
         _collider = GetComponent<Collider2D>();
         _moveDirection = GetComponentInParent<MoveDirection>();
@@ -122,6 +125,8 @@ public class HitObstacle : MonoBehaviour
                             // if health == 0  -> checkpoint
                             if (_gameManager.HealthBiM <= 0)
                             {
+                                _animator.Play("BimDies");
+
                                 _followFinger.enabled = false;
 
                                 _collider.enabled = false;
@@ -178,6 +183,8 @@ public class HitObstacle : MonoBehaviour
                             // if health == 0  -> checkpoint
                             if (_gameManager.HealthBiM <= 0)
                             {
+                                _animator.Play("BimDies");
+
                                 _followFinger.enabled = false;
 
                                 _collider.enabled = false;
@@ -221,14 +228,16 @@ public class HitObstacle : MonoBehaviour
                 //else
                 //{
                 //    StartCoroutine(RotateBim(_immunityTime, false));
-                //}      
-                
+                //}
+                _animator.Play("BimHitWall");                
 
                 // update sprites
                 _gameManager.UpdateHUDHealth();
                 // if health == 0  -> checkpoint
                 if (_gameManager.HealthBiM <= 0)
                 {
+                    _animator.Play("BimDies");
+
                     _followFinger.enabled = false;
 
                     _collider.enabled = false;
@@ -276,6 +285,7 @@ public class HitObstacle : MonoBehaviour
             //{
             //    StartCoroutine(RotateBim(_immunityTime, true));
             //}
+            _animator.Play("BimHitWall");
 
             // 2) reverse the speed
             _moveDirection.Speed = _moveDirection.Speed * -1;
@@ -303,8 +313,9 @@ public class HitObstacle : MonoBehaviour
             //{
             //    StartCoroutine(RotateBim(_immunityTime, false));
             //}
+            _animator.Play("BimHitWall");
 
-                
+
             _moveDirection.Speed = _moveDirection.Speed * -1;
         }
         else if (collision.contacts[0].normal.normalized.y <= -0.2f) // bounce down with rigidbody force      // DATED CODE BELOW AS THIS IS NOT RELEVANT ANYMORE //

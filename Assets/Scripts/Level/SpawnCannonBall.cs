@@ -21,10 +21,16 @@ public class SpawnCannonBall : MonoBehaviour
 
     private float _timer = 0;
 
+    private AudioSource _audioSource;
+    [SerializeField]
+    private GameObject _smokeParticlePrefab;
+
 
     private void Start()
     {
         _timer = _loopTime;
+
+        _audioSource = GetComponent<AudioSource>();
     }
 
 
@@ -34,6 +40,11 @@ public class SpawnCannonBall : MonoBehaviour
 
         if (_timer >= _loopTime)
         {
+            // audio clip
+            _audioSource.Play();
+            // particle effect
+            Instantiate(_smokeParticlePrefab, _shootPosition.position, Quaternion.identity);
+            // animation
             _animator.SetTrigger("Shoot");
 
             if (_projectileType == ProjectileType.Cannonball) // canonballs only
