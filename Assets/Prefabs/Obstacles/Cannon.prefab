@@ -527,6 +527,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8660945090048447888}
   - component: {fileID: 2500001682572959140}
+  - component: {fileID: 5897348737883426698}
   m_Layer: 9
   m_Name: Cannon
   m_TagString: Untagged
@@ -582,3 +583,14 @@ PolygonCollider2D:
       - {x: -5.1310177, y: -2.9268355}
       - {x: 5.698807, y: -3.0350409}
       - {x: 5.8509564, y: 1.1341386}
+--- !u!210 &5897348737883426698
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8660945090048447902}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
