@@ -37,7 +37,7 @@ public class CanonBall_Projectile : MonoBehaviour
             else
                 Destroy(this.gameObject); // use fancier logic here for sound, particle, etc
         }
-        else if (collision.gameObject.GetComponent<Feathers>() == null || collision.gameObject.GetComponent<EggElixir>() == null || collision.gameObject.tag != "ImmuneToProjectile") // if it's not a feather,elixer or special terrain
+        else if (collision.gameObject.GetComponent<Feathers>() == null && collision.gameObject.GetComponent<EggElixir>() == null && collision.gameObject.tag != "ImmuneToProjectile") // if it's not a feather,elixer or special terrain
         {
             Destroy(this.gameObject);
         }
