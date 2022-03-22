@@ -42,6 +42,7 @@ GameObject:
   - component: {fileID: 2293627265519700366}
   - component: {fileID: 2293627265519700367}
   - component: {fileID: 2293627265519700361}
+  - component: {fileID: 1786108918461073044}
   m_Layer: 0
   m_Name: SideMatras
   m_TagString: Block
@@ -132,6 +133,17 @@ MonoBehaviour:
   direction: 0
   VerticalBoostDirection: 0
   _bounceStrength: 6
+--- !u!210 &1786108918461073044
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2293627265519700368}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 5
 --- !u!1 &6290264480823855872
 GameObject:
   m_ObjectHideFlags: 0
@@ -265,7 +277,7 @@ MonoBehaviour:
   - {fileID: 8719824257829484406}
   m_Bounds:
     m_Center: {x: 0.019999743, y: -0.008379936, z: 0}
-    m_Extent: {x: 0.81500065, y: 2.0294416, z: 0}
+    m_Extent: {x: 0.8150006, y: 2.0294414, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
 --- !u!1 &7802166592760134535

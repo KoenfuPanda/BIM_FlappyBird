@@ -167,8 +167,8 @@ MonoBehaviour:
   - {fileID: 6562395154002170771}
   - {fileID: 3009552724381879585}
   m_Bounds:
-    m_Center: {x: 0.01999855, y: -0.008375883, z: 0}
-    m_Extent: {x: 0.8150003, y: 2.0294409, z: 0}
+    m_Center: {x: 0.019999564, y: -0.0083761215, z: 0}
+    m_Extent: {x: 0.81500036, y: 2.0294409, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
 --- !u!1 &2681149319306850558
@@ -444,8 +444,8 @@ MonoBehaviour:
   - {fileID: 591133065892341067}
   - {fileID: 234922310276897734}
   m_Bounds:
-    m_Center: {x: -0.024585605, y: -0.02693975, z: 0}
-    m_Extent: {x: 0.83958524, y: 1.9480608, z: 0}
+    m_Center: {x: -0.024585187, y: -0.02693975, z: 0}
+    m_Extent: {x: 0.8395853, y: 1.948061, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
 --- !u!1 &6774304342590609425
@@ -610,8 +610,8 @@ MonoBehaviour:
   - {fileID: 616350011466080975}
   - {fileID: 6539417090468156607}
   m_Bounds:
-    m_Center: {x: -0.024586082, y: -0.026943803, z: 0}
-    m_Extent: {x: 0.8395852, y: 1.9480605, z: 0}
+    m_Center: {x: -0.024585664, y: -0.026939869, z: 0}
+    m_Extent: {x: 0.8395852, y: 1.9480606, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
 --- !u!1 &8139704488262051437
@@ -737,6 +737,7 @@ GameObject:
   - component: {fileID: 8934555721446212758}
   - component: {fileID: 8934555721446212754}
   - component: {fileID: 8934555721446212752}
+  - component: {fileID: 4587930028742071407}
   m_Layer: 0
   m_Name: Matras_New
   m_TagString: Untagged
@@ -857,6 +858,17 @@ MonoBehaviour:
   _speedsUpGame: 0
   _speedBoost: 3
   _timeBoosted: 1000
+--- !u!210 &4587930028742071407
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8934555721446212755}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 4
 --- !u!1 &8934555721459182509
 GameObject:
   m_ObjectHideFlags: 0
