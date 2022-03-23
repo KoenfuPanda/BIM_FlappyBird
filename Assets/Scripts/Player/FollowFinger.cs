@@ -9,6 +9,7 @@ public class FollowFinger : MonoBehaviour
     // PRIVATE
 
     private Animator _animator;
+    private Animator _bimpivotAnimator;
     private GameObject bim;
     private static Rigidbody2D rigidBody;
     [SerializeField]
@@ -71,8 +72,12 @@ public class FollowFinger : MonoBehaviour
     void Start()
     {
         _hitObstacle = GetComponent<HitObstacle>();
+
         bim = transform.GetChild(0).gameObject;
         _animator = bim.GetComponent<Animator>();
+
+        _bimpivotAnimator = GetComponent<Animator>();
+
         rigidBody = GetComponent<Rigidbody2D>();
         controlCharacter = true;
 
@@ -465,8 +470,8 @@ public class FollowFinger : MonoBehaviour
 
     public void BimGrow(float upgradeTimeLimit)
     {
-        _animator.speed = 1;
-        _animator.Play("BimGrows");
+        _bimpivotAnimator.speed = 1;
+        _bimpivotAnimator.Play("BimGrows");
         _bimSpriteCollider.enabled = true;
 
         _hitObstacle.ImmuneToggled();
@@ -478,7 +483,7 @@ public class FollowFinger : MonoBehaviour
     {
         //transform.localScale = new Vector3(1f, 1f, 1f); // make this gradualy decrease
 
-        _animator.Play("BimDeGrows");
+        _bimpivotAnimator.Play("BimDeGrows");
         _bimSpriteCollider.enabled = false;
 
         MegaBimActive = false;
