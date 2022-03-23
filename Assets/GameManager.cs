@@ -14,7 +14,6 @@ public class GameManager : MonoBehaviour
     [HideInInspector]
     public int HealthBiM;
    
-
     public List<EggElixir> CollectedEggs = new List<EggElixir>();
 
     [HideInInspector]
@@ -68,6 +67,13 @@ public class GameManager : MonoBehaviour
 
     private CinemachineVirtualCamera _vCam;
 
+    // pitch increaser for closely packed eggs
+    private float _eggPickupTimer;
+    [SerializeField]
+    private float _eggPickupTimeLimit;
+    [HideInInspector]
+    public int EggQuickPickupCount;
+
 
     private void Awake()
     {
@@ -106,6 +112,21 @@ public class GameManager : MonoBehaviour
         SpawnEggs();
     }
 
+
+    private void Update()
+    {
+        _eggPickupTimer += Time.deltaTime;
+        if (_eggPickupTimer >= _eggPickupTimeLimit)
+        {
+            _eggPickupTimer = 0;
+            EggQuickPickupCount = 0;
+        }
+    }
+
+
+
+
+
     public void GameOver()
     {
         gameOverCanvas.SetActive(true);
@@ -115,6 +136,8 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene(levelName);
     }
+
+
 
 
 
@@ -177,6 +200,14 @@ public class GameManager : MonoBehaviour
     public void PickedUpFeather()
     {
         FeatherScore += 1;
+
+        _eggPickupTimer = 0;
+        EggQuickPickupCount += 1;
+        if(EggQuickPickupCount >= 8) // only increase the pitch x times (maybe more later on)
+        {
+            EggQuickPickupCount = 8;
+        }
+
         UpdateFeatherScoreHud();
     }
     private void ResetFeatherCount()

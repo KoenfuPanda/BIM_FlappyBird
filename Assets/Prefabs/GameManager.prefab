@@ -791,6 +791,8 @@ MonoBehaviour:
   _star3: {fileID: 7922986295034614095}
   _buttonPanel: {fileID: 7922986295187114984}
   _fillingBar: {fileID: 2655651126836058273}
+  _scoreParent: {fileID: 0}
+  _eggTransform: {fileID: 0}
   IsEnabled: 0
   _audioMaster: {fileID: 5852099065551877385}
 --- !u!61 &8157713602075417474
@@ -1150,7 +1152,7 @@ MonoBehaviour:
   CollectedFeathers: []
   CollectedSavedFeathers: []
   EggScoreText: {fileID: 0}
-  FeatherScoreText: {fileID: 0}
+  _scoreAnimator: {fileID: 0}
   FeatherScore: 0
   SavedFeatherScore: 0
   CollectedPowerups: []
@@ -1168,6 +1170,8 @@ MonoBehaviour:
   _audioClips:
   - {fileID: 8300000, guid: e4c65d2bc6e29f5439b2bcc7cec9b5b3, type: 3}
   - {fileID: 8300000, guid: 4a7b3922d37653c47b7d5dcfa0cc35c9, type: 3}
+  _eggPickupTimeLimit: 0.5
+  EggQuickPickupCount: 0
 --- !u!114 &8157713602601542619
 MonoBehaviour:
   m_ObjectHideFlags: 0

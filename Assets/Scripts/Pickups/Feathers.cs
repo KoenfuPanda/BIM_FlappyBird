@@ -67,13 +67,22 @@ public class Feathers : MonoBehaviour
             // update actual score
             _gameManager.PickedUpFeather();
 
-            // play sound effect
-            if (_possibleSounds.Count > 0) 
-            {
-                _audioSource.PlayOneShot(_possibleSounds[Random.Range(0, _possibleSounds.Count - 1)]);
-            }
-            // instantiate particle
-            Instantiate(_particleSystemPickup, transform.position, Quaternion.identity);
+
+            // play sound effect // replacement logic present in particle
+            //if (_possibleSounds.Count > 0) 
+            //{
+            //    _audioSource.PlayOneShot(_possibleSounds[Random.Range(0, _possibleSounds.Count - 1)]);
+            //}
+
+            // instantiate particle //
+            //Instantiate(_particleSystemPickup, transform.position, Quaternion.identity);
+
+
+            // replacement for instantiate logic
+            _particleSystemPickup.GetComponent<AudioSource>().pitch += (float)(_gameManager.EggQuickPickupCount / 20f);
+            Debug.Log("pitch part " + _particleSystemPickup.GetComponent<AudioSource>().pitch);
+
+            _particleSystemPickup.SetActive(true);
 
             if (_imAProjectile)
             {
