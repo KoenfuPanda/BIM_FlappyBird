@@ -11,6 +11,9 @@ public class FollowFinger : MonoBehaviour
     private Animator _animator;
     private GameObject bim;
     private static Rigidbody2D rigidBody;
+    [SerializeField]
+    private Collider2D _bimSpriteCollider;
+
     private Vector3 mouseWorldPosition;
     private bool bounce = false;
     private float velocityMultiplier = 0;
@@ -75,6 +78,8 @@ public class FollowFinger : MonoBehaviour
 
         _parentObject = GetComponentInParent<MoveDirection>().transform;
         //_lineAssitsant = _parentObject.GetComponentInChildren<LineAssistant>();
+
+        _bimSpriteCollider.enabled = false;
     }
 
     void FixedUpdate()
@@ -455,18 +460,32 @@ public class FollowFinger : MonoBehaviour
         //_onClickableSurface = false;
     }
 
+
+
+
     public void BimGrow(float upgradeTimeLimit)
     {
+        _animator.speed = 1;
+        _animator.Play("BimGrows");
+        _bimSpriteCollider.enabled = true;
+
         _hitObstacle.ImmuneToggled();
-        transform.localScale = new Vector3(3f, 3f, 3f); // make this gradualy increase
+        //transform.localScale = new Vector3(3f, 3f, 3f); // make this gradualy increase
         MegaBimTimeLimit = upgradeTimeLimit;
         MegaBimActive = true;
     }
     public void ReturnBimToNormal()
     {
-        transform.localScale = new Vector3(1f, 1f, 1f); // make this gradualy decrease
+        //transform.localScale = new Vector3(1f, 1f, 1f); // make this gradualy decrease
+
+        _animator.Play("BimDeGrows");
+        _bimSpriteCollider.enabled = false;
+
         MegaBimActive = false;
-        _megaBimTimer = 0;
+        _megaBimTimer = 0;      
+    }
+    public void BimReturnedToNormal()
+    {
         _hitObstacle.ImmuneToggled();
     }
 

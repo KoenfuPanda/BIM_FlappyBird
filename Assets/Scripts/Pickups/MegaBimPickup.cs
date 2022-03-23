@@ -7,6 +7,19 @@ public class MegaBimPickup : MonoBehaviour
     [SerializeField]
     private float _upgradeTime;
 
+    [SerializeField]
+    private AudioSource _audioSource;
+    private Collider2D _trigger;
+
+    [SerializeField]
+    private GameObject _animatingParent;
+
+    private void Awake()
+    {
+        _audioSource = GetComponent<AudioSource>();
+        _trigger = GetComponent<Collider2D>();
+    }
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -14,7 +27,9 @@ public class MegaBimPickup : MonoBehaviour
         {
             followFinger.BimGrow(_upgradeTime);
 
-            Destroy(this.gameObject);
+            _audioSource.Play();
+            _animatingParent.SetActive(false);
+            _trigger.enabled = false;
         }
     }
 
