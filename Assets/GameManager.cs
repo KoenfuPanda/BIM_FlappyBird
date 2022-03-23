@@ -207,8 +207,8 @@ public class GameManager : MonoBehaviour
         foreach (Feathers pickedFeather in CollectedFeathers)
         {
             pickedFeather.GetComponent<Collider2D>().enabled = true;
-            pickedFeather.GetComponent<SpriteRenderer>().enabled = true;
-            pickedFeather.transform.GetChild(0).gameObject.SetActive(true); // get component didnt seem to do the trick to get the particle ..
+            pickedFeather.GetComponentInChildren<SpriteRenderer>().enabled = true;
+            pickedFeather.transform.GetChild(1).gameObject.SetActive(true); // get component didnt seem to do the trick to get the particle ..
             
             // check for feathers with magnetizer on them, -> enable = false ,reset their position to start, remove the script -- players could die when feathers are being magnetized, hence this logic.
             if (pickedFeather.TryGetComponent(out Magnetizer magnetizer))
