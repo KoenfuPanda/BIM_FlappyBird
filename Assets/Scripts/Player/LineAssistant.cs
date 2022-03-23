@@ -9,6 +9,7 @@ public class LineAssistant : MonoBehaviour
 
     private LineRenderer _lineRenderer;
 
+
     private Color _colorStart;
     private Color _colorEnd;
 
