@@ -61,9 +61,7 @@ public class FollowFinger : MonoBehaviour
     private bool _tookDamage, _recoveringToNormal;
     private float _damagedTimer;
 
-    //private LineAssistant _lineAssitsant;
-    [SerializeField]
-    private LineAssistSpriteShape _lineAssitsant;
+    private LineAssistant _lineAssitsant;
 
     private Transform _parentObject;
 
@@ -82,7 +80,7 @@ public class FollowFinger : MonoBehaviour
         controlCharacter = true;
 
         _parentObject = GetComponentInParent<MoveDirection>().transform;
-        //_lineAssitsant = _parentObject.GetComponentInChildren<LineAssistant>();
+        _lineAssitsant = _parentObject.GetComponentInChildren<LineAssistant>();
 
         _bimSpriteCollider.enabled = false;
     }
@@ -392,6 +390,7 @@ public class FollowFinger : MonoBehaviour
     {
         if (rigidBody.velocity.y > 0 && bim.transform.localRotation.z < 0.05f)
         {
+            print("print");
             bim.transform.Rotate(0, 0, 1.5f);
         }
         else if (rigidBody.velocity.y < 0 && bim.transform.localRotation.z > -0.30f)

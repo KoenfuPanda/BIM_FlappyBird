@@ -62,8 +62,8 @@ public class LineAssistant : MonoBehaviour
         }
 
 
-        _colorStart = new Color(1, 0, 0, TransparencyValue);
-        _colorEnd = new Color(0, 0, 1, TransparencyValue);
+        _colorStart = new Color(1, 1, 1, TransparencyValue);
+        _colorEnd = new Color(1, 1, 1, TransparencyValue);
         _lineRenderer.startColor = _colorStart;
         _lineRenderer.endColor = _colorEnd;
 
