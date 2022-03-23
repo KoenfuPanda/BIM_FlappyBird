@@ -25,7 +25,9 @@ public class Feathers : MonoBehaviour
 
     private void Start()
     {
-        _spriteRenderer = GetComponent<SpriteRenderer>();
+        //_spriteRenderer = GetComponent<SpriteRenderer>();
+        _spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+
         _collider = GetComponent<CircleCollider2D>();
         _audioSource = GetComponent<AudioSource>();
 
