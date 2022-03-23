@@ -11,7 +11,9 @@ GameObject:
   - component: {fileID: 7287764490342038756}
   - component: {fileID: 6353165343244222504}
   - component: {fileID: 6353165343244222505}
-  m_Layer: 0
+  - component: {fileID: 1388089331}
+  - component: {fileID: 1388089330}
+  m_Layer: 2
   m_Name: AdaptiveFollowLine_Shape
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 6353165343244222518}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.9, y: -0.63, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.61394, y: 0.61394, z: 0.61394}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -78,8 +80,8 @@ SpriteShapeRenderer:
   m_Sprites:
   - {fileID: 8974840051373054322, guid: 9a252c3871c087541be0a2945f5211e0, type: 3}
   m_LocalAABB:
-    m_Center: {x: 1.5982704, y: 0.28841165, z: -0.00005}
-    m_Extent: {x: 3.5266385, y: 0.29990524, z: 0.00005}
+    m_Center: {x: -1.9934258, y: 0.06577009, z: -0.00005}
+    m_Extent: {x: 6.013142, y: 0.38520753, z: 0.00005}
 --- !u!114 &6353165343244222505
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -95,7 +97,7 @@ MonoBehaviour:
   m_Spline:
     m_IsOpenEnded: 1
     m_ControlPoints:
-    - position: {x: -1.9239558, y: 0.3080293, z: 0}
+    - position: {x: -8, y: 0, z: -0.00000020332936}
       leftTangent: {x: 0, y: 0, z: 0}
       rightTangent: {x: 0, y: 0, z: 0}
       mode: 0
@@ -104,11 +106,11 @@ MonoBehaviour:
       bevelSize: 0
       spriteIndex: 0
       corner: 1
-    - position: {x: 5.1206865, y: 0.4557898, z: 0}
+    - position: {x: 4.0161247, y: 0.37526804, z: -0.00000020332936}
       leftTangent: {x: 0, y: 0, z: 0}
       rightTangent: {x: 0, y: 0, z: 0}
       mode: 0
-      height: 0.63
+      height: 0.36
       bevelCutoff: 0
       bevelSize: 0
       spriteIndex: 0
@@ -128,3 +130,28 @@ MonoBehaviour:
   m_OptimizeGeometry: 1
   m_EnableTangents: 0
   m_GeometryCached: 0
+--- !u!210 &1388089331
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6353165343244222518}
+  m_Enabled: 1
+  m_SortingLayerID: 412932639
+  m_SortingLayer: 2
+  m_SortingOrder: 205
+--- !u!114 &1388089330
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6353165343244222518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48255ddfde7efe24c982f8c1cd56a3a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _followFinger: {fileID: 0}
+  _bimTransform: {fileID: 0}

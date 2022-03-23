@@ -13,23 +13,11 @@ MonoBehaviour:
   m_Name: FollowLine_Closed
   m_EditorClassIdentifier: 
   m_Angles:
-  - m_Start: -45
-    m_End: 45
+  - m_Start: -100
+    m_End: 100
     m_Order: 4
     m_Sprites:
-    - {fileID: 8974840051373054322, guid: 9a252c3871c087541be0a2945f5211e0, type: 3}
-  - m_Start: -135
-    m_End: -45
-    m_Order: 3
-    m_Sprites: []
-  - m_Start: 135
-    m_End: 225
-    m_Order: 2
-    m_Sprites: []
-  - m_Start: 45
-    m_End: 135
-    m_Order: 1
-    m_Sprites: []
+    - {fileID: 21300000, guid: e744ca7953eb8454e88bba559d8b0bd8, type: 3}
   m_FillTexture: {fileID: 0}
   m_CornerSprites:
   - m_CornerType: 0
@@ -56,5 +44,5 @@ MonoBehaviour:
   - m_CornerType: 7
     m_Sprites:
     - {fileID: 0}
-  m_FillOffset: 0
-  m_UseSpriteBorders: 1
+  m_FillOffset: 0.5
+  m_UseSpriteBorders: 0

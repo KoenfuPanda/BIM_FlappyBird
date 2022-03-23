@@ -57,7 +57,10 @@ public class FollowFinger : MonoBehaviour
     private bool _tookDamage, _recoveringToNormal;
     private float _damagedTimer;
 
-    private LineAssistant _lineAssitsant;
+    //private LineAssistant _lineAssitsant;
+    [SerializeField]
+    private LineAssistSpriteShape _lineAssitsant;
+
     private Transform _parentObject;
 
     private float cameraDistance = 52;
@@ -71,46 +74,13 @@ public class FollowFinger : MonoBehaviour
         controlCharacter = true;
 
         _parentObject = GetComponentInParent<MoveDirection>().transform;
-        _lineAssitsant = _parentObject.GetComponentInChildren<LineAssistant>();
+        //_lineAssitsant = _parentObject.GetComponentInChildren<LineAssistant>();
     }
 
     void FixedUpdate()
     {
         /////////
         // Calculate Velocity
-
-        if (HoldingDown == true)
-        {
-            mouseWorldPosition = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, cameraDistance));
-            //mouseWorldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-
-            TargetPosition = mouseWorldPosition;
-        }
-
-
-        if (mouseWorldPosition.y < transform.position.y - 0.1f)
-        {
-            velocity = (Mathf.Pow(2, velocityMultiplier)) * -1;  // creates negative velocity
-            if (velocity > -7)
-            {
-                velocityMultiplier += 0.5f;
-            }
-            //velocity = -8;
-        }
-        else if (mouseWorldPosition.y > transform.position.y + 0.1f)
-        {
-            velocity = Mathf.Pow(2, velocityMultiplier);
-            if (velocity < 7)
-            {
-                velocityMultiplier += 0.5f;
-            }
-            //velocity = 8;
-        }
-        else
-        {
-            velocityMultiplier = 0;
-            velocity = 0;
-        }
 
         // update the velocity calculater to be more efficient //
         //if (TargetPosition.y < transform.position.y - 0.25f)
@@ -144,6 +114,39 @@ public class FollowFinger : MonoBehaviour
 
     void Update()
     {
+        if (HoldingDown == true)
+        {
+            mouseWorldPosition = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, cameraDistance));
+            //mouseWorldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+            TargetPosition = mouseWorldPosition;
+        }
+
+
+
+        if (mouseWorldPosition.y < transform.position.y - 0.1f)
+        {
+            velocity = (Mathf.Pow(2, velocityMultiplier)) * -1;  // creates negative velocity
+            if (velocity > -7)
+            {
+                velocityMultiplier += 0.5f;
+            }
+            //velocity = -8;
+        }
+        else if (mouseWorldPosition.y > transform.position.y + 0.1f)
+        {
+            velocity = Mathf.Pow(2, velocityMultiplier);
+            if (velocity < 7)
+            {
+                velocityMultiplier += 0.5f;
+            }
+            //velocity = 8;
+        }
+        else
+        {
+            velocityMultiplier = 0;
+            velocity = 0;
+        }
         //if (mouseWorldPosition.y < transform.position.y - 0.1f)
         //{
         //    velocity = (Mathf.Pow(2, velocityMultiplier)) * -1;  // creates negative velocity
