@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4010105999885059543}
   - component: {fileID: 3032424493296414695}
   - component: {fileID: 3984005951325396572}
+  - component: {fileID: 3713142615394576455}
   m_Layer: 10
   m_Name: CanonBall_Projectile
   m_TagString: Untagged
@@ -100,6 +101,17 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.95
+--- !u!210 &3713142615394576455
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4010105999885059540}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: -1
 --- !u!1 &7888661486712066383
 GameObject:
   m_ObjectHideFlags: 0

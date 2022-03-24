@@ -29,6 +29,8 @@ public class FollowFinger : MonoBehaviour
     private Vector3 target;
     private float timeToReachTarget;
 
+    public bool _bimWallHit = false;
+
 
     // PUBLIC
     
@@ -356,16 +358,20 @@ public class FollowFinger : MonoBehaviour
             if(_damagedTimer > 0.75f)
             {
                 _recoveringToNormal = true;
+                _bimpivotAnimator.speed = 0.5f;
                 _tookDamage = false;
                 _damagedTimer = 0;
             }
         }
         else if (_recoveringToNormal == true)
         {
-            _animator.speed += Time.deltaTime * 0.5f;
-            if(_animator.speed >= 1)
+
+            _bimpivotAnimator.speed += Time.deltaTime * 0.5f;
+            //_animator.speed += Time.deltaTime * 0.5f;
+            if(_bimpivotAnimator.speed >= 1)
             {
-                _animator.speed = 1;
+                _bimpivotAnimator.speed = 1;
+                //_animator.speed = 1;
                 _recoveringToNormal = false;
             }
         }
@@ -414,11 +420,19 @@ public class FollowFinger : MonoBehaviour
         {
             _bimpivotAnimator.Play("Bim_Flying");
         }
-        else if (bim.transform.localRotation.z < -0.19f && bim.transform.localRotation.z > -0.30f)
+        else if (_bimWallHit)
+        {
+            if(_bimpivotAnimator.GetCurrentAnimatorClipInfo(0)[0].clip.name != "BimHitWall")
+            {
+                _bimpivotAnimator.speed = 1.0f;
+                _bimpivotAnimator.Play("BimHitWall");
+            }
+        }
+        else if (bim.transform.localRotation.z < -0.19f && bim.transform.localRotation.z > -0.30f && !_bimWallHit)
         {
             _bimpivotAnimator.Play("Bim_Floating");
         }
-        else if(bim.transform.localRotation.z > -0.19f)
+        else if(bim.transform.localRotation.z > -0.19f && !_bimWallHit)
         {
             _bimpivotAnimator.Play("Bim_Flying");
         }
@@ -527,10 +541,11 @@ public class FollowFinger : MonoBehaviour
     public void HitWallFeedback(Vector3 hitPosition)
     {
         Instantiate(_getHitParticlePrefab, transform.position, Quaternion.Euler(-90,0,0));
-        _animator.speed = 0.5f;
+        //_animator.speed = 0.5f;
 
         _recoveringToNormal = false;
         _tookDamage = true;
+        _bimWallHit = true;
     }
 
 
@@ -574,5 +589,10 @@ public class FollowFinger : MonoBehaviour
         travelTime = Vector3.Distance(startPosition, target) / 10;
 
         moveTo = true;
+    }
+
+    public void ResetWallHitVariable()
+    {
+        _bimWallHit = false;
     }
 }
