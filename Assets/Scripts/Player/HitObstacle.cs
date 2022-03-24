@@ -20,14 +20,14 @@ public class HitObstacle : MonoBehaviour
 
     [SerializeField]
     private float _immunityTime;
-    [SerializeField]
-    private AudioClip[] _soundEffectsGiantBim;
+    //[SerializeField]
+    //private AudioClip[] _soundEffectsGiantBim;
 
     private AudioSource _audioSource;
     private Animator _animator;
 
     [SerializeField]
-    private GameObject _particlePrefabDestruction;
+    private GameObject _particlePrefabDestruction, _particlePrefabHitCannonball;
 
 
     private void Start()
@@ -107,6 +107,7 @@ public class HitObstacle : MonoBehaviour
                     if (collision.gameObject.GetComponent<CanonBall_Projectile>() != null)
                     {
                         // add cannonball bounce particle
+                        Instantiate(_particlePrefabHitCannonball, collision.contacts[0].point, Quaternion.identity);
                     }
                     else
                     {

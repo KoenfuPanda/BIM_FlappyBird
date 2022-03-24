@@ -9603,9 +9603,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23b6cb6f762594b47ab148e81069902e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _soundEffectsGiantBim:
-  - {fileID: 8300000, guid: 37271cb9eab37244e8cc4e826ad04a6c, type: 3}
+  _soundEffects:
   - {fileID: 8300000, guid: 14030c0cfc611bf49953eedb3e1eef44, type: 3}
+  - {fileID: 8300000, guid: 37271cb9eab37244e8cc4e826ad04a6c, type: 3}
   - {fileID: 8300000, guid: d6de72e61c6300c47a3bf5f49a46ee12, type: 3}
 --- !u!82 &1457600552266132050
 AudioSource:
