@@ -1,4 +1,4 @@
-﻿using System.Collections;
+﻿//using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,7 +7,7 @@ public class PlayRandomSoundEffectUponActive : MonoBehaviour
     private AudioSource _audioSource;
 
     [SerializeField]
-    private AudioClip[] _soundEffectsGiantBim;
+    private AudioClip[] _soundEffects;
 
     private void Awake()
     {
@@ -16,7 +16,10 @@ public class PlayRandomSoundEffectUponActive : MonoBehaviour
 
     private void Start()
     {
-        var random = UnityEngine.Random.Range(0, _soundEffectsGiantBim.Length);
-        _audioSource.PlayOneShot(_soundEffectsGiantBim[random]);
+        int random = UnityEngine.Random.Range(0, _soundEffects.Length);
+        float randomBonusPitch = UnityEngine.Random.Range(-0.2f, 0.2f);
+
+        _audioSource.pitch += randomBonusPitch;
+        _audioSource.PlayOneShot(_soundEffects[random]);
     }
 }

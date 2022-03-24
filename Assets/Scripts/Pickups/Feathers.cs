@@ -82,6 +82,8 @@ public class Feathers : MonoBehaviour
             _particleSystemPickup.GetComponent<AudioSource>().pitch += (float)(_gameManager.EggQuickPickupCount / 20f);
             _particleSystemPickup.SetActive(true);
 
+
+
             if (_imAProjectile)
             {
                 Destroy(this.gameObject, 2f);
