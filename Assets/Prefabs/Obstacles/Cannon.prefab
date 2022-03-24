@@ -419,7 +419,7 @@ MonoBehaviour:
     type: 3}
   _shootPosition: {fileID: 2757054442564032016}
   _projectileType: 0
-  _smokeParticlePrefab: {fileID: 7276576345278048746, guid: 0ad7aa34f532db2439672a9263748e25,
+  _smokeParticlePrefab: {fileID: 2656822756005125223, guid: 0c016287b1278bc44843b751f5676680,
     type: 3}
 --- !u!82 &4285390897386008779
 AudioSource:
