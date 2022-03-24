@@ -72,7 +72,7 @@ public class FollowFinger : MonoBehaviour
         _hitObstacle = GetComponent<HitObstacle>();
 
         bim = transform.GetChild(0).gameObject;
-        _animator = bim.GetComponent<Animator>();
+        //_animator = bim.GetComponent<Animator>();
 
         _bimpivotAnimator = GetComponent<Animator>();
 
@@ -390,15 +390,16 @@ public class FollowFinger : MonoBehaviour
     {
         if (rigidBody.velocity.y > 0 && bim.transform.localRotation.z < 0.05f)
         {
-            print("print");
             bim.transform.Rotate(0, 0, 1.5f);
         }
         else if (rigidBody.velocity.y < 0 && bim.transform.localRotation.z > -0.30f)
         {
+
             bim.transform.Rotate(0, 0, -1.5f);
         }
         else // When flying straight
         {
+
             if (bim.transform.localRotation.z > -0.15)
             {
                 bim.transform.Rotate(0, 0, -1.5f);
@@ -407,6 +408,32 @@ public class FollowFinger : MonoBehaviour
             {
                 bim.transform.Rotate(0, 0, +1.5f);
             }
+        }
+
+        if (MegaBimActive)
+        {
+            _bimpivotAnimator.Play("Bim_Flying");
+        }
+        else if (bim.transform.localRotation.z < -0.19f && bim.transform.localRotation.z > -0.30f)
+        {
+            _bimpivotAnimator.Play("Bim_Floating");
+        }
+        else if(bim.transform.localRotation.z > -0.19f)
+        {
+            _bimpivotAnimator.Play("Bim_Flying");
+        }
+
+        if (MegaBimActive)
+        {
+            _bimpivotAnimator.speed = 0.7f;
+        }
+        else if (bim.transform.localRotation.z < -0.1f)
+        {
+            _bimpivotAnimator.speed = 1.0f;
+        }
+        else
+        {
+            _bimpivotAnimator.speed = 2.0f;
         }
     }
 
