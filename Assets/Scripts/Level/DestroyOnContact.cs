@@ -23,13 +23,17 @@ public class DestroyOnContact : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        _collider.enabled = false;
-        _visuals.SetActive(false);
-
-        foreach (var location in _particleLocations)
+        if (collision.gameObject.GetComponent<FollowFinger>().MegaBimActive == true || collision.gameObject.GetComponentInParent<FollowFinger>().MegaBimActive == true)
         {
-            Instantiate(_particleToShowPrefab, location.position, Quaternion.identity);
+            _collider.enabled = false;
+            _visuals.SetActive(false);
+
+            foreach (var location in _particleLocations)
+            {
+                Instantiate(_particleToShowPrefab, location.position, Quaternion.identity);
+            }
         }
+
         
     }
 }
