@@ -7,6 +7,9 @@ public class Shrink : MonoBehaviour
     [SerializeField] private float _timeActive;
 
     private GameManager _gameManager;
+    private HitObstacle _hitObstacle;
+    [HideInInspector]
+    public bool HasReturnedToNormalSize;
 
     private Vector3 _originalScale;
 
@@ -19,9 +22,14 @@ public class Shrink : MonoBehaviour
     {
         if (collider.TryGetComponent(out HitObstacle hitObstacle))
         {
+            _hitObstacle = hitObstacle;
+
             GetComponent<SpriteRenderer>().enabled = false;
 
-            hitObstacle.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
+            // shrinking logic -> animation
+            // after x seconds, setnormal size plays de-shrink
+            //hitObstacle.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
+            _hitObstacle.GetComponent<Animator>().Play("BimShrinks");
 
             //if i have a magnet, --> scale up the magnet object times 2
             if (collider.GetComponentInChildren<Magnet>() != null)
@@ -38,17 +46,28 @@ public class Shrink : MonoBehaviour
     IEnumerator SetNormalSize(GameObject character)
     {
         yield return new WaitForSeconds(_timeActive);
-        if (character != null && character.GetComponent<FollowFinger>().MegaBimActive == false)  // if Bim exists AND is not mega...
+        if (character != null && character.GetComponent<FollowFinger>().MegaBimActive == false && HasReturnedToNormalSize == false)  // if Bim exists AND is not mega...
         {
-            if (character.transform.localScale.x > 0)
-            {
-                character.transform.localScale = new Vector3(1, 1, 1);
-            }
-            else
-            {
-                character.transform.localScale = new Vector3(-1, 1, 1);
-            }          
+            _hitObstacle.GetComponent<Animator>().Play("BimDeShrinks");
+
+            //if (character.transform.localScale.x > 0)
+            //{
+            //    character.transform.localScale = new Vector3(1, 1, 1);
+            //}
+            //else
+            //{
+            //    character.transform.localScale = new Vector3(-1, 1, 1);
+            //}          
         }       
         //Destroy(gameObject);
+    }
+
+    public void SetNormalSizeInstantly()
+    {
+        if (HasReturnedToNormalSize == false)
+        {
+            _hitObstacle.GetComponent<Animator>().Play("BimDeShrinks");
+            HasReturnedToNormalSize = true;
+        }
     }
 }
