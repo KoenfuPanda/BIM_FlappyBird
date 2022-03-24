@@ -80,6 +80,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _lever: {fileID: 5148881680350622901}
   _wheel: {fileID: 1653530227677142298}
+  _gateAnimator: {fileID: 0}
   _onlyAllowedFinger: 0
   _onlyAllowedBim: 0
   _triggerCollider: {fileID: 1235289082553920942}
@@ -621,7 +622,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: cf568b80d8ff832498e7dd06cc10f4b9, type: 3}
+  m_audioClip: {fileID: 8300000, guid: f1a6a581845872140ac21bbd6a2c6d7a, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
