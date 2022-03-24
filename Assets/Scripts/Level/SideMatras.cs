@@ -25,6 +25,9 @@ public class SideMatras : MonoBehaviour
 
     private float _timeLostControl = 0.6f;
 
+    [SerializeField]
+    private GameObject _particleMatrassBouncePrefab;
+
 
     private void Start()
     {
@@ -74,7 +77,11 @@ public class SideMatras : MonoBehaviour
                 changeDirection.GoRight();
             }
             else
-                changeDirection.GoLeft();
+            {
+                changeDirection.GoLeft();               
+            }
+
+            _particleMatrassBouncePrefab.SetActive(true);
 
             if (_bounceUp)
             {
