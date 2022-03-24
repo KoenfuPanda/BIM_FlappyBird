@@ -16,11 +16,12 @@ public class Shrink : MonoBehaviour
     [SerializeField]
     private List<AudioClip> _soundEffects = new List<AudioClip>();
 
-
+    private MusicAdjuster _musicAdjuster;
 
     private void Start()
     {
         _gameManager = FindObjectOfType<GameManager>();
+        _musicAdjuster = FindObjectOfType<MusicAdjuster>();
     }
 
 
@@ -37,6 +38,7 @@ public class Shrink : MonoBehaviour
             //hitObstacle.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
             _hitObstacle.GetComponent<Animator>().Play("BimShrinks");
             _hitObstacle.GetComponent<AudioSource>().PlayOneShot(_soundEffects[0]);
+            _musicAdjuster.PitchShift(0.1f);
 
             //if i have a magnet, --> scale up the magnet object times 2
             if (collider.GetComponentInChildren<Magnet>() != null)
@@ -57,6 +59,7 @@ public class Shrink : MonoBehaviour
         {
             _hitObstacle.GetComponent<Animator>().Play("BimDeShrinks");
             _hitObstacle.GetComponent<AudioSource>().PlayOneShot(_soundEffects[1]);
+            _musicAdjuster.PitchToNormal();
 
             //if (character.transform.localScale.x > 0)
             //{
@@ -76,6 +79,8 @@ public class Shrink : MonoBehaviour
         {
             _hitObstacle.GetComponent<Animator>().Play("BimDeShrinks");
             _hitObstacle.GetComponent<AudioSource>().PlayOneShot(_soundEffects[1]);
+            _musicAdjuster.PitchToNormal();
+
             HasReturnedToNormalSize = true;
         }
     }

@@ -14,11 +14,20 @@ public class MegaBimPickup : MonoBehaviour
     [SerializeField]
     private GameObject _animatingParent;
 
+    private MusicAdjuster _musicAdjuster;
+
     private void Awake()
     {
         _audioSource = GetComponent<AudioSource>();
         _trigger = GetComponent<Collider2D>();
     }
+
+    private void Start()
+    {
+        _musicAdjuster = FindObjectOfType<MusicAdjuster>();
+    }
+
+
 
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -30,6 +39,8 @@ public class MegaBimPickup : MonoBehaviour
             _audioSource.Play();
             _animatingParent.SetActive(false);
             _trigger.enabled = false;
+
+            _musicAdjuster.PitchShift(-0.1f);
         }
     }
 
