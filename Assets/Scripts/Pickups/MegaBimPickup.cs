@@ -35,6 +35,7 @@ public class MegaBimPickup : MonoBehaviour
         if(collision.TryGetComponent(out FollowFinger followFinger))
         {
             followFinger.BimGrow(_upgradeTime);
+            StartCoroutine(ReturnMusicPitchToNormal());
 
             _audioSource.Play();
             _animatingParent.SetActive(false);
@@ -43,6 +44,14 @@ public class MegaBimPickup : MonoBehaviour
             _musicAdjuster.PitchShift(-0.1f);
         }
     }
+
+    private IEnumerator ReturnMusicPitchToNormal()
+    {
+        yield return new WaitForSeconds(_upgradeTime);
+
+        _musicAdjuster.PitchToNormal();       
+    }
+
 
     // upon picking me up
     // 1) set a boolean on HitObstacle to true 
