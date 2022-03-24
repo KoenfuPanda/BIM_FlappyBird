@@ -114,6 +114,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _timeActive: 17
+  HasReturnedToNormalSize: 0
+  _soundEffects:
+  - {fileID: 8300000, guid: f048f686b6bde4d4ead2c4a325a1ffb4, type: 3}
+  - {fileID: 8300000, guid: feb615642274b394da21f7465a93fa10, type: 3}
 --- !u!95 &2928990698037565418
 Animator:
   serializedVersion: 3
