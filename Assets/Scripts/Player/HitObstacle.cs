@@ -63,7 +63,7 @@ public class HitObstacle : MonoBehaviour
         {
             if (_followFinger != null) // if using followfinger ...
             {
-                if (_followFinger.MegaBimActive == true) // IF GIGANTIC
+                if (_followFinger.MegaBimActive == true && collision.gameObject.tag != "DestructibleObstacle") // IF GIGANTIC && not a destroyable obstacle (obstacles that evaporate on hit)
                 {
                     // disable the collider(s) on the object
                     var colls = collision.gameObject.GetComponents<Collider2D>();
@@ -104,7 +104,15 @@ public class HitObstacle : MonoBehaviour
                     // play a sound effect effect ( ideally probably an object pool of instantiated particles with their own hit sounds, but that would be for later //
                     //var random = UnityEngine.Random.Range(0,_soundEffectsGiantBim.Length);
                     //_audioSource.PlayOneShot(_soundEffectsGiantBim[random]);
-                    Instantiate(_particlePrefabDestruction, collision.contacts[0].point, Quaternion.identity);
+                    if (collision.gameObject.GetComponent<CanonBall_Projectile>() != null)
+                    {
+                        // add cannonball bounce particle
+                    }
+                    else
+                    {
+                        Instantiate(_particlePrefabDestruction, collision.contacts[0].point, Quaternion.identity);
+                    }
+                    
 
 
                 }
