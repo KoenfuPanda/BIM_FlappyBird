@@ -167,8 +167,8 @@ MonoBehaviour:
   - {fileID: 6562395154002170771}
   - {fileID: 3009552724381879585}
   m_Bounds:
-    m_Center: {x: 0.019999564, y: -0.0083761215, z: 0}
-    m_Extent: {x: 0.81500036, y: 2.0294409, z: 0}
+    m_Center: {x: 0.01999855, y: -0.008375883, z: 0}
+    m_Extent: {x: 0.8150003, y: 2.0294409, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
 --- !u!1 &2681149319306850558
@@ -444,8 +444,8 @@ MonoBehaviour:
   - {fileID: 591133065892341067}
   - {fileID: 234922310276897734}
   m_Bounds:
-    m_Center: {x: -0.024585187, y: -0.02693975, z: 0}
-    m_Extent: {x: 0.8395853, y: 1.948061, z: 0}
+    m_Center: {x: -0.024585605, y: -0.02693975, z: 0}
+    m_Extent: {x: 0.83958524, y: 1.9480608, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
 --- !u!1 &6774304342590609425
@@ -610,8 +610,8 @@ MonoBehaviour:
   - {fileID: 616350011466080975}
   - {fileID: 6539417090468156607}
   m_Bounds:
-    m_Center: {x: -0.024585664, y: -0.026939869, z: 0}
-    m_Extent: {x: 0.8395852, y: 1.9480606, z: 0}
+    m_Center: {x: -0.024586082, y: -0.026943803, z: 0}
+    m_Extent: {x: 0.8395852, y: 1.9480605, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
 --- !u!1 &8139704488262051437
@@ -760,6 +760,7 @@ Transform:
   - {fileID: 8934555720588229462}
   - {fileID: 8934555721459182508}
   - {fileID: 3270335078614483051}
+  - {fileID: 877697375107319272}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -858,6 +859,7 @@ MonoBehaviour:
   _speedsUpGame: 0
   _speedBoost: 3
   _timeBoosted: 1000
+  _particleMatrassBouncePrefab: {fileID: 877697375107319275}
 --- !u!210 &4587930028742071407
 SortingGroup:
   m_ObjectHideFlags: 0
@@ -950,3 +952,89 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &1003755652985387753
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 8934555721446212757}
+    m_Modifications:
+    - target: {fileID: 126166133314912001, guid: 89ce097457fb0cd4589c66231a9322be,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 126166133314912001, guid: 89ce097457fb0cd4589c66231a9322be,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 126166133314912001, guid: 89ce097457fb0cd4589c66231a9322be,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.34
+      objectReference: {fileID: 0}
+    - target: {fileID: 126166133314912001, guid: 89ce097457fb0cd4589c66231a9322be,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 126166133314912001, guid: 89ce097457fb0cd4589c66231a9322be,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 126166133314912001, guid: 89ce097457fb0cd4589c66231a9322be,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 126166133314912001, guid: 89ce097457fb0cd4589c66231a9322be,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 126166133314912001, guid: 89ce097457fb0cd4589c66231a9322be,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 126166133314912001, guid: 89ce097457fb0cd4589c66231a9322be,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 126166133314912001, guid: 89ce097457fb0cd4589c66231a9322be,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 126166133314912001, guid: 89ce097457fb0cd4589c66231a9322be,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 126166133314912002, guid: 89ce097457fb0cd4589c66231a9322be,
+        type: 3}
+      propertyPath: m_Name
+      value: Particle_MatrassBounce_Wrap
+      objectReference: {fileID: 0}
+    - target: {fileID: 126166133314912002, guid: 89ce097457fb0cd4589c66231a9322be,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 89ce097457fb0cd4589c66231a9322be, type: 3}
+--- !u!1 &877697375107319275 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 126166133314912002, guid: 89ce097457fb0cd4589c66231a9322be,
+    type: 3}
+  m_PrefabInstance: {fileID: 1003755652985387753}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &877697375107319272 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 126166133314912001, guid: 89ce097457fb0cd4589c66231a9322be,
+    type: 3}
+  m_PrefabInstance: {fileID: 1003755652985387753}
+  m_PrefabAsset: {fileID: 0}

@@ -25,6 +25,9 @@ public class MatrassBounce : MonoBehaviour
     [SerializeField]
     private float _speedBoost, _timeBoosted;
 
+    [SerializeField]
+    private GameObject _particleMatrassBouncePrefab;
+
     private void Start()
     {
         //_animator = GetComponent<Animator>();
@@ -57,10 +60,13 @@ public class MatrassBounce : MonoBehaviour
                 if (_bouncesDownwards == false)
                 {
                     BounceUpActivate();
+                    _particleMatrassBouncePrefab.SetActive(true);
                 }
                 else
                 {
                     BounceDownActivate();
+                    _particleMatrassBouncePrefab.transform.rotation = Quaternion.Euler(0,0,180);
+                    _particleMatrassBouncePrefab.SetActive(true);
                 }                           
             }        
         }
