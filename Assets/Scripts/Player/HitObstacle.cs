@@ -26,6 +26,9 @@ public class HitObstacle : MonoBehaviour
     private AudioSource _audioSource;
     private Animator _animator;
 
+    [SerializeField]
+    private GameObject _particlePrefabDestruction;
+
 
     private void Start()
     {
@@ -98,9 +101,11 @@ public class HitObstacle : MonoBehaviour
                     // add lifespan to the pieces (they get destroyed after 3 seconds or so)
                     Destroy(collision.gameObject, 3f);
 
-                    // play a sound effect effect ( ideally probably an object pool of instantiated particles with their own hit sounds, but that would be for later
-                    var random = UnityEngine.Random.Range(0,_soundEffectsGiantBim.Length);
-                    _audioSource.PlayOneShot(_soundEffectsGiantBim[random]);
+                    // play a sound effect effect ( ideally probably an object pool of instantiated particles with their own hit sounds, but that would be for later //
+                    //var random = UnityEngine.Random.Range(0,_soundEffectsGiantBim.Length);
+                    //_audioSource.PlayOneShot(_soundEffectsGiantBim[random]);
+                    Instantiate(_particlePrefabDestruction, collision.contacts[0].point, Quaternion.identity);
+
 
                 }
                 else // IF NOT GIGANTIC

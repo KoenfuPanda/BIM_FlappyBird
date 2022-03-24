@@ -564,7 +564,6 @@ MonoBehaviour:
   TargetPosition: {x: 0, y: 0}
   _getHitParticlePrefab: {fileID: 126166133314912002, guid: d6dbda516fa8a1840be8e18477bc317d,
     type: 3}
-  _lineAssitsant: {fileID: 0}
 --- !u!114 &6106393831850996109
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -583,6 +582,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 37271cb9eab37244e8cc4e826ad04a6c, type: 3}
   - {fileID: 8300000, guid: 14030c0cfc611bf49953eedb3e1eef44, type: 3}
   - {fileID: 8300000, guid: d6de72e61c6300c47a3bf5f49a46ee12, type: 3}
+  _particlePrefabDestruction: {fileID: 126166133314912002, guid: e6dd6c6bbec8bc04a8fdc226acbcaf8e,
+    type: 3}
 --- !u!58 &4855686127239626921
 CircleCollider2D:
   m_ObjectHideFlags: 0

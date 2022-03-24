@@ -80,8 +80,6 @@ public class Feathers : MonoBehaviour
 
             // replacement for instantiate logic
             _particleSystemPickup.GetComponent<AudioSource>().pitch += (float)(_gameManager.EggQuickPickupCount / 20f);
-            Debug.Log("pitch part " + _particleSystemPickup.GetComponent<AudioSource>().pitch);
-
             _particleSystemPickup.SetActive(true);
 
             if (_imAProjectile)
