@@ -32,11 +32,26 @@ public class Draggable : MonoBehaviour
     private TutorialLogic _requiredTutorial;
 
 
+    [SerializeField]
+    private GameObject _borderObject;
+
+    // tapping functionality
+    [SerializeField]
+    private bool _tapFuncionalityOn;
+    private bool _activatedByTap;
+    [SerializeField]
+    private Animator _animator;
+    private Collider2D _collider;
+
+
     private void Start()
     {
         // Calculate border
-        GameObject border = transform.Find("Border").gameObject;
-        borderSprite = border.transform.GetComponent<SpriteRenderer>();
+        //GameObject border = transform.Find("Border").gameObject;
+        borderSprite = _borderObject.transform.GetComponent<SpriteRenderer>();
+        _animator = GetComponent<Animator>();
+        _collider = GetComponent<Collider2D>();
+
         _followFinger = FindObjectOfType<FollowFinger>();
 
         if (_isTutorial == true)
@@ -53,19 +68,33 @@ public class Draggable : MonoBehaviour
         topBorder = borderSprite.transform.TransformPoint(borderSprite.sprite.bounds.max).y;
         bottomBorder = borderSprite.transform.TransformPoint(borderSprite.sprite.bounds.min).y;
 
-        Destroy(border);
+        Destroy(_borderObject);
         
     }
 
     void OnMouseDown()
     {
-        if (IsActive == true)
+        if (IsActive == true && _activatedByTap == false)
         {
             //FollowFinger.controlCharacter = false;
             _followFinger.EnteredClickableSurface();
 
             screenPoint = Camera.main.WorldToScreenPoint(gameObject.transform.position);
             offset = gameObject.transform.position - Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z));
+
+            if (_tapFuncionalityOn == true)
+            {
+                // activate animation
+                _animator.Play("DraggableMove");
+                _collider.enabled = false;
+
+                if (_isTutorial) // if lifted high enough => call continue game
+                {
+                    _requiredTutorial.ContinueTheGame();
+                }
+
+                _activatedByTap = true;
+            }
         }
     }
     
@@ -77,7 +106,7 @@ public class Draggable : MonoBehaviour
 
     void OnMouseDrag()
     {
-        if (IsActive == true)
+        if (IsActive == true && _tapFuncionalityOn == false)
         {
             // Calculate mouse & obstacle position
 

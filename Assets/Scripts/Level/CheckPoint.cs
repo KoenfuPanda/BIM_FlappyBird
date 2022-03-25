@@ -36,7 +36,7 @@ public class CheckPoint : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(_hasBeenActivated == false)
+        if(_hasBeenActivated == false && collision.TryGetComponent(out HitObstacle hitObstacle)) // if yet to be activated and is player...
         {
             _animator.SetTrigger("Ring");
 
