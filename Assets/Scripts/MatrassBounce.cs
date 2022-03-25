@@ -41,8 +41,12 @@ public class MatrassBounce : MonoBehaviour
             
             if(collision.TryGetComponent(out FollowFinger followFinger))
             {
+                // turn of controls
                 followFinger.TurnOffControl(_timeAmountControlLost, false, true, false);
+                // become immune for a bit
+                StartCoroutine(collision.GetComponent<HitObstacle>().GainImmunity(1f));
 
+                // add velocity
                 if(collision.GetComponentInParent<MoveDirection>() != null)
                 {
                     _moveDirection = collision.GetComponentInParent<MoveDirection>(); 

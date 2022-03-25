@@ -5030,7 +5030,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6106393831581321802}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.124126, y: -1.3673044, z: -10}
+  m_LocalPosition: {x: -2.8969128, y: -1.3673044, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6106393831258886328}
@@ -5133,9 +5133,9 @@ GameObject:
   - component: {fileID: 6106393831715984676}
   - component: {fileID: 6106393831715984675}
   - component: {fileID: 2490897289166945182}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Bim
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -480,7 +480,7 @@ public class HitObstacle : MonoBehaviour
         }
     }
 
-    IEnumerator GainImmunity(float immuneTimer)
+    public IEnumerator GainImmunity(float immuneTimer)
     {
         IsImmune = true;
 
