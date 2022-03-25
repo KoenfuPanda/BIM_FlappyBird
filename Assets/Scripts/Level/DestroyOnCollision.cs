@@ -48,8 +48,9 @@ public class DestroyOnCollision : MonoBehaviour
                 _spriteRen.enabled = false;
                 // disable collider
                 _collider.enabled = false;
-                // set particle active to true
-                _particlePrefab.SetActive(true);
+                // set particle active to true, unparent it
+                _particlePrefab.transform.SetParent(null);
+                _particlePrefab.SetActive(true);             
             }
             else if (IsBarrel == false)
             {
