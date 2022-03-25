@@ -60,6 +60,8 @@ public class FollowFinger : MonoBehaviour
 
     [SerializeField]
     private GameObject _getHitParticlePrefab;
+    [SerializeField]
+    private ParticleSystem _rotatingStars;
     private bool _tookDamage, _recoveringToNormal;
     private float _damagedTimer;
 
@@ -540,6 +542,7 @@ public class FollowFinger : MonoBehaviour
 
     public void HitWallFeedback(Vector3 hitPosition)
     {
+        _rotatingStars.Play();
         Instantiate(_getHitParticlePrefab, transform.position, Quaternion.Euler(-90,0,0));
         //_animator.speed = 0.5f;
 
