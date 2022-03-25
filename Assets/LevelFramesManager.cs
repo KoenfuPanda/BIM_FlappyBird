@@ -19,11 +19,31 @@ public class LevelFramesManager : MonoBehaviour
 
         for(int levelIndex = 0; levelIndex < 6; levelIndex++)
         {
-            //Feathers
-            if(GameInstance.CollectedFeathers[levelIndex] > 0)
+            // 20,50,80% threshHolds for Stars
+            float threshHold1 = GameInstance.MaxFeathers[levelIndex] / 5;
+            float threshHold2 = GameInstance.MaxFeathers[levelIndex] / 2;
+            float threshHold3 = GameInstance.MaxFeathers[levelIndex] * (8f / 10f);
+
+            //Feathers           
+            if (GameInstance.CollectedFeathers[levelIndex] > 0)
             {
                 Frames[levelIndex].EggScore.text = GameInstance.CollectedFeathers[levelIndex].ToString() + "/" + GameInstance.MaxFeathers[levelIndex].ToString();
                 Frames[levelIndex].Filling.padding = new Vector4(0, 0, 0, 80 - ((float)GameInstance.CollectedFeathers[levelIndex] / (float)GameInstance.MaxFeathers[levelIndex] * 80));
+
+                // check threshHolds
+                if (GameInstance.CollectedFeathers[levelIndex] >= threshHold3)
+                {
+                    // setActive GO star_1,star_2,star_3
+                }
+                else if (GameInstance.CollectedFeathers[levelIndex] >= threshHold2)
+                {
+                    // setActive GO star_1,star_2
+                }
+                else if (GameInstance.CollectedFeathers[levelIndex] >= threshHold1)
+                {
+                    // setActive GO star_1
+                }
+                // ideally have an additional top if statement check if ALL eggs were collected to show a nice sprite of the crystal egg (similar to finishing line)
             }
 
             // Emblems
