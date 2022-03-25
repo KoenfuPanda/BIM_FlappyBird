@@ -22,7 +22,7 @@ public class FinishingLine : MonoBehaviour
 
     // score measurement objects
     [SerializeField]
-    private GameObject _endScreenCanvas, _HUDScoreElementToMove;
+    private GameObject _endScreenCanvas, _HUDScoreElementToMove, _HUDCanvas;
     [SerializeField]
     private GameObject _engraving1, _engraving2, _engraving3, _engravingParent;
     [SerializeField]
@@ -89,6 +89,7 @@ public class FinishingLine : MonoBehaviour
         _gameManager = GetComponentInParent<GameManager>();
 
         _HUDScoreElementToMove.GetComponent<Animator>().enabled = false; // just making sure this is disabled at start
+
         _engravingsParentAnimator = _engravingParent.GetComponent<Animator>();
         _engravingsParentAnimator.enabled = false; // idem ditto
 
@@ -398,6 +399,7 @@ public class FinishingLine : MonoBehaviour
             // first activate the moving hud element, then pop open the score
             //_endScreenCanvas.SetActive(true);
             _HUDScoreElementToMove.SetActive(true);
+            _HUDCanvas.GetComponent<Animator>().Play("HealthRemoved");
             // 2)   after the popup animation is complete, move the feather counter closer to the panel, transfer the score from the HUD to the score panel egg
             // 2.1) at 3 treshholds, each adding a 'star' when reached (maybe pause the count during the activation of a star)(maybe slowdown the count the farther it gets, for suspense)
 
