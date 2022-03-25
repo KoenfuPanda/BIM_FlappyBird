@@ -7,14 +7,18 @@ public class MusicAdjuster : MonoBehaviour
     private AudioSource _audioSource;
 
     private float _startPitch;
-    private int _startVolumeTimes100;
-
+    private float _startVolume, _targetVolume;
+    private float _durationFizzle;
 
     void Start()
     {
         _audioSource = GetComponent<AudioSource>();
+
         _startPitch = _audioSource.pitch;
-        _startVolumeTimes100 = (int)(_audioSource.volume * 100);
+        _startVolume = _audioSource.volume;
+
+        _durationFizzle = 3f;
+        _targetVolume = 0.2f;
     }
 
 
@@ -23,12 +27,20 @@ public class MusicAdjuster : MonoBehaviour
     // kill/reduce the volume of the music with this method, called end level ?
     public IEnumerator FizzleOutMusic()
     {
-        for (int i = _startVolumeTimes100; i > 0; i--)
-        {
-            _audioSource.volume -= (float)((float)i/100f);
-        }
+        yield return new WaitForSeconds(1.3f);
 
-        yield return null;
+        float currentTime = 0;
+        float start = _audioSource.volume;
+
+        while (currentTime < _durationFizzle)
+        {
+            currentTime += Time.deltaTime;
+            _audioSource.volume = Mathf.Lerp(start, _targetVolume, currentTime / _durationFizzle);
+            yield return null;
+        }
+        yield break;
+
+ 
     }
 
 

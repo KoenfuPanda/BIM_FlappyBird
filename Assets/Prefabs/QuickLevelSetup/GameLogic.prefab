@@ -1214,6 +1214,11 @@ PrefabInstance:
       objectReference: {fileID: 8864637171370101198}
     - target: {fileID: 8157713602075417472, guid: 617028c5d648d2c40b4fe3b8b212824c,
         type: 3}
+      propertyPath: _musicAdjuster
+      value: 
+      objectReference: {fileID: 8196980225291786267}
+    - target: {fileID: 8157713602075417472, guid: 617028c5d648d2c40b4fe3b8b212824c,
+        type: 3}
       propertyPath: _HUDScoreElementToMove
       value: 
       objectReference: {fileID: 1264852135422398875}

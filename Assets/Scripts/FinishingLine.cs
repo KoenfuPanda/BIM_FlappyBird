@@ -79,6 +79,8 @@ public class FinishingLine : MonoBehaviour
     // sound effect things
     [SerializeField]
     private SoundEffectMaster _audioMaster;
+    [SerializeField]
+    private MusicAdjuster _musicAdjuster;
     
 
 
@@ -370,6 +372,8 @@ public class FinishingLine : MonoBehaviour
             _followFinger = followFinger;
             _rigidBim = _followFinger.GetComponent<Rigidbody2D>();
             _moveDirection = _followFinger.GetComponentInParent<MoveDirection>();
+
+            StartCoroutine(_musicAdjuster.FizzleOutMusic());
 
             // disable controls
             _followFinger.TurnOffControl(1000, true, false, false);
