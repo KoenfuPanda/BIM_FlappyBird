@@ -34,14 +34,20 @@ public class LevelFramesManager : MonoBehaviour
                 if (GameInstance.CollectedFeathers[levelIndex] >= threshHold3)
                 {
                     // setActive GO star_1,star_2,star_3
+                    Frames[levelIndex].Stars[0].enabled = true;
+                    Frames[levelIndex].Stars[1].enabled = true;
+                    Frames[levelIndex].Stars[2].enabled = true;
                 }
                 else if (GameInstance.CollectedFeathers[levelIndex] >= threshHold2)
                 {
                     // setActive GO star_1,star_2
+                    Frames[levelIndex].Stars[0].enabled = true;
+                    Frames[levelIndex].Stars[1].enabled = true;
                 }
                 else if (GameInstance.CollectedFeathers[levelIndex] >= threshHold1)
                 {
                     // setActive GO star_1
+                    Frames[levelIndex].Stars[0].enabled = true;
                 }
                 // ideally have an additional top if statement check if ALL eggs were collected to show a nice sprite of the crystal egg (similar to finishing line)
             }
@@ -51,7 +57,7 @@ public class LevelFramesManager : MonoBehaviour
             {
                 if (GameInstance.CollectedEggs[levelIndex, EmblemIndex])
                 {
-                    Frames[levelIndex].EmblemPieces[EmblemIndex].enabled = true;
+                    Frames[levelIndex].EmblemPieces[EmblemIndex].enabled = true;                   
                 }
             }
 
