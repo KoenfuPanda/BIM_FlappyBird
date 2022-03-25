@@ -83,9 +83,16 @@ public class LevelFramesManager : MonoBehaviour
 
     public void LoadSelectedLevel()
     {
-        SceneManager.LoadScene("Level_0" + FrameNumber.ToString());
+        StartCoroutine(LoadSelectedLevelDelay());
         //SceneManager.LoadScene("TestingScoreScreen"); // testing purposes
         //SceneManager.LoadScene("Alpha_level_0" + FrameNumber.ToString());
+    }
+
+    IEnumerator LoadSelectedLevelDelay()
+    {
+        yield return new WaitForSeconds(1);
+
+        SceneManager.LoadScene("Level_0" + FrameNumber.ToString());
     }
 
     public void FrameToRight()
