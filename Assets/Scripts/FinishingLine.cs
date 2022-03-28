@@ -351,7 +351,7 @@ public class FinishingLine : MonoBehaviour
 
     public void CreateEggsToAbsorb()
     {
-        GameObject eggImage = ObjectPooler.SharedInstance.GetPooledObject();
+        GameObject eggImage = _gameManager.GetComponent<ObjectPooler>().GetPooledObject();
         if (eggImage != null)
         {
             eggImage.transform.SetParent(_eggTransform);

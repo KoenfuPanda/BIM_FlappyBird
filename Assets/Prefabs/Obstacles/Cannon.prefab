@@ -208,6 +208,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2757054442564032016}
+  - component: {fileID: 3354290056828620484}
   m_Layer: 9
   m_Name: ProjectileSpawnPosition
   m_TagString: Untagged
@@ -229,6 +230,23 @@ Transform:
   m_Father: {fileID: 8660945089566781232}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3354290056828620484
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1903486029441136059}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85e6486aaf29a5644bb8067a29daac42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PooledObjects: []
+  ObjectToPool: {fileID: 7276576345278048746, guid: 0ad7aa34f532db2439672a9263748e25,
+    type: 3}
+  NumberToPool: 2
+  ParentTransform: {fileID: 2757054442564032016}
 --- !u!1 &2535193000774471795
 GameObject:
   m_ObjectHideFlags: 0
@@ -373,6 +391,7 @@ GameObject:
   - component: {fileID: 8660945089566781232}
   - component: {fileID: 8660945089566781235}
   - component: {fileID: 4285390897386008779}
+  - component: {fileID: 687339895814894683}
   m_Layer: 9
   m_Name: CannonPivot
   m_TagString: Untagged
@@ -408,8 +427,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff7be2a7c9924ab4fb82520b81fe8478, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _projectile: {fileID: 4212198404088404017, guid: 9e9b09c0ea77c0540b35d29225ece059,
-    type: 3}
   _loopTime: 1
   _speed: 150
   _animator: {fileID: 4312439675486823182}
@@ -419,8 +436,10 @@ MonoBehaviour:
     type: 3}
   _shootPosition: {fileID: 2757054442564032016}
   _projectileType: 0
-  _smokeParticlePrefab: {fileID: 2656822756005125223, guid: 0c016287b1278bc44843b751f5676680,
+  _smokeParticlePrefab: {fileID: 7276576345278048746, guid: 0ad7aa34f532db2439672a9263748e25,
     type: 3}
+  _cannonBallPool: {fileID: 687339895814894683}
+  _smokeParticlePool: {fileID: 3354290056828620484}
 --- !u!82 &4285390897386008779
 AudioSource:
   m_ObjectHideFlags: 0
@@ -517,6 +536,23 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &687339895814894683
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8660945089566781233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85e6486aaf29a5644bb8067a29daac42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PooledObjects: []
+  ObjectToPool: {fileID: 4010105999885059540, guid: 3e7f52ebdc904044ba9cc3ad6da1b494,
+    type: 3}
+  NumberToPool: 6
+  ParentTransform: {fileID: 8660945089566781232}
 --- !u!1 &8660945090048447902
 GameObject:
   m_ObjectHideFlags: 0

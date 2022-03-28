@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SpawnCannonBall : MonoBehaviour
 {
-    [SerializeField] private GameObject _projectile;
+    //[SerializeField] private GameObject _projectile;
     [SerializeField] private float _loopTime;
     [SerializeField] private float _speed;
     [SerializeField] private Animator _animator;
@@ -15,6 +15,7 @@ public class SpawnCannonBall : MonoBehaviour
 
     [SerializeField]
     private Transform _shootPosition;
+    private Vector3 _shootDirection;
 
     private enum ProjectileType { Cannonball, Feather, Random }
     [SerializeField] private ProjectileType _projectileType;
@@ -25,12 +26,22 @@ public class SpawnCannonBall : MonoBehaviour
     [SerializeField]
     private GameObject _smokeParticlePrefab;
 
+    [SerializeField]
+    private ObjectPooler _cannonBallPool, _smokeParticlePool;
+
 
     private void Start()
     {
         _timer = _loopTime;
 
         _audioSource = GetComponent<AudioSource>();
+
+        // calculate shoot direction, put this in update if u want to animate the cannon and shoot properly
+        _shootDirection = _shootPosition.right.normalized;
+        if (transform.parent.localScale.x < 0) // if i mirrored the cannon, reverse shoot direction
+        {
+            _shootDirection *= -1;
+        }
     }
 
 
@@ -42,76 +53,84 @@ public class SpawnCannonBall : MonoBehaviour
         {
             // audio clip
             _audioSource.Play();
+
             // particle effect
-            Instantiate(_smokeParticlePrefab, _shootPosition.position, Quaternion.identity);
+            //Instantiate(_smokeParticlePrefab, _shootPosition.position, Quaternion.identity);
+            CreateSmokeParticle();
+
             // animation
             _animator.SetTrigger("Shoot");
 
-            if (_projectileType == ProjectileType.Cannonball) // canonballs only
-            {
-                _chosenProjectile = Instantiate(_canonBallPrefab, _shootPosition.position, Quaternion.identity);
-            }
-            else if (_projectileType == ProjectileType.Feather) // feathers only
-            {
-                _chosenProjectile = Instantiate(_featherPickupPrefab, _shootPosition.position, Quaternion.identity);               
-            }
-            else // randomly shoots both
-            {
-                var randomValue = UnityEngine.Random.Range(0, 2);
-                if(randomValue == 0)
-                {
-                    _chosenProjectile = Instantiate(_canonBallPrefab, _shootPosition.position, Quaternion.identity);
-                }
-                else
-                    _chosenProjectile = Instantiate(_featherPickupPrefab, _shootPosition.position, Quaternion.identity);
-            }
+            // get pooled object
+            CreateCannonballToShoot();
 
-            var shootDir = _shootPosition.right.normalized;
-            if (transform.parent.localScale.x < 0) // if i mirrored the cannon, reverse shoot direction
-            {
-                shootDir *= -1;
-            }
 
-            _chosenProjectile.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-            _chosenProjectile.GetComponent<Rigidbody2D>().velocity = _speed * Time.fixedDeltaTime * shootDir; // adds the velocity to the spawned object
+            // dated original logic //
 
-            _timer = 0;
-
-            //GameObject projectile = Instantiate(_projectile, gameObject.transform.position, Quaternion.Euler(transform.eulerAngles.z * -1, 90, 0));
-            //projectile.GetComponent<Projectile>().speed = _speed;
-
-            //if (_projectileType == ProjectileType.Feather)
+            //if (_projectileType == ProjectileType.Cannonball) // canonballs only
             //{
-            //    projectile.GetComponent<Projectile>().feather = true;
+            //    _chosenProjectile = Instantiate(_canonBallPrefab, _shootPosition.position, Quaternion.identity);
             //}
-            //else if (_projectileType == ProjectileType.Random)
+            //else if (_projectileType == ProjectileType.Feather) // feathers only
             //{
-            //    int randomNumber = Random.Range(0, 2);
-
-            //    if (randomNumber > 0)
+            //    _chosenProjectile = Instantiate(_featherPickupPrefab, _shootPosition.position, Quaternion.identity);               
+            //}
+            //else // randomly shoots both
+            //{
+            //    var randomValue = UnityEngine.Random.Range(0, 2);
+            //    if(randomValue == 0)
             //    {
-            //        projectile.GetComponent<Projectile>().feather = true;
+            //        _chosenProjectile = Instantiate(_canonBallPrefab, _shootPosition.position, Quaternion.identity);
             //    }
             //    else
-            //    {
-            //        projectile.GetComponent<Projectile>().feather = false;
-            //    }
+            //        _chosenProjectile = Instantiate(_featherPickupPrefab, _shootPosition.position, Quaternion.identity);
             //}
 
-            //timer = 0;
+            // velocity adding
+            //_chosenProjectile.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+            //_chosenProjectile.GetComponent<Rigidbody2D>().velocity = _speed * Time.fixedDeltaTime * shootDir; // adds the velocity to the spawned object
+
+            // timer reset
+            _timer = 0;
         }       
     }
 
-
-    //private void Shoot()
-    //{
-    //    _chosenProjectile.GetComponent<Rigidbody2D>().velocity = Vector3.forward * Time.deltaTime * _speed; // adds the velocity to the spawned object
-    //}
 
 
 
     private void OnEnable()
     {
         _timer = _loopTime;
+    }
+
+    public void CreateCannonballToShoot()
+    {
+        GameObject cannonBall = _cannonBallPool.GetPooledObject();
+        if (cannonBall != null)
+        {
+            cannonBall.transform.SetParent(this.transform);
+            cannonBall.transform.localScale = Vector3.one;
+            cannonBall.transform.position = _shootPosition.position;
+            cannonBall.transform.rotation = _shootPosition.rotation;
+            cannonBall.SetActive(true);
+
+            // velocity adding
+            cannonBall.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+            cannonBall.GetComponent<Rigidbody2D>().velocity = _speed * Time.fixedDeltaTime * _shootDirection; // adds the velocity to the spawned object
+        }
+    }
+
+    public void CreateSmokeParticle()
+    {
+        GameObject smokeParticle = _smokeParticlePool.GetPooledObject();
+        if (smokeParticle != null)
+        {
+            smokeParticle.SetActive(false);
+            smokeParticle.transform.SetParent(this.transform);
+            smokeParticle.transform.localScale = Vector3.one;
+            smokeParticle.transform.position = _shootPosition.position;
+            smokeParticle.transform.rotation = _shootPosition.rotation;
+            smokeParticle.SetActive(true);
+        }
     }
 }

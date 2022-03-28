@@ -63,7 +63,7 @@ public class HitObstacle : MonoBehaviour
         {
             if (_followFinger != null) // if using followfinger ...
             {
-                if (_followFinger.MegaBimActive == true && collision.gameObject.tag != "DestructibleObstacle") // IF GIGANTIC && not a destroyable obstacle (obstacles that evaporate on hit)
+                if (_followFinger.MegaBimActive == true && collision.gameObject.tag != "DestructibleObstacle") // IF GIGANTIC && not a destroyable obstacle (not obstacles that evaporate on hit)
                 {
                     // disable the collider(s) on the object
                     var colls = collision.gameObject.GetComponents<Collider2D>();
@@ -99,7 +99,15 @@ public class HitObstacle : MonoBehaviour
 
                     // !! always have a checkpoint right after he turns small (otherwise i need code to respawn the level pieces) !!
                     // add lifespan to the pieces (they get destroyed after 3 seconds or so)
-                    Destroy(collision.gameObject, 3f);
+                    //if (collision.gameObject.TryGetComponent(out CanonBall_Projectile cannonballProjectile))
+                    //{
+                    StartCoroutine(SetObjectStateToFalse(collision.gameObject));
+                    //}
+                    //else
+                    //{
+                    //    Destroy(collision.gameObject, 3f);
+                    //}
+                    
 
                     // play a sound effect effect ( ideally probably an object pool of instantiated particles with their own hit sounds, but that would be for later //
                     //var random = UnityEngine.Random.Range(0,_soundEffectsGiantBim.Length);
@@ -543,5 +551,13 @@ public class HitObstacle : MonoBehaviour
 
         _rigidbody.rotation = 0;
         _rigidbody.freezeRotation = true;
+    }
+
+
+    IEnumerator SetObjectStateToFalse(GameObject obj)
+    {
+        yield return new WaitForSeconds(3);
+
+        obj.SetActive(false);
     }
 }

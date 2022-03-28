@@ -35,7 +35,10 @@ public class CanonBall_Projectile : MonoBehaviour
 
             }
             else
-                Destroy(this.gameObject); // use fancier logic here for sound, particle, etc
+            {
+                //Destroy(this.gameObject);
+                this.gameObject.SetActive(false);
+            }           
         }
         else if (collision.gameObject.GetComponentInParent<FollowFinger>() != null) // if the parent is the player...
         {
@@ -44,11 +47,15 @@ public class CanonBall_Projectile : MonoBehaviour
 
             }
             else
-                Destroy(this.gameObject); // use fancier logic here for sound, particle, etc
+            {
+                //Destroy(this.gameObject);
+                this.gameObject.SetActive(false);
+            }               
         }
         else if (collision.gameObject.GetComponent<Feathers>() == null && collision.gameObject.GetComponent<EggElixir>() == null && collision.gameObject.tag != "ImmuneToProjectile") // if it's not a feather,elixer or special terrain
         {
-            Destroy(this.gameObject);
+            //Destroy(this.gameObject);
+            this.gameObject.SetActive(false);
         }
     }
 }

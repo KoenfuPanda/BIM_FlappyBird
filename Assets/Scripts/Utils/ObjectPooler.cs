@@ -7,7 +7,8 @@ public class ObjectPooler : MonoBehaviour
     // source -> ht"t"ps://www.raywenderlich.com/847-object-pooling-in-unity
 
 
-    public static ObjectPooler SharedInstance;
+    // this is usefull if you have only one type of objectpooler, currently i want to use more than one type
+    //public static ObjectPooler SharedInstance;
 
 
     public List<GameObject> PooledObjects;
@@ -17,10 +18,10 @@ public class ObjectPooler : MonoBehaviour
     public Transform ParentTransform;
 
 
-    private void Awake()
-    {
-        SharedInstance = this;
-    }
+    //private void Awake()
+    //{
+    //    SharedInstance = this;
+    //}
 
     private void Start()
     {
