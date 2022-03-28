@@ -79,7 +79,7 @@ GameObject:
   - component: {fileID: 4308515243475187676}
   - component: {fileID: 1483451832771827479}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: BlackScreen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -725,7 +725,7 @@ PrefabInstance:
     - target: {fileID: 6106393831581321803, guid: a449fe7b4e53d99459c68fa6840544ad,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.4104543
+      value: -2.8982527
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a449fe7b4e53d99459c68fa6840544ad, type: 3}
@@ -857,6 +857,11 @@ PrefabInstance:
       propertyPath: _finishingLineScript
       value: 
       objectReference: {fileID: 1264852134283055077}
+    - target: {fileID: 5696009959556047508, guid: 253a3bdab46750d4e8c28b108bd75587,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 15.3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 253a3bdab46750d4e8c28b108bd75587, type: 3}
 --- !u!224 &6944486860291176823 stripped

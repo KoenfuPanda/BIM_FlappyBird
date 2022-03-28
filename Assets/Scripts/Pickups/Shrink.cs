@@ -38,7 +38,7 @@ public class Shrink : MonoBehaviour
             //hitObstacle.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
             _hitObstacle.GetComponent<Animator>().Play("BimShrinks");
             _hitObstacle.GetComponent<AudioSource>().PlayOneShot(_soundEffects[0]);
-            _musicAdjuster.PitchShift(0.1f);
+            _musicAdjuster.PitchShift(0.3f);
 
             //if i have a magnet, --> scale up the magnet object times 2
             if (collider.GetComponentInChildren<Magnet>() != null)
