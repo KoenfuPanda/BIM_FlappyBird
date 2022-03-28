@@ -194,7 +194,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/NEWLEVELSWTF/LVL3.unity
     guid: 5d62aee853e6aec4e8850c30616856fa
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/NEWLEVELSWTF/LVL4.unity
     guid: 18d0aa10b2bec324b86714c0259f6450
   m_configObjects: {}
