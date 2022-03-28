@@ -43,7 +43,7 @@ public class Feathers : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.tag == "Player")
+        if(collision.gameObject.GetComponentInParent<FollowFinger>() != null || collision.gameObject.GetComponent<FollowFinger>() != null)
         {
             //FeatherScore.Feathers++;
 
