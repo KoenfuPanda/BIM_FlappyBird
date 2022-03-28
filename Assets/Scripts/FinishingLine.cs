@@ -399,7 +399,7 @@ public class FinishingLine : MonoBehaviour
             // first activate the moving hud element, then pop open the score
             //_endScreenCanvas.SetActive(true);
             _HUDScoreElementToMove.SetActive(true);
-            _HUDCanvas.GetComponent<Animator>().Play("HealthRemoved");
+            _HUDCanvas.GetComponent<Animator>().Play("Health_Removed_Upwards");
             // 2)   after the popup animation is complete, move the feather counter closer to the panel, transfer the score from the HUD to the score panel egg
             // 2.1) at 3 treshholds, each adding a 'star' when reached (maybe pause the count during the activation of a star)(maybe slowdown the count the farther it gets, for suspense)
 
