@@ -505,7 +505,7 @@ GameObject:
   - component: {fileID: 1516779903172663463}
   m_Layer: 0
   m_Name: Trackcheckpoint
-  m_TagString: Untagged
+  m_TagString: ImmuneToProjectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -725,7 +725,7 @@ PrefabInstance:
     - target: {fileID: 6106393831581321803, guid: a449fe7b4e53d99459c68fa6840544ad,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.8982527
+      value: -3.752478
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a449fe7b4e53d99459c68fa6840544ad, type: 3}
