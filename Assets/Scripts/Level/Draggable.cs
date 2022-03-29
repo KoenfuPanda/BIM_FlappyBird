@@ -43,6 +43,8 @@ public class Draggable : MonoBehaviour
     private Animator _animator;
     private Collider2D _collider;
 
+    private AudioSource _audioSource;
+
 
     private void Start()
     {
@@ -53,6 +55,8 @@ public class Draggable : MonoBehaviour
         _collider = GetComponent<Collider2D>();
 
         _followFinger = FindObjectOfType<FollowFinger>();
+
+        _audioSource = GetComponent<AudioSource>();
 
         if (_isTutorial == true)
         {
@@ -87,6 +91,7 @@ public class Draggable : MonoBehaviour
                 // activate animation
                 _animator.Play("DraggableMove");
                 _collider.enabled = false;
+                _audioSource.Play();
 
                 if (_isTutorial) // if lifted high enough => call continue game
                 {
