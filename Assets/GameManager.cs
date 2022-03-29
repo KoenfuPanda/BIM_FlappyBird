@@ -309,7 +309,8 @@ public class GameManager : MonoBehaviour
         _balls = FindObjectsOfType<CanonBall_Projectile>().ToList();
         foreach (var ball in _balls)
         {
-            Destroy(ball.gameObject);
+            //Destroy(ball.gameObject);
+            ball.gameObject.SetActive(false);
         }
 
 
