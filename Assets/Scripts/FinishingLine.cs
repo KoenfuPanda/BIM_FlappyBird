@@ -157,8 +157,8 @@ public class FinishingLine : MonoBehaviour
 
         _timerLimit = _timePer1Egg / (float)_gameManager.AllFeathers.Count;
 
-        Debug.Log(_gameManager.AllFeathers.Count + " all eggs in the level");
-        Debug.Log(_threshHold1 + " T " + _threshHold2 + " T " + _threshHold3);
+        //Debug.Log(_gameManager.AllFeathers.Count + " all eggs in the level");
+        //Debug.Log(_threshHold1 + " T " + _threshHold2 + " T " + _threshHold3);
 
         _scoreText = _scoreParent.GetComponentInChildren<Text>();
 
