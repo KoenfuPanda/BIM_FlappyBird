@@ -102,7 +102,8 @@ public class GameManager : MonoBehaviour
 
         _rotatingPillars = FindObjectsOfType<SetAnimationSpeed>().ToList();
         _cannonShooters = FindObjectsOfType<SpawnCannonBall>().ToList();
-        AllFeathers = FindObjectsOfType<Feathers>().ToList();
+        StartCoroutine(Delay());
+        //AllFeathers = FindObjectsOfType<Feathers>().ToList();
 
         _featherScoreText = _scoreAnimator.GetComponentInChildren<Text>();
 
@@ -110,6 +111,12 @@ public class GameManager : MonoBehaviour
         _vCam = FindObjectOfType<CinemachineVirtualCamera>();
 
         SpawnEggs();
+    }
+
+    IEnumerator Delay()
+    {
+        yield return new WaitForSeconds(5);
+        AllFeathers = FindObjectsOfType<Feathers>().ToList();
     }
 
 

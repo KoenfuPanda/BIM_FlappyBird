@@ -17,7 +17,7 @@ public class LevelFramesManager : MonoBehaviour
     {
         yield return new WaitForSeconds(0.05f);
 
-        for(int levelIndex = 0; levelIndex < 6; levelIndex++)
+        for(int levelIndex = 0; levelIndex < 4; levelIndex++)
         {
             // 20,50,80% threshHolds for Stars
             float threshHold1 = GameInstance.MaxFeathers[levelIndex] / 5;
@@ -67,6 +67,8 @@ public class LevelFramesManager : MonoBehaviour
             }
         }
 
+        SetStartFrame();
+
         UnlockFrames();
     }
     private void UnlockFrames()
@@ -97,7 +99,7 @@ public class LevelFramesManager : MonoBehaviour
 
     public void FrameToRight()
     {
-        if(FrameNumber < 6)
+        if(FrameNumber < GameInstance.GameState +1)
         {
             FrameNumber++;
             GetComponent<Animator>().SetTrigger(FrameNumber.ToString());
@@ -111,5 +113,10 @@ public class LevelFramesManager : MonoBehaviour
             FrameNumber--;
             GetComponent<Animator>().SetTrigger(FrameNumber.ToString());
         }
+    }    
+    public void SetStartFrame()
+    {
+        FrameNumber = GameInstance.GameState + 1;
+        GetComponent<Animator>().SetTrigger((FrameNumber).ToString());
     }
 }

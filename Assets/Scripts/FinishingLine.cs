@@ -92,6 +92,63 @@ public class FinishingLine : MonoBehaviour
 
         _engravingsParentAnimator = _engravingParent.GetComponent<Animator>();
         _engravingsParentAnimator.enabled = false; // idem ditto
+        StartCoroutine(Delay());
+        //_gameManager = GetComponentInParent<GameManager>();
+
+        //_HUDScoreElementToMove.GetComponent<Animator>().enabled = false; // just making sure this is disabled at start
+
+        //_engravingsParentAnimator = _engravingParent.GetComponent<Animator>();
+        //_engravingsParentAnimator.enabled = false; // idem ditto
+
+        //// 20, 50 and 80 %
+        //_threshHold1 = _gameManager.AllFeathers.Count / 5;
+        //_threshHold2 = _gameManager.AllFeathers.Count / 2;
+        //_threshHold3 = _gameManager.AllFeathers.Count * (8f / 10f);
+
+        //_timerLimit = _timePer1Egg / (float)_gameManager.AllFeathers.Count;
+
+        //Debug.Log(_gameManager.AllFeathers.Count + " all eggs in the level" );
+        //Debug.Log(_threshHold1 + " T " + _threshHold2 + " T " + _threshHold3);
+
+        //_scoreText = _scoreParent.GetComponentInChildren<Text>();
+
+
+        //if (GameInstance.CollectedEggs[_levelNumber-1, 0] == true)
+        //{
+        //    // enable engraving piece, disable animator
+        //    _engraving1.SetActive(true);
+        //    _collectedSpecial1 = true;
+        //    _foundSpecialCounter += 1;
+        //}
+        //if (GameInstance.CollectedEggs[_levelNumber-1, 1] == true)
+        //{
+        //    // enable engraving piece, disable animator
+        //    _engraving2.SetActive(true);
+        //    _collectedSpecial2 = true;
+        //    _foundSpecialCounter += 1;
+        //}
+        //if (GameInstance.CollectedEggs[_levelNumber-1, 2] == true)
+        //{
+        //    // enable engraving piece, disable animator
+        //    _engraving3.SetActive(true);
+        //    _collectedSpecial3 = true;
+        //    _foundSpecialCounter += 1;
+        //}
+
+        //if(_foundSpecialCounter >= 3) // if all were previously collected...
+        //{
+        //    _engravingsParentAnimator.enabled = true;
+        //    _finishedSpecialsCount = true;
+        //}
+
+
+        //this.enabled = false;  // disables update method untill it is needed. (enable it when the _hudScoreElement is in place next to the panel) (does not work ?)
+    }
+
+    IEnumerator Delay()
+    {
+        yield return new WaitForSeconds(6);
+
 
         // 20, 50 and 80 %
         _threshHold1 = _gameManager.AllFeathers.Count / 5;
@@ -100,27 +157,27 @@ public class FinishingLine : MonoBehaviour
 
         _timerLimit = _timePer1Egg / (float)_gameManager.AllFeathers.Count;
 
-        Debug.Log(_gameManager.AllFeathers.Count + " all eggs in the level" );
+        Debug.Log(_gameManager.AllFeathers.Count + " all eggs in the level");
         Debug.Log(_threshHold1 + " T " + _threshHold2 + " T " + _threshHold3);
 
         _scoreText = _scoreParent.GetComponentInChildren<Text>();
 
 
-        if (GameInstance.CollectedEggs[_levelNumber-1, 0] == true)
+        if (GameInstance.CollectedEggs[_levelNumber - 1, 0] == true)
         {
             // enable engraving piece, disable animator
             _engraving1.SetActive(true);
             _collectedSpecial1 = true;
             _foundSpecialCounter += 1;
         }
-        if (GameInstance.CollectedEggs[_levelNumber-1, 1] == true)
+        if (GameInstance.CollectedEggs[_levelNumber - 1, 1] == true)
         {
             // enable engraving piece, disable animator
             _engraving2.SetActive(true);
             _collectedSpecial2 = true;
             _foundSpecialCounter += 1;
         }
-        if (GameInstance.CollectedEggs[_levelNumber-1, 2] == true)
+        if (GameInstance.CollectedEggs[_levelNumber - 1, 2] == true)
         {
             // enable engraving piece, disable animator
             _engraving3.SetActive(true);
@@ -128,14 +185,11 @@ public class FinishingLine : MonoBehaviour
             _foundSpecialCounter += 1;
         }
 
-        if(_foundSpecialCounter >= 3) // if all were previously collected...
+        if (_foundSpecialCounter >= 3) // if all were previously collected...
         {
             _engravingsParentAnimator.enabled = true;
             _finishedSpecialsCount = true;
         }
-
-
-        //this.enabled = false;  // disables update method untill it is needed. (enable it when the _hudScoreElement is in place next to the panel) (does not work ?)
     }
 
     private void Update()
