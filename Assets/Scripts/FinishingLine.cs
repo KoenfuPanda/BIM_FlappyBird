@@ -478,8 +478,10 @@ public class FinishingLine : MonoBehaviour
                 _gameInstance = GameObject.Find("GameInstance(Clone)").GetComponent<GameInstance>();
 
                 // eggs collected in this level level x = _gamemanager.saved feathers
-
-                _gameInstance.SetGameState(_levelNumber);
+                if (_levelNumber < 4)
+                {
+                    _gameInstance.SetGameState(_levelNumber);
+                }
             }
 
             // Amount collected feathers in level
