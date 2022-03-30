@@ -38,8 +38,11 @@ public class CheckPoint : MonoBehaviour
     {
         if(_hasBeenActivated == false && collision.TryGetComponent(out HitObstacle hitObstacle)) // if yet to be activated and is player...
         {
-            _animator.SetTrigger("Ring");
-
+            if (_animator.gameObject.activeSelf == true) // if i am an active object
+            {
+                _animator.SetTrigger("Ring");
+            }
+            
             foreach (CheckPoint checkPoint in _gameManager.CheckPoints) // disable others
             {
                 checkPoint.IsActive = false;

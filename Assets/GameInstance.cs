@@ -34,7 +34,7 @@ public class GameInstance : MonoBehaviour
 
     public void SetLevelButtons()
     {
-        if (SceneManager.GetActiveScene().name == "Alpha_MainMenu" || SceneManager.GetActiveScene().name == "MainMenu")
+        if (SceneManager.GetActiveScene().name == "Alpha_MainMenu" || SceneManager.GetActiveScene().name == "MainMenu" || SceneManager.GetActiveScene().name == "LevelSelect")
         {
             GameObject reference = GameObject.Find("SceneReferences");
 
