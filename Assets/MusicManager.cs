@@ -24,11 +24,29 @@ public class MusicManager : MonoBehaviour
     private void Start()
     {
         _audioSource = GetComponent<AudioSource>();
-        StartCoroutine(SetIntro());
+        //StartCoroutine(SetIntro());
     }
 
     private void Update()
     {
+        print(_audioSource.time + " /  " + _audioSource.clip.length);
+
+        if (_audioSource.clip.length == _audioSource.time)
+        {
+            if (_state == 0 || _state == 2)
+            {
+                _audioSource.clip = _verses[0];
+                _audioSource.Play();
+                _state = 1;
+            }
+            else if (_state == 1)
+            {
+                _audioSource.clip = _bridges[0];
+                _audioSource.Play();
+                _state = 2;
+            }
+        }
+
         //print(_timer);
         //print(_audioSource.clip.length);
         //_timer +=Time.deltaTime;
