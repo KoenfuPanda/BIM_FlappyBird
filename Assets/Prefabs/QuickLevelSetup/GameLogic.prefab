@@ -725,7 +725,7 @@ PrefabInstance:
     - target: {fileID: 6106393831581321803, guid: a449fe7b4e53d99459c68fa6840544ad,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.752478
+      value: -3.7532952
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a449fe7b4e53d99459c68fa6840544ad, type: 3}
@@ -1117,7 +1117,7 @@ PrefabInstance:
     - target: {fileID: 7922986295063319508, guid: 617028c5d648d2c40b4fe3b8b212824c,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: MainMenu
+      value: LevelSelect
       objectReference: {fileID: 0}
     - target: {fileID: 7922986295063319508, guid: 617028c5d648d2c40b4fe3b8b212824c,
         type: 3}

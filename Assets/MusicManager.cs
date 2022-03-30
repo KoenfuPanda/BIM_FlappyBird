@@ -29,7 +29,7 @@ public class MusicManager : MonoBehaviour
 
     private void Update()
     {
-        print(_audioSource.time + " /  " + _audioSource.clip.length);
+        //print(_audioSource.time + " /  " + _audioSource.clip.length);
 
         if (_audioSource.clip.length == _audioSource.time)
         {
