@@ -735,7 +735,7 @@ MonoBehaviour:
   _audioClips:
   - {fileID: 8300000, guid: e4c65d2bc6e29f5439b2bcc7cec9b5b3, type: 3}
   - {fileID: 8300000, guid: 4a7b3922d37653c47b7d5dcfa0cc35c9, type: 3}
-  _eggPickupTimeLimit: 0.5
+  _eggPickupTimeLimit: 0.75
   EggQuickPickupCount: 0
 --- !u!114 &8157713602601542619
 MonoBehaviour:

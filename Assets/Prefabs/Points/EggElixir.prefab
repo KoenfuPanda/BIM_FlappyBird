@@ -218,7 +218,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af95dd10c66fe504dbd63750001efc9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _particleSystemPickup: {fileID: 8266249862236230101, guid: 494b0a78381980446a5ebfbb139c7aef,
+  _particleSystemPickup: {fileID: 8266249862236230101, guid: eaa0179ef71799b4b81e4df8d131edca,
     type: 3}
   _particleSystemGlow: {fileID: 7276576345819725754}
   _possibleSounds:
@@ -238,7 +238,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.6
   m_Pitch: 1
   Loop: 0
   Mute: 0
