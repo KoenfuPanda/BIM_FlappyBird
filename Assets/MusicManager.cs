@@ -27,7 +27,7 @@ public class MusicManager : MonoBehaviour
 
     private void Update()
     {
-        if (_audioSource.clip.length >= _audioSource.time)
+        if (_audioSource.time >= _audioSource.clip.length)
         {
             if (_state == 0 || _state == 2)
             {
