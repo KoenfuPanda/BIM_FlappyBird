@@ -25,8 +25,8 @@ public class GameManager : MonoBehaviour
 
     public Text EggScoreText;
 
-    //private Text _featherScoreText;
-    private TMP_Text _featherScoreText;
+    private Text _featherScoreText;
+    //private TMP_Text _featherScoreText;
     [SerializeField]
     private Animator _scoreAnimator;
     private bool _scoreAnimationSwapped;
@@ -108,8 +108,8 @@ public class GameManager : MonoBehaviour
         StartCoroutine(Delay());
         //AllFeathers = FindObjectsOfType<Feathers>().ToList();
 
-        //_featherScoreText = _scoreAnimator.GetComponentInChildren<Text>();
-        _featherScoreText = _scoreAnimator.GetComponentInChildren<TMP_Text>();
+        _featherScoreText = _scoreAnimator.GetComponentInChildren<Text>();
+        //_featherScoreText = _scoreAnimator.GetComponentInChildren<TMP_Text>();
 
         //SaveFeathersCollectedSoFar();
         _vCam = FindObjectOfType<CinemachineVirtualCamera>();
